@@ -3,7 +3,7 @@ layout: post
 title: 相逢是可喜，难料是别离
 subtitle: 
 author: Coink Wang
-date: 2015-08-22 03:35:54 +0800
+date: 2015-08-22 03:35:54
 categories: 
 tag: 
 ---
