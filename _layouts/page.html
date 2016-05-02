@@ -150,6 +150,30 @@ layout: default
                                 </a>
                             </li>
                             {% endif %}
+
+                            {% if site.steam_username %}
+                    <li>
+                        <a target="_blank" href="http://steamcommunity.com/id/{{ site.steam_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-steam fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    <!-- add telegram by Coink-->
+                    {% if site.telegram_username %}
+                    <li>
+                        <a target="_blank" href="https://telegram.me/{{ site.telegram_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">Tg</i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
                             {% if site.facebook_username %}
                             <li>
                                 <a target="_blank" href="https://www.facebook.com/{{ site.facebook_username }}">

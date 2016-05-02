@@ -14,18 +14,21 @@ paginate: 10
 # SNS settings
 RSS: false
 weibo_username: 
+telegram_username: CoinkWang
 zhihu_username:
 facebook_username: 
 twitter_username: 
+steam_username: CoinkWang
 github_username:  CoinkWang
 
 # Sidebar settings
 sidebar: true                     
-sidebar-about-description: ""
+sidebar-about-description: 
 sidebar-avatar: /img/avatar.jpg
 
 gems: [jekyll-paginate]
 disqus_username: Coink 
+
 # Friends
 friends: [
     {

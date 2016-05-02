@@ -16,7 +16,7 @@
                     {% endif %}
                     {% if site.twitter_username %}
                     <li>
-                        <a href="https://twitter.com/{{ site.twitter_username }}">
+                        <a target="_blank" href="https://twitter.com/{{ site.twitter_username }}">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -36,6 +36,30 @@
                         </a>
                     </li>
                     {% endif %}
+                                        <!-- add steam by Coink-->
+                    {% if site.steam_username %}
+                    <li>
+                        <a target="_blank" href="http://steamcommunity.com/id/{{ site.steam_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-steam fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                                        <!-- add telegram by Coink-->
+                    {% if site.telegram_username %}
+                    <li>
+                        <a target="_blank" href="https://telegram.me/{{ site.telegram_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-1x fa-inverse">Tg</i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
                     {% if site.weibo_username %}
                     <li>
                         <a target="_blank" href="http://weibo.com/{{ site.weibo_username }}">
