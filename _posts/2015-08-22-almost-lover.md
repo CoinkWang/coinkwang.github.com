@@ -5,7 +5,8 @@ subtitle:
 author: Coink Wang
 date: 2015-08-22 03:35:54
 categories: 
-tag: 
+tags:
+- diary
 ---
 呐，你知道吗
 

@@ -19,8 +19,17 @@ facebook_username:
 twitter_username: 
 github_username:  CoinkWang
 
+# Sidebar settings
 sidebar: true                     
 sidebar-about-description: ""
 sidebar-avatar: /img/avatar.jpg
 
 gems: [jekyll-paginate]
+disqus_username: Coink 
+# Friends
+friends: [
+    {
+        title: "Mapers丨路标社区",
+        href: "http://mapers.net/"
+    },
+]
