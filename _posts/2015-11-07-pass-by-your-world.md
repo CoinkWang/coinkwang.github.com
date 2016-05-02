@@ -6,7 +6,7 @@ author: Coink
 date: 2015-11-04 00:50
 categories: 
 tags:
-- diary
+- Diary
 ---
 不记得何时何地，怎么样的机缘巧合之下，我邂逅了一个句子：
 
