@@ -10,10 +10,6 @@ task :new do
 	@name = STDIN.gets.chomp
 	puts "post 子标题："
 	@subtitle = STDIN.gets.chomp
-	puts "post 分类，以空格分隔："
-	@categories = STDIN.gets.chomp
-	puts "post 标签："
-	@tag = STDIN.gets.chomp
 	@slug = "#{@url}"
 	@slug = @slug.downcase.strip.gsub(' ', '-')
 	@date = Time.now.strftime("%F")
@@ -29,8 +25,7 @@ task :new do
 			file.puts "subtitle: #{@subtitle}"
 			file.puts "author: Coink "
 			file.puts "date: #{Time.now}"
-			file.puts "categories: #{@categories}"
-			file.puts "tag: #{@tag}"
+			file.puts "tag: "
 			file.puts "---"
 	end
 	exec "vi #{@post_name}"
