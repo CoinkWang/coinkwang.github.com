@@ -1,6 +1,6 @@
 # Site settings
 title: Coink丨Do Boom!
-SEOTitle: Coink丨Do Boom!
+SEOTitle: Coink丨Do Boom!丨CoinkWang'S Blog
 header-img: img/home-bg.jpg
 email: coinkwang@163.com
 description: 
@@ -24,7 +24,7 @@ github_username:  CoinkWang
 
 # Sidebar settings
 sidebar: true                     
-sidebar-about-description: 请叫我现充
+sidebar-about-description: 内敛的中二患者
 sidebar-avatar: /img/avatar.jpg
 
 gems: [jekyll-paginate]
