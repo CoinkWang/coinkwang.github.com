@@ -5,7 +5,7 @@ header-img: img/home-bg.jpg
 email: coinkwang@163.com
 description: 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://coink.wang" # the base hostname & protocol for your site
+url: "http://coink.wang" 
 
 
 # Build settings
@@ -23,7 +23,7 @@ steam_username: CoinkWang
 github_username:  CoinkWang
 
 # Sidebar settings
-sidebar: true                     
+sidebar: true 
 sidebar-about-description: 内敛的中二患者
 sidebar-avatar: /img/avatar.jpg
 
