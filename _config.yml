@@ -6,7 +6,7 @@ email: coinkwang@163.com
 description: 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://coink.wang" 
-permalink: /:title.html
+
 
 # Build settings
 markdown: kramdown
