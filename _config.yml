@@ -5,7 +5,7 @@ header-img: img/home-bg.jpg
 email: coinkwang@163.com
 description: 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://coink.wang" 
+url: "https://coink.wang" 
 
 
 # Build settings
@@ -15,12 +15,12 @@ paginate: 10
 # SNS settings
 RSS: false
 weibo_username: 
-telegram_username: CoinkWang
+telegram_username: 
 zhihu_username:
 facebook_username: 
-twitter_username: CoinkWang
-steam_username: CoinkWang
-github_username:  CoinkWang
+twitter_username: 
+steam_username: 
+github_username:  
 
 # Sidebar settings
 sidebar: true 
