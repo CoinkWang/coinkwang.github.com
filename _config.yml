@@ -22,6 +22,9 @@ twitter_username:
 steam_username: 
 github_username:  
 
+
+permalink: /:title.html
+
 # Sidebar settings
 sidebar: true 
 sidebar-about-description: 内敛的中二患者
