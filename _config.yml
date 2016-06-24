@@ -36,6 +36,10 @@ disqus_username: Coink
 # Friends
 friends: [
     {
+        title: "My Github",
+        href: "https://github.com/CoinkWang"
+    },
+    {
         title: "Mapers丨路标社区",
         href: "http://mapers.net/"
     },
