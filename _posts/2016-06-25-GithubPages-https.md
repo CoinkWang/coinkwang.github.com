@@ -59,3 +59,18 @@ https://kloudsec.com/github-pages/new
 --
 
 如果你的一些资源不是相对url调用，甚至是http的话，会无法加载，其他没啥坑了
+
+
+
+
+
+
+--------
+
+7月更新：
+
+收到一封邮件：
+![SHUTDOWN](http://7xread.com1.z0.glb.clouddn.com/b62df5c8-ea87-4dbd-bf3c-8efc4f020b61)
+
+
+8月，再见Kloudsec.
