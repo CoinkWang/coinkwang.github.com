@@ -4,7 +4,7 @@ SEOTitle: Coink丨Do Boom!丨CoinkWang'S Blog
 header-img: img/home-bg.jpg
 email: coinkwang@163.com
 description: 
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "" 
 url: "https://coink.wang" 
 
 
