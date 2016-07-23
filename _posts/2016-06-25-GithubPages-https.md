@@ -21,7 +21,7 @@ tag:
 
 原理应该是服务器缓存你的pages，用他的https服务器传输到用户访问
 
-#步骤
+# 步骤
 --
 https://kloudsec.com/github-pages/new
 
@@ -55,7 +55,7 @@ https://kloudsec.com/github-pages/new
 
 访问你的网站看吧
 
-#最后还有一件事
+# 最后还有一件事
 --
 
 如果你的一些资源不是相对url调用，甚至是http的话，会无法加载，其他没啥坑了
