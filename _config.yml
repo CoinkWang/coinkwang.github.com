@@ -10,7 +10,7 @@ url: "https://coink.wang"
 
 # Build settings
 markdown: kramdown
-paginate: 10
+paginate: 99
 
 # SNS settings
 RSS: false
