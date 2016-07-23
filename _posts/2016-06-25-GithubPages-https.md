@@ -12,17 +12,17 @@ tag:
 
 
 # 为什么要给GithubPages启用HTTPS
---
+
 ~~鬼知道啊~~
 
 # 实现
---
+
 一个非常简单的解决方案：Kloudsec
 
 原理应该是服务器缓存你的pages，用他的https服务器传输到用户访问
 
 # 步骤
---
+
 https://kloudsec.com/github-pages/new
 
 - 先注册账号
@@ -56,7 +56,7 @@ https://kloudsec.com/github-pages/new
 访问你的网站看吧
 
 # 最后还有一件事
---
+
 
 如果你的一些资源不是相对url调用，甚至是http的话，会无法加载，其他没啥坑了
 
