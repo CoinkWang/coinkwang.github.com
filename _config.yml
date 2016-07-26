@@ -12,7 +12,7 @@ url: "https://coink.wang"
 markdown: kramdown
 paginate: 99
 
-# SNS settings
+# SNS settings 
 RSS: false
 weibo_username: 
 telegram_username: 
