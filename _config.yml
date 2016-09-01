@@ -1,8 +1,8 @@
 # Site settings
 title: Coink丨Do Boom!
-SEOTitle: Coink丨Do Boom!丨CoinkWang'S Blog
+SEOTitle: Coink丨Do Boom!丨王钢蹦
 header-img: img/home-bg.jpg
-email: coinkwang@163.com
+email: cn.coink.wang@gmail.com
 description: 
 baseurl: "" 
 url: "https://coink.wang" 
@@ -27,7 +27,8 @@ permalink: /:title.html
 
 # Sidebar settings
 sidebar: true 
-sidebar-about-description: 内敛的中二患者
+sidebar-about-description: 内敛的中二少年<br>渴望变强<br>竜が我が敌を食らえ！<br><a href="mailto:cn.coink.wang@gmail.com">cn.coink.wang@gmail.com</a><br><a href="https://github.com/CoinkWang">Github.com/CoinkWang</a><br><a href="https://twitter.com/CoinkWang">Twitter @CoinkWang</a>
+
 sidebar-avatar: /img/avatar.jpg
 
 gems: [jekyll-paginate]
