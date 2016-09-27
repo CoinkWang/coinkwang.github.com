@@ -14,7 +14,7 @@ tag:
 
 ![](https://ooo.0o0.ooo/2016/07/29/579b830ca36e5.png)
 
-作为局外人我就不妄加评论什么了，整合一下网络上流传的Drops文章，仅供自己学习，故不一一标明出处。
+作为局外人我就不妄加评论什么了，Fork来的Drops文章，供查阅。
 
 [知识不朽。](https://github.com/CoinkWang/wooyun-drops-all-articles-package)
 
