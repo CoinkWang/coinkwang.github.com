@@ -248,7 +248,7 @@ tag:
 
 1. [GitHub Student Developer Pack](https://education.github.com/pack)
 
-包含GitHub增强服务，Bitnami一年免费商业套餐3，AWS 百来刀的可用余额，Azure 每月**25美刀**的免费服务器，一年的免费 .me 域名，免费 SSL 服务，等等等等，还有TMD虚幻4引擎随你用啊啊啊啊啊啊（反正你也不会用，科科，辣鸡）眼花缭乱
+包含GitHub增强服务，Bitnami一年免费商业套餐3，AWS 百来刀的可用余额，**Azure 每月25美刀**的免费服务器，DigitalOcean服务器50$，一年的免费 .me 域名，免费 SSL 服务，等等等等，还有TMD虚幻4引擎随你用啊啊啊啊啊啊（反正你也不会用，科科，辣鸡）眼花缭乱
 
 1. [Free for students:Professional developer tools from JetBrains](http://www.jetbrains.com/student/)
 
