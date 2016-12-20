@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 
-subtitle: 给你的Githubpages启用https
+subtitle: 给你的GithubPages启用https
 author: Coink 
 date: 2016-06-24 00:00:00 
 categories: 
@@ -17,6 +17,8 @@ tag:
 # 实现
 
 一个非常简单的解决方案：Kloudsec
+
+更新：CloudFlare
 
 # 步骤
 
