@@ -18,8 +18,6 @@ tag:
 
 一个非常简单的解决方案：Kloudsec
 
-原理应该是服务器缓存你的pages，用他的https服务器传输到用户访问
-
 # 步骤
 
 https://kloudsec.com/github-pages/new
@@ -63,7 +61,6 @@ https://kloudsec.com/github-pages/new
 
 
 
-
 --------
 
 7月更新：
@@ -74,4 +71,4 @@ https://kloudsec.com/github-pages/new
 
 8月，再见Kloudsec.
 
-修改NS记录，无缝转移到CloudFlare，HTTPS依旧给力。
+故转移到CloudFlare。（所以为什么不一开始就用CF？
