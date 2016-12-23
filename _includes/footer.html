@@ -16,7 +16,7 @@
                     {% endif %}
                     {% if site.twitter_username %}
                     <li>
-                        <a href="https://twitter.com/{{ site.twitter_username }}">
+                        <a target="_blank" href="https://twitter.com/{{ site.twitter_username }}">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -36,6 +36,30 @@
                         </a>
                     </li>
                     {% endif %}
+                                        <!-- add steam by Coink-->
+                    {% if site.steam_username %}
+                    <li>
+                        <a target="_blank" href="http://steamcommunity.com/id/{{ site.steam_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-steam fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                                        <!-- add telegram by Coink-->
+                    {% if site.telegram_username %}
+                    <li>
+                        <a target="_blank" href="https://telegram.me/{{ site.telegram_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-1x fa-inverse">Tg</i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
                     {% if site.weibo_username %}
                     <li>
                         <a target="_blank" href="http://weibo.com/{{ site.weibo_username }}">
@@ -68,36 +92,13 @@
                         </a>
                     </li>
                     {% endif %}
-                    {% if site.email_username %}
-                    <li>
-                        <a href="mailto:{{ site.email_username }}">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    {% endif %}
-                    {% if site.linkedin_username %}
-                    <li>
-                        <a target="_blank" href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    {% endif %}
                 </ul>
                 <p class="copyright text-muted">
                     Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
                     <br>
-                    Theme by <a href="http://tangliangdong.me">Hux</a>
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="91px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=tangliangdong&repo=tangliangdong.github.io&type=star&count=true" >
-                    </iframe>
+                    除非另有声明，本网站内容采用 <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/"> 知识共享署名-非商业性使用-相同方式共享 </a> 授权。
+                    <br>
+                    Theme by Clean-Blog-Jekyll & Hux & Coink
                 </p>
             </div>
         </div>
@@ -112,7 +113,6 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="{{ "/js/hux-blog.min.js " | prepend: site.baseurl }}"></script>
-
 
 
 <!-- async load function -->
@@ -134,8 +134,7 @@
      so Huxblog drops it officially.
 
      - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
-     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
-     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
 -->
 <!--
     <script>
@@ -151,7 +150,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async('{{ "/js/jquery.tagcloud.js" | prepend: site.baseurl }}',function(){
+        async("/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
@@ -162,12 +161,12 @@
 </script>
 
 <!--fastClick.js -->
-<!-- <script>
-    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
         var $nav = document.querySelector("nav");
         if($nav) FastClick.attach($nav);
     })
-</script> -->
+</script>
 
 
 <!-- Google Analytics -->
@@ -205,53 +204,3 @@
     })();
 </script>
 {% endif %}
-
-
-
-<!-- Side Catalog -->
-{% if page.catalog %}
-<script type="text/javascript">
-    function generateCatalog (selector) {
-        var P = $('div.post-container'),a,n,t,l,i,c;
-        a = P.find('h1,h2,h3,h4,h5,h6');
-        a.each(function () {
-            n = $(this).prop('tagName').toLowerCase();
-            i = "#"+$(this).prop('id');
-            t = $(this).text();
-            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
-            l = $('<li class="'+n+'_nav"></li>').append(c);
-            $(selector).append(l);
-        });
-        return true;    
-    }
-
-    generateCatalog(".catalog-body");
-
-    // toggle side catalog
-    $(".catalog-toggle").click((function(e){
-        e.preventDefault();
-        $('.side-catalog').toggleClass("fold")
-    }))
-
-    /*
-     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
-     * Fork by Hux to support padding
-     */
-    async("{{ '/js/jquery.nav.js' | prepend: site.baseurl }}", function () {
-        $('.catalog-body').onePageNav({
-            currentClass: "active",
-            changeHash: !1,
-            easing: "swing",
-            filter: "",
-            scrollSpeed: 700,
-            scrollOffset: 0,
-            scrollThreshold: .2,
-            begin: null,
-            end: null,
-            scrollChange: null,
-            padding: 80
-        });
-    });
-</script>
-{% endif %}
-
