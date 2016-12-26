@@ -11,6 +11,7 @@ url: "https://coink.wang"
 # Build settings
 markdown: kramdown
 paginate: 99
+highlighter: pygments 
 
 # SNS settings 
 RSS: false
