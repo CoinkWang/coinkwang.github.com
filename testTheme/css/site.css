@@ -1,8 +1,0 @@
-.demo-layout-transparent {
-    background: url('pic/bg.jpg') center / cover;
-}
-
-.demo-layout-transparent .mdl-layout__header,
-.demo-layout-transparent .mdl-layout__drawer-button {
-    color: white;
-}

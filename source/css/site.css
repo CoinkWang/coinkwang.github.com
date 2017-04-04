@@ -1,0 +1,34 @@
+/*index style*/
+.demo-layout-transparent {
+    background: url('../pic/bg.jpg') center / cover;`
+}
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+    color: white;
+}
+
+/*card style*/
+.demo-card-wide.mdl-card {
+  width: 600px;
+  margin: 50px auto;/*居中*/
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 200px;
+  background: url('../pic/card1.jpg') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+
+#avatar{
+     width:100px;height:100px;
+     margin: 10px auto;
+     border-radius: 50px;
+     -webkit-border-radius: 50px;
+     -moz-border-radius: 50px;
+}
+
+#description{
+    text-align: center;
+}
