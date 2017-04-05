@@ -36,3 +36,10 @@
 #description{
     text-align: center;
 }
+
+#music-player{
+   position: fixed;
+   z-index: 1001;
+   right: 10px;
+   top: 0;
+}
