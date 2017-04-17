@@ -31,7 +31,7 @@ tag:
 
 前几天填了简历，老唐给我“正经”的发了条短信
 
-![zhi.png](https://ooo.0o0.ooo/2017/04/11/58ecbb4d56e54.png)
+![](https://ooo.0o0.ooo/2017/04/17/58f4da340ce78.png)
 
 
 
