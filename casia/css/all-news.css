@@ -1,0 +1,111 @@
+.sub-nav {
+    padding: 0 1%;
+    width: 98%;
+    height: 34px;
+    background: rgb(33, 33, 33);
+}
+
+.sub-nav a {
+    float: left;
+    display: block;
+    padding: 0 10px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 34px;
+    text-decoration: none;
+}
+
+.sub-nav span {
+    float: left;
+    display: block;
+}
+
+.sub-nav span:first-child {
+    padding: 6px 0 0 0;
+}
+
+.sub-nav .home-part {
+    color: rgb(136, 176, 190);
+}
+
+.sub-nav:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.news {
+    padding: 20px 2% 60px 2%;
+    width: 96%;
+    height: auto;
+}
+
+.news h1 {
+    color: rgb(85, 75, 100);
+    font-size: 24px;
+    line-height: 30px;
+    padding: 0 0 25px;
+    font-weight: normal;
+    background: #fff;
+}
+
+.news h1 span {
+    padding: 0 4px;
+    color: #eee;
+    background: rgb(85, 75, 100);
+}
+
+.news h1 span #all {
+    color: rgb(85, 75, 100);
+    border: 1px solid rgb(85, 75, 100);
+    background: none;
+}
+
+.news .news-wrap {
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 90%;
+    height: auto;
+}
+
+.news .news-wrap span {
+    display: inline-block;
+    color: #bbb;
+    padding: 8px 12px;
+}
+
+.news .news-wrap h2 a {
+    color: rgb(54, 96, 104);
+    font-size: 16px;
+    font-weight: bold;
+    font-style: oblique;
+    padding: 0 0 15px;
+    text-decoration: none;
+}
+
+.news .news-wrap p {
+    padding: 12px 8px 20px 8px;
+    line-height: 14px;
+    text-align: justify;
+}
+
+.news .next-page {
+    float: right;
+    margin: 0 5% 0 0;
+    width: 100px;
+    height: 32px;
+    line-height: 32px;
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+    background: #bbb;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.news .next-page:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

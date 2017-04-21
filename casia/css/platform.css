@@ -1,0 +1,120 @@
+.about {
+    padding: 30px 5%;
+    width: 90%;
+    height: auto;
+}
+
+.about p {
+    line-height: 18px;
+    text-align: justify;
+}
+
+.about h1 {
+    color: rgb(85, 75, 100);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 32px;
+}
+
+.laboratory-equipment {
+    padding: 30px 2%;
+    width: 96%;
+    height: auto;
+}
+
+.laboratory-equipment:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.laboratory-equipment .latest {
+    float: left;
+    padding: 10px 3%;
+    width: 62%;
+    text-align: center;
+    background: #fff;
+}
+
+.laboratory-equipment .latest h1 {
+    color: #554b64;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 32px;
+}
+
+.laboratory-equipment .latest p {
+    line-height: 18px;
+    text-align: justify;
+    color: rgb(54, 96, 104);
+}
+
+.laboratory-equipment .latest img {
+    margin: 10px 0;
+    width: 100%;
+    height: 300px;
+}
+
+.laboratory-equipment .box {
+    float: right;
+    margin: 0 0 0 1%;
+    padding: 10px 0;
+    width: 30%;
+    height: 438px;
+    text-align: center;
+    background: #fff;
+}
+
+.laboratory-equipment .box p {
+    padding: 10px 24px;
+    line-height: 18px;
+    text-align: justify;
+    color: rgb(54, 96, 104);
+}
+
+.laboratory-equipment .box img {
+    width: 250px;
+    height: 140px;
+}
+
+.more {
+    margin-top: 30px;
+    padding: 0 1% 20px 1%;
+    width: 98%;
+    height: auto;
+}
+
+.more:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.more h1 {
+    padding: 0 0 0 2%;
+    font-size: 24px;
+    color: rgb(85, 75, 100);
+    font-weight: bold;
+}
+
+.more .wrap {
+    float: left;
+    margin: 10px;
+    padding: 20px 5px;
+    width: 220px;
+    height: 280px;
+    text-align: center;
+    background: #ffffff;
+}
+
+.more .wrap p {
+    padding: 10px 24px;
+    line-height: 18px;
+    text-align: justify;
+    color: rgb(54, 96, 104);
+}
+
+.more .wrap img {
+    width: 180px;
+    height: 100px;
+}
