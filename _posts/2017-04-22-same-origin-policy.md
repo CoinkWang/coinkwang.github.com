@@ -69,29 +69,29 @@ Cookie 是服务器写入浏览器的一小段信息，只有同源的网页才�
 
 举例来说，A网页是`http://w1.example.com/a.html`，B网页是`http://w2.example.com/b.html`，那么只要设置相同的`document.domain`，两个网页就可以共享Cookie。
 
-> ```javascript
-> document.domain = 'example.com';
-> ```
+```javascript
+document.domain = 'example.com';
+```
 
 现在，A网页通过脚本设置一个 Cookie。
 
-> ```javascript
-> document.cookie = "test1=hello";
-> ```
+```javascript
+document.cookie = "test1=hello";
+```
 
 B网页就可以读到这个 Cookie。
 
-> ```javascript
-> var allCookie = document.cookie;
-> ```
+```javascript
+var allCookie = document.cookie;
+```
 
 注意，这种方法只适用于 Cookie 和 iframe 窗口，LocalStorage 和 IndexDB 无法通过这种方法，规避同源政策，而要使用下文介绍的PostMessage API。
 
 另外，服务器也可以在设置Cookie的时候，指定Cookie的所属域名为一级域名，比如`.example.com`。
 
-> ```
-> Set-Cookie: key=value; domain=.example.com; path=/
-> ```
+```
+Set-Cookie: key=vae; domain=.example.com; path=/
+```
 
 这样的话，二级域名和三级域名不用做任何设置，都可以读取这个Cookie。
 
@@ -101,19 +101,19 @@ B网页就可以读到这个 Cookie。
 
 比如，父窗口运行下面的命令，如果`iframe`窗口不是同源，就会报错。
 
-> ```javascript
-> document.getElementById("myIFrame").contentWindow.document
-> // Uncaught DOMException: Blocked a frame from accessing a cross-origin frame.
-> ```
+```javascript
+document.getElementById("myIFrame").contentWindow.document
+// Uncaught DOMException: Blocked a frame from accessing a cross-origin frame.
+```
 
 上面命令中，父窗口想获取子窗口的DOM，因为跨源导致报错。
 
 反之亦然，子窗口获取主窗口的DOM也会报错。
 
-> ```javascript
-> window.parent.document.body
-> // 报错
-> ```
+```javascript
+window.parent.document.body
+// 报错
+```
 
 如果两个窗口一级域名相同，只是二级域名不同，那么设置上一节介绍的`document.domain`属性，就可以规避同源政策，拿到DOM。
 
@@ -129,27 +129,26 @@ B网页就可以读到这个 Cookie。
 
 父窗口可以把信息，写入子窗口的片段标识符。
 
-> ```javascript
-> var src = originURL + '#' + data;
-> document.getElementById('myIFrame').src = src;
-> ```
+```javascript
+var src = originURL + '#' + data;
+document.getElementById('myIFrame').src = src;
+```
 
 子窗口通过监听`hashchange`事件得到通知。
 
-> ```javascript
-> window.onhashchange = checkMessage;
->
-> function checkMessage() {
->   var message = window.location.hash;
->   // ...
-> }
-> ```
+```javascript
+window.onhashchange = checkMessage;
+function checkMessage() {
+  var message = window.location.hash;
+  // ...
+}
+```
 
 同样的，子窗口也可以改变父窗口的片段标识符。
 
-> ```javascript
-> parent.location.href= target + "#" + hash;
-> ```
+```javascript
+parent.location.href= target + "#" + hash;
+```
 
 ### 3.2 window.name
 
@@ -157,21 +156,21 @@ B网页就可以读到这个 Cookie。
 
 父窗口先打开一个子窗口，载入一个不同源的网页，该网页将信息写入`window.name`属性。
 
-> ```javascript
-> window.name = data;
-> ```
+```javascript
+window.name = data;
+```
 
 接着，子窗口跳回一个与主窗口同域的网址。
 
-> ```javascript
-> location = 'http://parent.url.com/xxx.html';
-> ```
+```javascript
+location = 'http://parent.url.com/xxx.html';
+```
 
 然后，主窗口就可以读取子窗口的`window.name`了。
 
-> ```javascript
-> var data = document.getElementById('myFrame').contentWindow.name;
-> ```
+```javascript
+var data = document.getElementById('myFrame').contentWindow.name;
+```
 
 这种方法的优点是，`window.name`容量很大，可以放置非常长的字符串；缺点是必须监听子窗口`window.name`属性的变化，影响网页性能。
 
@@ -183,26 +182,26 @@ B网页就可以读到这个 Cookie。
 
 举例来说，父窗口`http://aaa.com`向子窗口`http://bbb.com`发消息，调用`postMessage`方法就可以了。
 
-> ```javascript
-> var popup = window.open('http://bbb.com', 'title');
-> popup.postMessage('Hello World!', 'http://bbb.com');
-> ```
+```javascript
+var popup = window.open('http://bbb.com', 'title');
+popup.postMessage('Hello World!', 'http://bbb.com');
+```
 
 `postMessage`方法的第一个参数是具体的信息内容，第二个参数是接收消息的窗口的源（origin），即"协议 + 域名 + 端口"。也可以设为`*`，表示不限制域名，向所有窗口发送。
 
 子窗口向父窗口发送消息的写法类似。
 
-> ```javascript
-> window.opener.postMessage('Nice to see you', 'http://aaa.com');
-> ```
+```javascript
+window.opener.postMessage('Nice to see you', 'http://aaa.com');
+```
 
 父窗口和子窗口都可以通过`message`事件，监听对方的消息。
 
-> ```javascript
-> window.addEventListener('message', function(e) {
->   console.log(e.data);
-> },false);
-> ```
+```javascript
+window.addEventListener('message', function(e) {
+  console.log(e.data);
+},false);
+```
 
 `message`事件的事件对象`event`，提供以下三个属性。
 
@@ -212,26 +211,26 @@ B网页就可以读到这个 Cookie。
 
 下面的例子是，子窗口通过`event.source`属性引用父窗口，然后发送消息。
 
-> ```javascript
-> window.addEventListener('message', receiveMessage);
-> function receiveMessage(event) {
->   event.source.postMessage('Nice to see you!', '*');
-> }
-> ```
+```javascript
+window.addEventListener('message', receiveMessage);
+function receiveMessage(event) {
+  event.source.postMessage('Nice to see you!', '*');
+}
+```
 
 `event.origin`属性可以过滤不是发给本窗口的消息。
 
-> ```javascript
-> window.addEventListener('message', receiveMessage);
-> function receiveMessage(event) {
->   if (event.origin !== 'http://aaa.com') return;
->   if (event.data === 'Hello World') {
->       event.source.postMessage('Hello', event.origin);
->   } else {
->     console.log(event.data);
->   }
-> }
-> ```
+```javascript
+window.addEventListener('message', receiveMessage);
+function receiveMessage(event) {
+  if (event.origin !== 'http://aaa.com') return;
+  if (event.data === 'Hello World') {
+      event.source.postMessage('Hello', event.origin);
+  } else {
+    console.log(event.data);
+  }
+}
+```
 
 ### 3.4 LocalStorage
 
@@ -239,63 +238,63 @@ B网页就可以读到这个 Cookie。
 
 下面是一个例子，主窗口写入iframe子窗口的`localStorage`。
 
-> ```javascript
-> window.onmessage = function(e) {
->   if (e.origin !== 'http://bbb.com') {
->     return;
->   }
->   var payload = JSON.parse(e.data);
->   localStorage.setItem(payload.key, JSON.stringify(payload.data));
-> };
-> ```
+```javascript
+window.onmessage = function(e) {
+  if (e.origin !== 'http://bbb.com') {
+    return;
+  }
+  var payload = JSON.parse(e.data);
+  localStorage.setItem(payload.key, JSON.stringify(payload.data));
+};
+```
 
 上面代码中，子窗口将父窗口发来的消息，写入自己的LocalStorage。
 
 父窗口发送消息的代码如下。
 
-> ```javascript
-> var win = document.getElementsByTagName('iframe')[0].contentWindow;
-> var obj = { name: 'Jack' };
-> win.postMessage(JSON.stringify({key: 'storage', data: obj}), 'http://bbb.com');
-> ```
+```javascript
+var win = document.getElementsByTagName('iframe')[0].contentWindow;
+var obj = { name: 'Jack' };
+win.postMessage(JSON.stringify({key: 'storage', data: obj}), 'http://bbb.com');
+```
 
 加强版的子窗口接收消息的代码如下。
 
-> ```javascript
-> window.onmessage = function(e) {
->   if (e.origin !== 'http://bbb.com') return;
->   var payload = JSON.parse(e.data);
->   switch (payload.method) {
->     case 'set':
->       localStorage.setItem(payload.key, JSON.stringify(payload.data));
->       break;
->     case 'get':
->       var parent = window.parent;
->       var data = localStorage.getItem(payload.key);
->       parent.postMessage(data, 'http://aaa.com');
->       break;
->     case 'remove':
->       localStorage.removeItem(payload.key);
->       break;
->   }
-> };
-> ```
+```javascript
+window.onmessage = function(e) {
+  if (e.origin !== 'http://bbb.com') return;
+  var payload = JSON.parse(e.data);
+  switch (payload.method) {
+    case 'set':
+      localStorage.setItem(payload.key, JSON.stringify(payload.data));
+      break;
+    case 'get':
+      var parent = window.parent;
+      var data = localStorage.getItem(payload.key);
+      parent.postMessage(data, 'http://aaa.com');
+      break;
+    case 'remove':
+      localStorage.removeItem(payload.key);
+      break;
+  }
+};
+```
 
 加强版的父窗口发送消息代码如下。
 
-> ```javascript
-> var win = document.getElementsByTagName('iframe')[0].contentWindow;
-> var obj = { name: 'Jack' };
-> // 存入对象
-> win.postMessage(JSON.stringify({key: 'storage', method: 'set', data: obj}), 'http://bbb.com');
-> // 读取对象
-> win.postMessage(JSON.stringify({key: 'storage', method: "get"}), "*");
-> window.onmessage = function(e) {
->   if (e.origin != 'http://aaa.com') return;
->   // "Jack"
->   console.log(JSON.parse(e.data).name);
-> };
-> ```
+```javascript
+var win = document.getElementsByTagName('iframe')[0].contentWindow;
+var obj = { name: 'Jack' };
+// 存入对象
+win.postMessage(JSON.stringify({key: 'storage', method: 'set', data: obj}), 'http://bbb.com');
+// 读取对象
+win.postMessage(JSON.stringify({key: 'storage', method: "get"}), "*");
+window.onmessage = function(e) {
+  if (e.origin != 'http://aaa.com') return;
+  // "Jack"
+  console.log(JSON.parse(e.data).name);
+};
+```
 
 ## 四、AJAX
 
@@ -315,32 +314,30 @@ JSONP是服务器与客户端跨源通信的常用方法。最大特点就是简
 
 首先，网页动态插入``元素，由它向跨源网址发出请求。
 
-> ```javascript
-> function addScriptTag(src) {
->   var script = document.createElement('script');
->   script.setAttribute("type","text/javascript");
->   script.src = src;
->   document.body.appendChild(script);
-> }
->
-> window.onload = function () {
->   addScriptTag('http://example.com/ip?callback=foo');
-> }
->
-> function foo(data) {
->   console.log('Your public IP address is: ' + data.ip);
-> };
-> ```
+```javascript
+function addScriptTag(src) {
+  var script = document.createElement('script');
+  script.setAttribute("type","text/javascript");
+  script.src = src;
+  document.body.appendChild(script);
+}
+window.onload = function () {
+  addScriptTag('http://example.com/ip?callback=foo');
+}
+function foo(data) {
+  console.log('Your public IP address is: ' + data.ip);
+};
+```
 
 上面代码通过动态添加``元素，向服务器`example.com`发出请求。注意，该请求的查询字符串有一个`callback`参数，用来指定回调函数的名字，这对于JSONP是必需的。
 
 服务器收到这个请求以后，会将数据放在回调函数的参数位置返回。
 
-> ```json
-> foo({
->   "ip": "8.8.8.8"
-> });
-> ```
+```json
+foo({
+  "ip": "8.8.8.8"
+});
+```
 
 由于``元素请求的脚本，直接作为代码运行。这时，只要浏览器定义了`foo`函数，该函数就会立即调用。作为参数的JSON数据被视为JavaScript对象，而不是字符串，因此避免了使用`JSON.parse`的步骤。
 
@@ -350,28 +347,28 @@ WebSocket是一种通信协议，使用`ws://`（非加密）和`wss://`（加�
 
 下面是一个例子，浏览器发出的WebSocket请求的头信息（摘自[维基百科](https://en.wikipedia.org/wiki/WebSocket)）。
 
-> ```http
-> GET /chat HTTP/1.1
-> Host: server.example.com
-> Upgrade: websocket
-> Connection: Upgrade
-> Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==
-> Sec-WebSocket-Protocol: chat, superchat
-> Sec-WebSocket-Version: 13
-> Origin: http://example.com
-> ```
+```http
+GET /chat HTTP/1.1
+Host: server.example.com
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==
+Sec-WebSocket-Protocol: chat, superchat
+Sec-WebSocket-Version: 13
+Origin: http://example.com
+```
 
 上面代码中，有一个字段是`Origin`，表示该请求的请求源（origin），即发自哪个域名。
 
 正是因为有了`Origin`这个字段，所以WebSocket才没有实行同源政策。因为服务器可以根据这个字段，判断是否许可本次通信。如果该域名在白名单内，服务器就会做出如下回应。
 
-> ```http
-> HTTP/1.1 101 Switching Protocols
-> Upgrade: websocket
-> Connection: Upgrade
-> Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=
-> Sec-WebSocket-Protocol: chat
-> ```
+```http
+HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=
+Sec-WebSocket-Protocol: chat
+```
 
 ### 4.3 CORS
 
@@ -437,14 +434,14 @@ CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持�
 
 下面是一个例子，浏览器发现这次跨源AJAX请求是简单请求，就自动在头信息之中，添加一个`Origin`字段。
 
-> ```http
-> GET /cors HTTP/1.1
-> Origin: http://api.bob.com
-> Host: api.alice.com
-> Accept-Language: en-US
-> Connection: keep-alive
-> User-Agent: Mozilla/5.0...
-> ```
+```http
+GET /cors HTTP/1.1
+Origin: http://api.bob.com
+Host: api.alice.com
+Accept-Language: en-US
+Connection: keep-alive
+User-Agent: Mozilla/5.0...
+```
 
 上面的头信息中，`Origin`字段用来说明，本次请求来自哪个源（协议 + 域名 + 端口）。服务器根据这个值，决定是否同意这次请求。
 
@@ -452,12 +449,12 @@ CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持�
 
 如果`Origin`指定的域名在许可范围内，服务器返回的响应，会多出几个头信息字段。
 
-> ```http
-> Access-Control-Allow-Origin: http://api.bob.com
-> Access-Control-Allow-Credentials: true
-> Access-Control-Expose-Headers: FooBar
-> Content-Type: text/html; charset=utf-8
-> ```
+```http
+Access-Control-Allow-Origin: http://api.bob.com
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: FooBar
+Content-Type: text/html; charset=utf-8
+```
 
 上面的头信息之中，有三个与CORS请求相关的字段，都以`Access-Control-`开头。
 
@@ -477,24 +474,24 @@ CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持�
 
 上面说到，CORS请求默认不发送Cookie和HTTP认证信息。如果要把Cookie发到服务器，一方面要服务器同意，指定`Access-Control-Allow-Credentials`字段。
 
-> ```http
-> Access-Control-Allow-Credentials: true
-> ```
+```http
+Access-Control-Allow-Credentials: true
+```
 
 另一方面，开发者必须在AJAX请求中打开`withCredentials`属性。
 
-> ```javascript
-> var xhr = new XMLHttpRequest();
-> xhr.withCredentials = true;
-> ```
+```javascript
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+```
 
 否则，即使服务器同意发送Cookie，浏览器也不会发送。或者，服务器要求设置Cookie，浏览器也不会处理。
 
 但是，如果省略`withCredentials`设置，有的浏览器还是会一起发送Cookie。这时，可以显式关闭`withCredentials`。
 
-> ```javascript
-> xhr.withCredentials = false;
-> ```
+```javascript
+xhr.withCredentials = false;
+```
 
 需要注意的是，如果要发送Cookie，`Access-Control-Allow-Origin`就不能设为星号，必须指定明确的、与请求网页一致的域名。同时，Cookie依然遵循同源政策，只有用服务器域名设置的Cookie才会上传，其他域名的Cookie并不会上传，且（跨源）原网页代码中的`document.cookie`也无法读取服务器域名下的Cookie。
 
@@ -510,28 +507,28 @@ CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持�
 
 下面是一段浏览器的JavaScript脚本。
 
-> ```javascript
-> var url = 'http://api.alice.com/cors';
-> var xhr = new XMLHttpRequest();
-> xhr.open('PUT', url, true);
-> xhr.setRequestHeader('X-Custom-Header', 'value');
-> xhr.send();
-> ```
+```javascript
+var url = 'http://api.alice.com/cors';
+var xhr = new XMLHttpRequest();
+xhr.open('PUT', url, true);
+xhr.setRequestHeader('X-Custom-Header', 'value');
+xhr.send();
+```
 
 上面代码中，HTTP请求的方法是`PUT`，并且发送一个自定义头信息`X-Custom-Header`。
 
 浏览器发现，这是一个非简单请求，就自动发出一个"预检"请求，要求服务器确认可以这样请求。下面是这个"预检"请求的HTTP头信息。
 
-> ```http
-> OPTIONS /cors HTTP/1.1
-> Origin: http://api.bob.com
-> Access-Control-Request-Method: PUT
-> Access-Control-Request-Headers: X-Custom-Header
-> Host: api.alice.com
-> Accept-Language: en-US
-> Connection: keep-alive
-> User-Agent: Mozilla/5.0...
-> ```
+```http
+OPTIONS /cors HTTP/1.1
+Origin: http://api.bob.com
+Access-Control-Request-Method: PUT
+Access-Control-Request-Headers: X-Custom-Header
+Host: api.alice.com
+Accept-Language: en-US
+Connection: keep-alive
+User-Agent: Mozilla/5.0...
+```
 
 "预检"请求用的请求方法是`OPTIONS`，表示这个请求是用来询问的。头信息里面，关键字段是`Origin`，表示请求来自哪个源。
 
@@ -549,42 +546,42 @@ CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持�
 
 服务器收到"预检"请求以后，检查了`Origin`、`Access-Control-Request-Method`和`Access-Control-Request-Headers`字段以后，确认允许跨源请求，就可以做出回应。
 
-> ```http
-> HTTP/1.1 200 OK
-> Date: Mon, 01 Dec 2008 01:15:39 GMT
-> Server: Apache/2.0.61 (Unix)
-> Access-Control-Allow-Origin: http://api.bob.com
-> Access-Control-Allow-Methods: GET, POST, PUT
-> Access-Control-Allow-Headers: X-Custom-Header
-> Content-Type: text/html; charset=utf-8
-> Content-Encoding: gzip
-> Content-Length: 0
-> Keep-Alive: timeout=2, max=100
-> Connection: Keep-Alive
-> Content-Type: text/plain
-> ```
+```http
+HTTP/1.1 200 OK
+Date: Mon, 01 Dec 2008 01:15:39 GMT
+Server: Apache/2.0.61 (Unix)
+Access-Control-Allow-Origin: http://api.bob.com
+Access-Control-Allow-Methods: GET, POST, PUT
+Access-Control-Allow-Headers: X-Custom-Header
+Content-Type: text/html; charset=utf-8
+Content-Encoding: gzip
+Content-Length: 0
+Keep-Alive: timeout=2, max=100
+Connection: Keep-Alive
+Content-Type: text/plain
+```
 
 上面的HTTP回应中，关键的是`Access-Control-Allow-Origin`字段，表示`http://api.bob.com`可以请求数据。该字段也可以设为星号，表示同意任意跨源请求。
 
-> ```http
-> Access-Control-Allow-Origin: *
-> ```
+```http
+Access-Control-Allow-Origin: *
+```
 
 如果浏览器否定了"预检"请求，会返回一个正常的HTTP回应，但是没有任何CORS相关的头信息字段。这时，浏览器就会认定，服务器不同意预检请求，因此触发一个错误，被`XMLHttpRequest`对象的`onerror`回调函数捕获。控制台会打印出如下的报错信息。
 
-> ```
-> XMLHttpRequest cannot load http://api.alice.com.
-> Origin http://api.bob.com is not allowed by Access-Control-Allow-Origin.
-> ```
+```
+XMLHttpRequest cannot load http://api.alice.com.
+Origin http://api.bob.com is not allowed by Access-Control-Allow-Origin.
+```
 
 服务器回应的其他CORS相关字段如下。
 
-> ```http
-> Access-Control-Allow-Methods: GET, POST, PUT
-> Access-Control-Allow-Headers: X-Custom-Header
-> Access-Control-Allow-Credentials: true
-> Access-Control-Max-Age: 1728000
-> ```
+```http
+Access-Control-Allow-Methods: GET, POST, PUT
+Access-Control-Allow-Headers: X-Custom-Header
+Access-Control-Allow-Credentials: true
+Access-Control-Max-Age: 1728000
+```
 
 **（1）Access-Control-Allow-Methods**
 
@@ -608,24 +605,24 @@ CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持�
 
 下面是"预检"请求之后，浏览器的正常CORS请求。
 
-> ```http
-> PUT /cors HTTP/1.1
-> Origin: http://api.bob.com
-> Host: api.alice.com
-> X-Custom-Header: value
-> Accept-Language: en-US
-> Connection: keep-alive
-> User-Agent: Mozilla/5.0...
-> ```
+```http
+PUT /cors HTTP/1.1
+Origin: http://api.bob.com
+Host: api.alice.com
+X-Custom-Header: value
+Accept-Language: en-US
+Connection: keep-alive
+User-Agent: Mozilla/5.0...
+```
 
 上面头信息的`Origin`字段是浏览器自动添加的。
 
 下面是服务器正常的回应。
 
-> ```http
-> Access-Control-Allow-Origin: http://api.bob.com
-> Content-Type: text/html; charset=utf-8
-> ```
+```http
+Access-Control-Allow-Origin: http://api.bob.com
+Content-Type: text/html; charset=utf-8
+```
 
 上面头信息中，`Access-Control-Allow-Origin`字段是每次回应都必定包含的。
 
