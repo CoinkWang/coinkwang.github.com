@@ -3,7 +3,7 @@ layout: post
 title:  关于计算机"科学"与"技术"的一点思考
 subtitle:  
 author: Coink
-date:   2017-04-25 00:00:19
+date:   2017-04-24 23:45:19
 tags:
     - Diary
     - Science
