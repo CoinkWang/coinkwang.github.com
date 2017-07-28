@@ -242,7 +242,7 @@ TBD
 
 相关：
 
-[独立精神 | indienova 独立游戏](https://www.indienova.com/)
+[indienova 独立游戏](https://www.indienova.com/)
 
 [腾讯GAD游戏开发者平台](http://www.gad.qq.com/community)
 
