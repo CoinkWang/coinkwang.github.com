@@ -104,11 +104,11 @@ tag:
 
 [stormzhang的Android学习之路](http://stormzhang.com/android/2014/07/07/learn-android-from-rookie/)
 
-[Runoob上的2015年最新Android基础入门教程目录](http://www.runoob.com/w3cnote/android-tutorial-contents.html)（15年的教程，现在依旧十分实用，我入门基本靠的就是这份）
+[Runoob上的2015年最新Android基础入门教程目录](http://www.runoob.com/w3cnote/android-tutorial-contents.html)（15年的教程，当作入门参考很棒）
 
-[官方文档](https://developer.android.com/training/index.html)
+[官方教程](https://developer.android.com/training/index.html)
 
-[官方文档中文](http://hukai.me/android-training-course-in-chinese/basics/index.html)
+[官方教程中文](http://hukai.me/android-training-course-in-chinese/basics/index.html)
 
 [Material Design 中文版](http://wiki.jikexueyuan.com/project/material-design/)
 
