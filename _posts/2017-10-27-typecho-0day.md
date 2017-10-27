@@ -251,7 +251,7 @@ C:\Users\Coink\Desktop\Sec\typecho\var\Typecho\Widget\Helper\Layout.php:
 
 
 
-最后执行了`_applyFilter($value)`，`$value`就是`_params[$key]`，也就是之前的`screenName`参数了。
+最后执行了`_applyFilter($value)`，`$value`就是`_params[$key]`，`$key`也就是之前的`screenName`参数了。
 
 接着跟`_applyFilter`，在L152-171：
 
