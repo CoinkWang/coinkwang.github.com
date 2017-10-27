@@ -10,6 +10,7 @@ url: "https://coink.wang"
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 paginate: 10
 
 # SNS settings 
