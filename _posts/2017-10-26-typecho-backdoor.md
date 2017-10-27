@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Typecho任意代码执行漏洞笔记
-subtitle: 又是反序列化
+subtitle: 只是笔记，没有干货
 author: Coink 
 date: 2017-10-26
 categories: 

@@ -27,11 +27,11 @@ permalink: /:title.html
 
 # Sidebar settings
 sidebar: true 
-sidebar-about-description: 内敛的中二少年<br>渴望变强<br>竜が我が敌を食らえ！<br><a href="mailto:cn.coink.wang@gmail.com">cn.coink.wang@gmail.com</a><br><a href="https://github.com/CoinkWang">Github.com/CoinkWang</a><br><a href="https://twitter.com/CoinkWang">Twitter @CoinkWang</a><br>BattleNet：在下法号随缘#5891
+sidebar-about-description: 中二少年<br>渴望变强<br>竜が我が敌を食らえ！<br><a href="mailto:cn.coink.wang@gmail.com">cn.coink.wang@gmail.com</a><br><a href="https://github.com/CoinkWang">Github.com/CoinkWang</a><br><a href="https://twitter.com/CoinkWang">Twitter@CoinkWang</a><br>BattleNet:在下法号随缘#5891
 
 sidebar-avatar: /img/avatar.jpg
 
-# plugins: [jekyll-paginate]
+plugins: [jekyll-paginate]
 disqus_username: Coink 
 
 # Friends
