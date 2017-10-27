@@ -10,7 +10,7 @@ url: "https://coink.wang"
 
 # Build settings
 markdown: kramdown
-paginate: 99
+paginate: 10
 
 # SNS settings 
 RSS: false
@@ -31,7 +31,7 @@ sidebar-about-description: 内敛的中二少年<br>渴望变强<br>竜が我が
 
 sidebar-avatar: /img/avatar.jpg
 
-gems: [jekyll-paginate]
+# plugins: [jekyll-paginate]
 disqus_username: Coink 
 
 # Friends
