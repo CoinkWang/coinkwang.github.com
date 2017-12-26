@@ -12,23 +12,23 @@
     function orientationHandler(event) {
         document.getElementById("gamma").innerHTML = event.gamma;
     }
-    function motionHandler(event) {
-        var acc = event.acceleration;
-        var accGravity = event.accelerationIncludingGravity;
-        var rotationRate = event.rotationRate;
-    }
+    // function motionHandler(event) {
+    //     var acc = event.acceleration;
+    //     var accGravity = event.accelerationIncludingGravity;
+    //     var rotationRate = event.rotationRate;
+    // }
 
-    if (window.DeviceMotionEvent) {
-        window.addEventListener("devicemotion", motionHandler, false);
-    } else {
-        document.body.innerHTML = "What user agent u r using???";
-    }
+    // if (window.DeviceMotionEvent) {
+    //     window.addEventListener("devicemotion", motionHandler, false);
+    // } else {
+    //     document.body.innerHTML = "What user agent u r using???";
+    // }
 
-    if (window.DeviceOrientationEvent) {
-        window.addEventListener("deviceorientation", orientationHandler, false);
-    } else {
-        document.body.innerHTML = "What user agent u r using???";
-    };
+    // if (window.DeviceOrientationEvent) {
+    //     window.addEventListener("deviceorientation", orientationHandler, false);
+    // } else {
+    //     document.body.innerHTML = "What user agent u r using???";
+    // };
     </script>
     <div class="container">
         <!-- 主画布 -->

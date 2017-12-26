@@ -93,8 +93,8 @@ var Player = function() {
 
     this.draw = function() {
         // 得分超过500，2000时进化
-        if (score == 10) evolution();
-        if (score == 2000) evolution();
+        if (score == 11) evolution();
+        if (score == 2001) evolution();
         //裁剪，绘制素材
         if (this.dir == "right") this.cy = 121;
         else if (this.dir == "left") this.cy = 201;
