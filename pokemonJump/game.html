@@ -11,7 +11,10 @@
     <script type="text/javascript">
     function orientationHandler(event) {
         document.getElementById("gamma").innerHTML = event.gamma;
+        if (event.gamma <= -10) player.isMovingLeft = true;
+        else if (event.gamma >= 10) player.isMovingRight = true;
     }
+
     function motionHandler(event) {
         var acc = event.acceleration;
         var accGravity = event.accelerationIncludingGravity;
