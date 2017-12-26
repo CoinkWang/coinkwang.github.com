@@ -9,35 +9,7 @@
 
 <body>
     <script type="text/javascript">
-    function orientationHandler(event) {
-        document.getElementById("gamma").innerHTML = event.gamma;
-        if (event.gamma <= -10) {
-            player.isMovingRight = false;
-            player.isMovingLeft = true;
 
-        } else if (event.gamma >= 10) {
-            player.isMovingLeft = false;
-            player.isMovingRight = true;
-        }
-    }
-
-    function motionHandler(event) {
-        var acc = event.acceleration;
-        var accGravity = event.accelerationIncludingGravity;
-        var rotationRate = event.rotationRate;
-    }
-
-    if (window.DeviceMotionEvent) {
-        window.addEventListener("devicemotion", motionHandler, false);
-    } else {
-        document.body.innerHTML = "What user agent u r using???";
-    }
-
-    if (window.DeviceOrientationEvent) {
-        window.addEventListener("deviceorientation", orientationHandler, false);
-    } else {
-        document.body.innerHTML = "What user agent u r using???";
-    };
     </script>
     <div class="container">
         <!-- 主画布 -->
@@ -46,7 +18,6 @@
         <!-- 主页 -->
         <div id="mainMenu">
             <h1>PokemonJump</h1>
-            <p>扭转：<span id="gamma"></span></p>
             <p class="rule">
                 键盘
                 <span class="arrow left">←</span>
