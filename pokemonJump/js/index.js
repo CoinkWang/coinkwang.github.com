@@ -297,10 +297,8 @@ function init(a) {
         }
 
         // 最大速度限制
-        if (player.vx > 8)
-            player.vx = 8;
-        else if (player.vx < -8)
-            player.vx = -8;
+        if (player.vx > 8) player.vx = 8;
+        else if (player.vx < -8) player.vx = -8;
 
         //跳跃判断
         if ((player.y + player.height) > base.y && base.y < height) player.jump();
@@ -634,20 +632,19 @@ function update() {
 menuLoop = function() {
     update();
     requestAnimFrame(menuLoop);
+    if (player.vx > 8) player.vx = 8;
+    else if (player.vx < -8) player.vx = -8;
 };
 
 menuLoop();
 
 function orientationHandler(event) {
-    if (event.gamma <= -5 || player.vx<-8) {
+    if (event.gamma <= -5) {
         player.isMovingRight = false;
         player.isMovingLeft = true;
-        player.vx=8;
-
-    } else if (event.gamma >= 5|| player.vx>8) {
+    } else if (event.gamma >= 5) {
         player.isMovingLeft = false;
         player.isMovingRight = true;
-        player.vx=8;
     }
 }
 
