@@ -637,3 +637,32 @@ menuLoop = function() {
 };
 
 menuLoop();
+
+function orientationHandler(event) {
+    if (event.gamma <= -5) {
+        player.isMovingRight = false;
+        player.isMovingLeft = true;
+
+    } else if (event.gamma >= 5) {
+        player.isMovingLeft = false;
+        player.isMovingRight = true;
+    }
+}
+
+function motionHandler(event) {
+    var acc = event.acceleration;
+    var accGravity = event.accelerationIncludingGravity;
+    var rotationRate = event.rotationRate;
+}
+
+if (window.DeviceMotionEvent) {
+    window.addEventListener("devicemotion", motionHandler, false);
+} else {
+    document.body.innerHTML = "What user agent u r using???";
+}
+
+if (window.DeviceOrientationEvent) {
+    window.addEventListener("deviceorientation", orientationHandler, false);
+} else {
+    document.body.innerHTML = "What user agent u r using???";
+};
