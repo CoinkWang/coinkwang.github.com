@@ -632,8 +632,6 @@ function update() {
 menuLoop = function() {
     update();
     requestAnimFrame(menuLoop);
-    if (player.vx > 8) player.vx = 8;
-    else if (player.vx < -8) player.vx = -8;
 };
 
 menuLoop();
