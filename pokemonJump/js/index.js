@@ -647,6 +647,11 @@ function orientationHandler(event) {
         player.isMovingLeft = false;
         player.isMovingRight = true;
     }
+            // 最大速度限制
+        if (player.vx > 8)
+            player.vx = 8;
+        else if (player.vx < -8)
+            player.vx = -8;
 }
 
 function motionHandler(event) {
