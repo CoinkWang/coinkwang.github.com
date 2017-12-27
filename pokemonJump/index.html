@@ -21,7 +21,6 @@
                 键盘
                 <span class="arrow left">←</span>
                 <span class="arrow right">→</span> 控制移动<br>
-                <span id="gamma">1</span>
             </p>
             <a class="button1" href="javascript:init(0)">小火龙</a>
             <a class="button2" href="javascript:init(3)">妙蛙种子</a>
@@ -46,10 +45,10 @@
 
     function orientationHandler(event) {
         console.log(event.gamma);
-        if (event.gamma <= -5) {
+        if (event.gamma <= -2) {
             player.isMovingRight = false;
             player.isMovingLeft = true;
-        } else if (event.gamma >= 5) {
+        } else if (event.gamma >= 2) {
             player.isMovingLeft = false;
             player.isMovingRight = true;
         }
