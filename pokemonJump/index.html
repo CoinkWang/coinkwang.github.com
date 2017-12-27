@@ -9,7 +9,6 @@
 
 <body>
     <script type="text/javascript">
-
     </script>
     <div class="container">
         <!-- 主画布 -->
@@ -21,9 +20,10 @@
             <p class="rule">
                 键盘
                 <span class="arrow left">←</span>
-                <span class="arrow right">→</span> 控制移动
+                <span class="arrow right">→</span> 控制移动<br>
+                <span id="gamma">1</span>
             </p>
-            <a class="button1" href="javascript:init(0);">小火龙</a>
+            <a class="button1" href="javascript:init(0)">小火龙</a>
             <a class="button2" href="javascript:init(3)">妙蛙种子</a>
             <a class="button3" href="javascript:init(6)">杰尼龟</a>
         </div>
@@ -42,6 +42,37 @@
         </div>
     </div>
     <script src="js/index.js"></script>
+    <script>
+
+    function orientationHandler(event) {
+        console.log(event.gamma);
+        if (event.gamma <= -5) {
+            player.isMovingRight = false;
+            player.isMovingLeft = true;
+        } else if (event.gamma >= 5) {
+            player.isMovingLeft = false;
+            player.isMovingRight = true;
+        }
+    }
+
+    function motionHandler(event) {
+        var acc = event.acceleration;
+        var accGravity = event.accelerationIncludingGravity;
+        var rotationRate = event.rotationRate;
+    }
+
+    if (window.DeviceMotionEvent) {
+        window.addEventListener("devicemotion", motionHandler, false);
+    } else {
+        document.body.innerHTML = "What user agent u r using???";
+    }
+
+    if (window.DeviceOrientationEvent) {
+        window.addEventListener("deviceorientation", orientationHandler, false);
+    } else {
+        document.body.innerHTML = "What user agent u r using???";
+    };
+    </script>
 </body>
 
 </html>
