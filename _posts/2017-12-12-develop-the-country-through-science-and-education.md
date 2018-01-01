@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 对家乡教师讨薪被武力驱逐事件的一点看法
+title: “科教兴国”
 subtitle: 春蚕到死丝方尽，蜡炬成灰泪始干？
 author: Coink
 date: 2017-12-10
