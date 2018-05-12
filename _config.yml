@@ -28,7 +28,7 @@ permalink: /:title.html
 
 # Sidebar settings
 sidebar: true 
-sidebar-about-description: 中二少年<br>渴望变强<br>竜が我が敌を食らえ！<br><a href="mailto:cn.coink.wang@gmail.com">cn.coink.wang@gmail.com</a><br><a href="https://github.com/CoinkWang">Github.com/CoinkWang</a><br><a href="https://twitter.com/CoinkWang">Twitter@CoinkWang</a><br>BattleNet:在下法号随缘#5891
+sidebar-about-description: 中二少年<br>渴望变强<br>竜が我が敌を食らえ！<br>cn.coink.wang#gmail.com</a><br><a href="https://github.com/CoinkWang">Github.com/CoinkWang</a><br><a href="https://twitter.com/CoinkWang">Twitter@CoinkWang</a><br>在下法号随缘#5891
 
 sidebar-avatar: /img/avatar.jpg
 
@@ -42,25 +42,22 @@ friends: [
         href: "http://mapers.net/"
     },
     {
+        title: "β-house",
+        href: "http://betahouse.us/"
+    },
+    {
         title: "Broncotc",
-        href: "https://blog.broncotc.com/"
+        href: "https://blog.broncotc.net/"
     },
     {
         title: "⑨BIE",
         href: "http://blog.9bie.org:8081/"
     },
     {
-        title: "SpadeS",
-        href: "http://spades.click"
-    },
-    {
         title: "小唐",
         href: "http://zhizhi.tangliangdong.me"
     },
-    {
-        title: "β-house",
-        href: "http://betahouse.us/"
-    },
+
     
 
 ]
