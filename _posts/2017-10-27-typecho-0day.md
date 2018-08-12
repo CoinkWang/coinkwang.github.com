@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Typecho任意代码执行漏洞学习笔记
-subtitle: 只是笔记，没有干货
+subtitle: 
 author: Coink 
 date: 2017-10-27
 categories: 
@@ -64,9 +64,7 @@ $db->addServer($config, Typecho_Db::READ | Typecho_Db::WRITE);
 Typecho_Db::set($db);
 ?>
 ```
-230行（修复前的非稳定版最后一版中是232行）使用了`unserialize`函数，获取cookie里`__typecho_config`的值，base64解码后反序列化，接着删除了这条cookie，用`$config['adapter']`和`$config['prefix']`进行`Typecho_Db`实例化...好像后面不重要了，不管了。
-
-这里比较奇怪的是这条名字叫config的cookie居然是base64加密过的，没想明白是要干啥
+230行（修复前的非稳定版最后一版中是232行）使用了`unserialize`函数，获取cookie里`__typecho_config`的值，base64解码后反序列化，接着删除了这条cookie，用`$config['adapter']`和`$config['prefix']`进行`Typecho_Db`实例化。
 
 转入Typecho_Db的构造函数看到（var\Typecho\Db.php#L107-135）：
 
@@ -134,15 +132,13 @@ C:\Users\Coink\Desktop\Sec\typecho\var\Typecho\Db\Query.php:
 3 matches across 3 files
 ```
 
-有点懒，不想一条条跟进，查阅了一些资料，发现问题出自var\Typecho\Feed.php#L358：
+问题出自var\Typecho\Feed.php#L358：
 
 ```php+HTML
     <name>' . $item['author']->screenName . '</name>
 ```
 
 由于item是可控的，只要让screenName从无法访问的属性读取数据，就能触发魔术方法`__get()`
-
-搜索一下，找到了许多。。。
 
 ```php
 Searching 229 files for "function __get"
@@ -217,9 +213,7 @@ C:\Users\Coink\Desktop\Sec\typecho\var\Typecho\Widget\Helper\Layout.php:
 10 matches across 7 files
 ```
 
-去掉前几个浑水摸鱼的，还是有很多...
-
-跟着大佬的足迹摸到var\Typecho\Request.php#L285-309：
+去掉前几个浑水摸鱼的，摸到var\Typecho\Request.php#L285-309：
 
 ```php
     /**
@@ -286,7 +280,7 @@ C:\Users\Coink\Desktop\Sec\typecho\var\Typecho\Widget\Helper\Layout.php:
 
 ## 0x02 作者解释
 
-因为有人恶意揣测/无意中伤，Typecho开发者发文解释：[原地址](https://joyqi.com/typecho/about-typecho-20171027.html) 
+因为有人恶意揣测，Typecho开发者发文解释：[原地址](https://joyqi.com/typecho/about-typecho-20171027.html) 
 
 
 
@@ -306,6 +300,6 @@ C:\Users\Coink\Desktop\Sec\typecho\var\Typecho\Widget\Helper\Layout.php:
 
 
 
-## 0x03 思考
+## 0x03 what‘s more
 
-我很庆幸我不是跟风被带节奏的那些人之一。经历了守望先锋Diya事件，Wooyun事件，我已经不再是一个没事就吃瓜看节奏顺便推波助澜的sb了，我学会了独立思考，会管好自己的嘴（手），对自己的言论负责，遇到这类“有趣”事情会条件反射的先确认真实性，算是养成了一种好习惯吧。
+经历了守望先锋Diya事件，Wooyun事件，我已经不会再没事就吃瓜看节奏顺便推波助澜了。保持独立思考，对自己的言论负责，遇到这类“有趣”的事先确认真实性，算是养成了一种好习惯吧。
