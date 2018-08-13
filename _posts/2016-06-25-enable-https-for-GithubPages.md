@@ -74,3 +74,7 @@ https://kloudsec.com/github-pages/new
 8月，再见Kloudsec.
 
 故转移到CloudFlare。（所以为什么不一开始就用CF？
+
+---
+
+更新：GithubPages已自带HTTPS，启用即可。
