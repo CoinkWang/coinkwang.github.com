@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 分享一下我喜欢的壁纸
+title: 我喜欢的壁纸
 subtitle: 
 author: Coink
 date: 2018-08-11
