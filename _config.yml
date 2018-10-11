@@ -38,6 +38,26 @@ disqus_username: Coink
 # Friends
 friends: [
     {
+        title: "Broncotc",
+        href: "https://blog.broncotc.net/"
+    },
+    {
+        title: "Coxxs - Σ(´∀｀；)",
+        href: "https://coxxs.me/"
+    },
+    {
+        title: "⑨BIE",
+        href: "http://blog.9bie.org:8081/"
+    },
+    {
+        title: "Denny Dai",
+        href: ""
+    },
+    {
+        title: "小唐",
+        href: "http://zhizhi.tangliangdong.me"
+    },
+    {
         title: "Mapers丨路标社区",
         href: "http://mapers.net/"
     },
@@ -45,19 +65,4 @@ friends: [
         title: "β-house",
         href: "http://betahouse.us/"
     },
-    {
-        title: "Broncotc",
-        href: "https://blog.broncotc.net/"
-    },
-    {
-        title: "⑨BIE",
-        href: "http://blog.9bie.org:8081/"
-    },
-    {
-        title: "小唐",
-        href: "http://zhizhi.tangliangdong.me"
-    },
-
-    
-
 ]
