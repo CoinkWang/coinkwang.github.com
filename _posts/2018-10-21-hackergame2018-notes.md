@@ -887,6 +887,31 @@ exit()
 
 
 
+之后跟soha聊了一下，菊苣提醒了我...这就是base64的算法呀（扶额，用[@soha](https://github.com/ustclug/hackergame2018-writeups/blob/master/players/soha/secret_of_flxg.md)的脚本替换:
+
+```js
+let fs=require('fs');
+let xianTian64Gua=[
+    "坤","剥","比","观","豫","晋","萃","否",
+    "谦","艮","蹇","渐","小过","旅","咸","遁",
+    "师","蒙","坎","涣","解","未济","困","讼",
+    "升","蛊","井","巽","恒","鼎","大过","姤",
+    "复","颐","屯","益","震","噬嗑","随","无妄",
+    "明夷","贲","既济","家人","丰","离","革","同人",
+    "临","损","节","中孚","归妹","睽","兑","履",
+    "泰","大畜","需","小畜","大壮","大有","夬","乾"
+],base64Map='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
+
+let flxg=fs.readFileSync('flxg.txt').toString();
+xianTian64Gua.forEach((v,i)=>flxg=flxg.replace(new RegExp(v,'g'),base64Map.charAt(i)));
+
+fs.writeFileSync('newFlxg.bin',Buffer.from(flxg,'base64'));
+```
+
+可以更简单的得到结果。
+
+
+
 ### 难以参悟的秘密
 
 file一下
@@ -912,6 +937,50 @@ TODO
 > 这条命令来连接。什么？你说你看到我服务器的家目录里有一个 flag 文件？这怎么可能？
 
 
+
+给了源程序，丢到IDA里，看一下main和__init
+
+![init.png](https://i.loli.net/2018/10/22/5bcd6371e4cf6.png)
+
+
+
+注册了4个信号到__err函数上，分别是：
+
+> 4) SIGILL：执行了非法指令. 通常是因为可执行文件本身出现错误, 或者试图执行数据段. 堆栈溢出时也有可能产生这个信号。
+
+> 6) SIGABRT：调用abort函数生成的信号。
+
+> 8) SIGFPE：在发生致命的算术运算错误时发出. 不仅包括浮点运算错误, 还包括溢出及除数为0等其它所有的算术的错误。
+
+> 11) SIGSEGV：试图访问未分配给自己的内存, 或试图往没有写权限的内存地址写数据.
+
+
+
+看起来计算器比较容易出现的错误应该是SIGFPE了，我们输入一个除以0的算式，发现程序进行了处理，google一下发现用MIN_INT/-1也会触发。接着看触发后会发生什么
+
+看一下_err函数：
+
+![err.png](https://i.loli.net/2018/10/22/5bcd6371dd8e6.png)
+
+
+
+进入__err之后会让我们输入一个command（不允许带sh），然后用execlp不带参数的执行。
+
+ls看到flag就在目录下，不能带参数所以cat用不了。
+
+疯狂尝试其他命令，最后熟悉的帮助乌干达儿童出现了。在vim里用命令打开flag：
+
+```
+:open flag
+```
+
+flag文件里是:
+
+> The real flag is in the file "-"
+
+继续打开"-"这个文件，得到flag：
+
+**flag{816484e67b21efd5de8f1661d180a007}**
 
 ## 加密算法和解密算法
 
