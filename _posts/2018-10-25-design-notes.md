@@ -64,7 +64,7 @@ H5实现的色块表示物体，纯CSS实现，没有使用Canvas和WebGL。看�
 
 - [Simple Desktop](http://simpledesktops.com/browse/)
 
-我所有壁纸的来源，扁平化桌面壁纸分享，我很喜欢。
+我所有壁纸的来源，扁平化桌面壁纸分享，简单干净，我很喜欢。
 
 
 
