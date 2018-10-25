@@ -6,6 +6,7 @@ author: Coink
 date: 2018-10-21
 categories:
 tag:
+- Tech
 ---
 
 

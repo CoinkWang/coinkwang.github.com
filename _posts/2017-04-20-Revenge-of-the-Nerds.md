@@ -6,7 +6,7 @@ author: Coink
 date: 2017-04-20 20:00
 categories: 
 tag:
-- Science
+- Tech
 ---
 
 作者：Paul Graham

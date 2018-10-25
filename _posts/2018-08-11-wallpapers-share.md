@@ -6,6 +6,7 @@ author: Coink
 date: 2018-08-11
 categories:
 tag:
+- Diary
 ---
 个人比较喜欢深色背景加上鲜艳的扁平化色块，在 [Simple Desktop](http://simpledesktops.com/browse/) 找到了这些。配上mac/win的深色主题，非常养眼。
 打包：[Download](//coink.wang/download/coinkDeWallpaper.zip)

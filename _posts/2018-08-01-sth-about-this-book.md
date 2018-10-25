@@ -6,6 +6,8 @@ author: Coink
 date: 2018-08-01
 categories:
 tag:
+- Tech
+- Diary
 ---
 
 

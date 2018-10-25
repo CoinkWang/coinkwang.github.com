@@ -6,7 +6,7 @@ author: Coink
 date: 2016-07-22 00:00:00 
 categories: 
 tag: 
-- Games
+- ACGN
 ---
 《The Stanley Parable》
 

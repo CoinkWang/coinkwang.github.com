@@ -6,7 +6,6 @@ author: Coink
 date: 2016-05-01 01:38:47
 categories: 
 tag: 
-- Diary
 - ACGN
 ---
 
@@ -19,8 +18,8 @@ tag:
 ![][2]
 
 
-  [1]: http://www.bilibili.com/video/av2327305/
-  [2]: https://ooo.0o0.ooo/2016/03/24/56f416ae4a46a.jpg
+[1]: http://www.bilibili.com/video/av2327305/
+[2]: https://ooo.0o0.ooo/2016/03/24/56f416ae4a46a.jpg
 
 
 

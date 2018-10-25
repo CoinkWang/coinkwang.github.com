@@ -6,7 +6,7 @@ author: Coink
 date: 2017-11-19
 categories:
 tag:
-- Science
+- Tech
 ---
 
 最近隐写里zlib上镜率比较高，解压缩脚本记录下

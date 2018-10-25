@@ -6,7 +6,7 @@ author: Coink
 date: 2016-07-28 00:00:00 
 categories: 
 tag: 
-- Science
+- Tech
 ---
 
 突然有一天：

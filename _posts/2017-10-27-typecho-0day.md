@@ -6,7 +6,7 @@ author: Coink
 date: 2017-10-27
 categories: 
 tag: 
-- Science
+- Tech
 ---
 
 ## 0x00 概

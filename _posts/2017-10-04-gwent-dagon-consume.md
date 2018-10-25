@@ -6,7 +6,7 @@ author: Coink
 date: 2017-10-04
 categories: 
 tag: 
-- Games
+- ACGN
 ---
 
 
