@@ -555,9 +555,9 @@ base64解码查看：
 ```python
 >>> import base64
 >>> print(base64.b64decode("6LeR55qE6L+Y5LiN6ZSZ77yM57uZ5L2gZmxhZ+WQpzogTmpnMk5ESXk="))
-
-跑的还不错，给你flag吧: Njg2NDIy
 ```
+
+> 跑的还不错，给你flag吧: Njg2NDIy
 
 每次请求flag都会不同，把flag字符串用POST提交回去，发现提示不够快：
 
