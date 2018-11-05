@@ -654,5 +654,5 @@ document.write("<h1>THE ANSWER IS HERE</h1><div><!--I AM HRER=empjdGZ7MV9hTV9IZT
 
 发现一段base64，解码后得到flag：
 
-**zjctf{1_aM_He2e_aaaa} **
+** zjctf{1_aM_He2e_aaaa} **
 
