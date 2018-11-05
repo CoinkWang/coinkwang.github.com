@@ -544,7 +544,7 @@ fishblow算法逆向。
 
 查看源码，提示
 
-> <!-- OK ,now you have to post the margin what you find -->
+> OK ,now you have to post the margin what you find
 
 让我们POST一个东西，所以得先找到这玩意。查看网络请求，在返回的请求头中发现了一个flag值：
 
