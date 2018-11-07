@@ -217,6 +217,8 @@ Psss:主办方很坏的在内网提供了压缩包爆破工具，是个狠人.jp
 
 
 
+105个字符，栅栏尝试各种组合，并没有可读文字。本题挂起。
+
 
 
 ### 3-1 似曾相识
@@ -247,6 +249,21 @@ Psss:主办方很坏的在内网提供了压缩包爆破工具，是个狠人.jp
 
 #### Solution
 
+在console里把score改成大于30000，发送POST请求，服务器会返回一张图片，加上游戏开始前页面三张图，一共是四张。
+
+![4img.png](https://i.loli.net/2018/11/07/5be2d186bc66c.png)
+
+
+
+一张张查看发现图片从左侧开始隐写了数据，在RGB通道1和3都能看到：
+
+![plane1.png](https://i.loli.net/2018/11/07/5be2d1868e7f4.png)
+
+根据文件名和异常像素量判断：前面的三张分别隐写了文件名字符串，flag以同样地方式隐写在第四张图中。
+
+
+
+写脚本中。本题挂起。
 
 
 
@@ -276,10 +293,6 @@ Psss:主办方很坏的在内网提供了压缩包爆破工具，是个狠人.jp
 #### Location
 
 > f2-2
-
-#### URL
-
-> http://sec4.hdu.edu.cn:40001/destory/png_header.png
 
 #### Solution
 
@@ -526,7 +539,9 @@ if __name__ == '__main__':
 
 #### Solution
 
-fishblow算法逆向。
+逆向题。fishblow加密。
+
+[Ch1p师傅的wp](https://mp.weixin.qq.com/s/dW7z87oeChzLLWBkXgDnSQ)
 
 
 
@@ -627,9 +642,43 @@ WEB
 
 #### Solution
 
-哈希算法碰撞，查看robots.txt能看到/flag和/code，前者是提交请求的接口，后者为验证码接口，发现后端是python，于是查看有无源码泄漏，得到flag.pyc，逆向出源码后进行哈希函数碰撞。
+哈希算法碰撞，查看robots.txt能看到/flag和/code，前者是提交请求的接口，后者为验证码接口，发现后端是python，于是查看有无源码泄漏，得到flag.pyc，猜测要逆向得到加密算法后进行哈希碰撞。挂起。
 
 
+
+### f1-4
+
+#### Name 
+
+> cont
+
+#### Title
+
+> 互联互通
+
+#### Category
+
+> PWN
+
+#### Describe
+
+>
+
+#### Score
+
+> 800
+
+#### Location
+
+> f1-4
+
+#### Solution
+
+给了一个binary，PWN题。
+
+还是看[Ch1p师傅的wp](https://mp.weixin.qq.com/s/dW7z87oeChzLLWBkXgDnSQ)
+
+### 
 
 ### f2-1 无量寿佛
 
