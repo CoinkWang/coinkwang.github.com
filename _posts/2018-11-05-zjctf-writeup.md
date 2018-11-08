@@ -541,7 +541,7 @@ if __name__ == '__main__':
 
 逆向题。fishblow加密。
 
-[Ch1p师傅的wp](https://mp.weixin.qq.com/s/dW7z87oeChzLLWBkXgDnSQ)
+[不在ch1ppppppp队伍里的Ch1p师傅的wp](https://mp.weixin.qq.com/s/dW7z87oeChzLLWBkXgDnSQ)
 
 
 
@@ -676,9 +676,11 @@ WEB
 
 给了一个binary，PWN题。
 
-还是看[Ch1p师傅的wp](https://mp.weixin.qq.com/s/dW7z87oeChzLLWBkXgDnSQ)
+[ch1pppppppp队伍的wp](https://mp.weixin.qq.com/s/dW7z87oeChzLLWBkXgDnSQ)
 
-### 
+
+
+
 
 ### f2-1 无量寿佛
 
