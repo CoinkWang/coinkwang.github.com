@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 写在十月
+title: I lost my best friend
 subtitle: 
 author: Coink
 date: 1018-11-11
