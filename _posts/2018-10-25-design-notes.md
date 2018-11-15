@@ -213,3 +213,16 @@ ASCII Art 在线制作工具，常见的Spring Boot启动输出的字符画就�
 
 在线slides解决方案，比PPT和Keynote更容易通过网络传播，适合演讲
 
+
+
+## 书籍
+
+[Designing Design](https://book.douban.com/subject/2036849/)
+
+
+
+[写给大家看的设计书](https://book.douban.com/subject/3323633/)
+
+
+
+[设计心理学](https://book.douban.com/subject/26102860/)
