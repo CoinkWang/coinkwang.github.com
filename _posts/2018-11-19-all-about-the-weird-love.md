@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 新的一课
-subtitle: 关于这段感情，我的总结
+subtitle: 最近我学到的
 author: Coink
 date: 2018-11-19
 categories:
