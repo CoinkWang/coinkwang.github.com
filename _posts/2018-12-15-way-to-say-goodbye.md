@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 道别的法子
+title: 论别
 subtitle: 
 author: Coink
 date: 2018-12-15
@@ -47,7 +47,7 @@ tag:
 
 
 
-你说要走，我也会起身给你开门，送送你。
+你说要走，我也敢起身开门，送客。
 
 
 
