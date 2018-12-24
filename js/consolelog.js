@@ -13,9 +13,9 @@ console.log("写下我不在乎\n");
 console.log("\n");
 console.log("最后，\n");
 console.log("我还是要把没来得及说的告白，偷偷说出口：\n");
-console.log("如果快乐难得\n");
-console.log("那我祝你平安\n");
-console.log("傻子菲，祝你健康平安，最好幸福快乐\n");
+console.log("傻子菲，圣诞了\n");
+console.log("如果幸福快乐难得\n");
+console.log("那我祝你健康平安\n");
 
 // 圣诞装饰
 setInterval(function () { window.location.hash = "🎄"; }, 1000);
