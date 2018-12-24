@@ -15,7 +15,7 @@ console.log("\n");
 console.log("思来想去，\n");
 console.log("我还决定把没法说出口的表白，偷偷留在这：\n");
 console.log("傻子菲，圣诞了\n");
-console.log("你要健康平安\n");
+console.log("祝你健康平安\n");
 console.log("最好快乐幸福\n");
 console.log("\n");
 console.log("还有\n");
