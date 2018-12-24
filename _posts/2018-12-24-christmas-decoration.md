@@ -91,4 +91,4 @@ setInterval(function () { window.location.hash = "Christmas"; }, 2000);
 
 
 
-圣诞快乐呀，大家。
+圣诞快乐，大家。
