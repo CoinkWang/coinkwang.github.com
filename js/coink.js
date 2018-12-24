@@ -5,7 +5,7 @@
 // console.log("害怕的东西同样害怕，但你得敢去面对\n");
 // console.log("我送你一份礼物，叫成熟\n");
 
-console.log("我想你了\n");
+console.log("想你了\n");
 console.log("但我是个理性又矫情的人\n");
 console.log("知道你不会喜欢我\n");
 console.log("就只能咬着牙\n");
