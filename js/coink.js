@@ -10,7 +10,7 @@ console.log("\n");
 console.log("刚才圣诞老人告诉我：\n");
 console.log("喜欢的东西继续喜欢，不一定要拥有\n");
 console.log("害怕的东西同样害怕，但得敢去面对\n");
-console.log("这就是我要给你的礼物，叫成熟\n");
+console.log("这就是他要给我的礼物。叫成熟\n");
 console.log("\n");
 console.log("思来想去，\n");
 console.log("我还决定把没法说出口的表白，偷偷留在这：\n");
