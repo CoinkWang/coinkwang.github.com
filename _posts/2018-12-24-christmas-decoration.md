@@ -73,6 +73,16 @@ setInterval(function () { window.location.hash = "Christmas"; }, 2000);
 
 
 
+在线调试的时候记得勾上Disable cache
+
+
+
+![cache.png](https://i.loli.net/2018/12/24/5c2074fb82092.png)
+
+
+
+
+
 预览：
 
 
