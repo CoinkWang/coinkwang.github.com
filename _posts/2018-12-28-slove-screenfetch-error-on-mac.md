@@ -50,6 +50,6 @@ usage: readlink [-n] [file ...]
 
 ## fix
 
-1. 等待homebrew上的release版本更新
-
-2. 直接从项目地址下载dev版本，改名放到环境变量中即可
+1. 使用greadlink替代readlink
+2. 等待homebrew上的release版本更新
+3. 直接从项目地址下载dev版本，改名放到环境变量中即可
