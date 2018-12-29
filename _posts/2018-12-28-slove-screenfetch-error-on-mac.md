@@ -3,7 +3,7 @@ layout: post
 title: 解决Mac下ScreenFetch出现readlink错误问题
 subtitle: 
 author: Coink
-date: 2018-12-29
+date: 2018-12-28
 categories:
 tag:
 - Tech
