@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 关于《黑客与安全技术指南》
+title: 《黑客与安全技术指南》出版了
 subtitle: 
 author: Coink
 date: 2018-08-01
