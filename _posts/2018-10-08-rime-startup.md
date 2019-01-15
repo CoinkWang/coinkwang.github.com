@@ -11,6 +11,21 @@ tag:
 
 
 
+update:
+
+Rime近期更新了0.10.0版本，但包括我在内的很多人更新后却无法正常使用。我恢复到了0.9.26.2版本，遇到同样问题的朋友可以尝试一下继续使用旧版，等新版本稳定后再做更新。
+
+[历史版本下载](https://bintray.com/lotem/rime/Squirrel)
+
+
+Squirrel-0.9.26.2.zip
+
+Size: 9.14 MB
+
+sha1: 8bd466d6219c6d145985afeb5f4999037a205dbc
+
+
+
 # 何谓Rime
 
 [Rime Input Method Engine · 中州韻輸入法引擎](https://rime.im/) ，关于命名可以看[这篇文章](https://rime.im/blog/2016/04/14/qna-in-mtvu/) 。在各家输入法被曝光搜集用户隐私信息后，我开始寻找开源的输入产品，结识了这款文墨气息浓厚的输入引擎，支持的输入方式相当多，配置起来也很有趣。
