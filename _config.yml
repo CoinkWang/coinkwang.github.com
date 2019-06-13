@@ -57,10 +57,10 @@ friends: [
         title: "小唐学长",
         href: "http://zhizhi.tangliangdong.me"
     },
-    {
-        title: "Rui0",
-        href: "http://rui0.cn/"
-    },
+    # {
+    #     title: "Rui0",
+    #     href: "http://rui0.cn/"
+    # },
     # {
     #     title: "Mapers丨路标社区",
     #     href: "http://mapers.net/"
