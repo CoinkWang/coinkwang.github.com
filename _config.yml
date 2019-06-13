@@ -28,7 +28,7 @@ permalink: /:title.html
 
 # Sidebar settings
 sidebar: true 
-sidebar-about-description:<a href="https://github.com/CoinkWang">Github.com/CoinkWang</a><br><a href="https://twitter.com/CoinkWang">Twitter@CoinkWang</a><br>Email:Y24uY29pbmsud2FuZ0BnbWFpbC5jb20=
+sidebar-about-description: <a href="https://github.com/CoinkWang">Github.com/CoinkWang</a><br><a href="https://twitter.com/CoinkWang">Twitter@CoinkWang</a><br>Email:Y24uY29pbmsud2FuZ0BnbWFpbC5jb20=
 
 sidebar-avatar: /img/avatar.png
 
