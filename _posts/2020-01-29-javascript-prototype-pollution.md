@@ -67,8 +67,6 @@ prototype 是怎样实现继承的呢？这里涉及一个属性：\_\_proto\_\_
 bird.__proto__ === Bird.prototype // true
 ```
 
-
-
 ## 原型链污染
 
 ### what & why
@@ -79,7 +77,7 @@ bird.__proto__ === Bird.prototype // true
 
 早已有人用这种特性来实现Object等内置对象的拓展，当然，并不推荐这样做：
 
-> ### 错误实践：扩展原生对象的原型
+> **错误实践：扩展原生对象的原型**
 >
 > 经常使用的一个错误实践是扩展 `Object.prototype` 或其他内置原型。
 >
@@ -197,11 +195,11 @@ Lodash 中就有这样的 merge 实现，并且被发现存在漏洞（**CVE-201
 
 ## Anti
 
-1. 从Lodash的防御手段来看，一是进行严格的过滤，不接受"\_\_proto\_\_"、"constructor"作为键名，并且在涉及代码执行的地方，进行过滤。
+1. 业务逻辑中进行严格的过滤，不接受"\_\_proto\_\_"、"constructor"作为键名，并且在涉及代码执行的地方，过滤危险代码。
 
-2. 使用```ownProperties```来判断属性是否直接来自于目标。
+2. 使用[```hasOwnProperty```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)来判断属性是否直接来自于目标，这个方法会忽略从原型链上继承到的属性。
 
-3. 可以在处理 json 字符串时就进行判断，过滤敏感键名， ajv 这个库就是这样做的。
+3. 在处理 json 字符串时进行判断，过滤敏感键名， ajv 这个库就是这样做的。
 4. 使用 ```Object.create(null)``` 创建没有原型的对象。
 5. 直接使用 Map 结构。
 6. 用```Object.freeze(Object.prototype)```冻结Object的原型，使Object的原型无法被修改。
