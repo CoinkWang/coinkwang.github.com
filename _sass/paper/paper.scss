@@ -1,5 +1,9 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Neucha|Patrick+Hand+SC);
+// @import url(https://fonts.googleapis.com/css?family=Neucha|Patrick+Hand+SC);
+
+/* incase that cannot connect to google */
+@import url(../../assets/css/fonts.css);
+
 .text-primary {
   color: #41403e
 }
