@@ -5,14 +5,15 @@ subtitle: JavaScript Prototype Pollution
 author: Coink
 date: 2020-01-29
 categories:
-tag:
-- Tech
+alert: 
+    content: 阅读本文需要... 我也不知道多少分钟 (๑•̀ㅂ•́)و✧
+    type: alert-success
 ---
 
 
 
-## 前置知识
-### JS中的类与实例
+### 前置知识
+#### JS中的类与实例
 
 JS 通过 **new关键字** 或 **`Object.create()`** 来进行对象实例的创建：
 
@@ -29,7 +30,7 @@ let bird = new Bird()
 
 ES6 中引入了 class 语法，但本质只是一种**语法糖**，并没有改变 JS 原有基于原型的继承，也没有引入新的继承模型。
 
-### prototype 与 \_\_proto\_\_
+#### prototype 与 \_\_proto\_\_
 
 回到上面的例子，如果类中有方法，实例会继承：
 ```javascript
@@ -67,9 +68,9 @@ prototype 是怎样实现继承的呢？这里涉及一个属性：\_\_proto\_\_
 bird.__proto__ === Bird.prototype // true
 ```
 
-## 原型链污染
+### 原型链污染
 
-### what & why
+#### what & why
 
 既然 \_\_proto\_\_ 指向的是类的原型，那么修改实例的 \_\_proto\_\_ ，是否会影响类本身呢？
 
@@ -100,18 +101,18 @@ another_bird.hungry // 'yes!'
 
 如果我们再向上一层呢？
 
-~~~javascript 
+```javascript 
 bird.__proto__.__proto__.hungry = 'yes!'
 
 let im_a_obj = {}
 im_a_obj.hungry // 'yes!'
-~~~
+```
 
 啊哦，这下影响大了，js中所有的对象都拥有了 hungry 这个属性，这可不妙。
 
 这样可以通过控制对象原型，从而影响所有同类对象的行为，被称为**原型链污染**。
 
-### how
+#### how
 
 现在我们知道了控制对象的 \_\_proto\_\_ ，即可影响该实例的父类，那么要如何控制 \_\_proto\_\_ 呢？
 
@@ -162,7 +163,7 @@ innocentObj.hello // 1
 
 成了，现在所有的 Object 对象都被污染上 hello 这个属性了。
 
-### 另一种实现
+#### 另一种实现
 
 除了通过控制 \_\_proto\_\_ 来实现漏洞，还有另一种方法：重载构造函数。
 
@@ -178,9 +179,9 @@ innocentObj.hello // 1
 
 实例 constructor 的 prototype ，和实例的\_\_proto\_\_指向一致。由于 merge 操作的解析是递归的，这种方式同样也会污染 Object。
 
-## 漏洞利用
+### 漏洞利用
 
-### Lodash
+#### Lodash
 
 Lodash 中就有这样的 merge 实现，并且被发现存在漏洞（**CVE-2019-10744**）影响版本 < 4.17.12，看一下[修复方式](https://github.com/lodash/lodash/commit/e77d68121ff00ba86b53eed5893d35adfe94c9dd#diff-0874e5f9b48ed68be725d581f7d72647R6602)：
 
@@ -193,7 +194,7 @@ Lodash 中就有这样的 merge 实现，并且被发现存在漏洞（**CVE-201
 
 此漏洞拓展：[P牛的一道CTF题](https://www.leavesongs.com/PENETRATION/javascript-prototype-pollution-attack.html#0x05-code-breaking-2018-thejs)。注意评论中有个附加trick，在实际利用过程中，污染原型链会导致一些业务bug或flag泄漏，需要循环删除污染的属性。
 
-## Anti
+### Anti
 
 1. 业务逻辑中进行严格的过滤，不接受"\_\_proto\_\_"、"constructor"作为键名，并且在涉及代码执行的地方，过滤危险代码。
 
@@ -206,7 +207,7 @@ Lodash 中就有这样的 merge 实现，并且被发现存在漏洞（**CVE-201
 
 
 
-## Referer
+### Referer
 
 [继承与原型链（MDN）](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
 
