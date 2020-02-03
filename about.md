@@ -1,7 +1,34 @@
 ---
 layout: about
 title: About Me
+info: 
+    name: Coink
+    email: coinkwang@qq.com
+works: 
+    name: Works
+    data:
+        work_0: 
+            title: Glacne
+            tags: [CSS,Jekyll]
+            subtitle: A clean jekyll theme based on PaperCSS.
+            description: Now u see it~ 基于 PaperCSS 的 Jekyll 主题，颜值全靠字体来撑（
+            link: https://github.com/CoinkWang/glance
+            button_text: Github
+            imgsrc: 
+        work_whatever: 
+            title: 《黑客与安全技术指南》
+            tags: [Security,Web]
+            subtitle: 清华大学出版社
+            description: 一本介绍并分享黑客与安全技术的入门书，内容从基础知识出发，通过相关实例为读者剖析计算机安全领域的各种技巧。
+            link: http://www.tup.tsinghua.edu.cn/booksCenter/book_06579101.html
+            button_text: Details
+            imgsrc: 
+        # work3: 
+
+
+
 ---
+
 
  ᕕ( ᐛ )ᕗ hey
 
@@ -15,13 +42,20 @@ CS 专业，接触过信息安全， ~~擅长口算MD5和手撕RSA~~，经常去
 
 2018 年我出版了一本书：[《黑客与安全技术指南》](http://www.tup.tsinghua.edu.cn/booksCenter/book_06579101.html)。
 
-贪玩儿，玩过 OW、WOW、CSGO、DOOM、Gwent，目前在玩 Destiny2，有一台PS4。
+玩过 OW、WOW、CSGO、DOOM、Gwent，目前在玩 Destiny2，有一台PS4。
 
-其他荣誉：小区乒乓球少儿组差十分夺冠；二胡非著名地铁站表演艺术家。
+很喜欢一句话："莫把湖面倒影，错当夜空繁星" 
 
-博客首页的句子 "莫把湖面倒影，错当夜空繁星" 译自巫师系列中人物 Vilgefortz。
+译自巫师系列中人物 Vilgefortz：
 
-> "You mistake stars reflected in a pond for the night sky"。
+- "You mistake stars reflected in a pond for the night sky"。
 
 以上，随时补充。
+
+
+其他可以公开的情报：
+ - 小区乒乓球少儿组差十分夺冠
+ - 二胡非著名地铁站表演艺术家
+ - 喜欢浅烘咖啡
+
 
