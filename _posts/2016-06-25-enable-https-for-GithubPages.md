@@ -1,12 +1,12 @@
 ---
 layout: post
-title: 
-subtitle: 给你的GithubPages启用https
+title: Enable https for ur Githubpages
+subtitle: 给你的GithubPages启用httpss
 author: Coink 
 date: 2016-06-24 00:00:00 
-categories: 
-tag: 
-- Tech
+alert: 
+    content: 本文由于时间久远，图床跑路，已无正常阅读意义，仅作存档使用
+    type: alert-warning
 ---
 
 

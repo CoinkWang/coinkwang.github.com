@@ -4,9 +4,9 @@ title: Drops文章整理
 subtitle: 
 author: Coink 
 date: 2016-07-28 00:00:00 
-categories: 
-tag: 
-- Tech
+alert: 
+    content: 本文由于时间久远，仓库已无法访问，本文仅作存档使用
+    type: alert-warning
 ---
 
 突然有一天：

@@ -4,13 +4,11 @@ title: 【昆特牌】达口美食家构筑思路
 subtitle: 
 author: Coink 
 date: 2017-10-04
-categories: 
-tag: 
-- ACGN
+alert: 
+    content: 由于环境更替和卡牌改动，此卡组已成为上古卡组，没有参考价值，仅供留念。
+    type: alert-warning
 ---
 
-
-# 注：由于环境更替和卡牌改动，此卡组已成为上古卡组，没有参考价值，仅供留念。
 
 ## 构成及胜率
 

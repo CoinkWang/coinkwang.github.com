@@ -4,9 +4,9 @@ title: 计算机系 入门搞事完全指南
 subtitle: 2018-07-13 update v 3.1
 author: Coink 
 date: 2017-07-28 
-categories: 
-tag: 
-- Tech
+alert: 
+    content: 文章时间久远，是入门时期撰写的教程，不具有参考意义，仅作存档保留
+    type: alert-warning
 
 ---
 
