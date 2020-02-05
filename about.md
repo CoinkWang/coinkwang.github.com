@@ -1,9 +1,6 @@
 ---
 layout: about
 title: About Me
-info: 
-    name: Coink
-    email: coinkwang@qq.com
 works: 
     name: Works
     data:
@@ -15,7 +12,7 @@ works:
             link: https://github.com/CoinkWang/glance
             button_text: Github
             imgsrc: 
-        work_whatever: 
+        work_1: 
             title: 《黑客与安全技术指南》
             tags: [Security,Web]
             subtitle: 清华大学出版社
@@ -23,9 +20,6 @@ works:
             link: http://www.tup.tsinghua.edu.cn/booksCenter/book_06579101.html
             button_text: Details
             imgsrc: 
-        # work3: 
-
-
 
 ---
 
@@ -52,6 +46,11 @@ CS 专业，接触过信息安全， ~~擅长口算MD5和手撕RSA~~，经常去
 
 以上，随时补充。
 
+我的联系方式：
+Mail: coinkwang[at]qq[dot]com
+Twitter: CoinkWang
+Github: CoinkWang
+WeChat: CoinkWang
 
 其他可以公开的情报：
  - 小区乒乓球少儿组差十分夺冠
