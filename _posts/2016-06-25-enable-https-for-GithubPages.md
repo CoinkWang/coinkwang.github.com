@@ -6,7 +6,7 @@ author: Coink
 date: 2016-06-24 00:00:00 
 alert: 
     content: 本文由于时间久远，图床跑路，已无正常阅读意义，仅作存档使用
-    type: alert-warning
+    type: warning
 ---
 
 

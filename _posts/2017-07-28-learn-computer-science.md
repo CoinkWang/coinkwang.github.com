@@ -6,7 +6,7 @@ author: Coink
 date: 2017-07-28 
 alert: 
     content: 文章时间久远，是入门时期撰写的教程，不具有参考意义，仅作存档保留
-    type: alert-warning
+    type: warning
 
 ---
 

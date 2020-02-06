@@ -27,13 +27,24 @@ layout: default
 
   <div>
     {%- if page.alert.content -%}
-      {%- if page.alert.type -%}
-        <div class="alert {{ page.alert.type }}" >{{ page.alert.content }}</div>
+      {%- if page.alert.type == 'primary' -%}
+        <div class="alert alert-primary" >{{ page.alert.content }}</div>
+      {%- endif -%}
+      {%- if page.alert.type == 'secondary' -%}
+        <div class="alert alert-secondary" >{{ page.alert.content }}</div>
+      {%- endif -%}
+      {%- if page.alert.type == 'success' -%}
+        <div class="alert alert-success" >{{ page.alert.content }}</div>
+      {%- endif -%}
+      {%- if page.alert.type == 'warning' -%}
+        <div class="alert alert-warning" >{{ page.alert.content }}</div>
+      {%- endif -%}
+      {%- if page.alert.type == 'danger' -%}
+        <div class="alert alert-danger" >{{ page.alert.content }}</div>
       {%- endif -%}
       {%- if page.alert.type == nil -%}
         <div class="alert">{{ page.alert.content }}</div>
       {%- endif -%}
-      
     {%- endif -%}
     {{ content }}
   </div>

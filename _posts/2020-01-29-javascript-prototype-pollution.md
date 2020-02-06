@@ -4,10 +4,9 @@ title: JavaScript 原型链污染攻击及实践
 subtitle: JavaScript Prototype Pollution
 author: Coink
 date: 2020-01-29
-categories:
 alert: 
     content: 阅读本文需要... 我也不知道多少分钟 (๑•̀ㅂ•́)و✧
-    type: alert-success
+    type: success
 ---
 
 

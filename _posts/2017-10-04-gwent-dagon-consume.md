@@ -6,7 +6,7 @@ author: Coink
 date: 2017-10-04
 alert: 
     content: 由于环境更替和卡牌改动，此卡组已成为上古卡组，没有参考价值，仅供留念。
-    type: alert-warning
+    type: warning
 ---
 
 
