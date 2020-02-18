@@ -5,7 +5,7 @@ works:
     name: Works
     data:
         work_0: 
-            title: Glacne
+            title: Glance
             tags: [CSS,Jekyll]
             subtitle: A clean jekyll theme based on PaperCSS.
             description: Now u see it~ 基于 PaperCSS 的 Jekyll 主题，颜值全靠字体来撑（
@@ -36,21 +36,23 @@ CS 专业，接触过信息安全， ~~擅长口算MD5和手撕RSA~~，经常去
 
 2018 年我出版了一本书：[《黑客与安全技术指南》](http://www.tup.tsinghua.edu.cn/booksCenter/book_06579101.html)。
 
-玩过 OW、WOW、CSGO、DOOM、Gwent，目前在玩 Destiny2，有一台PS4。
+PC 和 PS 游戏玩家，偏爱独立游戏和 FPS，目前在玩 Destiny2。
 
-很喜欢一句话："莫把湖面倒影，错当夜空繁星" 
+很喜欢一句话，来自巫师系列中人物 Vilgefortz：
 
-译自巫师系列中人物 Vilgefortz：
+- "You mistake stars reflected in a pond for the night sky."
+- "莫把湖面倒影，错当夜空繁星。" 
 
-- "You mistake stars reflected in a pond for the night sky"。
 
-以上，随时补充。
 
 我的联系方式：
-Mail: coinkwang[at]qq[dot]com
-Twitter: CoinkWang
-Github: CoinkWang
-WeChat: CoinkWang
+
+- Mail: coinkwang[at]qq[dot]com
+- Twitter: CoinkWang
+- Github: CoinkWang
+- WeChat: CoinkWang
+
+
 
 其他可以公开的情报：
  - 小区乒乓球少儿组差十分夺冠
