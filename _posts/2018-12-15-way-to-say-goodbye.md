@@ -4,9 +4,6 @@ title: 论别
 subtitle: 
 author: Coink
 date: 2018-12-15
-categories:
-tag:
-- Diary
 ---
 
 

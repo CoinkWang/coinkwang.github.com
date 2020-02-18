@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 肥宅与菜鸡
-subtitle: 
+subtitle: 辩证看待自嘲、自谦 与 隐性自大
 author: Coink
 date: 2018-08-08
 categories:
@@ -19,4 +19,4 @@ tag:
 
 ---
 
-作为诚信啊宅，我真不知道该用什么自称。不过还好，一般我不说话。
+作为诚信阿宅，我真不知道该用什么自称。不过还好，一般我不说话。
