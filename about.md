@@ -11,7 +11,7 @@ works:
             description: Now u see it~ 基于 PaperCSS 的 Jekyll 主题，颜值全靠字体来撑（
             link: https://github.com/CoinkWang/glance
             button_text: Github
-            imgsrc: https://sm.ms/image/RUD6dtEmqjMNc3W.png
+            imgsrc: https://i.loli.net/2020/02/20/RUD6dtEmqjMNc3W.png
         work_1: 
             title: 《黑客与安全技术指南》
             tags: [Security,Web,Hacker]
@@ -19,7 +19,7 @@ works:
             description: 一本介绍并分享黑客与安全技术的入门书，内容从基础知识出发，通过相关实例为读者剖析计算机安全领域的各种技巧。
             link: http://www.tup.tsinghua.edu.cn/booksCenter/book_06579101.html
             button_text: Details
-            imgsrc: https://sm.ms/image/G2QqbI8TkXP9xrK.png
+            imgsrc: https://i.loli.net/2020/02/20/G2QqbI8TkXP9xrK.jpg
 
 ---
 
