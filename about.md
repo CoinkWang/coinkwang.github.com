@@ -6,20 +6,20 @@ works:
     data:
         work_0: 
             title: Glance
-            tags: [CSS,Jekyll]
+            tags: [CSS,Jekyll,Theme]
             subtitle: A clean jekyll theme based on PaperCSS.
             description: Now u see it~ 基于 PaperCSS 的 Jekyll 主题，颜值全靠字体来撑（
             link: https://github.com/CoinkWang/glance
             button_text: Github
-            imgsrc: 
+            imgsrc: https://sm.ms/image/RUD6dtEmqjMNc3W
         work_1: 
             title: 《黑客与安全技术指南》
-            tags: [Security,Web]
+            tags: [Security,Web,Hacker]
             subtitle: 清华大学出版社
             description: 一本介绍并分享黑客与安全技术的入门书，内容从基础知识出发，通过相关实例为读者剖析计算机安全领域的各种技巧。
             link: http://www.tup.tsinghua.edu.cn/booksCenter/book_06579101.html
             button_text: Details
-            imgsrc: 
+            imgsrc: https://sm.ms/image/G2QqbI8TkXP9xrK
 
 ---
 
