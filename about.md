@@ -8,10 +8,10 @@ works:
             title: Glance
             tags: [CSS,Jekyll,Theme]
             subtitle: A clean jekyll theme based on PaperCSS.
-            description: Now u see it~ 基于 PaperCSS 的 Jekyll 主题，颜值全靠字体来撑（
+            description: 基于 PaperCSS 的极简手绘风格 Jekyll 主题，gem-based 发布。
             link: https://github.com/CoinkWang/glance
             button_text: Github
-            imgsrc: https://i.loli.net/2020/02/20/RUD6dtEmqjMNc3W.png
+            imgsrc: https://i.loli.net/2020/02/21/VYOatMdy4pBPmFs.png
         work_1: 
             title: 《黑客与安全技术指南》
             tags: [Security,Web,Hacker]
@@ -20,7 +20,6 @@ works:
             link: http://www.tup.tsinghua.edu.cn/booksCenter/book_06579101.html
             button_text: Details
             imgsrc: https://i.loli.net/2020/02/20/G2QqbI8TkXP9xrK.jpg
-
 ---
 
 
