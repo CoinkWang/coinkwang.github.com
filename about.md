@@ -20,6 +20,14 @@ works:
             link: http://www.tup.tsinghua.edu.cn/booksCenter/book_06579101.html
             button_text: Details
             imgsrc: https://i.loli.net/2020/02/20/G2QqbI8TkXP9xrK.jpg
+        work_2: 
+            title: Youtube 双语字幕插件
+            tags: [Youtube,Subtitle]
+            subtitle: 任意双语显示字幕，支持无字幕视频自动生成的字幕。
+            description: 组装一个新的 xhr 请求翻译后的字幕，通过 xhook 拦截原请求，将新请求（翻译文字）和原请求（源字幕）中的文字部分进行合并。组装一个新的 xhr 请求翻译后的字幕，通过 xhook 拦截原请求，将新请求（翻译文字）和原请求（源字幕）中的文字部分进行合并。
+            link: https://github.com/CoinkWang/Y2BDoubleSubs
+            button_text: Github
+            imgsrc: https://i.loli.net/2020/03/06/j8kLgBQXcZxC6R4.png
 ---
 
 
@@ -47,15 +55,17 @@ PC 和 PS 游戏玩家，偏爱独立游戏和 FPS，目前在玩 Destiny2。
 我的联系方式：
 
 - Mail: coinkwang[at]qq[dot]com
-- Twitter: CoinkWang
-- Github: CoinkWang
+- Twitter: [CoinkWang](https://twitter.com/CoinkWang)
+- Github: [CoinkWang](https://github.com/CoinkWang)
 - WeChat: CoinkWang
+- Telegram: @Coink
 
 
 
 其他可以公开的情报：
- - 小区乒乓球少儿组差十分夺冠
+ - 小区乒乓球少儿组仅十分之差痛失金牌🏅
  - 二胡非著名地铁站表演艺术家
- - 喜欢浅烘咖啡
+ - 浅烘咖啡喝完就睡爱好者
+ - 买书藏书不看书学家
 
 
