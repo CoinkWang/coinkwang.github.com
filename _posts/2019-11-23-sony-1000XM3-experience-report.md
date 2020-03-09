@@ -5,7 +5,7 @@ subtitle: 外观、配件、音质、体验、续航与不足
 author: Coink
 date: 2019-11-23
 alert: 
-    content: 更是一个伙伴。
+    content: 喜报，XM3喜迎降价800元（抹泪。
     type: success
 ---
 
