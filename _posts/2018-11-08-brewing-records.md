@@ -4,7 +4,9 @@ title: 冲煮记录
 subtitle: 感谢温热的咖啡在这个冬天给我带来的暖意
 author: Coink
 date: 2018-11-08
-
+alert: 
+    content: 关于本文的最新思考请看：https://coink.wang/why-did-i-learn-those-knowledge.html
+    type: success
 ---
 
 
