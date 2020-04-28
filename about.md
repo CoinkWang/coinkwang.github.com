@@ -43,13 +43,12 @@ CS 专业，接触过信息安全， ~~擅长口算MD5和手撕RSA~~，经常去
 
 2018 年我出版了一本书：[《黑客与安全技术指南》](http://www.tup.tsinghua.edu.cn/booksCenter/book_06579101.html)。
 
-PC 和 PS 游戏玩家，偏爱独立游戏和 FPS，目前在玩 Destiny2。
+PC 和 PS 游戏玩家，偏爱独立游戏、横版解谜 和 FPS。
 
 很喜欢一句话，来自巫师系列中人物 Vilgefortz：
 
 - "You mistake stars reflected in a pond for the night sky."
 - "莫把湖面倒影，错当夜空繁星。" 
-
 
 
 我的联系方式：
@@ -67,5 +66,3 @@ PC 和 PS 游戏玩家，偏爱独立游戏和 FPS，目前在玩 Destiny2。
  - 二胡非著名地铁站表演艺术家
  - 浅烘咖啡喝完就睡爱好者
  - 买书藏书不看书学家
-
-
