@@ -21,12 +21,12 @@ links:
             popover: 又名侦探911
         link_4: 
             name: 王悟空
-            link: https://zensky123.github.io/
+            link: https://carot.wang/
             popover: 王悟空
-        link_5: 
-            name: XiaoTang
-            link: http://zhizhi.tangliangdong.me
-            popover: 小唐学长
+        # link_5: 
+        #     name: XiaoTang
+        #     link: http://zhizhi.tangliangdong.me
+        #     popover: 小唐学长
         link_6: 
             name: ⑨BIE
             link: https://9bie.org/
