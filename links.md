@@ -15,6 +15,10 @@ links:
             name: Denny Dai
             link: https://daihan.me/
             popover: Dxxxxxxxxxxx
+        link_8: 
+            name: MXXXXXS
+            link: https://suger.aqua.coffee/
+            popover: MXXXXXS 的日常笔记
         link_3: 
             name: Rui0
             link: http://rui0.cn
