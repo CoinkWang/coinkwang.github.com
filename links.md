@@ -10,7 +10,7 @@ links:
         link_1: 
             name: Coxxs - Σ(´∀｀；)
             link: https://dev.moe/
-            popover: Coxxs - Σ(´∀｀；)
+            popover: Coxxs
         link_2: 
             name: Denny Dai
             link: https://daihan.me/
@@ -18,7 +18,7 @@ links:
         link_8: 
             name: MXXXXXS
             link: https://suger.aqua.coffee/
-            popover: MXXXXXS 的日常笔记
+            popover: MXXXXXS的日常笔记
         link_3: 
             name: Rui0
             link: http://rui0.cn
