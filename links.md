@@ -11,6 +11,10 @@ links:
             name: Coxxs - Σ(´∀｀；)
             link: https://dev.moe/
             popover: Coxxs
+        link_9: 
+            name: 珵玉
+            link: https://outside-man.github.io/
+            popover: 谦谦君子,温润如玉
         link_2: 
             name: Denny Dai
             link: https://daihan.me/
