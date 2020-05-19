@@ -31,9 +31,9 @@ works:
 ---
 
 
- ᕕ( ᐛ )ᕗ hey
+ ᕕ( ᐛ )ᕗ hi !
 
-我的常用 id 是 Coink，也有很多人叫我钢蹦。
+我叫王成，生于 Y2K bug 的前一年，常以 Coink 这个 id 混迹互联网，也有很多人叫我钢蹦。
 
 CS 专业，接触过信息安全， ~~擅长口算MD5和手撕RSA~~，经常去各大CTF签到。
 
@@ -43,7 +43,7 @@ CS 专业，接触过信息安全， ~~擅长口算MD5和手撕RSA~~，经常去
 
 2018 年我出版了一本书：[《黑客与安全技术指南》](http://www.tup.tsinghua.edu.cn/booksCenter/book_06579101.html)。
 
-PC 和 PS 游戏玩家，偏爱独立游戏、横版解谜 和 FPS。
+我是 PC 和 PS 游戏玩家，偏爱独立游戏、解谜 和 FPS。
 
 很喜欢一句话，来自巫师系列中人物 Vilgefortz：
 
@@ -56,13 +56,11 @@ PC 和 PS 游戏玩家，偏爱独立游戏、横版解谜 和 FPS。
 - Mail: coinkwang[at]qq[dot]com
 - Twitter: [CoinkWang](https://twitter.com/CoinkWang)
 - Github: [CoinkWang](https://github.com/CoinkWang)
-- WeChat: CoinkWang
 - Telegram: @Coink
 
 
 
 其他可以公开的情报：
  - 小区乒乓球少儿组仅十分之差痛失金牌🏅
- - 二胡非著名地铁站表演艺术家
+ - 地铁站非著名二胡表演艺术家
  - 浅烘咖啡喝完就睡爱好者
- - 买书藏书不看书学家
