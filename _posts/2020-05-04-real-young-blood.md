@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 浪潮之下，流动着什么
-subtitle: 真正的《后浪》，不必全都熠熠生辉。
+title: 真正的后浪，不必全都熠熠生辉
+subtitle: 
 author: Coink
 date: 2020-05-04
 alert: 
