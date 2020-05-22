@@ -43,7 +43,7 @@ CS 专业，接触过信息安全， ~~擅长口算MD5和手撕RSA~~，经常去
 
 2018 年我出版了一本书：[《黑客与安全技术指南》](http://www.tup.tsinghua.edu.cn/booksCenter/book_06579101.html)。
 
-我是 PC 和 PS 游戏玩家，偏爱独立游戏、解谜 和 FPS。
+我是 PC 和 主机 游戏玩家，偏爱独立游戏、解谜 和 FPS。
 
 很喜欢一句话，来自巫师系列中人物 Vilgefortz：
 
