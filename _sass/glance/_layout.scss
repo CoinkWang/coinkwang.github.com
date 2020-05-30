@@ -50,11 +50,16 @@
 .post-link {
   display: block;
   @include relative-font-size(1.5);
-  a {
-    // Clean the underline from paperCSS 
-    background-image: none;
-  }
 }
+
+/**
+ * Post badge
+ */
+ .post-badge {
+  float: right;
+  font-size: 50% !important;
+}
+
 
 /**
  * Clean links
@@ -101,7 +106,6 @@
   margin: 1rem 0;
 }
 
-
 /**
  * links container
  */
@@ -116,6 +120,7 @@
 }
 
 .friend-links{
+  transform: rotate(-5deg);
   min-width: 10rem;
   margin: 1rem 0;
   display: -webkit-flex; /* Safari */
