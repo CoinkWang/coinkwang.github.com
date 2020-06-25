@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 123
+title: 用可选链操作符重构大型代码库：经验与教训
 subtitle: 原作者: Lea Verou, 授权翻译: Coink
 author: Coink
 date: 2020-06-24
@@ -9,13 +9,12 @@ alert:
     type: success
 ---
 
+
 原文地址：https://lea.verou.me/2020/06/refactoring-optional-chaining-into-a-large-codebase-lessons-learned/
 
 原作者:  Lea Verou
 
 授权翻译：Coink
-
----
 
 ![https://memegenerator.net/img/instances/84759102/-.jpg](https://memegenerator.net/img/instances/84759102/-.jpg)
 
