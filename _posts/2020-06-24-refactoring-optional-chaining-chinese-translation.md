@@ -179,7 +179,7 @@ if (this.bar && this.bar.edit) {
 }
 ```
 
-我开开心心地把他们重写为:
+我开开心心地把它们重写为:
 
 ```javascript
 if (this.bar?.edit) {
