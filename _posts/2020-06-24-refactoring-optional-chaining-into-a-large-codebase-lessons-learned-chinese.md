@@ -22,7 +22,7 @@ alert:
 
 首先，如果你还不知道什么是*可选链*，让我们先来了解一下。
 
-你是否知道，不去检查 `foo`、`foo.bar`、`foo.bar.baz` 是否存在就直接取 `foo.bar.baz()` 是不可行的，会得到错误（error）吗？，所以调用之前要先做一些判断：
+你是否知道，不去检查 `foo`、`foo.bar`、`foo.bar.baz` 是否存在就直接取 `foo.bar.baz()` 是不可行的，会得到错误（error）吗？所以调用之前要先做一些判断：
 
 ```javascript
 if (foo && foo.bar && foo.bar.baz) {
