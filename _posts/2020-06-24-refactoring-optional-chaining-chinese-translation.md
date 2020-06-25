@@ -27,7 +27,7 @@ alert:
 
 ```javascript
 if (foo && foo.bar && foo.bar.baz) {
-		foo.bar.baz();
+    foo.bar.baz();
 }
 ```
 
@@ -294,7 +294,7 @@ if (foo?.bar !== baz) { /* ... */ }
 
 ```javascript
 if (foo && foo.bar) {
-		return foo.bar();
+    return foo.bar();
 }
 ```
 
@@ -342,8 +342,6 @@ if (element) {
 Razvan Caliman 在 Twitter 上指出:
 
 ![twitter_screenshot](https://i.loli.net/2020/06/24/rizKMP79ONbuCRF.png)
-
-翻译：
 
 感谢分享您的经验！
 
