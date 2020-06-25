@@ -3,7 +3,7 @@ layout: post
 title: [译]使用可选链操作符重构大型代码库：经验与教训
 subtitle: 原作者: Lea Verou, 授权翻译: Coink
 author: [Lea Verou,Coink]
-date: 2020-06-25
+date: 2020-06-24
 alert: 
     content: 在阅读过程中，若您有不好理解或发现翻译不准确之处，请发送邮件到 cn.coink.wang[at]gamil.com 指正！感谢！
     type: success
