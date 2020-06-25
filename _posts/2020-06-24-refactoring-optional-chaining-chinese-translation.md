@@ -195,7 +195,7 @@ this.bar?.edit?.textContent = this._("edit");
 
 坏了， `Uncaught SyntaxError: Invalid left-hand side in assignment`。这样不行，还是得要判断，实际上我也一直在这么做，我很高兴我在编辑器里使用了 ESLint 来在实际运行代码前就得到警告。
 
-### 该放 ?. 的地方没放，不该放的地方放上了
+### 该用 ?. 的地方没用，不该用的地方用上了
 
 需要注意，如果你在用可选链操作符重构一个很长的链，你经常需要插入很多个 `?.` 给每个可能存在或不存在的成员属性，否则一旦链返回了 `undefined` ，就会发生错误。
 
