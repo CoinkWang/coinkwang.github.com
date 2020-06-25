@@ -18,7 +18,7 @@ alert:
 
 ![https://memegenerator.net/img/instances/84759102/-.jpg](https://memegenerator.net/img/instances/84759102/-.jpg)
 
-现在 [可选链操作符](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/%E5%8F%AF%E9%80%89%E9%93%BE) 已被 [支持](https://caniuse.com/#feat=mdn-javascript_operators_optional_chaining)，我最终也决定用它来重构 [Mavo](https://mavo.io/)  (好好好，我们也提供了一个转译版本来适配旧浏览器，都坐下)。我很久前就在等待这一刻，我觉得可选链操作符是自 箭头函数 和 模板字符串 以来，最重要的 JS 语法改进。没错，我认为它甚至比  async/await 还要重要，因为能被它改进的代码实在是太多了，属性访问操作几乎*遍布各处*。
+现在 [可选链操作符](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/%E5%8F%AF%E9%80%89%E9%93%BE) 已被 [支持](https://caniuse.com/#feat=mdn-javascript_operators_optional_chaining)，我最终也决定用它来重构 [Mavo](https://mavo.io/)  (好好好，我们也提供了一个转译版本来适配旧浏览器，都坐下)。我等这一刻很久了，我认为可选链操作符是自 箭头函数 和 模板字符串 以来，最重要的 JS 语法改进。没错，我认为它甚至比  async/await 还要重要，因为能被它改进的代码实在是太多了，属性访问操作几乎*遍布各处*。
 
 首先，如果你还不知道什么是*可选链*，让我们先来了解一下。
 
