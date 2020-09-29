@@ -1,6 +1,6 @@
 ---
 hlayout: post
-title: 恶魔城中无人贩卖赎罪券
+title: 恶魔城里无人贩卖赎罪券
 subtitle: 
 author: Coink
 date: 2020-09-28
