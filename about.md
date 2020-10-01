@@ -30,21 +30,18 @@ works:
             imgsrc: https://i.loli.net/2020/03/06/j8kLgBQXcZxC6R4.png
 ---
 
-我叫王成。
+这里记录着我的生活、工作思考。
 
-当前是一名前端工程师。
+以及我是谁。
 
-这里记录着我的生活、工作思考与一些技术探索。
+&nbsp;
 
-
-
-我的联系方式：
 - Mail: coinkwang[at]qq[dot]com
 - Twitter: [CoinkWang](https://twitter.com/CoinkWang)
 - Github: [CoinkWang](https://github.com/CoinkWang)
 - Telegram: [@Coink](https://t.me/Coink)
 
-
+&nbsp;
 
 其他可以公开的情报：
  - 小区乒乓球少儿组仅十分之差痛失金牌🏅
