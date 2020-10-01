@@ -30,30 +30,11 @@ works:
             imgsrc: https://i.loli.net/2020/03/06/j8kLgBQXcZxC6R4.png
 ---
 
+我叫王成。
 
- ᕕ( ᐛ )ᕗ hi !
+当前是一名前端工程师。
 
-我叫王成，生于 Y2K bug 的前一年，常以 Coink 这个 id 混迹互联网，也有很多人叫我钢蹦。
-
-CS 专业，接触过 hacking， ~~擅长口算 MD5 和手撕 RSA~~，经常去各大 CTF 签到。
-
-当前版本转职成了一名前端工程师。
-
-这个博客里记录着我的生活、工作思考与一些技术探索。
-
-游戏玩家，偏爱剧情优秀的独立游戏，FPS玩家。
-
-
-
-我坚持的一些原则或习惯：
-
-- 不发“朋友圈”。
-- 不需要补充能量时不喝含糖饮料。
-- 不特殊化节日、不过（自己的）生日。
-- 对“网红”性质事物敬而远之，不为某物“打卡”。
-- 任何有它人的场合，戴耳机。如宿舍、公共交通。
-- 不借款给任何人。对于真正需要帮助的人，能力范围内直接给予。
-- 除住房外，不进行超前消费，不使用任何“花呗”形式服务，不使用分期付款。
+这里记录着我的生活、工作思考与一些技术探索。
 
 
 
@@ -61,7 +42,7 @@ CS 专业，接触过 hacking， ~~擅长口算 MD5 和手撕 RSA~~，经常去�
 - Mail: coinkwang[at]qq[dot]com
 - Twitter: [CoinkWang](https://twitter.com/CoinkWang)
 - Github: [CoinkWang](https://github.com/CoinkWang)
-- Telegram: @Coink
+- Telegram: [@Coink](https://t.me/Coink)
 
 
 
