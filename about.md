@@ -30,6 +30,8 @@ works:
             imgsrc: https://i.loli.net/2020/03/06/j8kLgBQXcZxC6R4.png
 ---
 
+文字无法 about me。
+
 这里记录着我的生活、工作思考。
 
 以及我是谁。
