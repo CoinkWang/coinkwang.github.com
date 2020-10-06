@@ -30,15 +30,11 @@ works:
             imgsrc: https://i.loli.net/2020/03/06/j8kLgBQXcZxC6R4.png
 ---
 
-My name's Coink aka. kn10c
+My name's Coink,
 
-这里记录理性与非理性 brainfucks，
+这儿记录理性与非理性 brainfucks,
 
 以及 who the fuck am I.
-
-&nbsp;
-
-: )
 
 &nbsp;
 
