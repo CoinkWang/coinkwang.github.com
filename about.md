@@ -30,11 +30,15 @@ works:
             imgsrc: https://i.loli.net/2020/03/06/j8kLgBQXcZxC6R4.png
 ---
 
-文字无法 about me。
+My name's Coink aka. kn10c
 
-这里会记录我不加修饰的想法。
+这里记录理性与非理性 brainfucks，
 
-以及我是谁。
+以及 who the fuck am I.
+
+&nbsp;
+
+: )
 
 &nbsp;
 
@@ -47,7 +51,8 @@ works:
 
 其他可以公开的情报：
  - 小区乒乓球少儿组仅十分之差痛失金牌🏅
- - 地铁站非著名二胡表演艺术家
- - 看见好看的云就走不动道儿
+ - 地铁站非著名现代曲二胡表演艺术家
+ - 新古典没有前摇推后摇
  - 浅烘咖啡喝完就睡爱好者
+ - 匹诺曹从政主义者 : )
 
