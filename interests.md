@@ -1,6 +1,6 @@
 ---
 layout: post
-title: IInterests
+title: Interests
 subtitle: 
 author: 
 ---
@@ -23,33 +23,23 @@ author:
 
   <input id="tab4" type="radio" name="tabs">
   <label for="tab4">
-   <span class="badge secondary">Movie/Anime</span>
+   <span class="badge warning">Movie/Anime</span>
   </label>
-</div>
 
-<div class="content" id="content1">
-  <p>
-    Bacon ipsum dolor sit amet beef venison beef ribs kielbasa...
-  </p>
-  <p>
-    Brisket meatball turkey short loin boudin leberkas meatloaf...
-  </p>
-</div>
-<div class="content" id="content2">
-  <p>
-    Bacon ipsum dolor sit amet landjaeger sausage brisket...
-  </p>
-</div>
-<div class="content" id="content3">
-  <p>
-    Bacon ipsum dolor sit amet beef venison beef ribs kielbasa...
-  </p>
-  <p>
-    Brisket meatball turkey short loin boudin leberkas meatloaf...
-  </p>
-</div>
-<div class="content" id="content4">
-  <p>
-    Bacon ipsum dolor sit amet landjaeger sausage brisket...
-  </p>
+  <div class="content" id="content1"> 
+  <!-- book -->
+
+  </div>
+  <div class="content" id="content2">
+  <!-- music -->
+
+  </div>
+  <div class="content" id="content3">
+  <!-- game -->
+
+  </div>
+  <div class="content" id="content4">
+  <!-- movie -->
+
+  </div>
 </div>
