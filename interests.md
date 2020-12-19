@@ -33,7 +33,6 @@ author:
   <thead>
     <tr>
       <th>Unfinish</th>
-      <th>...</th>
     </tr>
   </thead>
   <tbody>
@@ -52,6 +51,29 @@ author:
   </div>
   <div class="content" id="content2">
   <!-- music -->
+
+  <table>
+    <thead>
+      <tr>
+        <th>Cover</th>
+        <th>Name</th>
+        <th>Sth...</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><img src="https://img2.doubanio.com/view/subject/m/public/s3081692.jpg" class="no-border"></td>
+        <td><a href='https://music.douban.com/subject/2299845/' target='_blank'>黑梦</a></td>
+        <td>「幸福在哪里」「幸福在哪里」「幸福在哪里」</td>
+      </tr>
+      <tr>
+        <td>古代中国的节庆与歌谣</td>
+      </tr>
+      <tr>
+        <td>社会心理学</td>
+      </tr>
+    </tbody>
+  </table>
 
   </div>
   <div class="content" id="content3">
