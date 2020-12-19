@@ -66,7 +66,7 @@ author:
     <tbody>
       <tr>
         <td><img src="https://i.loli.net/2020/12/19/EDGiZbxsqfnkFvg.png" width='80px' class="no-border"></td>
-        <td>><p>黑梦 - 窦唯</td></p>
+        <td><p>黑梦 - 窦唯</p></td>
         <td><p>「幸福在哪里」「幸福在哪里」「幸福在哪里」</p></td>
       </tr>
       <tr>
