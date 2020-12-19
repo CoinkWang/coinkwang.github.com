@@ -30,11 +30,11 @@ works:
             imgsrc: https://i.loli.net/2020/03/06/j8kLgBQXcZxC6R4.png
 ---
 
+
+
 My name's Coink,
 
-这儿记录理性与非理性 brainfucks,
-
-以及 who the fuck am I.
+Here is who the f**k I am.
 
 &nbsp;
 
@@ -46,9 +46,9 @@ My name's Coink,
 &nbsp;
 
 其他可以公开的情报：
- - 小区乒乓球少儿组仅十分之差痛失金牌🏅
- - 地铁站非著名现代曲二胡表演艺术家
- - 新古典没有前摇推后摇
+ - 小区乒乓球少儿组十分之差痛失金牌🏅
+ - 地铁站非著名现代二胡表演艺术家
  - 浅烘咖啡喝完就睡爱好者
- - 匹诺曹从政主义者 : )
+ - 匹诺曹从政支持者 : )
+ - 狡猾的人
 
