@@ -1,6 +1,6 @@
 ---
 layout: post
-title: interests
+title: IInterests
 subtitle: 
 author: 
 ---
@@ -25,31 +25,31 @@ author:
   <label for="tab4">
    <span class="badge secondary">Movie/Anime</span>
   </label>
+</div>
 
-  <div class="content" id="content1">
-    <p>
-      Bacon ipsum dolor sit amet beef venison beef ribs kielbasa...
-    </p>
-    <p>
-      Brisket meatball turkey short loin boudin leberkas meatloaf...
-    </p>
-  </div>
-  <div class="content" id="content2">
-    <p>
-      Bacon ipsum dolor sit amet landjaeger sausage brisket...
-    </p>
-  </div>
-  <div class="content" id="content3">
-    <p>
-      Bacon ipsum dolor sit amet beef venison beef ribs kielbasa...
-    </p>
-    <p>
-      Brisket meatball turkey short loin boudin leberkas meatloaf...
-    </p>
-  </div>
-  <div class="content" id="content4">
-    <p>
-      Bacon ipsum dolor sit amet landjaeger sausage brisket...
-    </p>
-  </div>
+<div class="content" id="content1">
+  <p>
+    Bacon ipsum dolor sit amet beef venison beef ribs kielbasa...
+  </p>
+  <p>
+    Brisket meatball turkey short loin boudin leberkas meatloaf...
+  </p>
+</div>
+<div class="content" id="content2">
+  <p>
+    Bacon ipsum dolor sit amet landjaeger sausage brisket...
+  </p>
+</div>
+<div class="content" id="content3">
+  <p>
+    Bacon ipsum dolor sit amet beef venison beef ribs kielbasa...
+  </p>
+  <p>
+    Brisket meatball turkey short loin boudin leberkas meatloaf...
+  </p>
+</div>
+<div class="content" id="content4">
+  <p>
+    Bacon ipsum dolor sit amet landjaeger sausage brisket...
+  </p>
 </div>
