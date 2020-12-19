@@ -45,6 +45,9 @@ author:
     <tr>
       <td>社会心理学</td>
     </tr>
+    <tr>
+      <td>深情史</td>
+    </tr>
   </tbody>
 </table>
 
@@ -63,12 +66,12 @@ author:
     <tbody>
       <tr>
         <td><img src="https://i.loli.net/2020/12/19/EDGiZbxsqfnkFvg.png" width='80px' class="no-border"></td>
-        <td><a href='https://music.douban.com/subject/2299845/' target='_blank'>黑梦 - 窦唯</a></td>
+        <td>><p>黑梦 - 窦唯</td></p>
         <td><p>「幸福在哪里」「幸福在哪里」「幸福在哪里」</p></td>
       </tr>
       <tr>
         <td><img src="https://i.loli.net/2020/12/19/QYytmswEp4kFh79.png" width='80px' class="no-border"></td>
-        <td>She Has No Strings Apollo</td>
+        <td><p>She Has No Strings Apollo - Dirty Three</p></td>
         <td><p>油画、还有提琴</p></td>
       </tr>
     </tbody>
