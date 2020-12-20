@@ -3178,18 +3178,33 @@ nav .bar3 {
   transition: 0.4s;
   width: 2rem;
 }
-nav .collapsible input[id^=collapsible]:checked + button .bar1,
-nav .collapsible input[id^=collapsible]:checked + label .bar1 {
-  transform: rotate(-45deg) translate(-9px, 7px);
+// nav .collapsible input[id^=collapsible]:checked + button .bar1,
+// nav .collapsible input[id^=collapsible]:checked + label .bar1 {
+//   transform: rotate(-45deg) translate(-9px, 7px);
+// }
+// nav .collapsible input[id^=collapsible]:checked + button .bar2,
+// nav .collapsible input[id^=collapsible]:checked + label .bar2 {
+//   opacity: 0;
+// }
+// nav .collapsible input[id^=collapsible]:checked + button .bar3,
+// nav .collapsible input[id^=collapsible]:checked + label .bar3 {
+//   transform: rotate(45deg) translate(-8px, -9px);
+// }
+
+// from old version by coink
+nav .collapsible input[id^=collapsible]:checked + button .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px,7px);
+  transform: rotate(-45deg) translate(-9px,7px)
 }
-nav .collapsible input[id^=collapsible]:checked + button .bar2,
-nav .collapsible input[id^=collapsible]:checked + label .bar2 {
-  opacity: 0;
+nav .collapsible input[id^=collapsible]:checked + button .bar2 {
+  opacity: 0
 }
-nav .collapsible input[id^=collapsible]:checked + button .bar3,
-nav .collapsible input[id^=collapsible]:checked + label .bar3 {
-  transform: rotate(45deg) translate(-8px, -9px);
+nav .collapsible input[id^=collapsible]:checked + button .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px,-9px);
+  transform: rotate(45deg) translate(-8px,-9px)
 }
+// from old version by coink end
+
 nav.split-nav {
   justify-content: space-between;
 }
