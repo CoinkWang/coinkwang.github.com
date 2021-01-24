@@ -32,23 +32,34 @@ works:
 
 
 
-My name's Coink,
+### @Coink
 
-Here is who the f**k I am.
-
-&nbsp;
-
-- Mail: coinkwang[at]qq[dot]com
+- Mail: cn.coink.wang[at]gmail[dot]com
 - Twitter: [CoinkWang](https://twitter.com/CoinkWang)
 - Github: [CoinkWang](https://github.com/CoinkWang)
 - Telegram: [@Coink](https://t.me/Coink)
 
-&nbsp;
+### Coding
 
-其他可以公开的情报：
- - 小区乒乓球少儿组十分之差痛失金牌🏅
- - 地铁站非著名现代二胡表演艺术家
- - 浅烘咖啡喝完就睡爱好者
+漫无目的耕码为生，目前是一家创业公司的前端工程师。
+
+### Gaming
+
+- PlayStation 4、Nintendo Switch、[PlayStation 5]
+
+- 独立游戏、FPS
+
+### Music
+
+- 器乐
+- 器乐摇滚
+
+- 二胡
+
+### 其他情报：
+
+ - 地铁站非著名后现代二胡表演艺术家
+ - 浅烘咖啡高温三段喝完就睡爱好者
  - 匹诺曹从政支持者 : )
  - 狡猾的人
 
