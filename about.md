@@ -46,14 +46,12 @@ works:
 ### Gaming
 
 - PlayStation 4、Nintendo Switch、[PlayStation 5]
-
 - 独立游戏、FPS
 
 ### Music
 
 - 器乐
 - 器乐摇滚
-
 - 二胡
 
 ### 其他情报：
