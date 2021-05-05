@@ -39,20 +39,18 @@ works:
 - Github: [CoinkWang](https://github.com/CoinkWang)
 - Telegram: [@Coink](https://t.me/Coink)
 
-### Coding
-
-漫无目的耕码为生，目前是一家创业公司的前端工程师。
-
 ### Gaming
 
 - PlayStation 4、Nintendo Switch、[PlayStation 5]
 - 独立游戏、FPS
+- 北极星铁御
+- 牛头人圣骑、熊猫人奶僧、DH
 
 ### Music
 
-- 器乐
 - 器乐摇滚
 - 新古典
+- 二胡
 
 ### 其他情报：
 
