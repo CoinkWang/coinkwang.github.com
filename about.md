@@ -43,7 +43,7 @@ works:
 
 - PlayStation 4、Nintendo Switch、[PlayStation 5]
 - 独立游戏、FPS
-- 北极星铁御
+- 铁驭
 - 牛头人圣骑、熊猫人奶僧、DH
 
 ### Music
