@@ -42,7 +42,6 @@ works:
 ### Code
 
 - JavaScript
-
 - TypeScript
 - Python
 - [Go]
