@@ -39,23 +39,37 @@ works:
 - Github: [CoinkWang](https://github.com/CoinkWang)
 - Telegram: [@Coink](https://t.me/Coink)
 
+### Code
+
+- JavaScript
+
+- TypeScript
+- Python
+- [Go]
+- [Objective - C]
+
 ### Gaming
 
 - PlayStation 4、Nintendo Switch、[PlayStation 5]
 - 独立游戏、FPS
-- 铁驭
+- 步枪兵库博
+- 尬殿
 - 牛头人圣骑、熊猫人奶僧、DH
+- 没有自我意识的圣母仿生人
 
 ### Music
 
 - 器乐摇滚
 - 新古典
 - 二胡
+- 偶尔听重型
 
-### 其他情报：
+### 其他情报
 
- - 地铁站非著名后现代二胡表演艺术家
- - 浅烘咖啡高温三段喝完就睡爱好者
+ - 地铁站非著名后现代酒后二胡表演艺术家
+ - 浅烘咖啡水没烧开冲三段喝完就睡爱好者
+ - 前反思转向反思个屁
  - 匹诺曹从政支持者 : )
+ - 蹩脚文字撰写专家
  - 狡猾的人
 
