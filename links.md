@@ -27,10 +27,10 @@ links:
             name: Rui0
             link: http://rui0.cn
             popover: 又名侦探911
-        link_4: 
-            name: 王悟空
-            link: https://carot.wang/
-            popover: 王悟空
+        # link_4: 
+        #     name: 王悟空
+        #     link: https://carot.wang/
+        #     popover: 王悟空
         # link_5: 
         #     name: XiaoTang
         #     link: http://zhizhi.tangliangdong.me
@@ -42,7 +42,7 @@ links:
         link_7: 
             name: β-house
             link: http://betahouse.us/
-            popover: 俺当过社长的技术工作室
+            popover: 本科时期的技术社团
 
 
 ---
