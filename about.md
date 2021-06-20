@@ -49,7 +49,7 @@ works:
 
 ### Gaming
 
-- PlayStation 4、Nintendo Switch、[PlayStation 5]
+- PlayStation 5、Nintendo Switch
 - 独立游戏、FPS
 - 步枪兵库博
 - 尬殿
