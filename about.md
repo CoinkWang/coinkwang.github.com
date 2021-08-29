@@ -44,31 +44,25 @@ works:
 - JavaScript
 - TypeScript
 - Python
-- [Go]
-- [Objective - C]
 
 ### Gaming
 
 - PlayStation 5、Nintendo Switch
 - 独立游戏、FPS
-- 步枪兵库博
-- 尬殿
-- 牛头人圣骑、熊猫人奶僧、DH
-- 没有自我意识的圣母仿生人
+- 网络游戏
+  - [Titanfall 2] 北极星
+  - [Splatoon 2] 打工水产
+  - [WOW] 牛头人圣骑、熊猫人奶僧、DH（AFK）
 
 ### Music
 
 - 器乐摇滚
 - 新古典
 - 二胡
-- 偶尔听重型
 
 ### 其他情报
 
- - 浅烘咖啡水没烧开八段萃取喝完就睡爱好者
  - 地铁站非著名后现代酒后二胡表演艺术家
- - 前反思转向反思个屁
- - 匹诺曹从政支持者 : )
  - 蹩脚文字撰写专家
  - 狡猾的人
 
