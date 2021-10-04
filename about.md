@@ -52,8 +52,9 @@ works:
 - 网络游戏
   - [Titanfall 2] 北极星
   - [Splatoon 2] 打工水产
+  - [Battlefiled 2042] 
   - [Desteny 2] 虚空猎（AFK） 
-  - [WOW] 牛头人圣骑、熊猫人奶僧、DH（AFK）
+  - [WOW] 牛头人圣骑、熊猫人奶僧、DH （120 AFK）
 
 ### Music
 
