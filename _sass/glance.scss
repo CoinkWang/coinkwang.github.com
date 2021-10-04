@@ -5,7 +5,8 @@ $brand-color-light:     lighten($brand-color, 40%) !default;
 $brand-color-dark:      darken($brand-color, 25%) !default;
 
 $text-color:            #111 !default;
-$background-color:      #fdfdfd !default;
+// $background-color:      #fdfdfd !default;
+$background-color:      #e1e1e1 !default; // modified by Coink
 $code-background-color: #e6e7e9 !default;
 
 $link-base-color:       #111 !default;
