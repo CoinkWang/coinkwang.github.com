@@ -1,6 +1,6 @@
 ---
 layout: about
-title: About Me
+title: About
 works: 
     name: Works
     data:
