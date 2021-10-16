@@ -17,36 +17,36 @@ layout: default
     <div class="row">
       {%- if obj[1].bg == nil -%}
         <div class="col background-primary">
-          {% for content in obj[1].content %}
-            <div>{{ content[1] }}</div>
+          {% for content in obj[1].contents %}
+            <div>{{ content }}</div>
           {% endfor %}
         </div>
       {%- endif -%}  
       {%- if obj[1].bg == 'danger' -%}
         <div class="col background-danger">
-          {% for content in obj[1].content %}
-            <div>{{ content[1] }}</div>
+          {% for content in obj[1].contents %}
+            <div>{{ content }}</div>
           {% endfor %}
         </div>
       {%- endif -%}
       {%- if obj[1].bg == 'secondary' -%}
         <div class="col background-secondary">
-          {% for content in obj[1].content %}
-            <div>{{ content[1] }}</div>
+          {% for content in obj[1].contents %}
+            <div>{{ content }}</div>
           {% endfor %}
         </div>
       {%- endif -%}
       {%- if obj[1].bg == 'success' -%}
         <div class="col background-success">
-          {% for content in obj[1].content %}
-            <div>{{ content[1] }}</div>
+          {% for content in obj[1].contents %}
+            <div>{{ content }}</div>
           {% endfor %}
         </div>
       {%- endif -%}
       {%- if obj[1].bg == 'warning' -%}
         <div class="col background-warning">
-          {% for content in obj[1].content %}
-            <div>{{ content[1] }}</div>
+          {% for content in obj[1].contents %}
+            <div>{{ content }}</div>
           {% endfor %}
         </div>
       {%- endif -%}    
