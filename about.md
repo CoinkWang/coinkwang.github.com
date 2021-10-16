@@ -47,14 +47,14 @@ works:
 
 ### Gaming
 
-- PlayStation 5、Nintendo Switch
+- PlayStation 5、Nintendo Switch、Steam Deck
 - 独立游戏、FPS
 - 网络游戏
-  - [Titanfall 2] 北极星
-  - [Splatoon 2] 打工水产
-  - [Battlefiled 2042] 
-  - [Desteny 2] 虚空猎（AFK） 
-  - [WOW] 牛头人圣骑、熊猫人奶僧、DH （120 AFK）
+  - [Titanfall]
+  - [Splatoon]
+  - [Call Of Duty] 
+  - [Destiny] AFK
+  - [WOW] AFK
 
 ### Music
 
