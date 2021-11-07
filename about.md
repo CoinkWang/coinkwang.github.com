@@ -47,7 +47,7 @@ works:
 
 ### Gaming
 
-- PlayStation 5、Nintendo Switch、Steam Deck
+- PlayStation 5、Xbox Series S、Nintendo Switch、Steam Deck
 - 独立游戏、FPS
 - 网络游戏
   - [Titanfall]
