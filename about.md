@@ -52,8 +52,10 @@ works:
 - 网络游戏
   - [Titanfall]
   - [Splatoon]
+  - [Halo]
   - [Call Of Duty] 
-  - [Destiny] AFK
+  - [Destiny]
+  - [OverWatch] AFK
   - [WOW] AFK
 
 ### Music

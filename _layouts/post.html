@@ -49,6 +49,17 @@ layout: default
     {{ content }}
   </div>
 
+  </br>
+
+  <div id="cusdis_thread"
+    data-host="https://cusdis.com"
+    data-app-id="0b1007c1-b9b6-4403-9ee7-a91cc7c12828"
+    data-page-id="{{ page.title }}"
+    data-page-title="{{ page.title }}"
+  ></div>
+
+  <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
   {%- include toper.html -%}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
