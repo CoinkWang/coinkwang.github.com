@@ -11,10 +11,10 @@ links:
             name: Coxxs - Σ(´∀｀；)
             link: https://dev.moe/
             popover: Coxxs
-        link_9: 
-            name: 珵玉
-            link: https://outside-man.github.io/
-            popover: 谦谦君子,温润如玉
+        # link_9: 
+        #     name: 珵玉
+        #     link: https://outside-man.github.io/
+        #     popover: 谦谦君子,温润如玉
         link_2: 
             name: Denny Dai
             link: https://daihan.me/
@@ -39,10 +39,10 @@ links:
             name: ⑨BIE
             link: https://9bie.org/
             popover: 黑IE害怕别人解释他的名字...
-        link_7: 
-            name: β-house
-            link: http://betahouse.us/
-            popover: 本科时期的技术社团
+        # link_7: 
+        #     name: β-house
+        #     link: http://betahouse.us/
+        #     popover: 本科时期的技术社团
 
 
 ---

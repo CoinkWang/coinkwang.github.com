@@ -47,7 +47,7 @@ works:
 
 ### Gaming
 
-- PlayStation 5、Xbox Series S、Nintendo Switch、Steam Deck
+- PlayStation 5、Xbox Series S、Nintendo Switch、Steam Deck、PC
 - 独立游戏、FPS
 - 网络游戏
   - [Titanfall]
@@ -55,8 +55,8 @@ works:
   - [Halo]
   - [Call Of Duty] 
   - [Destiny]
-  - [OverWatch] AFK
-  - [WOW] AFK
+  - [OverWatch]
+  - [WOW]
 
 ### Music
 
