@@ -30,8 +30,6 @@ works:
             imgsrc: https://i.loli.net/2020/03/06/j8kLgBQXcZxC6R4.png
 ---
 
-
-
 ### @Coink
 
 - Mail: cn.coink.wang[at]gmail[dot]com
@@ -53,7 +51,8 @@ works:
   - [Titanfall]
   - [Splatoon]
   - [Halo]
-  - [Call Of Duty] 
+  - [Call Of Duty]
+  - [Battlefield]
   - [Destiny]
   - [OverWatch]
   - [WOW]
@@ -69,4 +68,3 @@ works:
  - 地铁站非著名后现代酒后二胡表演艺术家
  - 蹩脚文字撰写专家
  - 狡猾的人
-
