@@ -30,6 +30,10 @@ layout: default
           {%- endif -%}
 
         </a>
+          {% for tag in page.tags %}
+            <span class="badge success">{{ tag }}</span>
+          {% endfor %}
+        </span>
         <span class="badge post-badge">{{ post.date | date: date_format }}</span>
       </p>
     {%- endfor -%}
