@@ -7,6 +7,8 @@ date: 2020-01-29
 alert: 
     content: 阅读本文需要... 我也不知道多少分钟 (๑•̀ㅂ•́)و✧
     type: success
+tag: 
+    - tech
 ---
 
 

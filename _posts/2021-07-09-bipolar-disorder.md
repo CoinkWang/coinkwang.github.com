@@ -4,9 +4,9 @@ title: 疯癫絮语
 subtitle: 
 author: Coink
 date: 2021-07-09
-alert: 
-    content: 
-    type: success
+tag: 
+    - phil 
+    - life
 
 ---
 

@@ -48,7 +48,9 @@
  * Post links
  */
 .post-link {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   @include relative-font-size(1.5);
 }
 
@@ -56,8 +58,12 @@
  * Post badge
  */
  .post-badge {
-  float: right;
   font-size: 50% !important;
+  margin-right: 3px;
+}
+
+.post-badge:last-child {
+  margin-right: 0px;
 }
 
 

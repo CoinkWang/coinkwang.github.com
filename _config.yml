@@ -8,6 +8,10 @@ description: > # this means to ignore newlines until "show_subtitle:"
 
 show_subtitle: true
 
+header_pages:
+  - about.md
+  - links.md
+
 permalink: /:title.html
 
 # date format

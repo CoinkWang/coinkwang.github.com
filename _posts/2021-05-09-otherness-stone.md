@@ -4,9 +4,8 @@ title: 鱼缸和石头
 subtitle: 
 author: Coink
 date: 2021-05-09
-alert: 
-    content: 
-    type: success
+tag: 
+    - life
 
 ---
 

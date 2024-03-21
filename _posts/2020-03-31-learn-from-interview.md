@@ -4,9 +4,10 @@ title: 从面试中，我看到了什么（一）
 subtitle: 2020应届计算机毕业生所见、所感
 author: Coink
 date: 2020-03-31
-alert: 
-    content: 
-    type: success
+tag: 
+    - work
+    - life
+    - tech
 ---
 
 ### TL;DR

@@ -4,9 +4,8 @@ title: 真正的后浪，不必全都熠熠生辉
 subtitle: 
 author: Coink
 date: 2020-05-04
-alert: 
-    content: 
-    type: success
+tag: 
+    - life
 ---
 
 ### 一场演讲，二分对立

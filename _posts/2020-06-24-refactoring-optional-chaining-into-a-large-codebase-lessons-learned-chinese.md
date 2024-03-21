@@ -7,6 +7,8 @@ date: 2020-06-24
 alert: 
     content: 在阅读过程中，若您有不好理解或发现翻译不准确之处，请发送邮件到 cn.coink.wang[at]gamil.com 指正！感谢！
     type: success
+tag: 
+    - tech
 ---
 
 

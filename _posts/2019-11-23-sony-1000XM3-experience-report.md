@@ -7,6 +7,8 @@ date: 2019-11-23
 alert: 
     content: 我给这篇文章“瘦身”了一次，删去了外观、配件部分，只留下了我的体验。
     type: success
+tag: 
+    - life
 ---
 
 ### 序

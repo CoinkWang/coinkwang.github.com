@@ -4,9 +4,8 @@ title: 小伎俩的虚荣心
 subtitle: 
 author: Coink
 date: 2020-07-08
-alert: 
-    content: 
-    type: success
+tag: 
+    - life
 ---
 
 今天听到几句话，触电一般。反思一下。

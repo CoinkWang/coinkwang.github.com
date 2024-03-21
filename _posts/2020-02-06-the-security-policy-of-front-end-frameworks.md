@@ -4,9 +4,8 @@ title: 探索主流前端框架的安全模型
 subtitle: Angular、React、Vue
 author: Coink
 date: 2020-02-06
-alert: 
-    content: 写的有些乱。更建议您直接阅读相关官方文档。
-    type: success
+tag: 
+    - tech
 ---
 
 

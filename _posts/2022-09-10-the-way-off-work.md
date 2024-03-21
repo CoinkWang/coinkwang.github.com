@@ -4,10 +4,8 @@ title: 下班路上
 subtitle: 
 author: Coink
 date: 2022-09-10
-alert: 
-    content: 
-    type: success
-
+tag: 
+    - life
 ---
 
 「下班路上」是个神圣的概念。

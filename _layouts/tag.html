@@ -4,7 +4,7 @@ layout: default
 
 <div class="tag">
   {%- if page.title -%}
-    <h3 class="page-heading">{{ page.title }}</h3>
+    <h3 class="page-heading" style="font-family: 'Patrick Hand SC',sans-serif;">{{ page.title }}</h3>
   {%- endif -%}
 
   {{ content }}
@@ -16,7 +16,7 @@ layout: default
 
     {%- for post in posts -%}
       <p class="post-link">
-        <a href="{{ post.url | relative_url }}" class="clean-link" target="_blank">
+        <a href="{{ post.url | relative_url }}" class="clean-link">
           {{ post.title | escape }}
 
           {%- if site.show_subtitle -%}
@@ -24,9 +24,13 @@ layout: default
               {{ post.subtitle }}
             </span>
           {%- endif -%}
-
         </a>
-        <span class="badge post-badge">{{ post.date | date: date_format }}</span>
+        <span style="display: flex;"> 
+          {%- for tag in post.tag -%}
+            <span class="badge post-badge"><a href="{{ tag }}"  class="clean-link" style="color: white;">{{ tag }}</a></span>
+          {%- endfor -%}
+          <span class="badge post-badge">{{ post.date | date: date_format }}</span>
+        </span>
       </p>
     {%- endfor -%}
   {%- endif -%}

@@ -4,9 +4,8 @@ title: 提上日程的ES2020新特性
 subtitle: img原生懒加载、Promise.allSettled、Promise.any、空值合并运算符、可选链操作符、BigInt数据类型、import()、globalThis、matchAll()、Class的私有属性
 author: Coink
 date: 2020-02-16
-alert: 
-    content: 所有进度截至本文成文时间。你看到这里的时候已经在使用这些特性也说不定哦
-    type: success
+tag: 
+    - tech
 ---
 
 

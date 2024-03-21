@@ -4,9 +4,8 @@ title: 该把什么放进博客
 subtitle: 
 author: Coink
 date: 2020-05-19
-alert: 
-    content: 
-    type: success
+tag: 
+    - life
 ---
 
 我在 2015 年写下第一篇随笔。直到今天，博客大多内容是我的技术笔记和生活吐槽，最近则开始记录一些思考。

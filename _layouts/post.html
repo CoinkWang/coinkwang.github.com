@@ -7,6 +7,11 @@ layout: default
     {%- if page.title -%}
       <h3>{{ page.title | escape }}</h3>
     {%- endif -%}
+    {%- if page.tag -%}
+      {%- for tag in page.tag -%}
+      <a href="{{ tag }}" style="color: white; margin-right: 3px;"><span class="badge">{{ tag }}</span></a>
+      {%- endfor -%}
+    {%- endif -%}
     {%- if page.subtitle -%}
       <p>{{ page.subtitle | escape }}</p>
     {%- endif -%}

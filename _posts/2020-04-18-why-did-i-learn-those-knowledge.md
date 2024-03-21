@@ -4,9 +4,8 @@ title: Kindle、星巴克、咖啡豆、我
 subtitle: 咖啡豆引起的反思——高级知识与低俗之人
 author: Coink
 date: 2020-04-18
-alert: 
-    content: 
-    type: success
+tag: 
+    - life
 ---
 
 ### 一
