@@ -4,9 +4,6 @@ title: 基于Rime的鼠须管输入法配置记录
 subtitle: 朙月拼音-简化字
 author: Coink
 date: 2018-10-08
-categories:
-tag:
-- Tech
 ---
 
 

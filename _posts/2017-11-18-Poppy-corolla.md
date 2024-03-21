@@ -4,9 +4,6 @@ title: 罂粟花冠
 subtitle: 多大人了还中二真不要脸
 author: Coink
 date: 2017-11-18
-categories:
-tag:
-- ACGN
 ---
 
 最近写的东西感觉都充斥着中二气息...听的歌也奇怪了起来...

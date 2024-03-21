@@ -4,9 +4,6 @@ title: ASCII LOGO 收集
 subtitle: ScreenFetch中各发型版Linux系统的ASCII LOGO收集(以及混入一些奇怪的系统)
 author: Coink
 date: 2018-12-29
-categories:
-tag:
-- Tech
 ---
 
 版本：Version 3.8.0

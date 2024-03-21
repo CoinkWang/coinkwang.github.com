@@ -5,8 +5,6 @@ subtitle: CSGO武器更名中文BUG深挖
 author: Coink 
 date: 2016-02-01 17:02:47
 categories: 
-tag: 
-- ACGN
 ---
 发现个奇怪的bug，武器更名时输入#加对应的字符串，武器可以更名为字符串所对应的长字符串
 

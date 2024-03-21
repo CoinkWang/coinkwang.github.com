@@ -4,9 +4,6 @@ title: ZJCTF WriteUp
 subtitle: 浙江省首届大学生信息安全竞赛
 author: Coink
 date: 2018-11-05
-categories:
-tag:
-- Tech
 ---
 
 去年参加了“杭州市首届”，今年跑来了“浙江省首届”，收获都挺大的。

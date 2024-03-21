@@ -4,9 +4,6 @@ title: Typecho任意代码执行漏洞学习笔记
 subtitle: 
 author: Coink 
 date: 2017-10-27
-categories: 
-tag: 
-- Tech
 ---
 
 ## 0x00 概

@@ -3,8 +3,6 @@ layout: post
 title:  "Typecho——>Jekyll 搬家记"
 author: Coink
 date:   2016-04-22 23:02:19
-tags:
-- Diary
 ---
 
 

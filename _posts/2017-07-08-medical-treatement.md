@@ -4,8 +4,6 @@ title:  .。o..，。o.
 subtitle:  你以为标题大大小小的是什么？是痘痘啊卧槽
 author: Coink
 date:   2017-07-08 11:44:58
-tags:
-- Diary
 ---
 
 ## 概

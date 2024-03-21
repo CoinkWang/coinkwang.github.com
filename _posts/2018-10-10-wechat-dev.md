@@ -4,9 +4,6 @@ title: 微信小程序跳坑记录&开发环境配置
 subtitle: 
 author: Coink
 date: 2018-10-10
-categories:
-tag:
-- Tech
 ---
 
 

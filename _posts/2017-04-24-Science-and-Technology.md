@@ -4,9 +4,6 @@ title:  关于计算机"科学"与"技术"的一点思考
 subtitle:  
 author: Coink
 date:   2017-04-24 23:45:19
-tags:
-- Diary
-- Tech
 ---
 
 最近疯狂的想去读一点大砖头经典书籍，《TCP/IP协议》三大坨买不起，就搁置了。剩下SICP ，CSAPP和 CLRS ，哦，还有被作为我校大一教材的编译原理——龙书（当然是中文译版。

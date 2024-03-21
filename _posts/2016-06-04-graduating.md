@@ -4,9 +4,6 @@ title:
 subtitle: 毕业一记
 author: Coink 
 date: 2016-06-04 00:00:00 
-categories: 
-tag: 
-- Diary
 ---
 
 

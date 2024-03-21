@@ -4,9 +4,6 @@ title:  用JS和emoji点缀圣诞
 subtitle: 
 author: Coink
 date: 2018-12-24
-categories:
-tag:
-- Tech
 ---
 
 

@@ -4,9 +4,6 @@ title: 近期笔记
 subtitle: 
 author: Coink
 date: 2017-11-19
-categories:
-tag:
-- Tech
 ---
 
 最近隐写里zlib上镜率比较高，解压缩脚本记录下

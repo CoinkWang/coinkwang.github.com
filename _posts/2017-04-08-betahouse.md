@@ -4,9 +4,6 @@ title: β-house新人小记
 subtitle: 
 author: Coink
 date: 2017-04-08 20:00
-categories: 
-tag:
-- Diary
 ---
 
 ## 缘起

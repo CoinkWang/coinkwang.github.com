@@ -4,9 +4,6 @@ title: 《The Stanley Parable》
 subtitle: 
 author: Coink 
 date: 2016-07-22 00:00:00 
-categories: 
-tag: 
-- ACGN
 ---
 《The Stanley Parable》
 

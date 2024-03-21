@@ -4,9 +4,6 @@ title: 杭州的雪
 subtitle: 二〇一八年冬
 author: Coink
 date: 2018-12-09
-categories:
-tag:
-- Diary
 ---
 
 
