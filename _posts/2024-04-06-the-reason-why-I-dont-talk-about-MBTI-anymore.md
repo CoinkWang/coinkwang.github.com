@@ -10,7 +10,7 @@ tag:
 ---
 我的观点是：MBTI 作为性格测试不够科学，其在社会语境中所导致的重复自我标签化不值得提倡。
 
-MBTI 的理论基础普遍被认为基于荣格的 Psychologische Typen（心理类型），但事实并非如此。MBTI 全称 Myers–Briggs Type Indicator，建构者为 Katharine Cook **Briggs 和** Isabel Briggs **Myers** 母女二人，她们并无无心理科学背景，而是在 WWII 期间试图对进入工业劳动力队伍的女性进行性格分类，以确定更合适的战时工作。
+MBTI 的理论基础普遍被认为基于荣格的 Psychologische Typen（心理类型），但事实并非如此。MBTI 全称 Myers–Briggs Type Indicator，建构者为 Katharine Cook **Briggs** 和 Isabel Briggs **Myers** 母女二人，她们并无无心理科学背景，而是在 WWII 期间试图对进入工业劳动力队伍的女性进行性格分类，以确定更合适的战时工作。
 
 即便是同一个个体，在短期内重复接受 MBTI 测验所导向的结论也有相当的差异，从统计学角度来说，该测验的信度和效度 (reliability and validity) ① 均存在统计学缺陷，所以我认为 MBTI 测试并不具有普适的统计学意义。
 
