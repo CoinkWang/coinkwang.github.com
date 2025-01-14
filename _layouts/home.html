@@ -9,16 +9,22 @@ layout: default
 
   {{ content }}
 
-  {% assign posts = site.posts %}
-
-  {%- if posts.size > 0 -%}
+  {%- if paginator.posts.size > 0 -%}
     {%- if page.list_title -%}
       <h4 class="post-list-heading">{{ page.list_title }}</h4>
     {%- endif -%}
     
     {%- assign date_format = site.glance.date_format | default: "%b %-d, %Y" -%}
+    {%- assign current_year = nil -%}
 
-    {%- for post in posts -%}
+    {%- for post in paginator.posts -%}
+      {%- assign post_year = post.date | date: "%Y" -%}
+      
+      {%- if current_year != post_year -%}
+        {%- assign current_year = post_year -%}
+        <h2 class="year-heading">{{ current_year }}</h2>
+      {%- endif -%}
+
       <div class="post-link">
         <a href="{{ post.url | relative_url }}" class="clean-link">
           {{ post.title | escape }}
@@ -31,12 +37,26 @@ layout: default
         </a>
         <span style="display: flex;"> 
           {%- for tag in post.tag -%}
-            <span class="badge post-badge"><a href="{{ tag }}"  class="clean-link" style="color: white;">{{ tag }}</a></span>
+            <span class="badge post-badge"><a href="{{ tag | relative_url }}"  class="clean-link" style="color: white;">{{ tag }}</a></span>
           {%- endfor -%}
           <span class="badge post-badge">{{ post.date | date: date_format }}</span>
         </span>
       </div>
     {%- endfor -%}
+
+    {%- if paginator.total_pages > 1 -%}
+      <div class="pagination">
+        {% for page in (1..paginator.total_pages) %}
+          {% if page == paginator.page %}
+            <span class="current-page">{{ page }}</span>
+          {% elsif page == 1 %}
+            <a href="{{ '/' | relative_url }}">{{ page }}</a>
+          {% else %}
+            <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {%- endif -%}
   {%- endif -%}
 
 </div>

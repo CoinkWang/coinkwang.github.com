@@ -25,4 +25,8 @@ glance:
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
-#  - jekyll-paginate 
+ - jekyll-paginate
+
+# 添加分页配置
+paginate: 10  # 每页显示的文章数量
+paginate_path: "/page/:num/"  # 分页URL路径格式 

@@ -65,6 +65,15 @@ layout: default
 
   <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(() => {
+          let scrollHeight = window.document.querySelector("#cusdis_thread iframe").contentWindow.document.body.scrollHeight;
+          window.document.querySelector("#cusdis_thread iframe").style.height = scrollHeight + "px";
+      }, 3000);
+    });
+  </script>
+
   {%- include toper.html -%}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
