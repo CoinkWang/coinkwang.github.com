@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 何以为鸟
-subtitle: 观鸟入门之那里其实本来没有门
+subtitle: 观鸟入门之那里其实并没有门
 author: Coink
 date: 2025-01-12
 tag: 
