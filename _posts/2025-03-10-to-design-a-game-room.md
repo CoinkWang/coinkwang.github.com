@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 我设计了一间电竞房
+title: 我设计了一间电竞房，但
 subtitle: 
 author: Coink
 date: 2025-03-10
