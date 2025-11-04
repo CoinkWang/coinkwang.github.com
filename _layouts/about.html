@@ -8,22 +8,16 @@
     {%- include header.html -%}
 
     <main class="page-content" aria-label="Content">
-      <div class="wrapper-about">
-        <article>
-          <header>
-            {%- if page.title -%}
-              <h2>{{ page.title | escape }}</h2>
-            {%- endif -%}
-          </header>
-          <div>
-            <!-- {{ content }} -->
-            <!-- 定制页面，不渲染 content 了 -->
-            <div class="collapsible">
-              <input id="collapsible-gaming" type="checkbox" name="collapsible">
-              <label for="collapsible-gaming">游戏 Gaming</label>
-              <div class="collapsible-body">
-                <p>我在 PlayStation 5、Xbox Series S、Nintendo Switch、Steam Deck、PC 上进行游戏</p>
-                <p>我喜欢独立游戏、射击游戏，尤其喜欢打破第四面墙的 meta game</p>
+      <section class="about-section" id="makes">
+        <div class="about-grid">
+          <div class="about-item">
+            <div class="about-icon">🎮</div>
+            <div class="about-label">游戏</div>
+            <div class="about-label">Gaming</div>
+            <p class="about-desc">喜欢独立游戏、射击游戏，尤其喜欢打破第四面墙的 meta game</p>
+            <details class="about-badges-collapsible">
+              <summary class="about-badges-toggle">分享我喜欢的游戏</summary>
+              <div class="about-badges">
                 <span class="badge secondary">守望先锋 Overwatch</span>
                 <span class="badge secondary">泰坦陨落 Titanfall</span>
                 <span class="badge secondary">喷射战士 Splatoon</span>
@@ -44,57 +38,58 @@
                 <span class="badge secondary">赛博朋克 2077</span>
                 <span class="badge secondary">史丹利寓言 The Stanley Parable</span>
                 <span class="badge secondary">动物井 Animal Wall</span>
-                <span class="badge secondary">女巫 Noita </span>
+                <span class="badge secondary">女巫 Noita</span>
               </div>
-            </div>
-            <div class="collapsible">
-              <input id="collapsible-birding" type="checkbox" name="collapsible">
-              <label for="collapsible-birding">观鸟 Birding</label>
-              <div class="collapsible-body">
-                <span>我喜欢深入郊野，观察自然生灵。我用 Nikon P950 记录，你可以在这里看到我的摄影：<a href="https://www.xiaohongshu.com/user/profile/6143edac000000000202705f">小红书</a></span>
+            </details>
+          </div>
+          <div class="about-item">
+            <div class="about-icon">🐦</div>
+            <div class="about-label">观鸟</div>
+            <div class="about-label">Birding</div>
+            <p class="about-desc">爱深入郊野，观察自然生灵。我用 Nikon P950 记录，你可以在这里看到我的摄影：<a href="https://www.xiaohongshu.com/user/profile/6143edac000000000202705f">小红书</a></p>
+          </div>
+          <div class="about-item">
+            <div class="about-icon">✍️</div>
+            <div class="about-label">写作</div>
+            <div class="about-label">Writing</div>
+            <p class="about-desc">技术文章、散文、小说、诗</p>
+            <details class="about-badges-collapsible">
+              <summary class="about-badges-toggle">出版作品</summary>
+              <div style="text-align: center;">
+                <img src="https://s2.loli.net/2024/11/28/XMKLtHs2FmY7agn.jpg" width="200" style="display: block; max-width: 100%; border-radius: 8px; margin: 0 auto 0.5rem auto;" />
+                <a href="http://www.tup.tsinghua.edu.cn/bookscenter/book_06579101.html">《黑客与安全技术指南》</a>（2017）
+                <br/>
+                失眠权（WIP）
               </div>
-            </div>
-            <div class="collapsible">
-              <input id="collapsible-writing" type="checkbox" name="collapsible">
-              <label for="collapsible-writing">写作 Writing</label>
-              <div class="collapsible-body">
-                <p>我写一些技术文章、散文、小说、诗</p>
-                <div>
-                  <img src="https://s2.loli.net/2024/11/28/XMKLtHs2FmY7agn.jpg" width="200"/>
-                  <a href="http://www.tup.tsinghua.edu.cn/bookscenter/book_06579101.html">《黑客与安全技术指南》</a>
-                </div>
-                <div>
-                  <a href="">《失眠权》（WIP）</a>
-                </div>
-              </div>
-            </div>
-            <div class="collapsible">
-              <input id="collapsible-reading" type="checkbox" name="collapsible">
-              <label for="collapsible-reading">阅读 Reading</label>
-              <div class="collapsible-body">
-                <p>我读文学、社科、哲学、计算机、鸟类、植物</p>
-                <p>喜欢实体书，也使用电子阅读器</p>
-              </div>
-            </div>
-            <div class="collapsible">
-              <input id="collapsible-cycling" type="checkbox" name="collapsible">
-              <label for="collapsible-cycling">骑行 Cycling</label>
-              <div class="collapsible-body">
-                <p>我有一辆改装的轻量化折叠自行车，我经常骑着它去往随机的地方（迷路了就打车回家 XD）</p>
-              </div>
-            </div>
-            <div class="collapsible">
-              <input id="collapsible-fitness" type="checkbox" name="collapsible">
-              <label for="collapsible-fitness">健身 Fitness</label>
-              <div class="collapsible-body">
-                <p>我进行力量和拳击训练，希望能拥有更健康的身体</p>
-              </div>
-            </div>
-            <div class="collapsible">
-              <input id="collapsible-music" type="checkbox" name="collapsible">
-              <label for="collapsible-music">音乐 Music</label>
-              <div class="collapsible-body">
-                <p>我欣赏：摇滚乐、后摇滚、民谣、器乐、音乐剧</p>
+            </details>
+          </div>
+          <div class="about-item">
+            <div class="about-icon">📚</div>
+            <div class="about-label">阅读</div>
+            <div class="about-label">Reading</div>
+            <p class="about-desc">我读文学、社科、哲学、计算机、鸟类、植物。喜欢实体书，也使用电子阅读器</p>
+          </div>
+          <div class="about-item">
+            <div class="about-icon">🌱</div>
+            <div class="about-label">园艺</div>
+            <div class="about-label">Gardening</div>
+            <p class="about-desc">喜欢植物，种些花花草草；会收集落叶落花制作标本</p>
+          </div>
+          <div class="about-item">
+            <div class="about-icon">🏃</div>
+            <div class="about-label">健身</div>
+            <div class="about-label">Fitness</div>
+            <p class="about-desc">力量训练，乒乓球，羽毛球，骑行</p>
+          </div>
+          <div class="about-item">
+            <div class="about-icon">🎵</div>
+            <div class="about-label">音乐</div>
+            <div class="about-label">Music</div>
+            <p class="about-desc">听：摇滚、后摇滚、器乐、音乐剧</p>
+            <p class="about-desc">奏：二胡、电二胡、电吉他、电贝斯、键盘、卡祖笛</p>
+            <details class="about-badges-collapsible">
+              <summary class="about-badges-toggle">分享我喜欢的音乐</summary>
+              <div class="about-badges">
                 <span class="badge secondary">木推瓜</span>
                 <span class="badge secondary">万能青年旅店</span>
                 <span class="badge secondary">周二下午谁没来</span>
@@ -105,64 +100,17 @@
                 <span class="badge secondary">Cicada</span>
                 <span class="badge secondary">Molchat Doma</span>
                 <span class="badge secondary">The Phantom of the Opera</span>
-                <p>我在学习演奏：二胡、电二胡、电吉他、电贝斯、键盘、卡祖笛</p>
               </div>
-            </div>
-            <div class="collapsible">
-              <input id="collapsible-coding" type="checkbox" name="collapsible">
-              <label for="collapsible-coding">编码 Coding</label>
-              <div class="collapsible-body">
-                <p>我通过编码获取薪水，也做一些个人项目</p>
-              </div>
-            </div>
-            <div class="collapsible">
-              <input id="collapsible-links" type="checkbox" name="collapsible">
-              <label for="collapsible-links">联系方式 Links</label>
-              <div class="collapsible-body">
-                  <p>Mail: cn.coink.wang[at]gmail[dot]com</p>
-                  <p>Twitter: <a href="https://twitter.com/CoinkWang" target="_blank">CoinkWang</a></p>
-                  <p>Github: <a href="https://github.com/CoinkWang" target="_blank">CoinkWang</a></p>
-                  <p>Telegram: <a href="https://t.me/Coink" target="_blank">@Coink</a></p>
-              </div>
-            </div>
+            </details>
           </div>
-        
-          <!-- {%- if page.works.name -%}
-            <h3>{{ page.works.name | escape }}</h3>
-          {%- endif -%}
-          <div class="works-card-container">
-          {%- if page.works -%}
-            {% for work in page.works.data %}
-            <div class="card works-card">
-              {%- if work[1].imgsrc -%}
-                <img src={{ work[1].imgsrc | escape }}  alt="Card image">
-              {%- endif -%}
-              <div class="card-body">
-                {%- if work[1].title -%}
-                  <h4 class="card-title">{{ work[1].title | escape }} 
-                    {%- if work[1].tags -%}
-                      {% for tag in work[1].tags %}
-                        <span class="badge success">{{ tag | escape }} </span>
-                      {% endfor %}
-                    {%- endif -%}
-                  </h4>
-                {%- endif -%}
-                {%- if work[1].subtitle -%}
-                  <h5 class="card-subtitle">{{ work[1].subtitle | escape }}</h5>
-                {%- endif -%}
-                {%- if work[1].description -%}
-                  <p class="card-text">{{ work[1].description | escape }}</p>
-                {%- endif -%}
-                {%- if work[1].button_text -%}
-                  <a href="{{ work[1].link | escape }}" class="clean-link"><button>{{ work[1].button_text | escape }}</button></a>
-                {%- endif -%}
-              </div>
-            </div>
-            {% endfor %}
-          {%- endif -%}
-          </div> -->
-        </article>
-      </div>
+          <div class="about-item">
+            <div class="about-icon">💻</div>
+            <div class="about-label">编码</div>
+            <div class="about-label">Coding</div>
+            <p class="about-desc">通过编码获取薪水，也做一些个人项目</p>
+          </div>
+        </div>
+      </section>
     </main>
 
     {%- include footer.html -%}

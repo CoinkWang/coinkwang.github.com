@@ -145,3 +145,70 @@
   border-bottom: 1px solid #eee;
   padding-bottom: 0.3em;
 }
+
+/**
+ * About section
+ */
+.about-section {
+  padding: 15px;
+}
+
+.about-grid {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.about-item {
+  text-align: center;
+}
+
+.about-icon {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  opacity: 0.3;
+}
+
+.about-badges-collapsible {
+  margin-top: 1rem;
+  
+  summary {
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    color: $link-base-color;
+    font-size: 0.9em;
+    margin-bottom: 0.5rem;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+  
+    &::-webkit-details-marker {
+      display: none;
+    }
+    
+    &::after {
+      content: " ▶";
+      display: inline-block;
+      transition: transform 0.3s;
+      margin-left: 0.3em;
+    }
+    
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  &[open] summary::after {
+    transform: rotate(90deg);
+  }
+}
+
+.about-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
