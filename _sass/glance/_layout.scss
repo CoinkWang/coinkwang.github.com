@@ -50,9 +50,14 @@
 .post-link {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   @include relative-font-size(1.5);
   margin: 25px 0;
+}
+
+.post-link-content {
+  flex: 1;
+  margin-right: 15px;
 }
 
 /**
@@ -83,6 +88,24 @@
  */
 .post-subtitle{
   @include relative-font-size(0.8);
+}
+
+/**
+ * Post preview
+ */
+.post-preview {
+  @include relative-font-size(0.85);
+  color: #666;
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+.clean-link .post-preview {
+  color: #666;
+  
+  &:hover {
+    color: #666;
+  }
 }
 
 /**
@@ -211,4 +234,24 @@
   gap: 0.5rem;
   justify-content: center;
   margin-top: 0.5rem;
+}
+
+/**
+ * Pagination
+ */
+.pagination {
+  a {
+    text-decoration: none;
+    background-image: none;
+    
+    &:hover {
+      text-decoration: none;
+      background-image: none;
+    }
+    
+    &:visited {
+      text-decoration: none;
+      background-image: none;
+    }
+  }
 }
