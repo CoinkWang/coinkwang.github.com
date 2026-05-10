@@ -26,26 +26,27 @@ layout: default
       {%- endif -%}
 
       <div class="post-link">
-        <div class="post-link-content">
-          <a href="{{ post.url | relative_url }}" class="clean-link">
+        <div class="post-link-header">
+          <a href="{{ post.url | relative_url }}" class="clean-link post-link-title">
             {{ post.title | escape }}
-
-            {%- if site.show_subtitle -%}
-              <div class="post-subtitle">
-                {{ post.subtitle }}
-              </div>
-            {%- endif -%}
-            <div class="post-preview">
-              {{ post.content | strip_html | truncate: 100 }}
-            </div>
           </a>
+          <span class="post-meta-list">
+            {%- for tag in post.tag -%}
+              <span class="badge post-badge"><a href="{{ tag | relative_url }}"  class="clean-link" style="color: white;">{{ tag }}</a></span>
+            {%- endfor -%}
+            <span class="badge post-badge">{{ post.date | date: date_format }}</span>
+          </span>
         </div>
-        <span style="display: flex;"> 
-          {%- for tag in post.tag -%}
-            <span class="badge post-badge"><a href="{{ tag | relative_url }}"  class="clean-link" style="color: white;">{{ tag }}</a></span>
-          {%- endfor -%}
-          <span class="badge post-badge">{{ post.date | date: date_format }}</span>
-        </span>
+        <a href="{{ post.url | relative_url }}" class="clean-link post-link-body">
+          {%- if site.show_subtitle -%}
+            <div class="post-subtitle">
+              {{ post.subtitle }}
+            </div>
+          {%- endif -%}
+          <div class="post-preview">
+            {{ post.content | strip_html | truncate: 100 }}
+          </div>
+        </a>
       </div>
     {%- endfor -%}
 

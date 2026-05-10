@@ -48,16 +48,30 @@
  * Post links
  */
 .post-link {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   @include relative-font-size(1.5);
   margin: 25px 0;
 }
 
-.post-link-content {
+.post-link-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.post-link-title {
   flex: 1;
-  margin-right: 15px;
+  min-width: 0;
+}
+
+.post-meta-list {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.post-link-body {
+  display: block;
 }
 
 /**
