@@ -3,7 +3,7 @@ layout: post
 title: 驾驶舱里的程序员
 subtitle:
 author: Coink
-date: 2026-07-05
+date: 2026-07-04
 tag:
   - tech
 ---
