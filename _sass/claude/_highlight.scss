@@ -1,0 +1,56 @@
+// =============================================================================
+// Claude code syntax highlighting
+// =============================================================================
+// Dark navy code surface, warm-palette syntax tokens.
+
+$ch-comment:  #8e8b82;   // muted warm gray
+$ch-keyword:  #e8a55a;   // amber
+$ch-string:   #cc785c;   // coral
+$ch-number:   #d4a017;   // mustard
+$ch-type:     #5db8a6;   // teal
+$ch-fn:       #c8b89a;   // warm sand
+$ch-tag:      #e8a55a;   // amber
+$ch-attr:     #d4a017;   // mustard
+$ch-builtin:  #5db8a6;   // teal
+$ch-error:    #c64545;   // red
+
+.highlight {
+  background: $cl-surface-dark;
+  border-radius: $cl-r-lg;
+  font-family: $cl-font-mono;
+  color: $cl-on-dark;
+  font-size: 14px;
+  line-height: 1.6;
+
+  pre {
+    background: transparent;
+    border: 0;
+    margin: 0;
+    color: inherit;
+    padding: $cl-s-lg;
+  }
+
+  .c, .cm, .c1, .cs, .cp { color: $ch-comment; font-style: italic; }
+  .err { color: $ch-error; }
+  .k, .kc, .kd, .kp, .kr, .kt { color: $ch-keyword; font-weight: 500; }
+  .o, .ow { color: $cl-on-dark-soft; }
+  .m, .mf, .mh, .mi, .mo, .il { color: $ch-number; }
+  .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr, .ss { color: $ch-string; }
+  .na { color: $ch-attr; }
+  .nb { color: $ch-builtin; }
+  .nc { color: $ch-type; font-weight: 500; }
+  .no { color: $ch-builtin; }
+  .ni, .ne { color: $ch-type; }
+  .nf { color: $ch-fn; font-weight: 500; }
+  .nn { color: $cl-on-dark; }
+  .nt { color: $ch-tag; }
+  .nv, .vc, .vg, .vi { color: $ch-attr; }
+  .w  { color: transparent; }
+  .gh, .gu { color: $cl-on-dark-soft; }
+  .gd { color: $ch-error; }
+  .gi { color: $cl-accent-teal; }
+}
+
+.highlighter-rouge {
+  .highlight { padding: 0; }
+}

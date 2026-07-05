@@ -1,0 +1,260 @@
+// =============================================================================
+// Denise components — sticker buttons, paper badges, hand-drawn pagination
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Buttons — sticker style: solid fill, dark outline, offset shadow
+// -----------------------------------------------------------------------------
+button,
+.btn,
+input[type="submit"],
+input[type="button"] {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: $dn-font-text;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1;
+  background: $dn-primary;
+  color: $dn-on-primary;
+  border: 2px solid $dn-ink;
+  border-radius: $dn-r-pill;
+  padding: 12px 22px;
+  height: 44px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 140ms ease, box-shadow 140ms ease, background-color 160ms ease;
+  box-shadow: $dn-shadow-sticker-sm;
+
+  &:hover {
+    background: $dn-primary-active;
+    color: $dn-on-primary;
+    border-bottom: 2px solid $dn-ink;
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 rgba(42, 37, 32, 0.85);
+    text-decoration: none;
+  }
+  &:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 rgba(42, 37, 32, 0.85);
+  }
+  &:focus-visible {
+    outline: 2px dashed $dn-primary;
+    outline-offset: 4px;
+  }
+}
+
+// Secondary — cream sticker
+.btn-secondary,
+button.btn-secondary {
+  background: $dn-canvas;
+  color: $dn-ink;
+
+  &:hover { background: $dn-surface-card; color: $dn-ink; }
+}
+
+// Ghost — soft cream, no shadow until hover
+.btn-ghost,
+button.btn-ghost {
+  background: $dn-surface-card;
+  color: $dn-body-strong;
+  border-color: $dn-hairline;
+  box-shadow: none;
+
+  &:hover {
+    background: $dn-surface-card-hover;
+    color: $dn-ink;
+    border-color: $dn-ink;
+    box-shadow: $dn-shadow-sticker-sm;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Badges — paper-sticker pills with dark outline
+// -----------------------------------------------------------------------------
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  font-family: $dn-font-text;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  border-radius: $dn-r-pill;
+  background: $dn-surface-warm;
+  color: $dn-body-strong;
+  border: 1.5px solid $dn-ink;
+  text-decoration: none;
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+    border-bottom: 0;
+    background-image: none !important;
+  }
+  &:hover { background: $dn-surface-card-hover; }
+
+  &.primary,
+  &.secondary,
+  &.success,
+  &.warning,
+  &.danger,
+  &.muted {
+    background: $dn-surface-warm;
+    color: $dn-body-strong;
+  }
+
+  &.primary  { background: $dn-primary;        color: $dn-on-primary; border-color: $dn-ink; }
+  &.success  { background: $dn-accent-sage;    color: $dn-on-primary; border-color: $dn-ink; }
+  &.warning  { background: $dn-accent-butter;  color: $dn-ink;        border-color: $dn-ink; }
+  &.danger   { background: $dn-primary;        color: $dn-on-primary; border-color: $dn-ink; }
+  &.muted    { background: $dn-surface-card;   color: $dn-muted;      border-color: $dn-hairline; }
+}
+
+// Tag pills on post list headers — slightly looser
+.post-badge {
+  font-size: 10.5px !important;
+  margin-right: 4px;
+  padding: 2px 10px;
+  transform: rotate(-1deg);
+
+  &:nth-child(even) { transform: rotate(1.5deg); }
+  &:nth-child(3n)   { transform: rotate(-2deg); }
+
+  &:last-child { margin-right: 0; }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+    border-bottom: 0;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Alerts — paper-sticker callouts
+// -----------------------------------------------------------------------------
+.alert {
+  border-radius: $dn-r-md;
+  padding: $dn-s-md $dn-s-lg;
+  margin: $dn-s-lg 0;
+  background: $dn-surface-warm;
+  color: $dn-body-strong;
+  border: 2px solid $dn-ink;
+  box-shadow: $dn-shadow-sticker-sm;
+  font-family: $dn-font-text;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: 0;
+
+  &.alert-primary   { background: $dn-primary-soft;                       border-color: $dn-ink; color: $dn-ink; }
+  &.alert-secondary { background: $dn-surface-card;                        border-color: $dn-ink; color: $dn-body-strong; }
+  &.alert-success   { background: rgba(122, 158, 126, 0.22);              border-color: $dn-ink; color: $dn-ink; }
+  &.alert-warning   { background: rgba(224, 167, 60, 0.25);               border-color: $dn-ink; color: $dn-ink; }
+  &.alert-danger    { background: rgba(217, 79, 58, 0.18);                border-color: $dn-ink; color: $dn-ink; }
+}
+
+// -----------------------------------------------------------------------------
+// Pagination — sticker numbers
+// -----------------------------------------------------------------------------
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: $dn-s-xs;
+  margin: $dn-s-section 0 $dn-s-xl 0;
+  flex-wrap: wrap;
+
+  a, .current-page {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    height: 44px;
+    padding: 0 14px;
+    border-radius: $dn-r-pill;
+    font-family: $dn-font-text;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: $dn-body-strong;
+    background: $dn-surface-warm;
+    text-decoration: none !important;
+    background-image: none !important;
+    border-bottom: 0;
+    border: 2px solid $dn-ink;
+    box-shadow: $dn-shadow-sticker-sm;
+    transition: transform 140ms ease, box-shadow 140ms ease, background-color 160ms ease;
+
+    &:hover {
+      background: $dn-surface-card-hover;
+      color: $dn-ink;
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0 rgba(42, 37, 32, 0.85);
+    }
+    &:visited { color: $dn-body-strong; }
+  }
+
+  .current-page {
+    background: $dn-primary;
+    color: $dn-on-primary;
+    &:hover { background: $dn-primary-active; color: $dn-on-primary; }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// To-top button — circular sticker with arrow
+// -----------------------------------------------------------------------------
+.to-top-btn {
+  padding: 0 !important;
+  background: $dn-primary !important;
+  color: $dn-on-primary !important;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 80;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  border: 2px solid $dn-ink !important;
+  font-size: 18px;
+  line-height: 1;
+  box-shadow: $dn-shadow-sticker !important;
+  transition: transform 200ms ease, box-shadow 200ms ease, background-color 160ms ease;
+
+  &:hover {
+    background: $dn-primary-active !important;
+    color: $dn-on-primary !important;
+    transform: translate(-2px, -2px) rotate(-8deg);
+    box-shadow: 5px 5px 0 rgba(42, 37, 32, 0.85) !important;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Neutralise paper.css decorative cruft
+// -----------------------------------------------------------------------------
+.border,
+.border-1, .border-2, .border-3, .border-4, .border-5, .border-6,
+.border-primary, .border-secondary, .border-success, .border-warning, .border-danger, .border-muted,
+.border-dashed, .border-dotted, .border-thick {
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.shadow,
+.shadow-large,
+.shadow-small,
+.shadow-hover {
+  box-shadow: none !important;
+}
+
+.article .shadow {
+  border-radius: $dn-r-md !important;
+  box-shadow: none !important;
+}

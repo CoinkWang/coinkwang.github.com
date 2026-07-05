@@ -1,0 +1,387 @@
+// =============================================================================
+// Page-level styles — home post list, tag, post article, about, links
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Home: hero heading + year groups + post tiles
+// -----------------------------------------------------------------------------
+.home {
+  .page-heading {
+    font-family: $apple-font-display;
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 1.07;
+    letter-spacing: -0.025em;
+    color: $apple-ink;
+    margin: $apple-s-lg 0 $apple-s-xxl 0;
+
+    @media (max-width: $apple-bp-tablet-land - 1) { font-size: 40px; }
+    @media (max-width: $apple-bp-tablet - 1) { font-size: 34px; }
+    @media (max-width: $apple-bp-phone - 1) { font-size: 28px; }
+  }
+}
+
+// Year heading: subtle, used as a section divider in the timeline
+.year-heading {
+  font-family: $apple-font-display;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $apple-ink-muted-48;
+  margin: $apple-s-xxl 0 $apple-s-md 0;
+  padding-bottom: $apple-s-xs;
+  border-bottom: 1px solid $apple-divider-soft;
+
+  &:first-of-type { margin-top: $apple-s-sm; }
+}
+
+// -----------------------------------------------------------------------------
+// Post list tiles (used on home, tag pages)
+// -----------------------------------------------------------------------------
+.post-link {
+  display: block;
+  margin: 0;
+  padding: $apple-s-lg 0;
+  border-bottom: 1px solid $apple-divider-soft;
+  font-size: 17px;
+  transition: background-color 160ms ease;
+
+  &:last-of-type { border-bottom: 1px solid $apple-divider-soft; }
+
+  &:hover {
+    .post-link-title { color: $apple-primary; }
+  }
+}
+
+.post-link-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $apple-s-md;
+  flex-wrap: wrap;
+}
+
+.post-link-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: $apple-font-display;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.022em;
+  color: $apple-ink !important;
+  background: none !important;
+  background-image: none !important;
+  text-decoration: none !important;
+  transition: color 200ms ease;
+
+  &:visited { color: $apple-ink !important; }
+  &:hover   { color: $apple-primary !important; text-decoration: none !important; }
+}
+
+.post-meta-list {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.post-link-body {
+  display: block;
+  text-decoration: none !important;
+  background: none !important;
+  background-image: none !important;
+  color: inherit !important;
+
+  &:visited, &:hover { text-decoration: none !important; color: inherit !important; }
+}
+
+.post-subtitle {
+  margin-top: 6px;
+  font-family: $apple-font-text;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: -0.014em;
+  color: $apple-ink-muted-80;
+}
+
+.post-preview {
+  margin-top: 6px;
+  font-family: $apple-font-text;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.014em;
+  color: $apple-ink-muted-32;
+}
+
+@media (max-width: $apple-bp-tablet - 1) {
+  .post-link-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .post-link-title { font-size: 21px; }
+  .post-meta-list { width: 100%; }
+}
+
+// -----------------------------------------------------------------------------
+// Single post (article)
+// -----------------------------------------------------------------------------
+article.article {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0;
+
+  > header {
+    padding: $apple-s-xl 0 $apple-s-lg 0;
+    border-bottom: 1px solid $apple-divider-soft;
+    margin-bottom: $apple-s-xl;
+
+    h3 {
+      font-family: $apple-font-display;
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: $apple-ink;
+      margin: 0 0 $apple-s-sm 0;
+
+      @media (max-width: $apple-bp-tablet-land - 1) { font-size: 32px; }
+      @media (max-width: $apple-bp-tablet - 1) { font-size: 26px; }
+    }
+
+    .badge {
+      margin-right: 6px;
+    }
+
+    > p {
+      color: $apple-ink-muted-80;
+      font-size: 17px;
+      line-height: 1.47;
+      margin: $apple-s-xs 0;
+    }
+
+    .article-meta {
+      margin-top: $apple-s-sm;
+      font-size: 14px;
+      letter-spacing: -0.016em;
+      color: $apple-ink-muted-48;
+
+      time { color: inherit; }
+    }
+  }
+
+  // Prose styles inside article body
+  > div {
+    font-family: $apple-font-text;
+    font-size: 17px;
+    line-height: 1.6;
+    letter-spacing: -0.012em;
+    color: $apple-body;
+
+    h1 { font-size: 32px; margin: 1.6em 0 0.6em; }
+    h2 { font-size: 26px; margin: 1.6em 0 0.5em; }
+    h3 { font-size: 21px; margin: 1.4em 0 0.5em; }
+    h4 { font-size: 18px; margin: 1.2em 0 0.4em; }
+
+    p { margin: 0 0 1.1em 0; }
+
+    ul, ol { margin: 0 0 1.1em 0; }
+
+    blockquote {
+      margin: $apple-s-lg 0;
+      padding-left: $apple-s-md;
+      border-left: 3px solid $apple-hairline-strong;
+      color: $apple-ink-muted-80;
+    }
+
+    img { display: block; margin: $apple-s-lg auto; border-radius: $apple-r-md; }
+  }
+}
+
+// Cusdis comment iframe wrapper
+#cusdis_thread {
+  margin-top: $apple-s-section;
+  padding-top: $apple-s-xl;
+  border-top: 1px solid $apple-divider-soft;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// -----------------------------------------------------------------------------
+// Tag pages (same as home but with smaller heading)
+// -----------------------------------------------------------------------------
+.tag {
+  .page-heading {
+    font-family: $apple-font-display !important;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    color: $apple-ink;
+    margin: $apple-s-lg 0 $apple-s-xl 0;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// About page (re-purposed paper.css card grid)
+// -----------------------------------------------------------------------------
+.about-section {
+  max-width: $apple-wide-max;
+  margin: 0 auto;
+  padding: $apple-s-xxl $apple-s-lg $apple-s-section;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $apple-s-lg;
+  margin: 0 auto;
+}
+
+.about-item {
+  text-align: left;
+  padding: $apple-s-lg;
+  background: $apple-canvas;
+  border-radius: $apple-r-lg;
+  border: 1px solid $apple-hairline;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+}
+
+.about-icon {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: $apple-s-sm;
+  opacity: 1;
+  line-height: 1;
+}
+
+.about-label {
+  font-family: $apple-font-display;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.011em;
+  color: $apple-ink;
+  line-height: 1.2;
+
+  & + .about-label {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: $apple-ink-muted-48;
+    margin-bottom: $apple-s-sm;
+  }
+}
+
+.about-desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: $apple-ink-muted-80;
+  letter-spacing: -0.014em;
+  margin: $apple-s-xs 0;
+}
+
+.about-badges-collapsible {
+  margin-top: $apple-s-sm;
+
+  summary {
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    color: $apple-primary;
+    font-size: 13px;
+    letter-spacing: -0.014em;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    background: transparent;
+
+    &::-webkit-details-marker { display: none; }
+    &::after {
+      content: " ›";
+      display: inline-block;
+      transition: transform 250ms ease;
+      margin-left: 4px;
+    }
+    &:focus { outline: none; }
+  }
+
+  &[open] summary::after { transform: rotate(90deg); }
+}
+
+.about-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: $apple-s-sm;
+
+  .badge {
+    background: $apple-canvas-parchment;
+    color: $apple-ink-muted-80;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Links page (friend-links)
+// -----------------------------------------------------------------------------
+.friend-links-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $apple-s-md;
+  justify-content: flex-start;
+  margin-top: $apple-s-xl;
+}
+
+.friend-links {
+  transform: none;
+  min-width: auto;
+  margin: 0;
+
+  button {
+    background: $apple-canvas;
+    color: $apple-ink;
+    box-shadow: inset 0 0 0 1px $apple-hairline;
+    border-radius: $apple-r-pill;
+    padding: 10px 18px;
+    font-size: 14px;
+    letter-spacing: -0.016em;
+
+    &:hover { background: $apple-canvas-parchment; color: $apple-primary; }
+  }
+
+  a { background: none !important; text-decoration: none !important; }
+}
+
+// -----------------------------------------------------------------------------
+// Generic page heading (post layout's h3 fallback)
+// -----------------------------------------------------------------------------
+.page-heading {
+  font-family: $apple-font-display;
+  letter-spacing: -0.025em;
+  color: $apple-ink;
+}
+
+// -----------------------------------------------------------------------------
+// Works card container (used on /works style pages, kept for safety)
+// -----------------------------------------------------------------------------
+.works-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $apple-s-lg;
+}
+
+.works-card {
+  width: auto;
+  margin: 0;
+  background: $apple-canvas;
+  border: 1px solid $apple-hairline;
+  border-radius: $apple-r-lg;
+  padding: $apple-s-lg;
+}

@@ -1,0 +1,190 @@
+// =============================================================================
+// Bugatti base — pure black canvas, white tracked display, serif body
+// =============================================================================
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $bu-canvas;
+}
+
+body {
+  margin: 0;
+  font-family: $bu-font-text;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: $bu-body;
+  background-color: $bu-canvas;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+}
+
+main { flex: 1 0 auto; }
+
+// All display headlines: UPPERCASE Bugatti Display at weight 400 with wide tracking.
+// Latin uppercases via text-transform; CJK ignores transform but keeps the
+// tracked, machined look from letter-spacing.
+h1, h2, h3, h4, h5, h6 {
+  font-family: $bu-font-display;
+  color: $bu-ink;
+  font-weight: 400;
+  margin: 0 0 0.7em 0;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+
+h1 { font-size: 64px; letter-spacing: 0.06em; line-height: 1.1; }
+h2 { font-size: 48px; letter-spacing: 0.06em; line-height: 1.15; }
+h3 { font-size: 32px; letter-spacing: 0.06em; line-height: 1.2; }
+h4 { font-size: 24px; letter-spacing: 0.06em; line-height: 1.3; }
+h5 { font-size: 20px; letter-spacing: 0.05em; line-height: 1.3; }
+h6 { font-size: 16px; letter-spacing: 0.08em; line-height: 1.3; }
+
+p {
+  margin: 0 0 1.2em 0;
+  font-family: $bu-font-text;
+  font-size: 16px;
+  line-height: 1.6;
+  color: $bu-body;
+}
+
+small { font-size: 13px; color: $bu-muted; }
+
+strong, b { color: $bu-body-strong; font-weight: 400; }
+
+em, i { color: inherit; font-style: italic; }
+
+// Inline links use the single non-monochrome token in the system.
+a {
+  color: $bu-link;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  background-image: none;
+  transition: color 160ms ease, opacity 160ms ease;
+
+  &:visited { color: $bu-link; }
+  &:hover   { color: $bu-on-dark; }
+  &:focus-visible {
+    outline: 1px solid $bu-on-dark;
+    outline-offset: 3px;
+  }
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: $bu-hairline;
+  margin: $bu-s-xxl 0;
+}
+
+ul, ol { padding-left: 1.2em; }
+li { margin: 0.3em 0; }
+
+blockquote {
+  margin: $bu-s-xl 0;
+  padding: 0 $bu-s-xl;
+  border-left: 1px solid $bu-hairline-strong;
+  color: $bu-body-strong;
+  font-family: $bu-font-text;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.55;
+  background: transparent;
+
+  p:last-child { margin-bottom: 0; }
+}
+
+code, kbd, samp, pre {
+  font-family: $bu-font-mono;
+  font-size: 0.9em;
+  letter-spacing: 0;
+}
+
+code {
+  background: $bu-surface-card;
+  color: $bu-on-dark;
+  padding: 0.15em 0.4em;
+  border-radius: 0;
+}
+
+pre {
+  background: $bu-surface-soft;
+  color: $bu-on-dark;
+  padding: $bu-s-lg;
+  border-radius: 0;
+  border: 1px solid $bu-hairline;
+  overflow-x: auto;
+  line-height: 1.6;
+  margin: $bu-s-xl 0;
+  font-size: 13px;
+
+  code {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    color: inherit;
+    font-size: inherit;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0;
+  display: block;
+}
+
+figure {
+  margin: $bu-s-xl 0;
+  text-align: center;
+
+  figcaption {
+    margin-top: $bu-s-sm;
+    font-family: $bu-font-mono;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: $bu-muted;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: $bu-s-xl 0;
+  font-family: $bu-font-text;
+  font-size: 14px;
+
+  th, td {
+    padding: $bu-s-md 0;
+    border-bottom: 1px solid $bu-hairline;
+    text-align: left;
+  }
+
+  th {
+    font-family: $bu-font-mono;
+    font-weight: 400;
+    color: $bu-on-dark;
+    background: transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 11px;
+  }
+
+  tr:hover td { background: $bu-surface-soft; }
+}
+
+::selection {
+  background: $bu-on-dark;
+  color: $bu-canvas;
+}

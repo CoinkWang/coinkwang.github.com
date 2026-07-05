@@ -1,0 +1,219 @@
+// =============================================================================
+// Apple components — buttons, badges, alerts, pagination, to-top, alerts, collapsibles
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Buttons (paper.css emits <button>; we restyle generically + variants)
+// -----------------------------------------------------------------------------
+button,
+.btn,
+input[type="submit"],
+input[type="button"] {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: $apple-font-text;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.016em;
+  line-height: 1;
+  background: $apple-primary;
+  color: $apple-canvas;
+  border: 0;
+  border-radius: $apple-r-pill;
+  padding: 11px 22px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 120ms ease, background-color 160ms ease, color 160ms ease;
+  box-shadow: none;
+
+  &:hover { background: $apple-primary-focus; color: $apple-canvas; text-decoration: none; }
+  &:active { transform: scale(0.96); }
+  &:focus-visible {
+    outline: 2px solid $apple-primary-focus;
+    outline-offset: 3px;
+  }
+}
+
+// Secondary variants
+.btn-secondary,
+button.btn-secondary {
+  background: transparent;
+  color: $apple-primary;
+  box-shadow: inset 0 0 0 1px $apple-primary;
+
+  &:hover { background: rgba(0, 102, 204, 0.08); color: $apple-primary; }
+}
+
+.btn-ghost,
+button.btn-ghost {
+  background: $apple-surface-pearl;
+  color: $apple-ink-muted-80;
+  box-shadow: inset 0 0 0 1px $apple-divider-soft;
+
+  &:hover { background: $apple-canvas; color: $apple-ink; }
+}
+
+// -----------------------------------------------------------------------------
+// Badges — used for tags/dates on post lists
+// -----------------------------------------------------------------------------
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  border-radius: $apple-r-pill;
+  background: $apple-canvas-parchment;
+  color: $apple-ink-muted-80;
+  border: 0;
+  text-transform: none;
+  font-family: $apple-font-text;
+
+  // tag badges (links)
+  a { color: inherit !important; text-decoration: none; }
+  &:hover { background: $apple-hairline; }
+
+  &.primary,
+  &.secondary,
+  &.success,
+  &.warning,
+  &.danger,
+  &.muted {
+    background: $apple-canvas-parchment;
+    color: $apple-ink-muted-80;
+  }
+
+  &.primary  { background: rgba(0, 102, 204, 0.10); color: $apple-primary; }
+  &.success  { background: rgba(48, 209, 88, 0.12); color: #1f6b3a; }
+  &.warning  { background: rgba(255, 159, 10, 0.14); color: #8a5500; }
+  &.danger   { background: rgba(255, 69, 58, 0.12);  color: #a32a23; }
+  &.muted    { background: $apple-canvas-parchment;  color: $apple-ink-muted-48; }
+}
+
+// Tag pills on the home/tag pages
+.post-badge {
+  font-size: 11px !important;
+  margin-right: 6px;
+  padding: 3px 9px;
+
+  &:last-child { margin-right: 0; }
+
+  a {
+    color: inherit !important;
+    text-decoration: none;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Alerts (article-level callouts)
+// -----------------------------------------------------------------------------
+.alert {
+  border-radius: $apple-r-md;
+  padding: $apple-s-md $apple-s-lg;
+  margin: $apple-s-lg 0;
+  background: $apple-canvas-parchment;
+  color: $apple-ink;
+  border: 1px solid $apple-divider-soft;
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: -0.014em;
+
+  &.alert-primary   { background: rgba(0, 102, 204, 0.06); border-color: rgba(0, 102, 204, 0.18); color: $apple-ink; }
+  &.alert-secondary { background: $apple-canvas-parchment; color: $apple-ink; border-color: $apple-divider-soft; }
+  &.alert-success   { background: rgba(48, 209, 88, 0.08); border-color: rgba(48, 209, 88, 0.22); color: $apple-ink; }
+  &.alert-warning   { background: rgba(255, 159, 10, 0.10); border-color: rgba(255, 159, 10, 0.25); color: $apple-ink; }
+  &.alert-danger    { background: rgba(255, 69, 58, 0.07);  border-color: rgba(255, 69, 58, 0.22);  color: $apple-ink; }
+}
+
+// -----------------------------------------------------------------------------
+// Pagination
+// -----------------------------------------------------------------------------
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: $apple-s-xs;
+  margin: $apple-s-section 0 $apple-s-xl 0;
+  flex-wrap: wrap;
+
+  a, .current-page {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    height: 44px;
+    padding: 0 14px;
+    border-radius: $apple-r-pill;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.016em;
+    color: $apple-ink;
+    background: transparent;
+    text-decoration: none !important;
+    background-image: none !important;
+    transition: background-color 160ms ease, color 160ms ease;
+
+    &:hover { background: $apple-canvas-parchment; color: $apple-primary; }
+    &:visited { color: $apple-ink; }
+  }
+
+  .current-page {
+    background: $apple-primary;
+    color: $apple-canvas;
+    &:hover { background: $apple-primary-focus; color: $apple-canvas; }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// To-top button
+// -----------------------------------------------------------------------------
+.to-top-btn {
+  padding: 0;
+  background: $apple-canvas !important;
+  color: $apple-ink !important;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 80;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid $apple-hairline !important;
+  font-size: 18px;
+  line-height: 1;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
+
+  &:hover {
+    background: $apple-canvas !important;
+    color: $apple-primary !important;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Neutralise paper.css decorative cruft (used inside post bodies & globally)
+// -----------------------------------------------------------------------------
+.border,
+.border-1, .border-2, .border-3, .border-4, .border-5, .border-6,
+.border-primary, .border-secondary, .border-success, .border-warning, .border-danger, .border-muted,
+.border-dashed, .border-dotted, .border-thick {
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.shadow,
+.shadow-large,
+.shadow-small,
+.shadow-hover {
+  box-shadow: none !important;
+}
+
+// Re-add a subtle hover effect on article-level shadow elements (if used as cards)
+.article .shadow {
+  border-radius: $apple-r-lg !important;
+  box-shadow: none !important;
+}

@@ -1,0 +1,75 @@
+// =============================================================================
+// Bugatti-design tokens
+// Pure black canvas · white uppercase tracked display · serif body · mono captions
+// =============================================================================
+
+// Brand & accent (the only color outside monochrome is the inline link blue)
+$bu-primary:            #ffffff;
+$bu-link:               #c3d9f3;
+
+// Surfaces — pure black
+$bu-canvas:             #000000;
+$bu-surface-soft:       #0d0d0d;
+$bu-surface-card:       #141414;
+$bu-surface-elevated:   #1f1f1f;
+
+// Hairlines
+$bu-hairline:           #262626;
+$bu-hairline-strong:    #3a3a3a;
+
+// Text
+$bu-ink:                #ffffff;
+$bu-on-dark:            #ffffff;
+$bu-body:               #cccccc;
+$bu-body-strong:        #e6e6e6;
+$bu-muted:              #999999;
+$bu-muted-soft:         #666666;
+
+// On-color
+$bu-on-primary:         #000000;
+$bu-on-photo:           #ffffff;
+
+// Semantic (very rare on marketing surfaces)
+$bu-warning:            #d4a017;
+$bu-success:            #5fa657;
+
+// Radii — binary: rectangular for everything except buttons (pill)
+$bu-r-none:    0;
+$bu-r-pill:    9999px;
+
+// Spacing — 4px base, generous section rhythm
+$bu-s-xxs:     4px;
+$bu-s-xs:      8px;
+$bu-s-sm:      12px;
+$bu-s-md:      16px;
+$bu-s-lg:      24px;
+$bu-s-xl:      40px;
+$bu-s-xxl:     64px;
+$bu-s-section: 120px;
+
+// Typography stacks — the trinity
+// 1. Bugatti Display (proprietary) → Saira Condensed substitute for uppercase tracked headlines
+$bu-font-display: "Bugatti Display", "Saira Condensed", "Saira",
+                  -apple-system, BlinkMacSystemFont, "Segoe UI",
+                  "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei",
+                  sans-serif;
+
+// 2. Bugatti Text Regular (proprietary) → EB Garamond substitute for serif body
+$bu-font-text:    "Bugatti Text Regular", "EB Garamond", "Cormorant Garamond",
+                  "Source Han Serif SC", "Songti SC", "STSong",
+                  Garamond, "Times New Roman", serif;
+
+// 3. Bugatti Monospace (proprietary) → JetBrains Mono / IBM Plex Mono substitute
+$bu-font-mono:    "Bugatti Monospace", "JetBrains Mono", "IBM Plex Mono",
+                  "SF Mono", ui-monospace, "Cascadia Mono", Menlo, Consolas,
+                  monospace;
+
+// Containers
+$bu-content-max:  1280px;
+$bu-narrow-max:   720px;
+
+// Breakpoints
+$bu-bp-phone:        480px;
+$bu-bp-tablet:       768px;
+$bu-bp-desktop:      1024px;
+$bu-bp-wide:         1440px;

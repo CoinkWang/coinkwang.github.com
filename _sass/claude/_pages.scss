@@ -1,0 +1,417 @@
+// =============================================================================
+// Claude page-level styles — home post list, tag, post article, about, links
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Home: editorial hero + year groups + post tiles
+// -----------------------------------------------------------------------------
+.home {
+  .page-heading {
+    font-family: $cl-font-display;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: $cl-ink;
+    margin: $cl-s-lg 0 $cl-s-xxl 0;
+
+    @media (max-width: $cl-bp-desktop - 1) { font-size: 52px; }
+    @media (max-width: $cl-bp-tablet - 1)  { font-size: 40px; }
+    @media (max-width: $cl-bp-phone - 1)   { font-size: 32px; }
+  }
+}
+
+// Year heading: editorial section divider, uppercase tracked sans
+.year-heading {
+  font-family: $cl-font-text;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $cl-muted;
+  margin: $cl-s-xxl 0 $cl-s-md 0;
+  padding-bottom: $cl-s-sm;
+  border-bottom: 1px solid $cl-hairline;
+
+  &:first-of-type { margin-top: $cl-s-sm; }
+}
+
+// -----------------------------------------------------------------------------
+// Post list tiles
+// -----------------------------------------------------------------------------
+.post-link {
+  display: block;
+  margin: 0;
+  padding: $cl-s-lg 0;
+  border-bottom: 1px solid $cl-hairline-soft;
+  font-size: 16px;
+  transition: background-color 160ms ease;
+
+  &:last-of-type { border-bottom: 1px solid $cl-hairline-soft; }
+
+  &:hover {
+    .post-link-title { color: $cl-primary; }
+  }
+}
+
+.post-link-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: $cl-s-md;
+  flex-wrap: wrap;
+}
+
+.post-link-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: $cl-font-display;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: $cl-ink !important;
+  background: none !important;
+  background-image: none !important;
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+  transition: color 200ms ease;
+
+  &:visited { color: $cl-ink !important; }
+  &:hover   { color: $cl-primary !important; text-decoration: none !important; border-bottom: 0 !important; }
+}
+
+.post-meta-list {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.post-link-body {
+  display: block;
+  text-decoration: none !important;
+  background: none !important;
+  background-image: none !important;
+  color: inherit !important;
+  border-bottom: 0 !important;
+
+  &:visited, &:hover { text-decoration: none !important; color: inherit !important; border-bottom: 0 !important; }
+}
+
+.post-subtitle {
+  margin-top: 8px;
+  font-family: $cl-font-text;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: $cl-body-strong;
+  line-height: 1.5;
+}
+
+.post-preview {
+  margin-top: 8px;
+  font-family: $cl-font-text;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
+  color: $cl-muted;
+}
+
+@media (max-width: $cl-bp-tablet - 1) {
+  .post-link-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .post-link-title { font-size: 24px; }
+  .post-meta-list { width: 100%; }
+}
+
+// -----------------------------------------------------------------------------
+// Single post (article)
+// -----------------------------------------------------------------------------
+article.article {
+  max-width: $cl-content-max;
+  margin: 0 auto;
+  padding: 0;
+
+  > header {
+    padding: $cl-s-xl 0 $cl-s-lg 0;
+    border-bottom: 1px solid $cl-hairline;
+    margin-bottom: $cl-s-xl;
+
+    h3 {
+      font-family: $cl-font-display;
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: $cl-ink;
+      margin: 0 0 $cl-s-sm 0;
+
+      @media (max-width: $cl-bp-desktop - 1) { font-size: 40px; }
+      @media (max-width: $cl-bp-tablet - 1)  { font-size: 30px; }
+    }
+
+    .badge {
+      margin-right: 6px;
+    }
+
+    > p {
+      color: $cl-body-strong;
+      font-family: $cl-font-display;
+      font-size: 20px;
+      font-style: italic;
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+      margin: $cl-s-md 0 $cl-s-xs 0;
+    }
+
+    .article-meta {
+      margin-top: $cl-s-md;
+      font-family: $cl-font-text;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: $cl-muted;
+      font-style: normal;
+
+      time { color: inherit; }
+    }
+  }
+
+  // Prose styles inside article body
+  > div {
+    font-family: $cl-font-text;
+    font-size: 17px;
+    line-height: 1.7;
+    letter-spacing: 0;
+    color: $cl-body-strong;
+
+    h1 { font-size: 36px; margin: 1.6em 0 0.6em; }
+    h2 { font-size: 28px; margin: 1.6em 0 0.5em; }
+    h3 { font-size: 22px; margin: 1.4em 0 0.5em; }
+    h4 { font-size: 18px; margin: 1.2em 0 0.4em; font-family: $cl-font-text; font-weight: 600; }
+
+    p { margin: 0 0 1.1em 0; }
+
+    ul, ol { margin: 0 0 1.1em 0; }
+
+    blockquote {
+      margin: $cl-s-lg 0;
+      padding: $cl-s-sm $cl-s-lg;
+      border-left: 3px solid $cl-primary;
+      color: $cl-body-strong;
+      font-family: $cl-font-display;
+      font-size: 20px;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    img { display: block; margin: $cl-s-lg auto; border-radius: $cl-r-lg; }
+
+    a {
+      color: $cl-primary;
+      border-bottom: 1px solid rgba(204, 120, 92, 0.3);
+      &:hover { color: $cl-primary-active; border-bottom-color: $cl-primary-active; }
+    }
+  }
+}
+
+// Cusdis comment iframe wrapper
+#cusdis_thread {
+  margin-top: $cl-s-section;
+  padding-top: $cl-s-xl;
+  border-top: 1px solid $cl-hairline;
+  max-width: $cl-content-max;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// -----------------------------------------------------------------------------
+// Tag pages
+// -----------------------------------------------------------------------------
+.tag {
+  .page-heading {
+    font-family: $cl-font-display !important;
+    font-size: 48px;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    color: $cl-ink;
+    margin: $cl-s-lg 0 $cl-s-xl 0;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// About page — feature-card grid
+// -----------------------------------------------------------------------------
+.about-section {
+  max-width: $cl-wide-max;
+  margin: 0 auto;
+  padding: $cl-s-xxl $cl-s-lg $cl-s-section;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $cl-s-lg;
+  margin: 0 auto;
+}
+
+.about-item {
+  text-align: left;
+  padding: $cl-s-xl;
+  background: $cl-surface-card;
+  border-radius: $cl-r-lg;
+  border: 0;
+  transition: background-color 200ms ease, transform 200ms ease;
+
+  &:hover {
+    background: $cl-surface-cream-strong;
+    transform: translateY(-2px);
+  }
+}
+
+.about-icon {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: $cl-s-sm;
+  opacity: 1;
+  line-height: 1;
+}
+
+.about-label {
+  font-family: $cl-font-display;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: $cl-ink;
+  line-height: 1.2;
+
+  & + .about-label {
+    font-family: $cl-font-text;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $cl-muted;
+    margin-bottom: $cl-s-sm;
+  }
+}
+
+.about-desc {
+  font-family: $cl-font-text;
+  font-size: 15px;
+  line-height: 1.6;
+  color: $cl-body;
+  letter-spacing: 0;
+  margin: $cl-s-xs 0;
+}
+
+.about-badges-collapsible {
+  margin-top: $cl-s-sm;
+
+  summary {
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    color: $cl-primary;
+    font-family: $cl-font-text;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    background: transparent;
+
+    &::-webkit-details-marker { display: none; }
+    &::after {
+      content: " ›";
+      display: inline-block;
+      transition: transform 250ms ease;
+      margin-left: 4px;
+    }
+    &:focus { outline: none; }
+  }
+
+  &[open] summary::after { transform: rotate(90deg); }
+}
+
+.about-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: $cl-s-sm;
+
+  .badge {
+    background: $cl-canvas;
+    color: $cl-body-strong;
+    border: 1px solid $cl-hairline;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Links page (friend-links)
+// -----------------------------------------------------------------------------
+.friend-links-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $cl-s-md;
+  justify-content: flex-start;
+  margin-top: $cl-s-xl;
+}
+
+.friend-links {
+  transform: none;
+  min-width: auto;
+  margin: 0;
+
+  button {
+    background: $cl-canvas;
+    color: $cl-body-strong;
+    box-shadow: inset 0 0 0 1px $cl-hairline;
+    border-radius: $cl-r-md;
+    padding: 12px 20px;
+    height: 40px;
+    font-family: $cl-font-text;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+
+    &:hover { background: $cl-surface-card; color: $cl-ink; }
+  }
+
+  a { background: none !important; text-decoration: none !important; border-bottom: 0 !important; }
+}
+
+// -----------------------------------------------------------------------------
+// Generic page heading (post layout's h3 fallback)
+// -----------------------------------------------------------------------------
+.page-heading {
+  font-family: $cl-font-display;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: $cl-ink;
+}
+
+// -----------------------------------------------------------------------------
+// Works card container
+// -----------------------------------------------------------------------------
+.works-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $cl-s-lg;
+}
+
+.works-card {
+  width: auto;
+  margin: 0;
+  background: $cl-surface-card;
+  border: 0;
+  border-radius: $cl-r-lg;
+  padding: $cl-s-xl;
+}

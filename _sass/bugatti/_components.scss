@@ -1,0 +1,245 @@
+// =============================================================================
+// Bugatti components — transparent pill buttons, mono captions, hairline cards
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Buttons — the signature transparent pill
+// -----------------------------------------------------------------------------
+button,
+.btn,
+input[type="submit"],
+input[type="button"] {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: $bu-font-mono;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1;
+  background: transparent;
+  color: $bu-on-dark;
+  border: 1px solid $bu-on-dark;
+  border-radius: $bu-r-pill;
+  padding: 14px 32px;
+  height: 44px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 200ms ease, color 200ms ease, opacity 160ms ease;
+  box-shadow: none;
+
+  &:hover {
+    background: $bu-on-dark;
+    color: $bu-canvas;
+    text-decoration: none;
+  }
+  &:active { opacity: 0.85; }
+  &:focus-visible {
+    outline: 1px solid $bu-on-dark;
+    outline-offset: 3px;
+  }
+}
+
+// Secondary variant — same transparent pill (Bugatti has one button voice)
+.btn-secondary,
+button.btn-secondary {
+  background: transparent;
+  color: $bu-on-dark;
+  border: 1px solid $bu-hairline-strong;
+
+  &:hover { background: $bu-on-dark; color: $bu-canvas; border-color: $bu-on-dark; }
+}
+
+.btn-ghost,
+button.btn-ghost {
+  background: transparent;
+  color: $bu-muted;
+  border: 1px solid $bu-hairline;
+
+  &:hover { background: transparent; color: $bu-on-dark; border-color: $bu-on-dark; }
+}
+
+// -----------------------------------------------------------------------------
+// Badges — transparent caption-uppercase labels (no fill, no border)
+// -----------------------------------------------------------------------------
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  font-family: $bu-font-mono;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  border-radius: 0;
+  background: transparent;
+  color: $bu-muted;
+  border: 0;
+
+  a {
+    color: inherit !important;
+    text-decoration: none;
+    border-bottom: 0;
+  }
+  &:hover { color: $bu-on-dark; background: transparent; }
+
+  &.primary,
+  &.secondary,
+  &.success,
+  &.warning,
+  &.danger,
+  &.muted {
+    background: transparent;
+    color: $bu-muted;
+  }
+
+  &.primary  { color: $bu-on-dark; }
+  &.success  { color: $bu-success; }
+  &.warning  { color: $bu-warning; }
+  &.danger   { color: #c64545; }
+  &.muted    { color: $bu-muted-soft; }
+}
+
+// Tag pills on post list headers — separator dot between sibling badges
+.post-badge {
+  font-size: 11px !important;
+  margin-right: $bu-s-md;
+  padding: 0;
+
+  &:last-child { margin-right: 0; }
+
+  & + .post-badge::before {
+    content: "·";
+    margin-right: $bu-s-md;
+    color: $bu-muted-soft;
+    letter-spacing: 0;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none;
+    border-bottom: 0;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Alerts — hairline boxes with mono captions
+// -----------------------------------------------------------------------------
+.alert {
+  border-radius: 0;
+  padding: $bu-s-lg;
+  margin: $bu-s-xl 0;
+  background: $bu-surface-soft;
+  color: $bu-body;
+  border: 1px solid $bu-hairline;
+  font-family: $bu-font-text;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: 0;
+
+  &.alert-primary   { background: $bu-surface-card; border-color: $bu-hairline-strong; color: $bu-on-dark; }
+  &.alert-secondary { background: $bu-surface-soft; color: $bu-body;       border-color: $bu-hairline; }
+  &.alert-success   { background: $bu-surface-soft; border-color: rgba(95, 166, 87, 0.4);  color: $bu-body-strong; }
+  &.alert-warning   { background: $bu-surface-soft; border-color: rgba(212, 160, 23, 0.4); color: $bu-body-strong; }
+  &.alert-danger    { background: $bu-surface-soft; border-color: rgba(198, 69, 69, 0.4);  color: $bu-body-strong; }
+}
+
+// -----------------------------------------------------------------------------
+// Pagination — mono uppercase, hairline outline, transparent
+// -----------------------------------------------------------------------------
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: $bu-s-sm;
+  margin: $bu-s-section 0 $bu-s-xl 0;
+  flex-wrap: wrap;
+
+  a, .current-page {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    height: 44px;
+    padding: 0 $bu-s-md;
+    border-radius: $bu-r-pill;
+    font-family: $bu-font-mono;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $bu-muted;
+    background: transparent;
+    border: 1px solid $bu-hairline;
+    text-decoration: none !important;
+    background-image: none !important;
+    transition: color 160ms ease, border-color 160ms ease, background-color 160ms ease;
+
+    &:hover {
+      background: transparent;
+      color: $bu-on-dark;
+      border-color: $bu-on-dark;
+    }
+    &:visited { color: $bu-muted; }
+  }
+
+  .current-page {
+    background: $bu-on-dark;
+    color: $bu-canvas;
+    border-color: $bu-on-dark;
+    &:hover { background: $bu-on-dark; color: $bu-canvas; border-color: $bu-on-dark; }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// To-top button — circular outline
+// -----------------------------------------------------------------------------
+.to-top-btn {
+  padding: 0;
+  background: transparent !important;
+  color: $bu-on-dark !important;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 80;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid $bu-on-dark !important;
+  font-size: 14px;
+  line-height: 1;
+  box-shadow: none;
+
+  &:hover {
+    background: $bu-on-dark !important;
+    color: $bu-canvas !important;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Neutralise paper.css decorative cruft
+// -----------------------------------------------------------------------------
+.border,
+.border-1, .border-2, .border-3, .border-4, .border-5, .border-6,
+.border-primary, .border-secondary, .border-success, .border-warning, .border-danger, .border-muted,
+.border-dashed, .border-dotted, .border-thick {
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.shadow,
+.shadow-large,
+.shadow-small,
+.shadow-hover {
+  box-shadow: none !important;
+}
+
+.article .shadow {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}

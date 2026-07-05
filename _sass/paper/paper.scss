@@ -7,7 +7,9 @@
 /**
   Global PaperCSS Config
 */
-@import url("https://fonts.googleapis.com/css?family=Neucha|Patrick+Hand+SC");
+// Neucha is now self-hosted via ../../assets/css/fonts.css (imported above).
+// Google Fonts CDN is blocked in mainland China; Patrick Hand SC is unused. (self-hosted)
+// @import url("https://fonts.googleapis.com/css?family=Neucha|Patrick+Hand+SC");
 html {
   --primary: #41403e;
   --secondary: #0071de;

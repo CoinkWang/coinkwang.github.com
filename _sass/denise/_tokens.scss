@@ -1,0 +1,104 @@
+// =============================================================================
+// Denise tokens — hand-drawn, charming, warm
+// Inspired by denisechandler.com: butter-cream canvas, coral-red accent,
+// hand-lettered display, paper-sticker cards, whimsical doodles.
+// =============================================================================
+
+// Brand & accent — warm coral-red is the dominant voltage
+$dn-primary:            #d94f3a;
+$dn-primary-active:     #b3382a;
+$dn-primary-soft:       #f3c5bb;
+$dn-accent-sage:        #7a9e7e;
+$dn-accent-butter:      #e0a73c;
+$dn-accent-pink:        #e8908f;
+$dn-accent-sky:         #6fa9c4;
+
+// Ink / text — warm chocolate-black, not blue-black
+$dn-ink:                #2a2520;
+$dn-body-strong:        #3d362d;
+$dn-body:               #534a3e;
+$dn-muted:              #8a7e6a;
+$dn-muted-soft:         #b3a791;
+
+// Surfaces — butter cream + paper grain
+$dn-canvas:             #fdf6e3;
+$dn-canvas-soft:        #f8efd6;
+$dn-surface-card:       #f4ead2;
+$dn-surface-card-hover: #efe2c0;
+$dn-surface-warm:       #fef9ea;
+
+// Hairlines — warm tan
+$dn-hairline:           #ddc88f;
+$dn-hairline-soft:      #ead9a6;
+
+// Dark surfaces — kept warm, never blue
+$dn-surface-dark:           #2d2419;
+$dn-surface-dark-elevated:  #3a3122;
+$dn-surface-dark-soft:      #38301f;
+
+// On-color tokens
+$dn-on-primary:         #fdf6e3;
+$dn-on-dark:            #f7eccc;
+$dn-on-dark-soft:       #b3a382;
+
+// Semantic
+$dn-success:            #7a9e7e;
+$dn-warning:            #e0a73c;
+$dn-error:              #d94f3a;
+
+// Radii — generous, hand-drawn corners feel soft
+$dn-r-xs:    6px;
+$dn-r-sm:    10px;
+$dn-r-md:    14px;
+$dn-r-lg:    20px;
+$dn-r-xl:    28px;
+$dn-r-pill:  9999px;
+
+// Spacing
+$dn-s-xxs:     4px;
+$dn-s-xs:      8px;
+$dn-s-sm:      12px;
+$dn-s-md:      16px;
+$dn-s-lg:      24px;
+$dn-s-xl:      36px;
+$dn-s-xxl:     56px;
+$dn-s-section: 96px;
+
+// Typography stacks
+// Display: hand-lettered marker — Caveat is the closest free substitute for
+// Denise's custom hand-drawn PNG banners. Fallback chain keeps the casual feel
+// for CJK by leaning on Kaiti/Yuanti.
+$dn-font-display: "Caveat", "Patrick Hand", "Kaiti SC", "STKaiti", "Yuanti SC",
+                  "Noto Sans SC", cursive, system-ui, sans-serif;
+
+// Editorial italic for taglines / blockquotes — a soft wonky serif
+$dn-font-script:  "Fraunces", "EB Garamond", "Source Han Serif SC", "Songti SC",
+                  Georgia, "Times New Roman", serif;
+
+// Body: Raleway — the only Google font Denise loads. Clean geometric humanist.
+$dn-font-text:    "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI",
+                  "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei",
+                  "Helvetica Neue", Arial, sans-serif;
+
+$dn-font-mono:    "JetBrains Mono", "SF Mono", ui-monospace, Menlo, Consolas,
+                  "Liberation Mono", monospace;
+
+// Containers
+$dn-content-max:  720px;
+$dn-wide-max:     1180px;
+
+// Breakpoints
+$dn-bp-phone:        480px;
+$dn-bp-tablet:       768px;
+$dn-bp-desktop:      1024px;
+$dn-bp-wide:         1440px;
+
+// Paper-sticker shadows — offset, not blurred. Mimics the look of a
+// pasted-down sticker / piece of cut paper.
+$dn-shadow-sticker:       3px 3px 0 rgba(42, 37, 32, 0.85);
+$dn-shadow-sticker-sm:    2px 2px 0 rgba(42, 37, 32, 0.85);
+$dn-shadow-sticker-lg:    5px 5px 0 rgba(42, 37, 32, 0.85);
+$dn-shadow-sticker-coral: 3px 3px 0 $dn-primary;
+$dn-shadow-soft:          0 2px 8px rgba(42, 37, 32, 0.08);
+$dn-shadow-card:          0 12px 28px rgba(42, 37, 32, 0.10);
+$dn-shadow-float:         0 24px 60px rgba(42, 37, 32, 0.22);

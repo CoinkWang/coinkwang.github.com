@@ -1,0 +1,59 @@
+// =============================================================================
+// Bugatti code syntax highlighting
+// =============================================================================
+// Monochrome palette on the near-black surface. Visual hierarchy via
+// brightness, not hue — keeps the brand discipline of "no accent color."
+
+$bh-comment:  #666666;
+$bh-keyword:  #e6e6e6;   // bright white
+$bh-string:   #cccccc;
+$bh-number:   #cccccc;
+$bh-type:     #e6e6e6;
+$bh-fn:       #cccccc;
+$bh-tag:      #e6e6e6;
+$bh-attr:     #999999;
+$bh-builtin:  #c3d9f3;   // the one allowed accent (used sparingly here)
+$bh-error:    #d4a017;   // warning yellow stands in for errors
+
+.highlight {
+  background: $bu-surface-soft;
+  border-radius: 0;
+  border: 1px solid $bu-hairline;
+  font-family: $bu-font-mono;
+  color: $bu-on-dark;
+  font-size: 13px;
+  line-height: 1.7;
+  letter-spacing: 0;
+
+  pre {
+    background: transparent;
+    border: 0;
+    margin: 0;
+    color: inherit;
+    padding: $bu-s-lg;
+  }
+
+  .c, .cm, .c1, .cs, .cp { color: $bh-comment; font-style: italic; }
+  .err { color: $bh-error; }
+  .k, .kc, .kd, .kp, .kr, .kt { color: $bh-keyword; }
+  .o, .ow { color: $bu-body; }
+  .m, .mf, .mh, .mi, .mo, .il { color: $bh-number; }
+  .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr, .ss { color: $bh-string; }
+  .na { color: $bh-attr; }
+  .nb { color: $bh-builtin; }
+  .nc { color: $bh-type; }
+  .no { color: $bh-builtin; }
+  .ni, .ne { color: $bh-type; }
+  .nf { color: $bh-fn; }
+  .nn { color: $bu-on-dark; }
+  .nt { color: $bh-tag; }
+  .nv, .vc, .vg, .vi { color: $bh-attr; }
+  .w  { color: transparent; }
+  .gh, .gu { color: $bu-muted; }
+  .gd { color: $bh-error; }
+  .gi { color: $bh-builtin; }
+}
+
+.highlighter-rouge {
+  .highlight { padding: 0; }
+}

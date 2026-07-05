@@ -1,0 +1,229 @@
+// =============================================================================
+// Claude components — buttons, badges, alerts, pagination, to-top
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Buttons — coral primary (paper.css emits <button> for friend-links etc.)
+// -----------------------------------------------------------------------------
+button,
+.btn,
+input[type="submit"],
+input[type="button"] {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: $cl-font-text;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
+  background: $cl-primary;
+  color: $cl-on-primary;
+  border: 0;
+  border-radius: $cl-r-md;
+  padding: 12px 20px;
+  height: 40px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease, transform 120ms ease;
+  box-shadow: none;
+
+  &:hover { background: $cl-primary-active; color: $cl-on-primary; border-bottom: 0; }
+  &:active { transform: scale(0.97); }
+  &:focus-visible {
+    outline: 2px solid $cl-primary;
+    outline-offset: 3px;
+  }
+}
+
+// Secondary — cream with hairline
+.btn-secondary,
+button.btn-secondary {
+  background: $cl-canvas;
+  color: $cl-ink;
+  box-shadow: inset 0 0 0 1px $cl-hairline;
+
+  &:hover { background: $cl-surface-card; color: $cl-ink; }
+}
+
+// Ghost — flat cream
+.btn-ghost,
+button.btn-ghost {
+  background: $cl-surface-card;
+  color: $cl-body-strong;
+  box-shadow: none;
+
+  &:hover { background: $cl-surface-cream-strong; color: $cl-ink; }
+}
+
+// -----------------------------------------------------------------------------
+// Badges — pill tags for post tags / dates
+// -----------------------------------------------------------------------------
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-family: $cl-font-text;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
+  border-radius: $cl-r-pill;
+  background: $cl-surface-card;
+  color: $cl-body-strong;
+  border: 0;
+  text-transform: none;
+
+  a {
+    color: inherit !important;
+    text-decoration: none;
+    border-bottom: 0;
+  }
+  &:hover { background: $cl-surface-cream-strong; }
+
+  &.primary,
+  &.secondary,
+  &.success,
+  &.warning,
+  &.danger,
+  &.muted {
+    background: $cl-surface-card;
+    color: $cl-body-strong;
+  }
+
+  &.primary  { background: $cl-primary; color: $cl-on-primary; }
+  &.success  { background: rgba(93, 184, 114, 0.15); color: #2f6b3e; }
+  &.warning  { background: rgba(212, 160, 23, 0.18); color: #7a5a00; }
+  &.danger   { background: rgba(198, 69, 69, 0.13);  color: #8a2a2a; }
+  &.muted    { background: $cl-surface-card;  color: $cl-muted; }
+}
+
+// Tag pills on post list headers
+.post-badge {
+  font-size: 11px !important;
+  margin-right: 6px;
+  padding: 3px 10px;
+
+  &:last-child { margin-right: 0; }
+
+  a {
+    color: inherit !important;
+    text-decoration: none;
+    border-bottom: 0;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Alerts — article-level callouts
+// -----------------------------------------------------------------------------
+.alert {
+  border-radius: $cl-r-lg;
+  padding: $cl-s-md $cl-s-lg;
+  margin: $cl-s-lg 0;
+  background: $cl-surface-card;
+  color: $cl-body-strong;
+  border: 1px solid $cl-hairline;
+  font-family: $cl-font-text;
+  font-size: 15px;
+  line-height: 1.55;
+  letter-spacing: 0;
+
+  &.alert-primary   { background: rgba(204, 120, 92, 0.1);  border-color: rgba(204, 120, 92, 0.3); color: $cl-ink; }
+  &.alert-secondary { background: $cl-surface-card; color: $cl-body-strong; border-color: $cl-hairline; }
+  &.alert-success   { background: rgba(93, 184, 114, 0.1); border-color: rgba(93, 184, 114, 0.28); color: $cl-ink; }
+  &.alert-warning   { background: rgba(212, 160, 23, 0.12); border-color: rgba(212, 160, 23, 0.32); color: $cl-ink; }
+  &.alert-danger    { background: rgba(198, 69, 69, 0.08);  border-color: rgba(198, 69, 69, 0.28); color: $cl-ink; }
+}
+
+// -----------------------------------------------------------------------------
+// Pagination
+// -----------------------------------------------------------------------------
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: $cl-s-xs;
+  margin: $cl-s-section 0 $cl-s-xl 0;
+  flex-wrap: wrap;
+
+  a, .current-page {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 14px;
+    border-radius: $cl-r-md;
+    font-family: $cl-font-text;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: $cl-body-strong;
+    background: transparent;
+    text-decoration: none !important;
+    background-image: none !important;
+    border-bottom: 0;
+    border: 1px solid $cl-hairline;
+    transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+
+    &:hover { background: $cl-surface-card; color: $cl-ink; border-color: $cl-hairline; }
+    &:visited { color: $cl-body-strong; }
+  }
+
+  .current-page {
+    background: $cl-primary;
+    color: $cl-on-primary;
+    border-color: $cl-primary;
+    &:hover { background: $cl-primary-active; color: $cl-on-primary; border-color: $cl-primary-active; }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// To-top button — circular icon button
+// -----------------------------------------------------------------------------
+.to-top-btn {
+  padding: 0;
+  background: $cl-canvas !important;
+  color: $cl-ink !important;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 80;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid $cl-hairline !important;
+  font-size: 18px;
+  line-height: 1;
+  box-shadow: $cl-shadow-soft;
+
+  &:hover {
+    background: $cl-canvas !important;
+    color: $cl-primary !important;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Neutralise paper.css decorative cruft
+// -----------------------------------------------------------------------------
+.border,
+.border-1, .border-2, .border-3, .border-4, .border-5, .border-6,
+.border-primary, .border-secondary, .border-success, .border-warning, .border-danger, .border-muted,
+.border-dashed, .border-dotted, .border-thick {
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.shadow,
+.shadow-large,
+.shadow-small,
+.shadow-hover {
+  box-shadow: none !important;
+}
+
+.article .shadow {
+  border-radius: $cl-r-lg !important;
+  box-shadow: none !important;
+}

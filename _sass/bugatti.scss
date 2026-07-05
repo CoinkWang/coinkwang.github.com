@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+// Bugatti-design-inspired blog theme.
+// Pure black canvas · white uppercase tracked display · serif body · mono captions.
+// No accent color · no shadows · no rounding (except pill buttons).
+
+@import
+  "bugatti/tokens",
+  "bugatti/base",
+  "bugatti/layout",
+  "bugatti/components",
+  "bugatti/pages",
+  "bugatti/highlight",
+  "bugatti/footnotes"
+;

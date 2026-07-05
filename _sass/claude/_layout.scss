@@ -1,0 +1,251 @@
+// =============================================================================
+// Claude layout — wrapper, global nav header, footer
+// =============================================================================
+
+// Wrapper: editorial-width
+.wrapper {
+  max-width: $cl-content-max;
+  margin: 0 auto;
+  padding: 0 $cl-s-lg;
+}
+
+.page-content {
+  padding: $cl-s-xl 0 $cl-s-section 0;
+}
+
+// Wide wrapper for grid pages (home / tag indexes / about)
+.wrapper:has(> .home),
+.wrapper:has(> .tag),
+.about-section .wrapper,
+.about-section {
+  max-width: $cl-wide-max;
+}
+
+// -----------------------------------------------------------------------------
+// Site header — cream nav bar
+// -----------------------------------------------------------------------------
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 249, 245, 0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid $cl-hairline-soft;
+  margin: 0;
+  min-height: 64px;
+  line-height: normal;
+  font-family: $cl-font-text;
+
+  // Reset paper.css shadow effects on header
+  box-shadow: none !important;
+
+  nav.split-nav {
+    max-width: $cl-wide-max;
+    margin: 0 auto;
+    padding: 0 $cl-s-lg;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none !important;
+    background: transparent;
+  }
+
+  .nav-brand {
+    h4 {
+      margin: 0;
+      font-family: $cl-font-display;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.015em;
+      line-height: 1;
+
+      a {
+        color: $cl-ink;
+        background: none;
+        text-decoration: none;
+        border-bottom: 0;
+        display: inline-flex;
+        align-items: baseline;
+        gap: 6px;
+
+        // The Anthropic-style spike-mark glyph (asterisk approximation)
+        &::before {
+          content: "✱";
+          color: $cl-primary;
+          font-family: $cl-font-text;
+          font-size: 18px;
+          line-height: 1;
+          position: relative;
+          top: -1px;
+        }
+
+        &:hover { color: $cl-ink; border-bottom: 0; }
+        &:visited { color: $cl-ink; }
+      }
+    }
+  }
+
+  .collapsible {
+    display: flex;
+    align-items: center;
+
+    .collapsible-body {
+      ul.inline {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: $cl-s-lg;
+
+        li {
+          margin: 0;
+          a {
+            display: inline-block;
+            font-family: $cl-font-text;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0;
+            color: $cl-body;
+            padding: 6px 2px;
+            text-decoration: none;
+            border-bottom: 0;
+            transition: color 160ms ease;
+
+            &:hover { color: $cl-ink; border-bottom: 0; }
+            &:visited { color: $cl-body; }
+            &:visited:hover { color: $cl-ink; }
+          }
+        }
+      }
+    }
+
+    // Hide paper.css hamburger on desktop
+    input,
+    button { display: none; }
+  }
+
+  @media (max-width: $cl-bp-tablet - 1) {
+    .collapsible {
+      // Do NOT set position: relative here — the absolute-positioned
+      // dropdown anchors to .site-header instead, so it can span full width.
+
+      input { display: none; }
+
+      button {
+        display: inline-flex;
+        background: none;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+
+        label {
+          display: inline-flex;
+          flex-direction: column;
+          gap: 4px;
+          cursor: pointer;
+          width: 22px;
+          height: 16px;
+          justify-content: center;
+        }
+      }
+
+      .bar1, .bar2, .bar3 {
+        display: block;
+        width: 22px;
+        height: 1.5px;
+        background: $cl-ink;
+        border-radius: 2px;
+        transition: all 200ms ease;
+      }
+
+      .collapsible-body {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: rgba(250, 249, 245, 0.96);
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        border-bottom: 1px solid $cl-hairline-soft;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 250ms ease;
+
+        ul.inline {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0;
+          padding: $cl-s-xs $cl-s-lg $cl-s-md;
+        }
+
+        li { width: 100%; }
+
+        li a {
+          display: block;
+          padding: $cl-s-sm 0;
+          font-size: 16px;
+          border-bottom: 1px solid $cl-hairline-soft;
+        }
+
+        li:last-child a { border-bottom: 0; }
+      }
+
+      input:checked ~ .collapsible-body {
+        max-height: 480px;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Footer — dark navy
+// -----------------------------------------------------------------------------
+.site-footer {
+  margin: 0;
+  background: $cl-surface-dark;
+  border-top: 0;
+  text-align: left;
+  border-radius: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+  color: $cl-on-dark-soft;
+
+  .container {
+    max-width: $cl-wide-max;
+    width: 100%;
+    margin: 0 auto;
+    padding: $cl-s-xxl $cl-s-lg;
+  }
+
+  .flex-middle {
+    display: flex;
+    flex-direction: column;
+    gap: $cl-s-xs;
+  }
+
+  p {
+    margin: 0;
+    color: $cl-on-dark-soft;
+    font-family: $cl-font-text;
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: 0;
+  }
+
+  a {
+    color: $cl-on-dark;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(250, 249, 245, 0.2);
+    &:hover { color: $cl-primary; border-bottom-color: $cl-primary; }
+    &:visited { color: $cl-on-dark; }
+  }
+}

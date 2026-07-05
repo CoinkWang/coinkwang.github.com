@@ -1,0 +1,166 @@
+// =============================================================================
+// Footnotes — sidenotes on wide screens, popup on narrow
+// =============================================================================
+
+// Hide kramdown's default footnotes <ol>; we render content elsewhere.
+.footnotes { display: none; }
+
+// Sidenotes container is only revealed at the wide breakpoint.
+.sidenotes { display: none; }
+
+// Mobile/narrow default: filled-circle badge for the inline reference.
+sup[id^="fnref:"] {
+  font-size: 0.7em;
+  vertical-align: super;
+  line-height: 0;
+  top: 0;
+
+  a {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    text-align: center;
+    border-radius: 50%;
+    background-color: $apple-primary;
+    background-image: none;
+    color: $apple-canvas;
+    text-decoration: none;
+    margin: 0 0.15em;
+    padding: 0;
+    font-weight: 600;
+    transition: background-color 160ms ease;
+
+    &:visited { color: $apple-canvas; background-image: none; }
+    &:hover {
+      color: $apple-canvas;
+      background-color: $apple-primary-focus;
+      background-image: none;
+      text-decoration: none;
+    }
+  }
+}
+
+// Wide-screen sidenotes
+@media (min-width: 1200px) {
+  body.has-sidenotes {
+    .wrapper {
+      max-width: 1200px;
+      padding-right: 264px;
+    }
+
+    article.article {
+      position: relative;
+      max-width: none;
+    }
+
+    .sidenotes {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      margin-left: 24px;
+      width: 240px;
+      pointer-events: none;
+    }
+
+    .sidenote {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      font-family: $apple-font-text;
+      font-size: 13px;
+      line-height: 1.55;
+      letter-spacing: -0.012em;
+      color: $apple-ink-muted-32;
+      pointer-events: auto;
+
+      p:first-of-type {
+        display: inline;
+        margin: 0;
+      }
+      p + p {
+        display: block;
+        margin: 0.5em 0 0 0;
+      }
+    }
+
+    .sidenote-num {
+      font-weight: 600;
+      margin-right: 0.3em;
+      color: $apple-primary;
+    }
+
+    // Plain superscript number on PC since the content lives in the gutter.
+    sup[id^="fnref:"] {
+      font-size: 0.75em;
+      line-height: 0;
+      top: -0.5em;
+
+      a {
+        display: inline;
+        width: auto;
+        height: auto;
+        line-height: inherit;
+        border-radius: 0;
+        background-color: transparent;
+        background-image: none;
+        color: $apple-primary;
+        margin: 0;
+        font-weight: inherit;
+        cursor: default;
+
+        &:visited { color: $apple-primary; }
+        &:hover   { color: $apple-primary-focus; background-color: transparent; }
+      }
+    }
+
+    .sidenote.is-active { color: $apple-ink; }
+  }
+}
+
+// Popup overlay (narrow breakpoint)
+.fn-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.fn-popup.is-open { display: flex; }
+
+.fn-popup-card {
+  background: $apple-canvas;
+  border: 0;
+  border-radius: $apple-r-lg;
+  padding: $apple-s-lg $apple-s-xl;
+  max-width: 90vw;
+  width: 32rem;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  font-family: $apple-font-text;
+  font-size: 15px;
+  line-height: 1.55;
+  letter-spacing: -0.014em;
+  color: $apple-body;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+}
+
+.fn-popup-num {
+  display: inline;
+  font-weight: 600;
+  margin-right: 0.3em;
+  color: $apple-primary;
+}
+
+.fn-popup-content {
+  display: inline;
+
+  p:first-of-type { display: inline; margin: 0; }
+  p + p { display: block; margin: 0.5em 0 0 0; }
+}

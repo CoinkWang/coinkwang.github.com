@@ -1,0 +1,76 @@
+// =============================================================================
+// Apple-design tokens
+// =============================================================================
+
+// Brand & accent
+$apple-primary:           #0066cc;
+$apple-primary-focus:     #0071e3;
+$apple-primary-on-dark:   #2997ff;
+
+// Ink / text
+$apple-ink:               #1d1d1f;
+$apple-body:              #1d1d1f;
+$apple-body-on-dark:      #ffffff;
+$apple-body-muted:        #cccccc;
+$apple-ink-muted-80:      #333333;
+$apple-ink-muted-48:      #7a7a7a;
+$apple-ink-muted-32:      #6e6e73;
+
+// Surfaces
+$apple-canvas:            #ffffff;
+$apple-canvas-parchment:  #f5f5f7;
+$apple-surface-pearl:     #fafafc;
+$apple-surface-tile-1:    #272729;
+$apple-surface-tile-2:    #2a2a2c;
+$apple-surface-tile-3:    #252527;
+$apple-surface-black:     #000000;
+$apple-surface-chip:      rgba(210, 210, 215, 0.64);
+
+// Hairlines
+$apple-divider-soft:      #f0f0f0;
+$apple-hairline:          #e0e0e0;
+$apple-hairline-strong:   #d2d2d7;
+
+// Radii
+$apple-r-xs:    5px;
+$apple-r-sm:    8px;
+$apple-r-md:    11px;
+$apple-r-lg:    18px;
+$apple-r-pill:  9999px;
+
+// Spacing
+$apple-s-xxs:     4px;
+$apple-s-xs:      8px;
+$apple-s-sm:      12px;
+$apple-s-md:      17px;
+$apple-s-lg:      24px;
+$apple-s-xl:      32px;
+$apple-s-xxl:     48px;
+$apple-s-section: 80px;
+
+// Typography stacks
+$apple-font-display: "SF Pro Display", system-ui, -apple-system, BlinkMacSystemFont,
+                     "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei",
+                     "Helvetica Neue", Arial, sans-serif;
+$apple-font-text:    "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont,
+                     "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei",
+                     "Helvetica Neue", Arial, sans-serif;
+$apple-font-mono:    "SF Mono", ui-monospace, "JetBrains Mono", Menlo, Consolas,
+                     "Liberation Mono", monospace;
+
+// Containers
+$apple-content-max:  980px;
+$apple-wide-max:     1440px;
+
+// Breakpoints
+$apple-bp-phone:           420px;
+$apple-bp-tablet:          735px;
+$apple-bp-tablet-land:     834px;
+$apple-bp-desktop:         1068px;
+$apple-bp-wide:            1440px;
+
+// Product shadow — reserved for imagery, used very sparingly
+$apple-shadow-product: 3px 5px 30px 0 rgba(0, 0, 0, 0.22);
+
+// Subtle separator shadow used on sticky bars only
+$apple-shadow-sticky:  0 1px 0 rgba(0, 0, 0, 0.06);

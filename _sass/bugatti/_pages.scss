@@ -1,0 +1,442 @@
+// =============================================================================
+// Bugatti page-level styles — home post list, tag, post article, about, links
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Home: hero h1 + year groups + post tiles
+// -----------------------------------------------------------------------------
+.home {
+  .page-heading {
+    font-family: $bu-font-display;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: $bu-on-dark;
+    margin: $bu-s-xl 0 $bu-s-section 0;
+
+    @media (max-width: $bu-bp-desktop - 1) { font-size: 48px; }
+    @media (max-width: $bu-bp-tablet - 1)  { font-size: 36px; }
+    @media (max-width: $bu-bp-phone - 1)   { font-size: 28px; }
+  }
+}
+
+// Year heading: mono caption-uppercase, very wide tracking
+.year-heading {
+  font-family: $bu-font-mono;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: $bu-muted;
+  margin: $bu-s-xxl 0 $bu-s-lg 0;
+  padding-bottom: $bu-s-md;
+  border-bottom: 1px solid $bu-hairline;
+
+  &:first-of-type { margin-top: $bu-s-lg; }
+}
+
+// -----------------------------------------------------------------------------
+// Post list tiles — career-listing-row inspired
+// -----------------------------------------------------------------------------
+.post-link {
+  display: block;
+  margin: 0;
+  padding: $bu-s-lg 0;
+  border-bottom: 1px solid $bu-hairline;
+  font-family: $bu-font-text;
+  font-size: 16px;
+  transition: background-color 160ms ease;
+
+  &:last-of-type { border-bottom: 1px solid $bu-hairline; }
+
+  &:hover {
+    .post-link-title { color: $bu-muted; }
+  }
+}
+
+.post-link-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: $bu-s-lg;
+  flex-wrap: wrap;
+}
+
+.post-link-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: $bu-font-display;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $bu-on-dark !important;
+  background: none !important;
+  background-image: none !important;
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+  transition: color 200ms ease;
+
+  &:visited { color: $bu-on-dark !important; }
+  &:hover   { color: $bu-muted !important; text-decoration: none !important; border-bottom: 0 !important; }
+}
+
+.post-meta-list {
+  display: inline-flex;
+  align-items: baseline;
+  flex-shrink: 0;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.post-link-body {
+  display: block;
+  text-decoration: none !important;
+  background: none !important;
+  background-image: none !important;
+  color: inherit !important;
+  border-bottom: 0 !important;
+
+  &:visited, &:hover { text-decoration: none !important; color: inherit !important; border-bottom: 0 !important; }
+}
+
+.post-subtitle {
+  margin-top: $bu-s-sm;
+  font-family: $bu-font-text;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: $bu-body-strong;
+  line-height: 1.5;
+}
+
+.post-preview {
+  margin-top: $bu-s-xs;
+  font-family: $bu-font-text;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
+  color: $bu-muted;
+}
+
+@media (max-width: $bu-bp-tablet - 1) {
+  .post-link-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $bu-s-xs;
+  }
+  .post-link-title { font-size: 18px; }
+  .post-meta-list { width: 100%; }
+}
+
+// -----------------------------------------------------------------------------
+// Single post (article) — full-bleed hero feel via massive top padding
+// -----------------------------------------------------------------------------
+article.article {
+  max-width: $bu-narrow-max;
+  margin: 0 auto;
+  padding: 0;
+
+  > header {
+    padding: $bu-s-section 0 $bu-s-xl 0;
+    border-bottom: 1px solid $bu-hairline;
+    margin-bottom: $bu-s-xxl;
+    text-align: center;
+
+    h3 {
+      font-family: $bu-font-display;
+      font-size: 56px;
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: $bu-on-dark;
+      margin: 0 0 $bu-s-lg 0;
+
+      @media (max-width: $bu-bp-desktop - 1) { font-size: 44px; }
+      @media (max-width: $bu-bp-tablet - 1)  { font-size: 30px; }
+    }
+
+    .badge {
+      margin-right: $bu-s-md;
+    }
+
+    > p {
+      color: $bu-body-strong;
+      font-family: $bu-font-text;
+      font-size: 18px;
+      font-style: italic;
+      line-height: 1.55;
+      letter-spacing: 0;
+      margin: $bu-s-lg auto;
+      max-width: 540px;
+    }
+
+    .article-meta {
+      margin-top: $bu-s-xl;
+      font-family: $bu-font-mono;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: $bu-muted;
+      font-style: normal;
+
+      time { color: inherit; }
+    }
+  }
+
+  // Prose styles inside article body — serif body, mono section heads
+  > div {
+    font-family: $bu-font-text;
+    font-size: 17px;
+    line-height: 1.7;
+    letter-spacing: 0;
+    color: $bu-body;
+
+    h1, h2, h3, h4 {
+      font-family: $bu-font-display;
+      color: $bu-on-dark;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    h1 { font-size: 36px; letter-spacing: 0.06em; margin: 1.8em 0 0.8em; }
+    h2 { font-size: 28px; letter-spacing: 0.06em; margin: 1.7em 0 0.7em; }
+    h3 { font-size: 22px; letter-spacing: 0.06em; margin: 1.5em 0 0.6em; }
+    h4 { font-size: 18px; letter-spacing: 0.06em; margin: 1.3em 0 0.5em; }
+
+    p { margin: 0 0 1.2em 0; }
+
+    ul, ol { margin: 0 0 1.2em 0; }
+
+    blockquote {
+      margin: $bu-s-xl 0;
+      padding: 0 $bu-s-xl;
+      border-left: 1px solid $bu-hairline-strong;
+      color: $bu-body-strong;
+      font-family: $bu-font-text;
+      font-size: 19px;
+      font-style: italic;
+      line-height: 1.55;
+    }
+
+    img { display: block; margin: $bu-s-xl auto; border-radius: 0; }
+
+    a {
+      color: $bu-link;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      &:hover { color: $bu-on-dark; }
+    }
+  }
+}
+
+// Cusdis comment iframe wrapper
+#cusdis_thread {
+  margin-top: $bu-s-section;
+  padding-top: $bu-s-xxl;
+  border-top: 1px solid $bu-hairline;
+  max-width: $bu-narrow-max;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// -----------------------------------------------------------------------------
+// Tag pages
+// -----------------------------------------------------------------------------
+.tag {
+  .page-heading {
+    font-family: $bu-font-display !important;
+    font-size: 48px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $bu-on-dark;
+    margin: $bu-s-xl 0 $bu-s-xxl 0;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// About page — model-photo-card style: black tile, mono caption, display name
+// -----------------------------------------------------------------------------
+.about-section {
+  max-width: $bu-content-max;
+  margin: 0 auto;
+  padding: $bu-s-section $bu-s-xl;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $bu-s-xl;
+  margin: 0 auto;
+}
+
+.about-item {
+  text-align: left;
+  padding: $bu-s-xl;
+  background: transparent;
+  border-radius: 0;
+  border: 1px solid $bu-hairline;
+  transition: border-color 200ms ease;
+
+  &:hover {
+    border-color: $bu-on-dark;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.about-icon {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: $bu-s-md;
+  opacity: 1;
+  line-height: 1;
+  filter: grayscale(1);
+}
+
+.about-label {
+  font-family: $bu-font-display;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $bu-on-dark;
+  line-height: 1.3;
+
+  & + .about-label {
+    font-family: $bu-font-mono;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: $bu-muted;
+    margin-bottom: $bu-s-md;
+  }
+}
+
+.about-desc {
+  font-family: $bu-font-text;
+  font-size: 15px;
+  line-height: 1.6;
+  color: $bu-body;
+  letter-spacing: 0;
+  margin: $bu-s-sm 0;
+}
+
+.about-badges-collapsible {
+  margin-top: $bu-s-md;
+
+  summary {
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    color: $bu-on-dark;
+    font-family: $bu-font-mono;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    background: transparent;
+
+    &::-webkit-details-marker { display: none; }
+    &::after {
+      content: " →";
+      display: inline-block;
+      transition: transform 250ms ease;
+      margin-left: $bu-s-xs;
+    }
+    &:focus { outline: none; }
+  }
+
+  &[open] summary::after { transform: rotate(90deg); }
+}
+
+.about-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $bu-s-md $bu-s-lg;
+  margin-top: $bu-s-md;
+
+  .badge {
+    background: transparent;
+    color: $bu-body;
+    border: 0;
+    padding: 0;
+
+    &::before { content: none; }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Links page (friend-links) — transparent pill buttons
+// -----------------------------------------------------------------------------
+.friend-links-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $bu-s-md;
+  justify-content: flex-start;
+  margin-top: $bu-s-xl;
+}
+
+.friend-links {
+  transform: none;
+  min-width: auto;
+  margin: 0;
+
+  button {
+    background: transparent;
+    color: $bu-on-dark;
+    border: 1px solid $bu-on-dark;
+    border-radius: $bu-r-pill;
+    padding: 14px 32px;
+    height: 44px;
+    font-family: $bu-font-mono;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    &:hover { background: $bu-on-dark; color: $bu-canvas; }
+  }
+
+  a { background: none !important; text-decoration: none !important; border-bottom: 0 !important; }
+}
+
+// -----------------------------------------------------------------------------
+// Generic page heading fallback
+// -----------------------------------------------------------------------------
+.page-heading {
+  font-family: $bu-font-display;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $bu-on-dark;
+}
+
+// -----------------------------------------------------------------------------
+// Works card container
+// -----------------------------------------------------------------------------
+.works-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $bu-s-xl;
+}
+
+.works-card {
+  width: auto;
+  margin: 0;
+  background: transparent;
+  border: 1px solid $bu-hairline;
+  border-radius: 0;
+  padding: $bu-s-xl;
+}

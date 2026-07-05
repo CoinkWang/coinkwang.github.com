@@ -8,6 +8,14 @@ description: > # this means to ignore newlines until "show_subtitle:"
 
 show_subtitle: true
 
+# 主题样式切换：
+#   bugatti — 新版，Bugatti 风格（纯黑底 + 白色全大写宽间距，无装饰，默认）
+#   claude  — Anthropic Claude 风格（暖米黄 + 珊瑚 + 衬线）
+#   apple   — Apple 风格（白底 + 深蓝 + SF Pro，无衬线）
+#   denise  — Denise Chandler 风格（黄油奶黄底 + 珊瑚红 + 手写 Caveat 标题 + 贴纸卡片）
+#   glance  — 旧版，PaperCSS 手绘风格
+theme_style: glance
+
 header_pages:
   - about.md
   - links.md

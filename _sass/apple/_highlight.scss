@@ -1,0 +1,49 @@
+// =============================================================================
+// Apple-style code syntax highlighting
+// =============================================================================
+// Light, restrained palette tuned to sit on $apple-canvas-parchment.
+
+$ah-comment: #6e6e73;   // muted grey
+$ah-keyword: #ad3da4;   // pink/magenta
+$ah-string:  #d12f1b;   // red
+$ah-number:  #272ad8;   // blue
+$ah-type:    #804fb8;   // purple
+$ah-fn:      #4b21b0;   // deep purple
+$ah-tag:     #aa0d91;   // brand pink
+$ah-attr:    #836c28;   // mustard
+$ah-builtin: #1f6feb;   // bright blue
+$ah-error:   #c41a16;   // red
+
+.highlight {
+  background: $apple-canvas-parchment;
+  border-radius: $apple-r-md;
+  font-family: $apple-font-mono;
+  color: $apple-ink;
+
+  pre { background: transparent; border: 0; margin: 0; }
+
+  .c, .cm, .c1, .cs, .cp { color: $ah-comment; font-style: italic; }
+  .err { color: $ah-error; }
+  .k, .kc, .kd, .kp, .kr, .kt { color: $ah-keyword; font-weight: 600; }
+  .o, .ow { color: $apple-ink-muted-80; }
+  .m, .mf, .mh, .mi, .mo, .il { color: $ah-number; }
+  .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr, .ss { color: $ah-string; }
+  .na { color: $ah-attr; }
+  .nb { color: $ah-builtin; }
+  .nc { color: $ah-type; font-weight: 600; }
+  .no { color: $ah-builtin; }
+  .ni, .ne { color: $ah-type; }
+  .nf { color: $ah-fn; font-weight: 600; }
+  .nn { color: $apple-ink; }
+  .nt { color: $ah-tag; }
+  .nv, .vc, .vg, .vi { color: $ah-attr; }
+  .w  { color: transparent; }
+  .gh, .gu { color: $apple-ink-muted-48; }
+  .gd { color: $ah-error; }
+  .gi { color: #007f3b; }
+}
+
+// Line-numbers / language tags from rouge wrappers
+.highlighter-rouge {
+  .highlight { padding: 0; }
+}

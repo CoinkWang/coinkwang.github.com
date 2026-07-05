@@ -1,0 +1,233 @@
+// =============================================================================
+// Bugatti layout — wrapper, transparent top nav, black footer
+// =============================================================================
+
+.wrapper {
+  max-width: $bu-content-max;
+  margin: 0 auto;
+  padding: 0 $bu-s-xl;
+}
+
+.page-content {
+  padding: $bu-s-xxl 0 $bu-s-section 0;
+}
+
+// Wide wrappers for list pages (home + tag); about uses its own container.
+.wrapper:has(> .home),
+.wrapper:has(> .tag),
+.about-section .wrapper,
+.about-section {
+  max-width: $bu-content-max;
+}
+
+// -----------------------------------------------------------------------------
+// Site header — transparent over canvas, 56px high
+// -----------------------------------------------------------------------------
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: saturate(120%) blur(10px);
+  -webkit-backdrop-filter: saturate(120%) blur(10px);
+  border-bottom: 1px solid $bu-hairline;
+  margin: 0;
+  min-height: 56px;
+  line-height: normal;
+  font-family: $bu-font-mono;
+
+  box-shadow: none !important;
+
+  nav.split-nav {
+    max-width: $bu-content-max;
+    margin: 0 auto;
+    padding: 0 $bu-s-xl;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none !important;
+    background: transparent;
+  }
+
+  .nav-brand {
+    h4 {
+      margin: 0;
+      font-family: $bu-font-display;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.42em;       // 6px / 14px ≈ 0.42em
+      text-transform: uppercase;
+      line-height: 1;
+
+      a {
+        color: $bu-on-dark;
+        background: none;
+        text-decoration: none;
+
+        &:hover { color: $bu-on-dark; opacity: 0.7; text-decoration: none; }
+        &:visited { color: $bu-on-dark; }
+      }
+    }
+  }
+
+  .collapsible {
+    display: flex;
+    align-items: center;
+
+    .collapsible-body {
+      ul.inline {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: $bu-s-xl;
+
+        li {
+          margin: 0;
+          a {
+            display: inline-block;
+            font-family: $bu-font-mono;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: $bu-on-dark;
+            padding: 6px 2px;
+            text-decoration: none;
+            transition: opacity 160ms ease;
+
+            &:hover { color: $bu-on-dark; opacity: 0.7; text-decoration: none; }
+            &:visited { color: $bu-on-dark; }
+            &:visited:hover { color: $bu-on-dark; opacity: 0.7; }
+          }
+        }
+      }
+    }
+
+    input, button { display: none; }
+  }
+
+  @media (max-width: $bu-bp-tablet - 1) {
+    .collapsible {
+      // Do NOT set position: relative here — the dropdown anchors to the
+      // sticky .site-header so it can span the full nav width.
+
+      input { display: none; }
+
+      button {
+        display: inline-flex;
+        background: none;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+
+        label {
+          display: inline-flex;
+          flex-direction: column;
+          gap: 5px;
+          cursor: pointer;
+          width: 22px;
+          height: 14px;
+          justify-content: center;
+        }
+      }
+
+      .bar1, .bar2, .bar3 {
+        display: block;
+        width: 22px;
+        height: 1px;
+        background: $bu-on-dark;
+        border-radius: 0;
+        transition: all 200ms ease;
+      }
+
+      .collapsible-body {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.96);
+        backdrop-filter: saturate(120%) blur(10px);
+        -webkit-backdrop-filter: saturate(120%) blur(10px);
+        border-bottom: 1px solid $bu-hairline;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 250ms ease;
+
+        ul.inline {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0;
+          padding: $bu-s-sm $bu-s-xl $bu-s-lg;
+        }
+
+        li { width: 100%; }
+
+        li a {
+          display: block;
+          padding: $bu-s-md 0;
+          font-size: 14px;
+          border-bottom: 1px solid $bu-hairline;
+        }
+
+        li:last-child a { border-bottom: 0; }
+      }
+
+      input:checked ~ .collapsible-body {
+        max-height: 480px;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Footer — black, mono captions
+// -----------------------------------------------------------------------------
+.site-footer {
+  margin: 0;
+  background: $bu-canvas;
+  border-top: 1px solid $bu-hairline;
+  text-align: left;
+  border-radius: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+  color: $bu-muted;
+
+  .container {
+    max-width: $bu-content-max;
+    width: 100%;
+    margin: 0 auto;
+    padding: $bu-s-xxl $bu-s-xl;
+  }
+
+  .flex-middle {
+    display: flex;
+    flex-direction: column;
+    gap: $bu-s-sm;
+  }
+
+  p {
+    margin: 0;
+    color: $bu-muted;
+    font-family: $bu-font-mono;
+    font-size: 11px;
+    line-height: 1.6;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  a {
+    color: $bu-muted;
+    text-decoration: none;
+    &:hover { color: $bu-on-dark; text-decoration: none; }
+    &:visited { color: $bu-muted; }
+  }
+}

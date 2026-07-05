@@ -1,0 +1,295 @@
+// =============================================================================
+// Denise layout — wrapper, sticky cream header, sticker-style footer
+// =============================================================================
+
+.wrapper {
+  max-width: $dn-content-max;
+  margin: 0 auto;
+  padding: 0 $dn-s-lg;
+}
+
+.page-content {
+  padding: $dn-s-xl 0 $dn-s-section 0;
+}
+
+// Wide wrapper for grid pages
+.wrapper:has(> .home),
+.wrapper:has(> .tag),
+.about-section .wrapper,
+.about-section {
+  max-width: $dn-wide-max;
+}
+
+// -----------------------------------------------------------------------------
+// Site header — solid cream bar with a dotted bottom edge
+// -----------------------------------------------------------------------------
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: $dn-canvas;
+  border-bottom: 3px dotted $dn-hairline;
+  margin: 0;
+  min-height: 72px;
+  line-height: normal;
+  font-family: $dn-font-text;
+
+  box-shadow: none !important;
+
+  nav.split-nav {
+    max-width: $dn-wide-max;
+    margin: 0 auto;
+    padding: 0 $dn-s-lg;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none !important;
+    background: transparent;
+  }
+
+  .nav-brand {
+    h4 {
+      margin: 0;
+      font-family: $dn-font-display;
+      font-size: 38px;
+      font-weight: 700;
+      letter-spacing: 0.005em;
+      line-height: 1;
+
+      a {
+        color: $dn-ink;
+        background: none;
+        text-decoration: none;
+        border-bottom: 0;
+        display: inline-flex;
+        align-items: baseline;
+        gap: 8px;
+        transition: transform 200ms ease;
+
+        // Little sparkle / hand-drawn asterisk in coral
+        &::before {
+          content: "✺";
+          color: $dn-primary;
+          font-family: $dn-font-text;
+          font-size: 22px;
+          line-height: 1;
+          position: relative;
+          top: -2px;
+          transform: rotate(-12deg);
+          display: inline-block;
+          transition: transform 400ms ease;
+        }
+
+        &:hover {
+          color: $dn-ink;
+          border-bottom: 0;
+          text-decoration: none;
+          &::before { transform: rotate(180deg); }
+        }
+        &:visited { color: $dn-ink; }
+      }
+    }
+  }
+
+  .collapsible {
+    display: flex;
+    align-items: center;
+
+    .collapsible-body {
+      ul.inline {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: $dn-s-lg;
+
+        li {
+          margin: 0;
+          a {
+            display: inline-block;
+            font-family: $dn-font-text;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: $dn-body-strong;
+            padding: 8px 4px;
+            text-decoration: none;
+            border-bottom: 0;
+            position: relative;
+            transition: color 160ms ease;
+
+            // Wavy hand-drawn underline reveal
+            &::after {
+              content: "";
+              position: absolute;
+              left: 4px;
+              right: 4px;
+              bottom: 0;
+              height: 4px;
+              background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 4' preserveAspectRatio='none'><path d='M0 2 Q 5 0, 10 2 T 20 2 T 30 2 T 40 2' fill='none' stroke='%23d94f3a' stroke-width='1.5' stroke-linecap='round'/></svg>");
+              background-repeat: repeat-x;
+              background-size: 40px 4px;
+              transform: scaleX(0);
+              transform-origin: left center;
+              transition: transform 250ms ease;
+            }
+
+            &:hover {
+              color: $dn-primary;
+              border-bottom: 0;
+              text-decoration: none;
+              &::after { transform: scaleX(1); }
+            }
+            &:visited { color: $dn-body-strong; }
+            &:visited:hover { color: $dn-primary; }
+          }
+        }
+      }
+    }
+
+    input,
+    button { display: none; }
+  }
+
+  @media (max-width: $dn-bp-tablet - 1) {
+    .collapsible {
+      input { display: none; }
+
+      button {
+        display: inline-flex;
+        background: none;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+        box-shadow: none;
+
+        &:hover { background: none; }
+
+        label {
+          display: inline-flex;
+          flex-direction: column;
+          gap: 5px;
+          cursor: pointer;
+          width: 24px;
+          height: 18px;
+          justify-content: center;
+        }
+      }
+
+      .bar1, .bar2, .bar3 {
+        display: block;
+        width: 24px;
+        height: 2.5px;
+        background: $dn-ink;
+        border-radius: 2px;
+        transition: all 200ms ease;
+      }
+      .bar2 { width: 18px; }
+
+      .collapsible-body {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: $dn-canvas;
+        border-bottom: 3px dotted $dn-hairline;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 250ms ease;
+
+        ul.inline {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0;
+          padding: $dn-s-xs $dn-s-lg $dn-s-md;
+        }
+
+        li { width: 100%; }
+
+        li a {
+          display: block;
+          padding: $dn-s-sm 0;
+          font-size: 16px;
+          border-bottom: 1px dashed $dn-hairline-soft;
+
+          &::after { display: none; }
+        }
+
+        li:last-child a { border-bottom: 0; }
+      }
+
+      input:checked ~ .collapsible-body {
+        max-height: 480px;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Footer — warm dark, not black; cream link color
+// -----------------------------------------------------------------------------
+.site-footer {
+  margin: $dn-s-section 0 0 0;
+  background: $dn-surface-dark;
+  border-top: 0;
+  text-align: left;
+  border-radius: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+  color: $dn-on-dark-soft;
+  position: relative;
+
+  // Scalloped top edge — paper-cut feel
+  &::before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: 0;
+    right: 0;
+    height: 16px;
+    background-image: radial-gradient(circle at 12px 16px, $dn-surface-dark 10px, transparent 11px);
+    background-size: 24px 16px;
+    background-repeat: repeat-x;
+  }
+
+  .container {
+    max-width: $dn-wide-max;
+    width: 100%;
+    margin: 0 auto;
+    padding: $dn-s-xxl $dn-s-lg;
+  }
+
+  .flex-middle {
+    display: flex;
+    flex-direction: column;
+    gap: $dn-s-xs;
+  }
+
+  p {
+    margin: 0;
+    color: $dn-on-dark-soft;
+    font-family: $dn-font-text;
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+  }
+
+  a {
+    color: $dn-on-dark;
+    text-decoration-color: rgba(247, 236, 204, 0.4);
+    &:hover {
+      color: $dn-accent-butter;
+      text-decoration-color: $dn-accent-butter;
+    }
+    &:visited { color: $dn-on-dark; }
+  }
+}

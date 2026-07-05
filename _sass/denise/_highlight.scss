@@ -1,0 +1,59 @@
+// =============================================================================
+// Denise code syntax highlighting
+// Warm dark surface, butter-coral-sage syntax tokens — never blue
+// =============================================================================
+
+$dh-comment:  #8a7e6a;       // warm muted tan
+$dh-keyword:  #e0a73c;       // butter / mustard
+$dh-string:   #f3c5bb;       // soft coral
+$dh-number:   #e8908f;       // dusty pink
+$dh-type:     #7a9e7e;       // sage
+$dh-fn:       #f7eccc;       // cream
+$dh-tag:      #e0a73c;       // butter
+$dh-attr:     #e8908f;       // dusty pink
+$dh-builtin:  #7a9e7e;       // sage
+$dh-error:    #d94f3a;       // coral red
+
+.highlight {
+  background: $dn-surface-dark;
+  border-radius: $dn-r-md;
+  font-family: $dn-font-mono;
+  color: $dn-on-dark;
+  font-size: 14px;
+  line-height: 1.7;
+  border: 2px solid $dn-ink;
+  box-shadow: $dn-shadow-sticker;
+
+  pre {
+    background: transparent;
+    border: 0;
+    margin: 0;
+    color: inherit;
+    padding: $dn-s-lg;
+    box-shadow: none;
+  }
+
+  .c, .cm, .c1, .cs, .cp { color: $dh-comment; font-style: italic; }
+  .err { color: $dh-error; }
+  .k, .kc, .kd, .kp, .kr, .kt { color: $dh-keyword; font-weight: 600; }
+  .o, .ow { color: $dn-on-dark-soft; }
+  .m, .mf, .mh, .mi, .mo, .il { color: $dh-number; }
+  .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr, .ss { color: $dh-string; }
+  .na { color: $dh-attr; }
+  .nb { color: $dh-builtin; }
+  .nc { color: $dh-type; font-weight: 600; }
+  .no { color: $dh-builtin; }
+  .ni, .ne { color: $dh-type; }
+  .nf { color: $dh-fn; font-weight: 600; }
+  .nn { color: $dn-on-dark; }
+  .nt { color: $dh-tag; }
+  .nv, .vc, .vg, .vi { color: $dh-attr; }
+  .w  { color: transparent; }
+  .gh, .gu { color: $dn-on-dark-soft; }
+  .gd { color: $dh-error; }
+  .gi { color: $dh-type; }
+}
+
+.highlighter-rouge {
+  .highlight { padding: 0; }
+}

@@ -1,0 +1,175 @@
+// =============================================================================
+// Claude footnotes — sidenotes on wide screens, popup on narrow
+// =============================================================================
+
+// Hide kramdown's default footnotes <ol>; we render content elsewhere.
+.footnotes { display: none; }
+
+// Sidenotes container is only revealed at the wide breakpoint.
+.sidenotes { display: none; }
+
+// Mobile/narrow default: filled-circle badge for the inline reference.
+// Scoped under article.article so the article > div a rules don't override
+// the white-on-coral fill via specificity.
+article.article sup[id^="fnref:"],
+sup[id^="fnref:"] {
+  font-size: 0.7em;
+  vertical-align: super;
+  line-height: 0;
+  top: 0;
+
+  a {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    text-align: center;
+    border-radius: 50%;
+    background-color: $cl-primary;
+    background-image: none;
+    color: $cl-on-primary;
+    text-decoration: none;
+    border-bottom: 0;
+    margin: 0 0.15em;
+    padding: 0;
+    font-family: $cl-font-text;
+    font-weight: 600;
+    transition: background-color 160ms ease;
+
+    &:visited { color: $cl-on-primary; background-image: none; }
+    &:hover {
+      color: $cl-on-primary;
+      background-color: $cl-primary-active;
+      background-image: none;
+      text-decoration: none;
+      border-bottom: 0;
+    }
+  }
+}
+
+// Wide-screen sidenotes — gutter to the right of the article column
+@media (min-width: 1200px) {
+  body.has-sidenotes {
+    .wrapper {
+      max-width: 1200px;
+      padding-right: 264px;
+    }
+
+    article.article {
+      position: relative;
+      max-width: none;
+    }
+
+    .sidenotes {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      margin-left: 24px;
+      width: 240px;
+      pointer-events: none;
+    }
+
+    .sidenote {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      font-family: $cl-font-text;
+      font-size: 13px;
+      line-height: 1.6;
+      letter-spacing: 0;
+      color: $cl-muted;
+      pointer-events: auto;
+
+      p:first-of-type {
+        display: inline;
+        margin: 0;
+      }
+      p + p {
+        display: block;
+        margin: 0.5em 0 0 0;
+      }
+    }
+
+    .sidenote-num {
+      font-family: $cl-font-text;
+      font-weight: 600;
+      margin-right: 0.3em;
+      color: $cl-primary;
+    }
+
+    // Plain superscript number on PC since the content lives in the gutter.
+    sup[id^="fnref:"] {
+      font-size: 0.75em;
+      line-height: 0;
+      top: -0.5em;
+
+      a {
+        display: inline;
+        width: auto;
+        height: auto;
+        line-height: inherit;
+        border-radius: 0;
+        background-color: transparent;
+        background-image: none;
+        color: $cl-primary;
+        margin: 0;
+        font-weight: inherit;
+        cursor: default;
+        border-bottom: 0;
+
+        &:visited { color: $cl-primary; }
+        &:hover   { color: $cl-primary-active; background-color: transparent; border-bottom: 0; }
+      }
+    }
+
+    .sidenote.is-active { color: $cl-body-strong; }
+  }
+}
+
+// Popup overlay (narrow breakpoint)
+.fn-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 20, 19, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.fn-popup.is-open { display: flex; }
+
+.fn-popup-card {
+  background: $cl-canvas;
+  border: 0;
+  border-radius: $cl-r-lg;
+  padding: $cl-s-lg $cl-s-xl;
+  max-width: 90vw;
+  width: 32rem;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  font-family: $cl-font-text;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: 0;
+  color: $cl-body-strong;
+  box-shadow: $cl-shadow-float;
+}
+
+.fn-popup-num {
+  display: inline;
+  font-family: $cl-font-text;
+  font-weight: 600;
+  margin-right: 0.3em;
+  color: $cl-primary;
+}
+
+.fn-popup-content {
+  display: inline;
+
+  p:first-of-type { display: inline; margin: 0; }
+  p + p { display: block; margin: 0.5em 0 0 0; }
+}

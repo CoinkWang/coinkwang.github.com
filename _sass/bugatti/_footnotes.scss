@@ -1,0 +1,166 @@
+// =============================================================================
+// Bugatti footnotes — sidenotes on wide screens, popup on narrow
+// =============================================================================
+
+.footnotes { display: none; }
+.sidenotes { display: none; }
+
+// Mobile/narrow default: thin circular outline with the number.
+// Scoped under article.article so the article > div a rules (which set the
+// ice-blue link color) don't override the white number via specificity.
+article.article sup[id^="fnref:"],
+sup[id^="fnref:"] {
+  font-size: 0.7em;
+  vertical-align: super;
+  line-height: 0;
+  top: 0;
+
+  a {
+    display: inline-block;
+    width: 1.6em;
+    height: 1.6em;
+    line-height: 1.6em;
+    text-align: center;
+    border-radius: 50%;
+    background-color: transparent;
+    background-image: none;
+    color: $bu-on-dark;
+    border: 1px solid $bu-on-dark;
+    text-decoration: none;
+    margin: 0 0.2em;
+    padding: 0;
+    font-family: $bu-font-mono;
+    font-weight: 400;
+    transition: background-color 160ms ease, color 160ms ease;
+
+    &:visited { color: $bu-on-dark; background-image: none; }
+    &:hover {
+      color: $bu-canvas;
+      background-color: $bu-on-dark;
+      background-image: none;
+      text-decoration: none;
+    }
+  }
+}
+
+// Wide-screen sidenotes
+@media (min-width: 1200px) {
+  body.has-sidenotes {
+    .wrapper {
+      max-width: 1200px;
+      padding-right: 264px;
+    }
+
+    article.article {
+      position: relative;
+      max-width: none;
+    }
+
+    .sidenotes {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      margin-left: $bu-s-lg;
+      width: 240px;
+      pointer-events: none;
+    }
+
+    .sidenote {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      font-family: $bu-font-text;
+      font-size: 13px;
+      line-height: 1.6;
+      letter-spacing: 0;
+      color: $bu-muted;
+      pointer-events: auto;
+
+      p:first-of-type { display: inline; margin: 0; }
+      p + p { display: block; margin: 0.5em 0 0 0; }
+    }
+
+    .sidenote-num {
+      font-family: $bu-font-mono;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      margin-right: 0.4em;
+      color: $bu-on-dark;
+    }
+
+    sup[id^="fnref:"] {
+      font-size: 0.75em;
+      line-height: 0;
+      top: -0.5em;
+
+      a {
+        display: inline;
+        width: auto;
+        height: auto;
+        line-height: inherit;
+        border-radius: 0;
+        background-color: transparent;
+        background-image: none;
+        color: $bu-on-dark;
+        border: 0;
+        margin: 0;
+        font-weight: inherit;
+        cursor: default;
+
+        &:visited { color: $bu-on-dark; }
+        &:hover   { color: $bu-muted; background-color: transparent; }
+      }
+    }
+
+    .sidenote.is-active { color: $bu-body-strong; }
+  }
+}
+
+// Popup overlay (narrow breakpoint)
+.fn-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.fn-popup.is-open { display: flex; }
+
+.fn-popup-card {
+  background: $bu-surface-card;
+  border: 1px solid $bu-hairline-strong;
+  border-radius: 0;
+  padding: $bu-s-xl;
+  max-width: 90vw;
+  width: 32rem;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  font-family: $bu-font-text;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: 0;
+  color: $bu-body;
+  box-shadow: none;
+}
+
+.fn-popup-num {
+  display: inline;
+  font-family: $bu-font-mono;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  margin-right: 0.4em;
+  color: $bu-on-dark;
+}
+
+.fn-popup-content {
+  display: inline;
+
+  p:first-of-type { display: inline; margin: 0; }
+  p + p { display: block; margin: 0.5em 0 0 0; }
+}

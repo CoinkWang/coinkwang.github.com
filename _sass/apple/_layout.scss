@@ -1,0 +1,232 @@
+// =============================================================================
+// Apple layout — wrapper, global nav header, footer
+// =============================================================================
+
+// Wrapper: editorial-width on most pages
+.wrapper {
+  max-width: $apple-content-max;
+  margin: 0 auto;
+  padding: 0 $apple-s-lg;
+}
+
+.page-content {
+  padding: $apple-s-lg 0 $apple-s-section 0;
+}
+
+// Wide wrapper for grid pages (about / tag indexes)
+.about-section .wrapper,
+.about-section,
+.tag .wrapper {
+  max-width: $apple-wide-max;
+}
+
+// -----------------------------------------------------------------------------
+// Site header (global nav)
+// -----------------------------------------------------------------------------
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid $apple-divider-soft;
+  margin: 0;
+  min-height: 52px;
+  line-height: normal;
+  font-family: $apple-font-text;
+
+  // Reset paper.css shadow effects on header
+  box-shadow: none !important;
+
+  nav.split-nav {
+    max-width: $apple-wide-max;
+    margin: 0 auto;
+    padding: 0 $apple-s-lg;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none !important;
+    background: transparent;
+  }
+
+  .nav-brand {
+    h4 {
+      margin: 0;
+      font-family: $apple-font-display;
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: 0.011em;
+      line-height: 1;
+
+      a {
+        color: $apple-ink;
+        background: none;
+        text-decoration: none;
+        &:hover { color: $apple-ink; text-decoration: none; }
+        &:visited { color: $apple-ink; }
+      }
+    }
+  }
+
+  .collapsible {
+    display: flex;
+    align-items: center;
+
+    .collapsible-body {
+      ul.inline {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: $apple-s-lg;
+
+        li {
+          margin: 0;
+          a {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: -0.016em;
+            color: $apple-ink;
+            padding: 4px 2px;
+            text-decoration: none;
+            transition: color 200ms ease;
+
+            &:hover { color: $apple-primary; text-decoration: none; }
+            &:visited { color: $apple-ink; }
+            &:visited:hover { color: $apple-primary; }
+          }
+        }
+      }
+    }
+
+    // Hide paper.css hamburger on desktop
+    input,
+    button { display: none; }
+  }
+
+  @media (max-width: $apple-bp-tablet-land - 1) {
+    .collapsible {
+      // Mobile: show hamburger checkbox toggle.
+      // Do NOT set position: relative here — the dropdown anchors to the
+      // sticky .site-header so it can span the full nav width.
+
+      input {
+        display: none;
+      }
+
+      button {
+        display: inline-flex;
+        background: none;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+
+        label {
+          display: inline-flex;
+          flex-direction: column;
+          gap: 4px;
+          cursor: pointer;
+          width: 22px;
+          height: 16px;
+          justify-content: center;
+        }
+      }
+
+      .bar1, .bar2, .bar3 {
+        display: block;
+        width: 22px;
+        height: 1.5px;
+        background: $apple-ink;
+        border-radius: 2px;
+        transition: all 200ms ease;
+      }
+
+      .collapsible-body {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        border-bottom: 1px solid $apple-divider-soft;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 250ms ease;
+
+        ul.inline {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0;
+          padding: $apple-s-xs $apple-s-lg $apple-s-md;
+        }
+
+        li { width: 100%; }
+
+        li a {
+          display: block;
+          padding: $apple-s-sm 0;
+          font-size: 17px;
+          border-bottom: 1px solid $apple-divider-soft;
+        }
+
+        li:last-child a { border-bottom: 0; }
+      }
+
+      input:checked ~ .collapsible-body {
+        max-height: 480px;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Footer
+// -----------------------------------------------------------------------------
+.site-footer {
+  margin: 0;
+  background: $apple-canvas-parchment;
+  border-top: 1px solid $apple-divider-soft;
+  text-align: left;
+  border-radius: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+
+  .container {
+    max-width: $apple-wide-max;
+    width: 100%;
+    margin: 0 auto;
+    padding: $apple-s-xxl $apple-s-lg;
+  }
+
+  .flex-middle {
+    display: flex;
+    flex-direction: column;
+    gap: $apple-s-xs;
+  }
+
+  p {
+    margin: 0;
+    color: $apple-ink-muted-48;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+  }
+
+  a {
+    color: $apple-ink-muted-32;
+    text-decoration: none;
+    &:hover { color: $apple-primary; text-decoration: underline; }
+    &:visited { color: $apple-ink-muted-32; }
+  }
+}

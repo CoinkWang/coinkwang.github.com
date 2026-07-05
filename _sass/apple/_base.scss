@@ -1,0 +1,164 @@
+// =============================================================================
+// Apple base — resets, typography, links, generic prose
+// =============================================================================
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: $apple-font-text;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.47;
+  letter-spacing: -0.012em;
+  color: $apple-body;
+  background-color: $apple-canvas;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+}
+
+main { flex: 1 0 auto; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $apple-font-display;
+  color: $apple-ink;
+  font-weight: 600;
+  margin: 0 0 0.5em 0;
+  letter-spacing: -0.022em;
+  line-height: 1.1;
+}
+
+h1 { font-size: 40px; letter-spacing: -0.025em; }
+h2 { font-size: 32px; }
+h3 { font-size: 26px; }
+h4 { font-size: 21px; letter-spacing: 0.011em; }
+h5 { font-size: 17px; letter-spacing: -0.022em; font-weight: 600; line-height: 1.24; }
+h6 { font-size: 14px; letter-spacing: -0.016em; font-weight: 600; }
+
+p {
+  margin: 0 0 1em 0;
+  font-size: 17px;
+  line-height: 1.47;
+}
+
+small { font-size: 12px; letter-spacing: -0.01em; }
+
+a {
+  color: $apple-primary;
+  text-decoration: none;
+  background-image: none;
+  transition: color 200ms ease;
+
+  &:visited { color: $apple-primary; }
+  &:hover   { color: $apple-primary-focus; text-decoration: underline; }
+  &:focus-visible {
+    outline: 2px solid $apple-primary-focus;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: $apple-hairline;
+  margin: $apple-s-xl 0;
+}
+
+ul, ol { padding-left: 1.2em; }
+
+li { margin: 0.2em 0; }
+
+blockquote {
+  margin: $apple-s-lg 0;
+  padding: $apple-s-sm $apple-s-lg;
+  border-left: 3px solid $apple-hairline-strong;
+  color: $apple-ink-muted-80;
+  font-style: normal;
+  background: transparent;
+
+  p:last-child { margin-bottom: 0; }
+}
+
+code, kbd, samp, pre {
+  font-family: $apple-font-mono;
+  font-size: 0.9em;
+}
+
+code {
+  background: $apple-canvas-parchment;
+  color: $apple-ink;
+  padding: 0.15em 0.4em;
+  border-radius: $apple-r-xs;
+}
+
+pre {
+  background: $apple-canvas-parchment;
+  color: $apple-ink;
+  padding: $apple-s-md $apple-s-lg;
+  border-radius: $apple-r-md;
+  overflow-x: auto;
+  line-height: 1.55;
+  margin: $apple-s-lg 0;
+  border: 1px solid $apple-divider-soft;
+
+  code {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: $apple-r-sm;
+}
+
+figure {
+  margin: $apple-s-lg 0;
+  text-align: center;
+
+  figcaption {
+    margin-top: $apple-s-xs;
+    font-size: 14px;
+    color: $apple-ink-muted-48;
+    letter-spacing: -0.016em;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: $apple-s-lg 0;
+  font-size: 15px;
+
+  th, td {
+    padding: $apple-s-sm $apple-s-md;
+    border-bottom: 1px solid $apple-hairline;
+    text-align: left;
+  }
+
+  th {
+    font-weight: 600;
+    color: $apple-ink;
+    background: $apple-canvas-parchment;
+  }
+
+  tr:hover td { background: $apple-surface-pearl; }
+}
+
+::selection {
+  background: rgba(0, 102, 204, 0.18);
+  color: $apple-ink;
+}

@@ -1,0 +1,185 @@
+// =============================================================================
+// Denise footnotes — sidenotes on wide screens, sticker popup on narrow
+// =============================================================================
+
+// Hide kramdown's default footnotes <ol>; we render content elsewhere.
+.footnotes { display: none; }
+
+.sidenotes { display: none; }
+
+// Mobile/narrow default: small coral-sticker badge for the inline reference.
+article.article sup[id^="fnref:"],
+sup[id^="fnref:"] {
+  font-size: 0.7em;
+  vertical-align: super;
+  line-height: 0;
+  top: 0;
+
+  a {
+    display: inline-block;
+    width: 1.6em;
+    height: 1.6em;
+    line-height: 1.5em;
+    text-align: center;
+    border-radius: 50%;
+    background-color: $dn-primary;
+    background-image: none;
+    color: $dn-on-primary;
+    text-decoration: none;
+    border-bottom: 0;
+    border: 1.5px solid $dn-ink;
+    margin: 0 0.2em;
+    padding: 0;
+    font-family: $dn-font-text;
+    font-weight: 700;
+    transition: background-color 160ms ease, transform 160ms ease;
+
+    &:visited { color: $dn-on-primary; background-image: none; }
+    &:hover {
+      color: $dn-on-primary;
+      background-color: $dn-primary-active;
+      background-image: none;
+      text-decoration: none;
+      border-bottom: 0;
+      transform: scale(1.1) rotate(-6deg);
+    }
+  }
+}
+
+// Wide-screen sidenotes — gutter to the right of the article column
+@media (min-width: 1200px) {
+  body.has-sidenotes {
+    .wrapper {
+      max-width: 1200px;
+      padding-right: 264px;
+    }
+
+    article.article {
+      position: relative;
+      max-width: none;
+    }
+
+    .sidenotes {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      margin-left: 24px;
+      width: 240px;
+      pointer-events: none;
+    }
+
+    .sidenote {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      font-family: $dn-font-text;
+      font-size: 13px;
+      line-height: 1.65;
+      letter-spacing: 0;
+      color: $dn-muted;
+      pointer-events: auto;
+      padding-left: 12px;
+      border-left: 2px dashed $dn-hairline;
+
+      p:first-of-type {
+        display: inline;
+        margin: 0;
+      }
+      p + p {
+        display: block;
+        margin: 0.5em 0 0 0;
+      }
+    }
+
+    .sidenote-num {
+      font-family: $dn-font-text;
+      font-weight: 700;
+      margin-right: 0.3em;
+      color: $dn-primary;
+    }
+
+    // Plain superscript on PC since content lives in the gutter.
+    sup[id^="fnref:"] {
+      font-size: 0.75em;
+      line-height: 0;
+      top: -0.5em;
+
+      a {
+        display: inline;
+        width: auto;
+        height: auto;
+        line-height: inherit;
+        border-radius: 0;
+        border: 0;
+        background-color: transparent;
+        background-image: none;
+        color: $dn-primary;
+        margin: 0;
+        font-weight: inherit;
+        cursor: default;
+        border-bottom: 0;
+
+        &:visited { color: $dn-primary; }
+        &:hover   {
+          color: $dn-primary-active;
+          background-color: transparent;
+          border-bottom: 0;
+          transform: none;
+        }
+      }
+    }
+
+    .sidenote.is-active {
+      color: $dn-body-strong;
+      border-left-color: $dn-primary;
+    }
+  }
+}
+
+// Popup overlay (narrow breakpoint) — sticker card
+.fn-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(42, 37, 32, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.fn-popup.is-open { display: flex; }
+
+.fn-popup-card {
+  background: $dn-surface-warm;
+  border: 2px solid $dn-ink;
+  border-radius: $dn-r-md;
+  padding: $dn-s-lg $dn-s-xl;
+  max-width: 90vw;
+  width: 32rem;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  font-family: $dn-font-text;
+  font-size: 15px;
+  line-height: 1.65;
+  letter-spacing: 0;
+  color: $dn-body-strong;
+  box-shadow: $dn-shadow-sticker-lg;
+}
+
+.fn-popup-num {
+  display: inline;
+  font-family: $dn-font-text;
+  font-weight: 700;
+  margin-right: 0.3em;
+  color: $dn-primary;
+}
+
+.fn-popup-content {
+  display: inline;
+
+  p:first-of-type { display: inline; margin: 0; }
+  p + p { display: block; margin: 0.5em 0 0 0; }
+}

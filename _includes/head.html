@@ -4,6 +4,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- include favicons.html -%}
   {%- seo -%}
+  {%- comment -%} Self-hosted fonts (see assets/fonts/*.css) — avoids the Google Fonts CDN, blocked in mainland China. {%- endcomment -%}
+  {%- if site.theme_style == "claude" -%}
+    <link rel="stylesheet" href="{{ "/assets/fonts/claude.css" | relative_url }}">
+  {%- elsif site.theme_style == "denise" -%}
+    <link rel="stylesheet" href="{{ "/assets/fonts/denise.css" | relative_url }}">
+  {%- elsif site.theme_style == nil or site.theme_style == "bugatti" -%}
+    <link rel="stylesheet" href="{{ "/assets/fonts/bugatti.css" | relative_url }}">
+  {%- endif -%}
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
   {%- feed_meta -%}
 </head>

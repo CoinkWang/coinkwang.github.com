@@ -2,4 +2,14 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-@import "glance"
+{% if site.theme_style == "glance" %}
+@import "glance";
+{% elsif site.theme_style == "apple" %}
+@import "apple";
+{% elsif site.theme_style == "claude" %}
+@import "claude";
+{% elsif site.theme_style == "denise" %}
+@import "denise";
+{% else %}
+@import "bugatti";
+{% endif %}
