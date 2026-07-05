@@ -4,3 +4,5 @@ _site
 .DS_Store
 .ruby-version
 .jekyll-cache
+.writing-notes/
+.obsidian/
