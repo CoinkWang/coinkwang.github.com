@@ -14,7 +14,8 @@ show_subtitle: true
 #   apple   — Apple 风格（白底 + 深蓝 + SF Pro，无衬线）
 #   denise  — Denise Chandler 风格（黄油奶黄底 + 珊瑚红 + 手写 Caveat 标题 + 贴纸卡片）
 #   glance  — 旧版，PaperCSS 手绘风格
-theme_style: glance
+#   fieldguide — 鸟类学家观察手册（陈纸 + 墨色 + 苔绿 + 朱砂印章，手绘群鸟）
+theme_style: fieldguide
 
 header_pages:
   - about.md

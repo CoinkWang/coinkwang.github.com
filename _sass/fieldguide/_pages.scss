@@ -1,0 +1,514 @@
+// =============================================================================
+// Fieldguide pages — home ledger, article, tag, about specimens, links
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Home — an index of entries with dotted leaders, grouped by year
+// -----------------------------------------------------------------------------
+.home {
+  .page-heading {
+    font-family: $fg-font-serif;
+    font-size: 34px;
+    font-weight: 600;
+    color: $fg-ink;
+    margin: $fg-s-lg 0 $fg-s-xl 0;
+  }
+}
+
+// Year heading — a wide-tracked small-caps figure hanging over a short rule
+.year-heading {
+  font-family: $fg-font-serif;
+  font-size: 30px;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.12em;
+  color: $fg-ink;
+  background: transparent;
+  display: block;
+  padding: 0;
+  margin: $fg-s-xxl 0 $fg-s-md 0;
+  line-height: 1;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 44px;
+    height: 2px;
+    background: $fg-moss;
+    margin-top: 10px;
+  }
+
+  &:first-of-type { margin-top: $fg-s-md; }
+}
+
+// -----------------------------------------------------------------------------
+// Post list — ledger rows: title … leader … marks
+// -----------------------------------------------------------------------------
+.post-link {
+  display: block;
+  margin: 0;
+  padding: $fg-s-md 2px;
+  border: 0;
+  border-bottom: 1px solid $fg-hairline-soft;
+  border-radius: 0;
+  background: transparent;
+  font-size: 16px;
+  box-shadow: none;
+  transition: background-color 150ms ease;
+
+  &:last-of-type { border-bottom: 1px solid $fg-hairline-soft; }
+
+  &:hover {
+    background: rgba(251, 247, 234, 0.9);
+    .post-link-title { color: $fg-moss-deep; }
+  }
+}
+
+.post-link-header {
+  display: flex;
+  align-items: baseline;
+  gap: $fg-s-sm;
+  flex-wrap: nowrap;
+
+  // The dotted leader between title and marks, as in a table of contents
+  &::after {
+    content: "";
+    order: 2;
+    flex: 1 1 auto;
+    min-width: 24px;
+    border-bottom: 1.5px dotted $fg-hairline;
+    transform: translateY(-4px);
+  }
+}
+
+.post-link-title {
+  order: 1;
+  flex: 0 1 auto;
+  min-width: 0;
+  font-family: $fg-font-serif;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: $fg-ink !important;
+  background: none !important;
+  background-image: none !important;
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+  transition: color 150ms ease;
+
+  &:visited { color: $fg-ink !important; }
+  &:hover   { color: $fg-moss-deep !important; text-decoration: none !important; border-bottom: 0 !important; }
+}
+
+.post-meta-list {
+  order: 3;
+  display: inline-flex;
+  align-items: baseline;
+  flex-shrink: 0;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  // The date badge — last in the row — drops its frame and reads as a plain figure
+  .badge:last-child {
+    border-color: transparent;
+    padding-right: 0;
+    color: $fg-muted;
+    text-transform: none;
+    letter-spacing: 0.04em;
+  }
+}
+
+.post-link-body {
+  display: block;
+  text-decoration: none !important;
+  background: none !important;
+  background-image: none !important;
+  color: inherit !important;
+  border-bottom: 0 !important;
+
+  &:visited, &:hover { text-decoration: none !important; color: inherit !important; border-bottom: 0 !important; }
+}
+
+.post-subtitle {
+  margin-top: 2px;
+  font-family: $fg-font-serif;
+  font-size: 14.5px;
+  font-style: italic;
+  color: $fg-body;
+  line-height: 1.6;
+}
+
+.post-preview {
+  margin-top: 4px;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: $fg-muted;
+}
+
+@media (max-width: $fg-bp-tablet - 1) {
+  .post-link { padding: $fg-s-md 0; }
+
+  .post-link-header {
+    flex-wrap: wrap;
+    gap: 4px $fg-s-sm;
+
+    &::after { display: none; }
+  }
+
+  .post-link-title { font-size: 18px; flex: 1 1 100%; }
+  .post-meta-list { justify-content: flex-start; }
+}
+
+// -----------------------------------------------------------------------------
+// Single post — a written-up entry, closed with a vermilion stamp
+// -----------------------------------------------------------------------------
+article.article {
+  max-width: $fg-content-max;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+
+  > header {
+    padding: $fg-s-lg 0 $fg-s-lg 0;
+    border-bottom: 1px solid $fg-hairline;
+    margin-bottom: $fg-s-xl;
+
+    h3 {
+      font-family: $fg-font-serif;
+      font-size: 38px;
+      font-weight: 600;
+      line-height: 1.35;
+      letter-spacing: 0.01em;
+      color: $fg-ink;
+      margin: 0 0 $fg-s-sm 0;
+
+      @media (max-width: $fg-bp-tablet - 1) { font-size: 29px; }
+    }
+
+    .badge { margin-right: 4px; }
+
+    > p {
+      color: $fg-body;
+      font-family: $fg-font-serif;
+      font-size: 17px;
+      font-style: italic;
+      line-height: 1.6;
+      margin: $fg-s-sm 0 $fg-s-xs 0;
+    }
+
+    .article-meta {
+      margin-top: $fg-s-sm;
+      font-family: $fg-font-mono;
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: $fg-muted;
+      font-style: normal;
+
+      time { color: inherit; }
+    }
+  }
+
+  // The stamp sits after the last line of the entry
+  > div:first-of-type::after {
+    content: "";
+    display: block;
+    width: 84px;
+    height: 84px;
+    margin: $fg-s-xl 0 0 auto;
+    opacity: 0.85;
+    transform: rotate(-8deg);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 90'><g fill='none' stroke='#{$fg-stamp-uri}'><circle cx='45' cy='45' r='42' stroke-width='2.4'/><circle cx='45' cy='45' r='35' stroke-width='1'/></g><g fill='#{$fg-stamp-uri}'><path transform='translate(30,30) scale(2.1)' d='M0 2 Q3.5 -2.5 7 1 Q10.5 -2.5 14 2 Q10.5 0.6 7 3.2 Q3.5 0.6 0 2 Z'/><text x='45' y='62' text-anchor='middle' font-family='Georgia,serif' font-size='12' letter-spacing='3'>COINK</text></g></svg>");
+    background-repeat: no-repeat;
+    background-size: 84px 84px;
+  }
+
+  // Prose inside article body
+  > div {
+    font-family: $fg-font-serif;
+    font-size: 17px;
+    line-height: 1.9;
+    color: $fg-body;
+
+    h1 { font-size: 32px; margin: 1.7em 0 0.6em; }
+    h2 { font-size: 27px; margin: 1.7em 0 0.5em; }
+    h3 { font-size: 22px; margin: 1.5em 0 0.5em; }
+    h4 { font-size: 18px; margin: 1.3em 0 0.4em; }
+
+    p { margin: 0 0 1.15em 0; }
+
+    ul, ol { margin: 0 0 1.15em 0; }
+
+    img {
+      display: block;
+      margin: $fg-s-lg auto;
+    }
+
+    a {
+      color: $fg-ink;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-decoration-color: rgba(46, 42, 32, 0.35);
+      text-underline-offset: 3px;
+      border-bottom: 0;
+      &:hover {
+        color: $fg-moss-deep;
+        text-decoration-color: $fg-moss;
+      }
+    }
+  }
+}
+
+// Comments — a fresh page after the entry
+#cusdis_thread {
+  margin-top: $fg-s-xxl;
+  padding-top: $fg-s-xl;
+  border-top: 1px solid $fg-hairline;
+  max-width: $fg-content-max;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// -----------------------------------------------------------------------------
+// Tag pages
+// -----------------------------------------------------------------------------
+.tag {
+  .page-heading {
+    font-family: $fg-font-mono !important;
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: $fg-moss-deep;
+    margin: $fg-s-lg 0 $fg-s-xl 0;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 44px;
+      height: 2px;
+      background: $fg-moss;
+      margin-top: 12px;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// About — specimen sheets taped onto the page
+// -----------------------------------------------------------------------------
+.about-section {
+  max-width: $fg-wide-max;
+  margin: 0 auto;
+  padding: $fg-s-xl $fg-s-lg $fg-s-section;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: $fg-s-lg;
+  margin: 0 auto;
+}
+
+.about-item {
+  text-align: left;
+  padding: $fg-s-xl $fg-s-lg $fg-s-lg;
+  background: $fg-sheet;
+  border-radius: $fg-r-xs;
+  border: 1px solid $fg-hairline;
+  box-shadow: $fg-shadow-sheet;
+  position: relative;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+
+  // A strip of translucent tape across the top edge
+  &::before {
+    content: "";
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    width: 76px;
+    height: 20px;
+    background: rgba(214, 202, 168, 0.55);
+    border-left: 1px dashed rgba(139, 128, 105, 0.35);
+    border-right: 1px dashed rgba(139, 128, 105, 0.35);
+    transform: translateX(-50%) rotate(-2deg);
+  }
+
+  &:nth-child(3n+1) { transform: rotate(-0.6deg); &::before { transform: translateX(-50%) rotate(2.5deg); } }
+  &:nth-child(3n+2) { transform: rotate(0.5deg); }
+  &:nth-child(3n+3) { transform: rotate(-0.3deg); &::before { transform: translateX(-50%) rotate(-3deg); } }
+
+  &:hover {
+    transform: rotate(0) translateY(-3px);
+    box-shadow: $fg-shadow-lift;
+  }
+}
+
+// Emoji icons pressed into ink drawings
+.about-icon {
+  font-size: 30px;
+  margin-bottom: $fg-s-sm;
+  line-height: 1;
+  display: inline-block;
+  filter: grayscale(1) sepia(0.35) contrast(1.05);
+  opacity: 0.85;
+}
+
+.about-label {
+  font-family: $fg-font-serif;
+  font-size: 23px;
+  font-weight: 600;
+  color: $fg-ink;
+  line-height: 1.2;
+
+  & + .about-label {
+    font-family: $fg-font-serif;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.06em;
+    text-transform: none;
+    color: $fg-muted;
+    margin-bottom: $fg-s-sm;
+    margin-top: 1px;
+  }
+}
+
+.about-desc {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: $fg-body;
+  margin: $fg-s-xs 0;
+}
+
+.about-badges-collapsible {
+  margin-top: $fg-s-sm;
+
+  summary {
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    color: $fg-moss-deep;
+    font-family: $fg-font-hand;
+    font-size: 18px;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    background: transparent;
+
+    &::-webkit-details-marker { display: none; }
+    &::after {
+      content: " ›";
+      display: inline-block;
+      transition: transform 250ms ease;
+      margin-left: 4px;
+    }
+    &:focus { outline: none; }
+  }
+
+  &[open] summary::after { transform: rotate(90deg); }
+}
+
+.about-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: $fg-s-sm;
+
+  .badge {
+    background: transparent;
+    color: $fg-body;
+    border: 1px solid $fg-hairline;
+    text-transform: none;
+    font-family: $fg-font-serif;
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Links / friend-links — specimen tags tied on with string
+// -----------------------------------------------------------------------------
+.friend-links-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $fg-s-md;
+  justify-content: flex-start;
+  margin-top: $fg-s-xl;
+}
+
+.friend-links {
+  transform: none;
+  min-width: auto;
+  margin: 0;
+
+  &:nth-child(even) { transform: rotate(0.8deg); }
+  &:nth-child(3n)   { transform: rotate(-0.8deg); }
+
+  button {
+    background: $fg-sheet;
+    color: $fg-ink;
+    border: 1px solid $fg-hairline;
+    border-radius: $fg-r-sm;
+    padding: 10px 16px 10px 26px;
+    height: auto;
+    font-family: $fg-font-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    box-shadow: $fg-shadow-sheet;
+    position: relative;
+
+    // The tag's punched hole
+    &::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      width: 7px;
+      height: 7px;
+      border: 1.3px solid $fg-muted-soft;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:hover {
+      background: $fg-sheet-warm;
+      color: $fg-moss-deep;
+      border-color: $fg-moss;
+      transform: translateY(-2px);
+      box-shadow: $fg-shadow-lift;
+    }
+  }
+
+  a { background: none !important; text-decoration: none !important; border-bottom: 0 !important; }
+}
+
+// -----------------------------------------------------------------------------
+// Generic page heading fallback
+// -----------------------------------------------------------------------------
+.page-heading {
+  font-family: $fg-font-serif;
+  font-weight: 600;
+  color: $fg-ink;
+}
+
+// -----------------------------------------------------------------------------
+// Works cards
+// -----------------------------------------------------------------------------
+.works-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: $fg-s-lg;
+}
+
+.works-card {
+  width: auto;
+  margin: 0;
+  background: $fg-sheet;
+  border: 1px solid $fg-hairline;
+  border-radius: $fg-r-xs;
+  padding: $fg-s-lg;
+  box-shadow: $fg-shadow-sheet;
+}

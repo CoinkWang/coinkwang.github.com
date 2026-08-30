@@ -1,0 +1,218 @@
+// =============================================================================
+// Fieldguide base — paper, ink, typography, prose
+// =============================================================================
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: $fg-font-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: $fg-body;
+  background-color: $fg-paper;
+  // Paper grain: faint fibre flecks, nothing regular enough to read as a pattern
+  background-image:
+    radial-gradient(circle at 22% 16%, rgba(139, 128, 105, 0.13) 1px, transparent 1.6px),
+    radial-gradient(circle at 71% 54%, rgba(139, 128, 105, 0.10) 1px, transparent 1.6px),
+    radial-gradient(circle at 44% 82%, rgba(139, 128, 105, 0.11) 1px, transparent 1.6px),
+    radial-gradient(circle at 88% 23%, rgba(215, 203, 170, 0.5) 1.2px, transparent 1.8px);
+  background-size: 190px 190px, 240px 240px, 300px 300px, 260px 260px;
+  background-position: 0 0, 60px 90px, 130px 40px, 30px 160px;
+  background-attachment: fixed;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-wrap: break-word;
+}
+
+main { flex: 1 0 auto; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $fg-font-serif;
+  color: $fg-ink;
+  font-weight: 600;
+  margin: 0 0 0.5em 0;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+
+h1 { font-size: 40px; }
+h2 { font-size: 32px; }
+h3 { font-size: 26px; }
+h4 { font-size: 21px; }
+h5 { font-size: 18px; }
+h6 {
+  font-size: 13px;
+  font-family: $fg-font-mono;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $fg-muted;
+}
+
+p {
+  margin: 0 0 1em 0;
+  line-height: 1.85;
+}
+
+small { font-size: 13px; }
+
+strong, b { color: $fg-ink; font-weight: 600; }
+
+em, i { color: inherit; font-style: italic; }
+
+// Links: fine ink underline that turns moss on hover
+a {
+  color: $fg-ink;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(46, 42, 32, 0.35);
+  text-underline-offset: 3px;
+  background-image: none;
+  transition: color 150ms ease, text-decoration-color 150ms ease;
+
+  &:visited { color: $fg-ink; }
+  &:hover {
+    color: $fg-moss-deep;
+    text-decoration-color: $fg-moss;
+  }
+  &:focus-visible {
+    outline: 1.5px dashed $fg-moss;
+    outline-offset: 3px;
+    border-radius: $fg-r-xs;
+  }
+}
+
+// Divider: a short trail of bird footprints walking across the page
+hr {
+  border: 0;
+  height: 20px;
+  margin: $fg-s-xl auto;
+  max-width: 170px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 170 20'><g stroke='#{$fg-muted-uri}' stroke-width='1.3' stroke-linecap='round' fill='none'><g transform='translate(14,15) rotate(-14)'><path d='M0 0 L-3.4 -5 M0 0 L0 -6 M0 0 L3.4 -5'/></g><g transform='translate(58,13) rotate(10)'><path d='M0 0 L-3.4 -5 M0 0 L0 -6 M0 0 L3.4 -5'/></g><g transform='translate(102,15) rotate(-8)'><path d='M0 0 L-3.4 -5 M0 0 L0 -6 M0 0 L3.4 -5'/></g><g transform='translate(146,12) rotate(14)'><path d='M0 0 L-3.4 -5 M0 0 L0 -6 M0 0 L3.4 -5'/></g></g></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 170px 20px;
+}
+
+ul, ol { padding-left: 1.5em; }
+li { margin: 0.3em 0; }
+ul li::marker { color: $fg-moss; }
+ol li::marker { color: $fg-muted; font-family: $fg-font-mono; font-size: 0.85em; }
+
+// Blockquote: a margin annotation in handwriting, hung on a pencil rule
+blockquote {
+  margin: $fg-s-lg 0;
+  padding: $fg-s-xs $fg-s-lg;
+  border-left: 2px solid $fg-hairline;
+  background: none;
+  color: $fg-ink;
+  font-family: $fg-font-hand;
+  font-size: 22px;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+
+  p { line-height: 1.55; }
+  p:last-child { margin-bottom: 0; }
+}
+
+code, kbd, samp, pre {
+  font-family: $fg-font-mono;
+  font-size: 0.85em;
+}
+
+code {
+  background: rgba(215, 203, 170, 0.35);
+  color: $fg-ink;
+  padding: 0.12em 0.4em;
+  border-radius: $fg-r-sm;
+  border: 0;
+}
+
+pre {
+  background: $fg-slate;
+  color: $fg-on-slate;
+  padding: $fg-s-lg;
+  border-radius: $fg-r-md;
+  overflow-x: auto;
+  line-height: 1.65;
+  margin: $fg-s-lg 0;
+  font-size: 13.5px;
+  border: 1px solid $fg-ink;
+
+  code {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    color: inherit;
+    font-size: inherit;
+  }
+}
+
+// Photographs are mounted: cream mat, hairline frame
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: $fg-r-xs;
+  background: $fg-sheet;
+  border: 1px solid $fg-hairline;
+  padding: 4px;
+}
+
+figure {
+  margin: $fg-s-lg 0;
+  text-align: center;
+
+  figcaption {
+    margin-top: $fg-s-xs;
+    font-family: $fg-font-hand;
+    font-size: 17px;
+    color: $fg-muted;
+  }
+}
+
+// Ruled ledger table
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: $fg-s-lg 0;
+  font-size: 15px;
+  background: transparent;
+  border: 0;
+  border-top: 2px solid $fg-ink;
+  border-bottom: 2px solid $fg-ink;
+
+  th, td {
+    padding: $fg-s-xs $fg-s-sm;
+    border-bottom: 1px solid $fg-hairline-soft;
+    text-align: left;
+  }
+
+  th {
+    font-family: $fg-font-mono;
+    font-weight: 500;
+    font-size: 11.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $fg-muted;
+    background: transparent;
+    border-bottom: 1px solid $fg-ink;
+  }
+
+  tr:last-child td { border-bottom: 0; }
+  tr:hover td { background: rgba(237, 229, 203, 0.55); }
+}
+
+::selection {
+  background: rgba(93, 112, 82, 0.25);
+  color: $fg-ink;
+}

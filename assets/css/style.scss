@@ -10,6 +10,8 @@
 @import "claude";
 {% elsif site.theme_style == "denise" %}
 @import "denise";
+{% elsif site.theme_style == "fieldguide" %}
+@import "fieldguide";
 {% else %}
 @import "bugatti";
 {% endif %}

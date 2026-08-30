@@ -1,0 +1,82 @@
+// =============================================================================
+// Fieldguide tokens — an ornithologist's notebook
+// Aged paper, warm ink, moss green, a single vermilion stamp.
+// The metaphor lives entirely in texture, type and hand-drawn marks —
+// never in copy.
+// =============================================================================
+
+// Ink — warm sepia-black, like fountain-pen ink on cream paper
+$fg-ink:            #2e2a20;
+$fg-body:           #4a4436;
+$fg-muted:          #8b8069;
+$fg-muted-soft:     #b3a88d;
+
+// Paper surfaces
+$fg-paper:          #f4eeda;   // page canvas
+$fg-paper-soft:     #ede5cb;   // recessed / hover
+$fg-sheet:          #fbf7ea;   // a fresher sheet laid on top (cards)
+$fg-sheet-warm:     #f8f2e0;
+
+// Hairlines — faded pencil ruling
+$fg-hairline:       #d7cbaa;
+$fg-hairline-soft:  #e4dbbf;
+
+// Accents
+$fg-moss:           #5d7052;   // moss green — links, markers, living things
+$fg-moss-deep:      #45543c;
+$fg-moss-soft:      #dde3d2;
+$fg-stamp:          #b04a3c;   // vermilion — the stamp, and almost nothing else
+$fg-stamp-soft:     #ead3cb;
+
+// Dark surface (code blocks) — like a slate notebook cover
+$fg-slate:          #322d23;
+$fg-on-slate:       #ece4cc;
+$fg-on-slate-soft:  #a89c7e;
+
+// URL-encoded ink/moss/stamp for data-URI SVGs
+$fg-ink-uri:   "%232e2a20";
+$fg-muted-uri: "%238b8069";
+$fg-moss-uri:  "%235d7052";
+$fg-stamp-uri: "%23b04a3c";
+
+// Radii — paper barely rounds
+$fg-r-xs:   2px;
+$fg-r-sm:   3px;
+$fg-r-md:   5px;
+
+// Spacing
+$fg-s-xxs:     4px;
+$fg-s-xs:      8px;
+$fg-s-sm:      12px;
+$fg-s-md:      16px;
+$fg-s-lg:      24px;
+$fg-s-xl:      36px;
+$fg-s-xxl:     56px;
+$fg-s-section: 88px;
+
+// Typography
+// Serif carries the plates-and-captions feel of a printed field guide;
+// CJK falls back to Songti / Noto Serif.
+$fg-font-serif: "EB Garamond", "Songti SC", "Noto Serif SC", "Source Han Serif SC",
+                "STSong", SimSun, Georgia, "Times New Roman", serif;
+
+// Handwriting for margin annotations; CJK leans on Kaiti.
+$fg-font-hand:  "Caveat", "Kaiti SC", "STKaiti", KaiTi, "Yuanti SC",
+                cursive, serif;
+
+// Mono for dates, catalogue numbers, metadata.
+$fg-font-mono:  "JetBrains Mono", "SF Mono", ui-monospace, Menlo, Consolas,
+                "Liberation Mono", monospace;
+
+// Containers
+$fg-content-max:  680px;
+$fg-wide-max:     1080px;
+
+// Breakpoints
+$fg-bp-phone:    480px;
+$fg-bp-tablet:   768px;
+$fg-bp-desktop:  1024px;
+
+// Shadows — paper lies flat; only lifted sheets cast a whisper
+$fg-shadow-sheet: 0 1px 2px rgba(46, 42, 32, 0.10), 0 4px 14px rgba(46, 42, 32, 0.07);
+$fg-shadow-lift:  0 2px 4px rgba(46, 42, 32, 0.12), 0 10px 24px rgba(46, 42, 32, 0.10);

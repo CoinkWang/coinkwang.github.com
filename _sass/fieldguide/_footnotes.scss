@@ -1,0 +1,181 @@
+// =============================================================================
+// Fieldguide footnotes — sidenotes in the margin on wide screens,
+// a slipped-in note card on narrow ones
+// =============================================================================
+
+.footnotes { display: none; }
+
+.sidenotes { display: none; }
+
+// Narrow default: a small circled figure, like a pencilled reference mark
+article.article sup[id^="fnref:"],
+sup[id^="fnref:"] {
+  font-size: 0.7em;
+  vertical-align: super;
+  line-height: 0;
+  top: 0;
+
+  a {
+    display: inline-block;
+    width: 1.7em;
+    height: 1.7em;
+    line-height: 1.55em;
+    text-align: center;
+    border-radius: 50%;
+    background-color: transparent;
+    background-image: none;
+    color: $fg-moss-deep;
+    text-decoration: none;
+    border-bottom: 0;
+    border: 1px solid $fg-moss;
+    margin: 0 0.2em;
+    padding: 0;
+    font-family: $fg-font-mono;
+    font-weight: 500;
+    transition: background-color 150ms ease, color 150ms ease;
+
+    &:visited { color: $fg-moss-deep; background-image: none; }
+    &:hover {
+      color: $fg-sheet;
+      background-color: $fg-moss-deep;
+      background-image: none;
+      text-decoration: none;
+      border-bottom: 0;
+    }
+  }
+}
+
+// Wide screens: notes live in the right margin, hung on a pencil rule
+@media (min-width: 1200px) {
+  body.has-sidenotes {
+    .wrapper {
+      max-width: 1200px;
+      padding-right: 264px;
+    }
+
+    article.article {
+      position: relative;
+      max-width: none;
+    }
+
+    .sidenotes {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      margin-left: 24px;
+      width: 240px;
+      pointer-events: none;
+    }
+
+    .sidenote {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      font-family: $fg-font-serif;
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: $fg-muted;
+      pointer-events: auto;
+      padding-left: 12px;
+      border-left: 2px solid $fg-hairline-soft;
+
+      p:first-of-type {
+        display: inline;
+        margin: 0;
+      }
+      p + p {
+        display: block;
+        margin: 0.5em 0 0 0;
+      }
+    }
+
+    .sidenote-num {
+      font-family: $fg-font-mono;
+      font-weight: 500;
+      font-size: 11px;
+      margin-right: 0.35em;
+      color: $fg-moss-deep;
+    }
+
+    sup[id^="fnref:"] {
+      font-size: 0.75em;
+      line-height: 0;
+      top: -0.5em;
+
+      a {
+        display: inline;
+        width: auto;
+        height: auto;
+        line-height: inherit;
+        border-radius: 0;
+        border: 0;
+        background-color: transparent;
+        background-image: none;
+        color: $fg-moss-deep;
+        margin: 0;
+        font-weight: inherit;
+        cursor: default;
+        border-bottom: 0;
+
+        &:visited { color: $fg-moss-deep; }
+        &:hover   {
+          color: $fg-moss;
+          background-color: transparent;
+          border-bottom: 0;
+        }
+      }
+    }
+
+    .sidenote.is-active {
+      color: $fg-body;
+      border-left-color: $fg-moss;
+    }
+  }
+}
+
+// Popup overlay (narrow) — a note card laid over the page
+.fn-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(46, 42, 32, 0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.fn-popup.is-open { display: flex; }
+
+.fn-popup-card {
+  background: $fg-sheet;
+  border: 1px solid $fg-ink;
+  border-radius: $fg-r-sm;
+  padding: $fg-s-lg $fg-s-xl;
+  max-width: 90vw;
+  width: 32rem;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  font-family: $fg-font-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  color: $fg-body;
+  box-shadow: $fg-shadow-lift;
+}
+
+.fn-popup-num {
+  display: inline;
+  font-family: $fg-font-mono;
+  font-weight: 500;
+  margin-right: 0.35em;
+  color: $fg-moss-deep;
+}
+
+.fn-popup-content {
+  display: inline;
+
+  p:first-of-type { display: inline; margin: 0; }
+  p + p { display: block; margin: 0.5em 0 0 0; }
+}

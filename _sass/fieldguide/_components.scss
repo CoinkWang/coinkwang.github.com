@@ -1,0 +1,211 @@
+// =============================================================================
+// Fieldguide components — quiet mono labels, paper buttons, pencil pagination
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Buttons — a slip of fresher paper with an ink frame
+// -----------------------------------------------------------------------------
+button,
+.btn,
+input[type="submit"],
+input[type="button"] {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: $fg-font-mono;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1;
+  background: $fg-sheet;
+  color: $fg-ink;
+  border: 1px solid $fg-ink;
+  border-radius: $fg-r-sm;
+  padding: 10px 18px;
+  height: 38px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+  box-shadow: $fg-shadow-sheet;
+
+  &:hover {
+    background: $fg-sheet-warm;
+    color: $fg-moss-deep;
+    border-color: $fg-moss-deep;
+    transform: translateY(-1px);
+    box-shadow: $fg-shadow-lift;
+    text-decoration: none;
+  }
+  &:active {
+    transform: translateY(0);
+    box-shadow: $fg-shadow-sheet;
+  }
+  &:focus-visible {
+    outline: 1.5px dashed $fg-moss;
+    outline-offset: 3px;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Badges — small mono labels, like pencilled catalogue marks
+// -----------------------------------------------------------------------------
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 8px;
+  font-family: $fg-font-mono;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  line-height: 1.7;
+  border-radius: $fg-r-sm;
+  background: transparent;
+  color: $fg-muted;
+  border: 1px solid $fg-hairline;
+  text-decoration: none;
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+    border-bottom: 0;
+    background-image: none !important;
+  }
+  &:hover { border-color: $fg-moss; color: $fg-moss-deep; }
+
+  &.primary  { background: transparent; color: $fg-moss-deep; border-color: $fg-moss; }
+  &.secondary { background: transparent; color: $fg-muted; border-color: $fg-hairline; }
+  &.success  { background: transparent; color: $fg-moss-deep; border-color: $fg-moss; }
+  &.warning  { background: transparent; color: $fg-body; border-color: $fg-hairline; }
+  &.danger   { background: transparent; color: $fg-stamp; border-color: $fg-stamp; }
+  &.muted    { background: transparent; color: $fg-muted-soft; border-color: $fg-hairline-soft; }
+}
+
+.post-badge {
+  margin-right: 4px;
+  &:last-child { margin-right: 0; }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+    border-bottom: 0;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Alerts — a note clipped into the page
+// -----------------------------------------------------------------------------
+.alert {
+  border-radius: $fg-r-sm;
+  padding: $fg-s-md $fg-s-lg;
+  margin: $fg-s-lg 0;
+  background: $fg-sheet;
+  color: $fg-body;
+  border: 1px solid $fg-hairline;
+  border-left: 3px solid $fg-muted;
+  box-shadow: $fg-shadow-sheet;
+  font-size: 15px;
+  line-height: 1.7;
+
+  &.alert-primary   { border-left-color: $fg-moss; }
+  &.alert-secondary { border-left-color: $fg-hairline; }
+  &.alert-success   { border-left-color: $fg-moss; background: rgba(221, 227, 210, 0.4); }
+  &.alert-warning   { border-left-color: $fg-muted; background: $fg-sheet-warm; }
+  &.alert-danger    { border-left-color: $fg-stamp; background: rgba(234, 211, 203, 0.35); }
+}
+
+// -----------------------------------------------------------------------------
+// Pagination — pencilled page numbers on a rule
+// -----------------------------------------------------------------------------
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: $fg-s-sm;
+  margin: $fg-s-xxl 0 $fg-s-lg 0;
+  flex-wrap: wrap;
+  font-family: $fg-font-mono;
+
+  a, .current-page {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    border-radius: $fg-r-sm;
+    font-family: $fg-font-mono;
+    font-size: 13px;
+    font-weight: 500;
+    color: $fg-muted;
+    background: transparent;
+    text-decoration: none !important;
+    background-image: none !important;
+    border: 1px solid transparent;
+    transition: color 150ms ease, border-color 150ms ease;
+
+    &:hover {
+      color: $fg-moss-deep;
+      border-color: $fg-moss;
+    }
+    &:visited { color: $fg-muted; }
+    &:visited:hover { color: $fg-moss-deep; }
+  }
+
+  .current-page {
+    color: $fg-ink;
+    border: 1px solid $fg-ink;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// To-top button — a small paper tab with an upward bird
+// -----------------------------------------------------------------------------
+.to-top-btn {
+  padding: 0 !important;
+  background: $fg-sheet !important;
+  color: transparent !important;
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 80;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  border: 1px solid $fg-ink !important;
+  overflow: hidden;
+  box-shadow: $fg-shadow-sheet !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><g fill='#{$fg-ink-uri}'><path d='M3 12 Q6.5 7.5 10 11 Q13.5 7.5 17 12 Q13.5 10.6 10 13.2 Q6.5 10.6 3 12 Z'/></g><path d='M10 8.5 L10 3.5 M10 3.5 L7.6 5.9 M10 3.5 L12.4 5.9' stroke='#{$fg-ink-uri}' stroke-width='1.5' fill='none' stroke-linecap='round'/></svg>") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 26px 26px !important;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+
+  &:hover {
+    background-color: $fg-sheet-warm !important;
+    transform: translateY(-3px);
+    box-shadow: $fg-shadow-lift !important;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Neutralise paper.css decorative cruft (glance-era classes in shared markup)
+// -----------------------------------------------------------------------------
+.border,
+.border-1, .border-2, .border-3, .border-4, .border-5, .border-6,
+.border-primary, .border-secondary, .border-success, .border-warning, .border-danger, .border-muted,
+.border-dashed, .border-dotted, .border-thick {
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.shadow,
+.shadow-large,
+.shadow-small,
+.shadow-hover {
+  box-shadow: none !important;
+}

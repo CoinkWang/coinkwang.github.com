@@ -1,0 +1,57 @@
+// =============================================================================
+// Fieldguide code highlighting — slate notebook cover, warm naturalist tokens
+// =============================================================================
+
+$fh-comment:  #8f8468;       // faded pencil
+$fh-keyword:  #c9a24f;       // dry-grass gold
+$fh-string:   #a9bd8f;       // moss lightened
+$fh-number:   #d09a8a;       // clay
+$fh-type:     #8fb5a3;       // lichen teal
+$fh-fn:       #ece4cc;       // cream
+$fh-tag:      #c9a24f;
+$fh-attr:     #d09a8a;
+$fh-builtin:  #8fb5a3;
+$fh-error:    #cf6a56;       // vermilion lightened
+
+.highlight {
+  background: $fg-slate;
+  border-radius: $fg-r-md;
+  font-family: $fg-font-mono;
+  color: $fg-on-slate;
+  font-size: 13.5px;
+  line-height: 1.7;
+  border: 1px solid $fg-ink;
+
+  pre {
+    background: transparent;
+    border: 0;
+    margin: 0;
+    color: inherit;
+    padding: $fg-s-lg;
+    box-shadow: none;
+  }
+
+  .c, .cm, .c1, .cs, .cp { color: $fh-comment; font-style: italic; }
+  .err { color: $fh-error; }
+  .k, .kc, .kd, .kp, .kr, .kt { color: $fh-keyword; font-weight: 500; }
+  .o, .ow { color: $fg-on-slate-soft; }
+  .m, .mf, .mh, .mi, .mo, .il { color: $fh-number; }
+  .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr, .ss { color: $fh-string; }
+  .na { color: $fh-attr; }
+  .nb { color: $fh-builtin; }
+  .nc { color: $fh-type; font-weight: 500; }
+  .no { color: $fh-builtin; }
+  .ni, .ne { color: $fh-type; }
+  .nf { color: $fh-fn; font-weight: 500; }
+  .nn { color: $fg-on-slate; }
+  .nt { color: $fh-tag; }
+  .nv, .vc, .vg, .vi { color: $fh-attr; }
+  .w  { color: transparent; }
+  .gh, .gu { color: $fg-on-slate-soft; }
+  .gd { color: $fh-error; }
+  .gi { color: $fh-type; }
+}
+
+.highlighter-rouge {
+  .highlight { padding: 0; }
+}
