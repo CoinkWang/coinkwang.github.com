@@ -111,11 +111,16 @@ def birding():
                               (90, 36, 7, 300), (88, 38, 6, 20), (7, 32, 6, 160)]:
         leaf(c, lx, ly, ln, ang, 2.2, 1)
     c.sprite(42, 25, MAGPIE)
-    # viewfinder focus brackets
-    x0, y0, x1, y1 = 36, 16, 82, 50
-    for (ax, ay, dx, dy) in [(x0, y0, 1, 1), (x1, y0, -1, 1), (x0, y1, 1, -1), (x1, y1, -1, -1)]:
-        c.line(ax, ay, ax + dx * 5, ay, 0)
-        c.line(ax, ay, ax, ay + dy * 5, 0)
+    # Two overlapping round eyepieces make one binocular field of view. The
+    # scene stays continuous where the circles meet, with a dark housing and
+    # a thin inner rim instead of a camera's focus brackets.
+    for y in range(H):
+        for x in range(W):
+            d = min(math.hypot((x - cx) / 36, (y - 42) / 35) for cx in (38, 74))
+            if d > 1:
+                c.put(x, y, 0)
+            elif d > 0.955:
+                c.put(x, y, 1)
     return c
 
 
@@ -123,10 +128,87 @@ def gaming():
     c = Canvas(W, H, 1)
     c.rect(0, 62, W, H, 0.5)
     c.radial(57, 70, 46, 2.1, 0.5, ry=14)
-    c.rect(0, 0, W, 60, 1.25)
-    for x in range(4, W, 8):
-        c.rect(x, 0, x + 1, 60, 1)
+    # A wall of collectibles: one long top shelf and two stacked side bays.
+    # Solid dark cubbies give each tiny silhouette room to read.
+    c.rect(0, 0, W, 60, 1)
+    for x in (1, 29, 84, 110):
+        c.rect(x, 0, x + 1, 60, 0)
+    for x0, x1, y in [(1, 111, 17), (1, 29, 37), (84, 111, 37),
+                       (1, 29, 57), (84, 111, 57)]:
+        c.rect(x0, y, x1, y + 3, 0)
+        c.rect(x0, y, x1, y + 1, 2)
     c.rect(0, 60, W, 62, 0)
+
+    # Mushroom, Space Invader, Triforce, Portal portals, Splatoon squid,
+    # and a Poké Ball run across the top shelf.
+    c.sprite(5, 4, [
+        "...222222...", "..22333222..", ".2223332222.", "222222222332",
+        "233222223332", "233222222222", "222222222222", ".0003300033.",
+        "...033330...", "...033330...", "...033330...", "....0000....",
+    ])
+    c.sprite(24, 6, [
+        "..2.....2..", "...2...2...", "..2222222..", ".220222022.",
+        "22222222222", "2.2222222.2", "2.2.....2.2", "...22.22...",
+    ])
+    for tx, ty in [(46, 3), (42, 10), (50, 10)]:
+        c.poly([(tx, ty), (tx - 3, ty + 5), (tx + 3, ty + 5)], 3)
+    c.ring(64, 10, 5, 2, t=1.5)
+    c.ring(73, 10, 5, 3, t=1.5)
+    c.rect(60, 3, 62, 17, 1)
+    c.rect(75, 3, 78, 17, 1)
+    c.sprite(82, 3, [
+        ".....2.....", "....222....", "...22222...", "..2222222..",
+        ".222222222.", "22222222222", "..2333332..", "..2303032..",
+        "..2333332..", "...22222...", "..22.2.22..", ".22..2..22.",
+    ])
+    c.ellipse(102, 10, 5, 5, 3)
+    c.rect(97, 9, 107, 11, 0)
+    c.rect(101, 8, 104, 12, 0)
+    c.rect(102, 9, 103, 11, 3)
+
+    # A Companion Cube and a potion bottle on the upper-left shelf.
+    c.rect(4, 23, 17, 36, 2)
+    c.frame(4, 23, 17, 36, 0)
+    c.frame(6, 25, 15, 34, 3)
+    c.rect(7, 26, 14, 33, 1)
+    c.sprite(8, 27, ["33.33", "33333", "33333", ".333.", "..3.."])
+    c.sprite(20, 25, [
+        ".333.", ".000.", ".232.", "02320", "23332", "22222",
+        "22222", "22222", ".000.",
+    ])
+    # A handheld console and a small stack of cartridges below.
+    c.rect(5, 41, 16, 56, 2)
+    c.rect(6, 42, 15, 49, 0)
+    c.rect(7, 43, 14, 48, 3)
+    c.rect(8, 50, 9, 55, 0)
+    c.rect(6, 52, 11, 53, 0)
+    c.put(13, 51, 0)
+    c.put(14, 53, 0)
+    for y, v in [(43, 2), (48, 3), (53, 2)]:
+        c.rect(20, y, 27, y + 3, v)
+        c.rect(21, y, 25, y + 1, 0)
+
+    # Hollow Knight's horned mask and a Creeper in the upper-right bay.
+    c.sprite(87, 22, [
+        "3........3", "33......33", ".33....33.", ".33333333.",
+        ".33333333.", ".30033003.", ".30033003.", "..333333..",
+        "...3333...", "...2222...", "..222222..", "...2..2...",
+    ])
+    c.sprite(101, 22, [
+        "22222222", "22222222", "20022002", "20022002", "22200222",
+        "22000022", "22022022", "22222222", "..2222..", "..2222..",
+        "..2222..", "..2222..", ".222222.", ".22..22.",
+    ])
+    # A sword and shield, with game cases filling the last shelf.
+    c.line(89, 42, 89, 52, 3)
+    c.line(86, 50, 92, 50, 2)
+    c.line(89, 52, 89, 56, 2)
+    c.poly([(92, 44), (98, 44), (98, 51), (95, 55), (92, 51)], 2)
+    c.line(95, 46, 95, 51, 3)
+    for x, h, v in [(100, 43, 2), (103, 41, 3), (106, 44, 2)]:
+        c.rect(x, h, x + 2, 57, v)
+        c.put(x, h + 2, 0)
+        c.put(x, 54, 0)
     # stand
     c.rect(24, 54, 88, 58, 0)
     c.rect(27, 58, 30, 66, 0)
@@ -159,8 +241,8 @@ def gaming():
         c.rect(75, y, 80, y + 1, 0)
     # antenna
     c.ellipse(57, 20, 6, 2, 0)
-    c.line(54, 19, 44, 4, 0)
-    c.line(60, 19, 72, 3, 0)
+    c.line(54, 19, 50, 16, 0)
+    c.line(60, 19, 64, 16, 0)
     # controller and cord
     c.line(30, 64, 33, 70, 0)
     c.line(28, 58, 30, 64, 0)
@@ -457,6 +539,18 @@ def music():
     c.poly([(45, 0), (53, 0), (74, 76), (24, 76)], 1.5)
     c.rect(0, 76, W, H, 0.5)
     c.ellipse(50, 78, 38, 5, 2)
+    # Compact MIDI keyboard on an X stand at the back of the stage.
+    c.line(67, 22, 96, 40, 0)
+    c.line(99, 22, 69, 40, 0)
+    c.rect(57, 8, 108, 22, 0)
+    c.rect(59, 10, 106, 20, 2)
+    c.rect(61, 12, 70, 18, 1)
+    for x in (63, 67):
+        c.rect(x, 13, x + 2, 15, 3)
+    for x in range(72, 105, 3):
+        c.rect(x, 12, x + 2, 19, 3)
+    for x in (74, 80, 83, 89, 95, 98):
+        c.rect(x, 12, x + 1, 16, 0)
     # amp
     c.rect(80, 42, 108, 78, 1)
     c.frame(80, 42, 108, 78, 0)
@@ -473,6 +567,20 @@ def music():
     c.line(58, 68, 54, 78, 1)
     c.line(70, 68, 74, 78, 1)
     c.sprite(53, 17, GUITAR)
+    # The erhu and guitar feed a stompbox on the floor; its output runs to
+    # the amplifier. Dark input cables cross the lit stage, while the output
+    # cable is lighter against the shadow at the amplifier's foot.
+    c.line(32, 68, 35, 75, 0)
+    c.line(35, 75, 44, 79, 0)
+    c.line(68, 65, 70, 73, 0)
+    c.line(70, 73, 64, 79, 0)
+    c.line(65, 79, 77, 81, 2)
+    c.line(77, 81, 91, 79, 2)
+    c.line(91, 79, 91, 76, 2)
+    c.rect(44, 74, 65, 82, 0)
+    c.rect(46, 75, 63, 81, 2)
+    c.rect(48, 77, 57, 78, 1)
+    c.rect(59, 76, 62, 79, 3)
     return c
 
 
