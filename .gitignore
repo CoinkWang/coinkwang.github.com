@@ -6,3 +6,13 @@ _site
 .jekyll-cache
 .writing-notes/
 .obsidian/
+
+# impeccable design reviews: screenshots and question logs (design.json and surfaces/ are tracked)
+.impeccable/review/
+.impeccable/questions/
+
+# local screenshots and drafts, not part of the site
+Claude outputs/
+
+# Python bytecode from the _pixel/ scripts
+__pycache__/
