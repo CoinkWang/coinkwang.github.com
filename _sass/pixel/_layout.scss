@@ -52,8 +52,8 @@ article:has(> .friend-links-container) {
     z-index: 1;
     height: $perch-h * $px;
     pointer-events: none;
-    background: url("../img/pixel/perch.png") repeat-x 24px 0 / #{$perch-w * $px} #{$perch-h * $px};
-    image-rendering: pixelated;
+    // Vector pixel cells avoid WebKit's smooth interpolation of PNG backgrounds.
+    background: url("../img/pixel/perch.svg") repeat-x 24px 0 / #{$perch-w * $px} #{$perch-h * $px};
   }
 
   nav.split-nav {

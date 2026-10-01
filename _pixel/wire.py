@@ -6,8 +6,8 @@ palette per bird. Black plumage is drawn a shade lighter than true black
 (with a sheen on the crown) so it still reads against the night ground.
 Tails are allowed to hang below the wire. `.` is clear.
 
-build.py writes the strip to assets/img/pixel/perch.png; _layout.scss tiles
-it along the header's bottom rule, which is the wire.
+build.py writes the strip to assets/img/pixel/perch.{png,svg}; _layout.scss
+tiles the SVG along the header's bottom rule, which is the wire.
 """
 
 # name: (rows, index of the row that lies on the wire, palette)

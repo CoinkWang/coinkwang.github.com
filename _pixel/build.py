@@ -5,6 +5,7 @@
 Writes
   assets/img/pixel/about-<key>.png   the eight album pictures, 112 x 84, screen tones
   assets/img/pixel/perch.png         the birds on the header wire, in their own colours
+  assets/img/pixel/perch.svg         the same pixels as vector shapes, for the header
   _sass/pixel/_sprites.scss          one-tone sprites as SVG mask data URIs,
                                      plus the wire strip's size
   assets/img/pixel/book-cover.png    the book cover as a thermal print (needs ImageMagick)
@@ -46,12 +47,43 @@ def build_pictures():
 
 def build_perch():
     """The wire strip, one image pixel per sprite pixel, each bird in its own
-    palette, clear where no bird is; the header tiles it and scales it up
-    with nearest-neighbour."""
+    palette, clear where no bird is. Kept as a raster reference; the header
+    uses the matching SVG to avoid browser bitmap interpolation."""
     grid, _, _ = wire.strip()
     pixels = [[(0, 0, 0, 0) if c is None else hexrgb(c) + (255,) for c in row] for row in grid]
     path = os.path.join(ROOT, "assets", "img", "pixel", "perch.png")
     write_png_rgba(path, len(grid[0]), len(grid), pixels)
+    return path
+
+
+def build_perch_svg():
+    """Keep the wire crisp even when a browser smooths background bitmaps.
+    Each horizontal run is an integer-aligned rectangle, grouped by colour."""
+    grid, _, _ = wire.strip()
+    paths = {}
+    for y, row in enumerate(grid):
+        x = 0
+        while x < len(row):
+            colour = row[x]
+            end = x + 1
+            while end < len(row) and row[end] == colour:
+                end += 1
+            if colour is not None:
+                width = end - x
+                paths.setdefault(colour, []).append(
+                    "M%d %dh%dv1h-%dz" % (x, y, width, width))
+            x = end
+    lines = [
+        '<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" '
+        'viewBox="0 0 %d %d" shape-rendering="crispEdges">' %
+        (len(grid[0]), len(grid), len(grid[0]), len(grid)),
+    ]
+    lines += ['<path fill="%s" d="%s"/>' % (colour, "".join(runs))
+              for colour, runs in paths.items()]
+    lines.append('</svg>')
+    path = os.path.join(ROOT, "assets", "img", "pixel", "perch.svg")
+    with open(path, "w") as f:
+        f.write("\n".join(lines) + "\n")
     return path
 
 
@@ -70,7 +102,7 @@ def build_masks():
     grid, _, below = wire.strip()
     lines += [
         "",
-        "// The wire strip (assets/img/pixel/perch.png, _pixel/wire.py)",
+        "// The wire strip (assets/img/pixel/perch.svg, _pixel/wire.py)",
         "$perch-w: %d;" % len(grid[0]),
         "$perch-h: %d;" % len(grid),
         "$perch-below: %d;  // rows under the wire, where tails hang" % below,
@@ -109,5 +141,6 @@ def build_cover(width=224):
 if __name__ == "__main__":
     print("\n".join(build_pictures()))
     print(build_perch())
+    print(build_perch_svg())
     print(build_masks())
     print(build_cover())
