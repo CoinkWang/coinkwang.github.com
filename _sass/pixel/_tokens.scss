@@ -1,0 +1,103 @@
+// =============================================================================
+// Pixel tokens — a 4-tone pocket camera, lit at night
+// Four LCD tones by luminance (t0 darkest … t3 lightest). Page roles are mapped
+// onto them as a lit-ink screen: dark ground, bright ink. Thermal-paper strips
+// carry their own four greys.
+// =============================================================================
+
+:root {
+  color-scheme: dark;
+
+  --t0: #0c1714;
+  --t1: #1f3a33;
+  --t2: #4f8f7a;
+  --t3: #a8e3c7;
+  --ground: var(--t0);
+  --ink: var(--t3);
+  --shade: var(--t2);
+  --mid: var(--t1);
+
+  // thermal paper
+  --paper: #d6d9d3;
+  --print: #151816;
+  --print-soft: #4f544f;
+  --print-faint: #a9ada7;
+}
+
+// One LCD pixel in chrome, and the spacing unit everything snaps to
+$px: 2px;
+$u: 4px;
+
+$s-1: $u;          //  4
+$s-2: $u * 2;      //  8
+$s-3: $u * 3;      // 12
+$s-4: $u * 4;      // 16
+$s-5: $u * 5;      // 20
+$s-6: $u * 6;      // 24
+$s-8: $u * 8;      // 32
+$s-12: $u * 12;    // 48
+$s-16: $u * 16;    // 64
+$s-24: $u * 24;    // 96
+
+// One bitmap face at exactly two sizes; CJK prose stays in a legible sans
+$font-pixel: "Ark Pixel", "Ark Pixel Full", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", monospace;
+$font-body: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+            "Noto Sans CJK SC", "Source Han Sans SC", "Microsoft YaHei",
+            "Helvetica Neue", Arial, sans-serif;
+$font-code: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+$content-max: 680px;
+$wide-max: 1104px;
+
+$bp-phone: 480px;
+$bp-tablet: 768px;
+$bp-desktop: 1200px;
+
+// -----------------------------------------------------------------------------
+// Mixins
+// -----------------------------------------------------------------------------
+
+// Bitmap text. Only 12px and 24px exist; anything else smears the grid.
+@mixin pixel-type($size: 12px) {
+  font-family: $font-pixel;
+  font-size: $size;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  line-height: if($size == 24px, 32px, 20px);
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: auto;
+  font-smooth: never;
+  text-transform: none;
+}
+
+// A pixel frame with notched corners, drawn outside the box
+@mixin pixel-frame($c: var(--ink), $w: $px) {
+  box-shadow: 0 (-$w) 0 0 $c, 0 $w 0 0 $c, (-$w) 0 0 0 $c, $w 0 0 0 $c;
+}
+
+// Two-tone ordered dither (checkerboard of $cell px squares)
+@mixin dither($a, $b, $cell: $px) {
+  background-color: $b;
+  background-image: repeating-conic-gradient(#{$a} 0 25%, transparent 0 50%);
+  background-size: ($cell * 2) ($cell * 2);
+}
+
+// Dotted rule along the bottom edge
+@mixin dotted-rule($c: var(--ink), $pos: bottom) {
+  background-image: linear-gradient(90deg, #{$c} 50%, transparent 0);
+  background-repeat: repeat-x;
+  background-size: ($px * 2) $px;
+  background-position: 0 $pos;
+}
+
+// A one-tone sprite from _sprites.scss, painted in the current colour
+@mixin sprite($mask, $w, $h, $scale: 2) {
+  display: inline-block;
+  width: $w * $scale * 1px;
+  height: $h * $scale * 1px;
+  flex: 0 0 auto;
+  background-color: currentColor;
+  -webkit-mask: $mask no-repeat 0 0 / 100% 100%;
+  mask: $mask no-repeat 0 0 / 100% 100%;
+}

@@ -1,0 +1,358 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-01T10:05:00+00:00",
+  "title": "Design System: Coink | DO BOOM! (pixel)",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "primary",
+        "displayName": "Lit-Teal Ground (t0)",
+        "canonical": "#0c1714",
+        "tonalRamp": [
+          "#1a322c",
+          "#2e594d",
+          "#427f6e",
+          "#56a590",
+          "#7bbaa9",
+          "#a2cec2",
+          "#c8e2db",
+          "#eef6f4"
+        ],
+        "cssVar": "--t0 / --ground"
+      },
+      "mid": {
+        "role": "primary",
+        "displayName": "Lit-Teal Mid (t1)",
+        "canonical": "#1f3a33",
+        "tonalRamp": [
+          "#1b322c",
+          "#2f584d",
+          "#437e6f",
+          "#58a490",
+          "#7cb9a9",
+          "#a2cec2",
+          "#c8e2db",
+          "#eef6f4"
+        ],
+        "cssVar": "--t1 / --mid"
+      },
+      "shade": {
+        "role": "primary",
+        "displayName": "Lit-Teal Shade (t2)",
+        "canonical": "#4f8f7a",
+        "tonalRamp": [
+          "#1b312a",
+          "#30574a",
+          "#457c6a",
+          "#59a28a",
+          "#7eb8a5",
+          "#a3ccbf",
+          "#c9e1d9",
+          "#eff6f4"
+        ],
+        "cssVar": "--t2 / --shade"
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Lit-Teal Ink (t3)",
+        "canonical": "#a8e3c7",
+        "tonalRamp": [
+          "#133a27",
+          "#216645",
+          "#2f9263",
+          "#3dbe81",
+          "#67ce9d",
+          "#94dcba",
+          "#c0ebd6",
+          "#ecf9f3"
+        ],
+        "cssVar": "--t3 / --ink"
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Thermal Paper",
+        "canonical": "#d6d9d3",
+        "tonalRamp": [
+          "#262923",
+          "#43483e",
+          "#616859",
+          "#7e8774",
+          "#9ba293",
+          "#b8bdb3",
+          "#d5d8d2",
+          "#f2f3f1"
+        ],
+        "cssVar": "--paper"
+      },
+      "print": {
+        "role": "neutral",
+        "displayName": "Print Black",
+        "canonical": "#151816",
+        "tonalRamp": [
+          "#242925",
+          "#3f4842",
+          "#5a675e",
+          "#75867b",
+          "#94a299",
+          "#b3bdb6",
+          "#d2d8d4",
+          "#f1f3f2"
+        ],
+        "cssVar": "--print"
+      },
+      "print-soft": {
+        "role": "neutral",
+        "displayName": "Faded Print",
+        "canonical": "#4f544f",
+        "tonalRamp": [
+          "#252725",
+          "#414541",
+          "#5e635e",
+          "#7a827a",
+          "#989e98",
+          "#b6bab6",
+          "#d4d6d4",
+          "#f2f3f2"
+        ],
+        "cssVar": "--print-soft"
+      },
+      "print-faint": {
+        "role": "neutral",
+        "displayName": "Ghost Print",
+        "canonical": "#a9ada7",
+        "tonalRamp": [
+          "#262825",
+          "#434641",
+          "#5f645d",
+          "#7c8279",
+          "#9a9e97",
+          "#b7bab5",
+          "#d5d7d4",
+          "#f2f3f2"
+        ],
+        "cssVar": "--print-faint"
+      }
+    },
+    "typographyMeta": {
+      "pixel-display": {
+        "displayName": "Pixel Display",
+        "purpose": "h1/h2, site name, index titles, year headings, print titles, Chinese album labels, Friends rows, 404 code. Ark Pixel at 24px only."
+      },
+      "pixel-label": {
+        "displayName": "Pixel Label",
+        "purpose": "Nav, buttons, badges, pagination, meta, captions, English album labels, print subheads and run-on lists, footer. Ark Pixel at 12px only."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Page prose in the system sans."
+      },
+      "body-print": {
+        "displayName": "Body Print",
+        "purpose": "Post body on the thermal strip, 680px max measure."
+      },
+      "body-album": {
+        "displayName": "Body Album",
+        "purpose": "About strip prose: 14px / 1.65, 15px when the card is at least 340px wide."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "In-body h3-h6 in bold sans (19/17/15px)."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Code blocks printed solid in print-black with paper text."
+      }
+    },
+    "shadows": [
+      {
+        "name": "pixel-frame",
+        "value": "0 -2px 0 0 var(--ink), 0 2px 0 0 var(--ink), -2px 0 0 0 var(--ink), 2px 0 0 0 var(--ink)",
+        "purpose": "Not elevation: a 2px notched-corner pixel frame for buttons, pagination, alerts and the printer slot."
+      },
+      {
+        "name": "bezel-frame",
+        "value": "0 -8px 0 0 var(--ink), 0 8px 0 0 var(--ink), -8px 0 0 0 var(--ink), 8px 0 0 0 var(--ink)",
+        "purpose": "Thick notched frame on the 404 empty viewfinder."
+      }
+    ],
+    "motion": [
+      {
+        "name": "press",
+        "value": "transform: translateY(2px), no transition",
+        "purpose": "Button active state drops one LCD pixel."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "480px"
+      },
+      {
+        "name": "album-two-column",
+        "value": "560px"
+      },
+      {
+        "name": "tablet",
+        "value": "768px"
+      },
+      {
+        "name": "album-three-column",
+        "value": "900px"
+      },
+      {
+        "name": "desktop",
+        "value": "1200px",
+        "note": "album four columns and hidden heading, hi-dpi side layout, sidenotes"
+      },
+      {
+        "name": "card-strip-wide",
+        "value": "340px (container)",
+        "note": "About strip prose 15px, roomier padding"
+      },
+      {
+        "name": "card-picture-x3",
+        "value": "344px (container)",
+        "note": "About picture at x3"
+      }
+    ],
+    "layout": {
+      "wideMax": "1104px",
+      "contentMax": "680px",
+      "indexMax": "840px",
+      "unit": "4px",
+      "lcdPixel": "2px",
+      "album": "CSS columns, 16px gap: 1 / 2 (>=560px) / 3 (>=900px) / 4 (>=1200px); cards in pixel_order",
+      "pictureScale": "whole device pixels: 112x84 at x2; x3 when the card is >=344px wide; x1.5 at >=1200px and >=2dppx with the label beside the picture",
+      "bookCover": "224px wide three-ink print, shown at up to 112 CSS px, smooth scaling"
+    },
+    "artPipeline": "All pixel art and sprites are authored in code in _pixel/ (paint.py, scenes.py, sprites.py) and regenerated with `python3 _pixel/build.py` into assets/img/pixel/about-<key>.png (112x84, screen tones), _sass/pixel/_sprites.scss (one-tone SVG masks) and assets/img/pixel/book-cover.png (Floyd-Steinberg in the print inks, paper transparent; needs ImageMagick)."
+  },
+  "components": [
+    {
+      "name": "Notched Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "Default control: ink on ground in a 2px notched frame; hover reverses, active drops one LCD pixel.",
+      "html": "<button class=\"ds-btn\">打印</button>",
+      "css": ":host { --t0:#0c1714; --t1:#1f3a33; --t2:#4f8f7a; --t3:#a8e3c7; --ground:var(--t0); --ink:var(--t3); --shade:var(--t2); --mid:var(--t1); --paper:#d6d9d3; --print:#151816; --print-soft:#4f544f; --print-faint:#a9ada7; color-scheme:dark; } .ds-btn { font-family: 'Ark Pixel', 'PingFang SC', monospace; font-size: 12px; line-height: 20px; font-weight: 400; letter-spacing: 0; -webkit-font-smoothing: none; display:inline-flex; align-items:center; min-height:40px; padding:0 16px; margin:2px; color:var(--ink); background:var(--ground); border:0; border-radius:0; box-shadow: 0 -2px 0 0 var(--ink), 0 2px 0 0 var(--ink), -2px 0 0 0 var(--ink), 2px 0 0 0 var(--ink); cursor:pointer; } .ds-btn:hover { background:var(--ink); color:var(--ground); } .ds-btn:active { transform:translateY(2px); } .ds-btn:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }"
+    },
+    {
+      "name": "Pixel Tag",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "A pixel price tag for post tags: mid body, ink label, a stepped point with a punched hole on the left, notched right corners; reverses to ink on hover.",
+      "html": "<span class=\"ds-badge\">fiction</span>",
+      "css": ":host { --t0:#0c1714; --t1:#1f3a33; --t2:#4f8f7a; --t3:#a8e3c7; --ground:var(--t0); --ink:var(--t3); --shade:var(--t2); --mid:var(--t1); color-scheme:dark; } .ds-badge { font-family:'Ark Pixel','PingFang SC',monospace; font-size:12px; line-height:20px; font-weight:400; letter-spacing:0; -webkit-font-smoothing:none; display:inline-flex; align-items:center; height:22px; padding:0 8px 0 16px; color:var(--ink); background:var(--mid); -webkit-mask:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 11' shape-rendering='crispEdges'%3E%3Cpath d='M5 0h1v1h-1zM4 1h2v1h-2zM3 2h3v1h-3zM2 3h4v1h-4zM1 4h5v1h-5zM0 5h2v1h-2zM3 5h3v1h-3zM1 6h5v1h-5zM2 7h4v1h-4zM3 8h3v1h-3zM4 9h2v1h-2zM5 10h1v1h-1z'/%3E%3C/svg%3E\") no-repeat 0 0/12px 22px, linear-gradient(#000 0 0) 12px 0/calc(100% - 14px) 100% no-repeat, linear-gradient(#000 0 0) 100% 2px/2px calc(100% - 4px) no-repeat; mask:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 11' shape-rendering='crispEdges'%3E%3Cpath d='M5 0h1v1h-1zM4 1h2v1h-2zM3 2h3v1h-3zM2 3h4v1h-4zM1 4h5v1h-5zM0 5h2v1h-2zM3 5h3v1h-3zM1 6h5v1h-5zM2 7h4v1h-4zM3 8h3v1h-3zM4 9h2v1h-2zM5 10h1v1h-1z'/%3E%3C/svg%3E\") no-repeat 0 0/12px 22px, linear-gradient(#000 0 0) 12px 0/calc(100% - 14px) 100% no-repeat, linear-gradient(#000 0 0) 100% 2px/2px calc(100% - 4px) no-repeat; } .ds-badge:hover { background:var(--ink); color:var(--ground); }"
+    },
+    {
+      "name": "Header Nav",
+      "kind": "nav",
+      "refersTo": "nav-item",
+      "description": "Pixel Label items; hover and current page reverse and show the triangle cursor.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">About</a><a href=\"#\">Friends</a></nav>",
+      "css": ":host { --t0:#0c1714; --t1:#1f3a33; --t2:#4f8f7a; --t3:#a8e3c7; --ground:var(--t0); --ink:var(--t3); --shade:var(--t2); --mid:var(--t1); --paper:#d6d9d3; --print:#151816; --print-soft:#4f544f; --print-faint:#a9ada7; color-scheme:dark; } .ds-nav { display:flex; gap:8px; background:var(--ground); padding:8px; border-bottom:2px solid var(--ink); } .ds-nav a { font-family: 'Ark Pixel', 'PingFang SC', monospace; font-size: 12px; line-height: 20px; font-weight: 400; letter-spacing: 0; -webkit-font-smoothing: none; position:relative; display:inline-flex; align-items:center; min-height:44px; padding:0 12px 0 24px; color:var(--ink); text-decoration:none; } .ds-nav a::before { content:''; position:absolute; left:8px; top:50%; margin-top:-7px; width:8px; height:14px; background:currentColor; -webkit-mask:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 7' shape-rendering='crispEdges'%3E%3Cpath d='M0 0h1v7h-1zM1 1h1v5h-1zM2 2h1v3h-1zM3 3h1v1h-1z'/%3E%3C/svg%3E\") no-repeat 0 0/100% 100%; mask:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 7' shape-rendering='crispEdges'%3E%3Cpath d='M0 0h1v7h-1zM1 1h1v5h-1zM2 2h1v3h-1zM3 3h1v1h-1z'/%3E%3C/svg%3E\") no-repeat 0 0/100% 100%; visibility:hidden; } .ds-nav a:hover, .ds-nav a[aria-current='page'] { background:var(--ink); color:var(--ground); } .ds-nav a:hover::before, .ds-nav a[aria-current='page']::before { visibility:visible; } .ds-nav a:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }"
+    },
+    {
+      "name": "Pagination Cells",
+      "kind": "custom",
+      "refersTo": "pagination-current",
+      "description": "40px framed number cells; current reversed, hover fills mid.",
+      "html": "<div class=\"ds-pages\"><a href=\"#\">1</a><span class=\"ds-cur\">2</span><a href=\"#\">3</a></div>",
+      "css": ":host { --t0:#0c1714; --t1:#1f3a33; --t2:#4f8f7a; --t3:#a8e3c7; --ground:var(--t0); --ink:var(--t3); --shade:var(--t2); --mid:var(--t1); --paper:#d6d9d3; --print:#151816; --print-soft:#4f544f; --print-faint:#a9ada7; color-scheme:dark; } .ds-pages { display:flex; gap:12px; background:var(--ground); padding:8px; } .ds-pages a, .ds-pages .ds-cur { font-family: 'Ark Pixel', 'PingFang SC', monospace; font-size: 12px; line-height: 20px; font-weight: 400; letter-spacing: 0; -webkit-font-smoothing: none; display:inline-flex; align-items:center; justify-content:center; min-width:40px; height:40px; margin:2px; color:var(--ink); text-decoration:none; box-shadow: 0 -2px 0 0 var(--ink), 0 2px 0 0 var(--ink), -2px 0 0 0 var(--ink), 2px 0 0 0 var(--ink); } .ds-pages a:hover { background:var(--mid); } .ds-pages .ds-cur { background:var(--ink); color:var(--ground); } .ds-pages a:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }"
+    },
+    {
+      "name": "Index Row",
+      "kind": "card",
+      "refersTo": "",
+      "description": "Post row in the album index; the whole row reverses under the cursor.",
+      "html": "<a class=\"ds-row\" href=\"#\"><span class=\"ds-row-title\">选择即创作</span><span class=\"ds-row-sub\">一篇关于取舍的随笔</span></a>",
+      "css": ":host { --t0:#0c1714; --t1:#1f3a33; --t2:#4f8f7a; --t3:#a8e3c7; --ground:var(--t0); --ink:var(--t3); --shade:var(--t2); --mid:var(--t1); --paper:#d6d9d3; --print:#151816; --print-soft:#4f544f; --print-faint:#a9ada7; color-scheme:dark; } .ds-row { position:relative; display:block; padding:16px 12px 16px 32px; color:var(--ink); background:var(--ground); text-decoration:none; } .ds-row-title { display:block; font-family:'Ark Pixel', monospace; font-size:24px; line-height:32px; -webkit-font-smoothing:none; } .ds-row-sub { display:block; margin-top:4px; font-family:-apple-system, 'PingFang SC', sans-serif; font-size:15px; line-height:1.7; } .ds-row:hover, .ds-row:focus-visible { background:var(--ink); color:var(--ground); outline:none; }"
+    },
+    {
+      "name": "Print Strip",
+      "kind": "card",
+      "refersTo": "print-strip",
+      "description": "Post body on thermal paper, fed from an ink slot, toothed bottom edge; ends with the magpie in print, its white patches left as paper.",
+      "html": "<div class=\"ds-printer\"><div class=\"ds-slot\"></div><article class=\"ds-print\"><h2 class=\"ds-ptitle\">选择即创作</h2><p>我设计了一间属于自己的电竞房，然后将它留在了图纸上。</p><span class=\"ds-sub\">附记</span><i class=\"ds-end\"></i></article></div>",
+      "css": ":host { --t0:#0c1714; --t1:#1f3a33; --t2:#4f8f7a; --t3:#a8e3c7; --ground:var(--t0); --ink:var(--t3); --shade:var(--t2); --mid:var(--t1); --paper:#d6d9d3; --print:#151816; --print-soft:#4f544f; --print-faint:#a9ada7; color-scheme:dark; } .ds-printer { background:var(--ground); padding:16px; } .ds-slot { height:8px; margin:0 2px; background:var(--ink); box-shadow: 0 -2px 0 0 var(--ink), 0 2px 0 0 var(--ink), -2px 0 0 0 var(--ink), 2px 0 0 0 var(--ink); } .ds-print { position:relative; display:block; margin:0 8px; padding:48px 48px 64px; color:var(--print); background:var(--paper); font-family:-apple-system,'PingFang SC',sans-serif; font-size:17px; line-height:1.9; -webkit-mask: linear-gradient(#000 0 0) 0 0 / 100% calc(100% - 4px) no-repeat, url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 4' shape-rendering='crispEdges'%3E%3Cpath d='M0 0h8v2h-2v2h-4v-2h-2z'/%3E%3C/svg%3E\") repeat-x 0 100% / 8px 4px; mask: linear-gradient(#000 0 0) 0 0 / 100% calc(100% - 4px) no-repeat, url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 4' shape-rendering='crispEdges'%3E%3Cpath d='M0 0h8v2h-2v2h-4v-2h-2z'/%3E%3C/svg%3E\") repeat-x 0 100% / 8px 4px; } .ds-ptitle { font-family:'Ark Pixel','PingFang SC',monospace; font-size:24px; line-height:32px; font-weight:400; letter-spacing:0; -webkit-font-smoothing:none; margin:0 0 12px; } .ds-sub { font-family:'Ark Pixel','PingFang SC',monospace; font-size:12px; line-height:20px; font-weight:400; letter-spacing:0; -webkit-font-smoothing:none; display:inline-block; padding:0 8px; background:var(--print); color:var(--paper); } .ds-end { position:relative; display:block; width:60px; height:26px; margin:48px auto 0; } .ds-end::before { content:''; position:absolute; inset:0; } .ds-end::before { background:var(--print); -webkit-mask:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 13' shape-rendering='crispEdges'%3E%3Cpath d='M22 0h4v1h-4zM21 1h6v1h-6zM21 2h3v1h-3zM25 2h5v1h-5zM20 3h7v1h-7zM15 4h11v1h-11zM13 5h2v1h-2zM23 5h3v1h-3zM11 6h15v1h-15zM9 7h17v1h-17zM6 8h9v1h-9zM23 8h1v1h-1zM3 9h6v1h-6zM12 9h3v1h-3zM22 9h1v1h-1zM0 10h6v1h-6zM13 10h2v1h-2zM20 10h1v1h-1zM17 11h1v1h-1zM20 11h1v1h-1zM16 12h2v1h-2zM19 12h2v1h-2z'/%3E%3C/svg%3E\") no-repeat center/100% 100%; mask:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 13' shape-rendering='crispEdges'%3E%3Cpath d='M22 0h4v1h-4zM21 1h6v1h-6zM21 2h3v1h-3zM25 2h5v1h-5zM20 3h7v1h-7zM15 4h11v1h-11zM13 5h2v1h-2zM23 5h3v1h-3zM11 6h15v1h-15zM9 7h17v1h-17zM6 8h9v1h-9zM23 8h1v1h-1zM3 9h6v1h-6zM12 9h3v1h-3zM22 9h1v1h-1zM0 10h6v1h-6zM13 10h2v1h-2zM20 10h1v1h-1zM17 11h1v1h-1zM20 11h1v1h-1zM16 12h2v1h-2zM19 12h2v1h-2z'/%3E%3C/svg%3E\") no-repeat center/100% 100%; }"
+    },
+    {
+      "name": "Magpie Brand Mark",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "Permanently reversed brand plate, 44px tall: the one-tone magpie (28x16 at x2) and the site name, both ground on ink, so the magpie's white patches are the plate. On hover the magpie hops up one LCD pixel. On phones a 44px ink menu key with ground bars sits at the other end of the bar and turns shade while open.",
+      "html": "<a class=\"ds-brand\" href=\"#\"><i></i>Coink | DO BOOM!</a> <span class=\"ds-key\"><b></b><b></b><b></b></span>",
+      "css": ":host { --t0:#0c1714; --t1:#1f3a33; --t2:#4f8f7a; --t3:#a8e3c7; --ground:var(--t0); --ink:var(--t3); --shade:var(--t2); --mid:var(--t1); --paper:#d6d9d3; --print:#151816; --print-soft:#4f544f; --print-faint:#a9ada7; color-scheme:dark; } .ds-brand { font-family:'Ark Pixel','PingFang SC',monospace; font-size:24px; line-height:32px; font-weight:400; letter-spacing:0; -webkit-font-smoothing:none; display:inline-flex; align-items:center; gap:12px; min-height:44px; padding:0 12px 0 8px; color:var(--ground); background:var(--ink); text-decoration:none; vertical-align:middle; } .ds-brand i { display:inline-block; width:60px; height:26px; flex:0 0 auto; background:currentColor; -webkit-mask:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 13' shape-rendering='crispEdges'%3E%3Cpath d='M22 0h4v1h-4zM21 1h6v1h-6zM21 2h3v1h-3zM25 2h5v1h-5zM20 3h7v1h-7zM15 4h11v1h-11zM13 5h2v1h-2zM23 5h3v1h-3zM11 6h15v1h-15zM9 7h17v1h-17zM6 8h9v1h-9zM23 8h1v1h-1zM3 9h6v1h-6zM12 9h3v1h-3zM22 9h1v1h-1zM0 10h6v1h-6zM13 10h2v1h-2zM20 10h1v1h-1zM17 11h1v1h-1zM20 11h1v1h-1zM16 12h2v1h-2zM19 12h2v1h-2z'/%3E%3C/svg%3E\") no-repeat 0 0/100% 100%; mask:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 13' shape-rendering='crispEdges'%3E%3Cpath d='M22 0h4v1h-4zM21 1h6v1h-6zM21 2h3v1h-3zM25 2h5v1h-5zM20 3h7v1h-7zM15 4h11v1h-11zM13 5h2v1h-2zM23 5h3v1h-3zM11 6h15v1h-15zM9 7h17v1h-17zM6 8h9v1h-9zM23 8h1v1h-1zM3 9h6v1h-6zM12 9h3v1h-3zM22 9h1v1h-1zM0 10h6v1h-6zM13 10h2v1h-2zM20 10h1v1h-1zM17 11h1v1h-1zM20 11h1v1h-1zM16 12h2v1h-2zM19 12h2v1h-2z'/%3E%3C/svg%3E\") no-repeat 0 0/100% 100%; } .ds-brand:hover i { transform:translateY(-2px); } .ds-brand:focus-visible { outline:2px solid var(--ink); outline-offset:2px; } .ds-key { display:inline-flex; flex-direction:column; justify-content:center; gap:4px; width:44px; height:44px; padding:0 12px; box-sizing:border-box; margin-left:8px; background:var(--ink); vertical-align:middle; } .ds-key b { display:block; width:20px; height:4px; background:var(--ground); } .ds-key b:nth-child(2) { width:14px; }"
+    },
+    {
+      "name": "Album Shot",
+      "kind": "card",
+      "refersTo": "shot-camera",
+      "description": "About entry: a dark mid camera body (8px bezel) with the 112x84 picture on a screen sunk behind a 2px ground edge and the ink label under it; a 4px ground printer slot across the body's foot, out of which the paper strip feeds (inset 8px, covering the 8px lip, toothed edge), with a print subhead and a run-on list.",
+      "html": "<article class=\"ds-shot\"><div class=\"ds-cam\"><span class=\"ds-pic\"></span><h2 class=\"ds-title\">音乐 <span>Music</span></h2></div><div class=\"ds-strip\"><p>听：摇滚、后摇、器乐、音乐剧</p><h3 class=\"ds-sub\">分享我喜欢的音乐</h3><ul class=\"ds-list\"><li>木推瓜</li><li>万能青年旅店</li><li>惘闻</li><li>MONO</li></ul></div></article>",
+      "css": ":host { --t0:#0c1714; --t1:#1f3a33; --t2:#4f8f7a; --t3:#a8e3c7; --ground:var(--t0); --ink:var(--t3); --shade:var(--t2); --mid:var(--t1); --paper:#d6d9d3; --print:#151816; --print-soft:#4f544f; --print-faint:#a9ada7; color-scheme:dark; } .ds-shot { width:256px; padding:16px; background:var(--ground); } .ds-cam { position:relative; padding:8px 8px 20px; background:var(--mid); color:var(--ink); } .ds-cam::after { content:''; position:absolute; left:6px; right:6px; bottom:8px; height:4px; background:var(--ground); } .ds-pic { display:block; width:224px; height:168px; margin:0 auto; background-color:var(--mid); background-image:repeating-conic-gradient(var(--ground) 0 25%, transparent 0 50%); background-size:4px 4px; box-shadow:0 -2px 0 0 var(--ground), 0 2px 0 0 var(--ground), -2px 0 0 0 var(--ground), 2px 0 0 0 var(--ground); } .ds-title { font-family:'Ark Pixel','PingFang SC',monospace; font-size:24px; line-height:32px; font-weight:400; letter-spacing:0; -webkit-font-smoothing:none; display:flex; align-items:baseline; gap:8px; margin:0; padding:8px 4px 0; } .ds-title span { font-family:'Ark Pixel','PingFang SC',monospace; font-size:12px; line-height:20px; font-weight:400; letter-spacing:0; -webkit-font-smoothing:none; } .ds-strip { position:relative; margin:-8px 8px 0; padding:12px 12px 16px; font-family:-apple-system,'PingFang SC',sans-serif; font-size:14px; line-height:1.65; color:var(--print); background:var(--paper); -webkit-mask: linear-gradient(#000 0 0) 0 0 / 100% calc(100% - 4px) no-repeat, url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 4' shape-rendering='crispEdges'%3E%3Cpath d='M0 0h8v2h-2v2h-4v-2h-2z'/%3E%3C/svg%3E\") repeat-x 0 100% / 8px 4px; mask: linear-gradient(#000 0 0) 0 0 / 100% calc(100% - 4px) no-repeat, url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 4' shape-rendering='crispEdges'%3E%3Cpath d='M0 0h8v2h-2v2h-4v-2h-2z'/%3E%3C/svg%3E\") repeat-x 0 100% / 8px 4px; } .ds-strip p { margin:0 0 4px; } .ds-sub { font-family:'Ark Pixel','PingFang SC',monospace; font-size:12px; line-height:20px; font-weight:400; letter-spacing:0; -webkit-font-smoothing:none; display:inline-block; margin:12px 0 8px; padding:0 8px; background:var(--print); color:var(--paper); } .ds-list { list-style:none; margin:0; padding:0; line-height:18px; } .ds-list li { font-family:'Ark Pixel','PingFang SC',monospace; font-size:12px; line-height:20px; font-weight:400; letter-spacing:0; -webkit-font-smoothing:none; display:inline-block; margin:0 8px 0 0; line-height:18px; } .ds-list li::before { content:''; display:inline-block; width:4px; height:4px; margin:0 4px 2px 0; vertical-align:middle; background:var(--print-soft); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Pocket Camera Album",
+    "overview": "The whole blog is a four-tone handheld camera with a thermal printer built in, lit for the dark. Navigation, lists, the About album and every bit of chrome live on the LCD: four tones of one deep teal hue fill every region edge to edge, a dark ground with bright lit ink, with no off-palette greys and no white page underneath. Reading happens on paper. A post body, an About entry and a footnote popup are thermal strips: pale grey paper, near-black print, and a toothed tear along the bottom edge. There is one palette; the screen does not change with the hour.\n\nThe density is low and handmade. One bitmap face at two sizes carries the interface; a legible system sans carries the prose. Everything snaps to a 4px unit and a 2px \"LCD pixel\". Nothing rounds, blurs or glows. Selection is reverse video, with a small triangle cursor sprite on menu-like rows. All pictures (the eight About scenes, the book cover, the magpie, the birds on the header wire, the bird-track divider, the tag ends) are drawn in code by `_pixel/` (`python3 _pixel/build.py`): the scenes are exported in the four screen tones, the wire birds in their own plumage, the cover in the three print inks, and sprites are masks painted by the theme tokens, so the art always uses the same tones as the surface it sits on.\n\nBirds are the recurring signature: a magpie is the brand mark and ends every printed post, real, nameable species sit on the header rule as on a wire (a night heron, a spotted dove, a light-vented bulbul, a hoopoe and a kingfisher, standing shoulder to shoulder, 3 pixels apart on every row so tails tuck under the next bird, and repeating as one unbroken line), and bird tracks make up the horizontal rule.",
+    "keyCharacteristics": [
+      "One set of four LCD tones, mapped onto the page roles ground / ink / shade / mid as a lit screen (dark ground, bright ink).",
+      "A separate four-grey thermal-paper set for anything you read at length.",
+      "Ark Pixel at exactly 12px and 24px; system sans for CJK prose.",
+      "A 4px spacing unit; 2px frames drawn as stepped box-shadow outlines with notched corners.",
+      "Reverse video and a triangle cursor for hover, current page and selection.",
+      "Code-drawn pixel art; sprites are one-tone masks painted by tokens. The magpie is drawn in black only; its white patches are whatever light surface it sits on."
+    ],
+    "rules": [
+      {
+        "name": "The Four Tones Rule",
+        "body": "A screen region uses only ground, ink, shade and mid, and a strip uses only paper, print, print-soft and print-faint. No other neutral, tint or accent gets added; art is drawn in the same four tones. The one exception is the birds on the header wire: each wears its own plumage colours, a small fixed palette per species in `_pixel/wire.py`, because the birds are what the blog is about and four tones cannot tell a kingfisher from a bulbul. Nothing else borrows those colours.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mid Never Speaks Rule",
+        "body": "Mid is too close to ground to carry text (1.5:1). Use it for underlines, separators, frames and disabled states only. Readable secondary text uses shade (4.8:1 on ground); ink on ground is 12.6:1. Print-faint follows the same rule on paper (1.6:1); print-soft carries secondary print text (5.4:1).",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Sizes Rule",
+        "body": "Ark Pixel appears at exactly 12px or 24px, weight 400, letter-spacing 0, with font smoothing off. Any other size, faux bold or tracking smears the pixel grid.",
+        "section": "typography"
+      },
+      {
+        "name": "The Prose Stays Sans Rule",
+        "body": "Paragraphs, lists of sentences, blockquotes and footnote text never use the pixel face. Pixel type is for interface, headings and short labels only.",
+        "section": "typography"
+      },
+      {
+        "name": "The Integer Scale Rule",
+        "body": "Every pixel of a pixel picture lands on whole device pixels, rendered with `image-rendering: pixelated`. The 112x84 album picture shows at x2 by default, at x3 when its card is at least 344px wide (phones and wide tablet columns), and at x1.5 (three device pixels) on hi-dpi desktops (at least 1200px wide and 2dppx), where the label moves beside the picture to save height. Low-dpi desktops keep x2 with the label underneath and may need a short scroll. The book cover is exempt: it is a 224px wide print shown at up to 112 CSS px (two print dots per CSS pixel) with smooth scaling.",
+        "section": "layout"
+      },
+      {
+        "name": "The No Blur Rule",
+        "body": "No blur radius, no glow and no offset shadow anywhere. A frame is four 2px offsets of one tone.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** reference page roles (`--ground`, `--ink`, `--shade`, `--mid`) or paper roles (`--paper`, `--print`, `--print-soft`, `--print-faint`), never raw hex or the raw `--t0`-`--t3` tones.",
+      "**Do** set every pixel label through the `pixel-type` mixin at 12px or 24px.",
+      "**Do** keep spacing on the 4px scale and frames and rules at 2px.",
+      "**Do** show hover, current and selected states as reverse video, adding the triangle cursor on menu-like rows.",
+      "**Do** put long-form reading on a paper strip with the toothed edge, in the system sans.",
+      "**Do** draw new pictures and sprites in `_pixel/` and regenerate them: pictures in the four screen tones, sprites as one-tone masks, each pixel landing on whole device pixels.",
+      "**Do** honour reduced motion, and give every script-driven view a no-script fallback."
+    ],
+    "donts": [
+      "**Don't** round corners, blur, glow, or add offset or soft shadows.",
+      "**Don't** add a fifth tone, an off-palette grey or a brand accent to a screen region (the wire birds' own plumage is the only exception, and it never spreads to text, chrome or other art).",
+      "**Don't** set text in mid or print-faint.",
+      "**Don't** set the pixel face at sizes other than 12 or 24px, bold it, track it, or use it for paragraph prose.",
+      "**Don't** use a white page with black-bordered dialog boxes, the Press Start 2P face, or an RPG stat-sheet look (the NES.css default this world rejects).",
+      "**Don't** load fonts from external CDNs. Fonts are self-hosted for readers in mainland China.",
+      "**Don't** caption drawn birds as real sightings. They are illustrations."
+    ]
+  }
+}

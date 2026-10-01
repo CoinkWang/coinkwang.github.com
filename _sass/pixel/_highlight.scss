@@ -1,0 +1,29 @@
+// =============================================================================
+// Pixel code highlighting — a solid printed block in four greys
+// =============================================================================
+
+.highlight {
+  margin: $s-6 0;
+  background: var(--print);
+  color: var(--paper);
+  font-family: $font-code;
+  font-size: 13.5px;
+  line-height: 1.7;
+
+  pre {
+    margin: 0;
+    background: transparent;
+    color: inherit;
+    border: 0;
+  }
+
+  .c, .cm, .c1, .cs, .cp { color: var(--print-faint); font-style: italic; }
+  .k, .kc, .kd, .kp, .kr, .kt, .nf, .nc { color: var(--paper); font-weight: 700; }
+  .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr, .ss,
+  .m, .mf, .mh, .mi, .mo, .il { color: var(--print-faint); }
+  .o, .ow, .p { color: var(--print-faint); }
+  .err, .gd { text-decoration: underline wavy; }
+  .w { color: transparent; }
+}
+
+.highlighter-rouge .highlight { padding: 0; }

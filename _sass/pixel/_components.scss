@@ -1,0 +1,191 @@
+// =============================================================================
+// Pixel components — notched buttons, catalogue badges, pagination, to-top
+// Hover is reverse video; nothing rounds, glows or blurs.
+// =============================================================================
+
+button,
+.btn,
+input[type="submit"],
+input[type="button"] {
+  appearance: none;
+  -webkit-appearance: none;
+  @include pixel-type(12px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $s-2;
+  min-height: 40px;
+  padding: 0 $s-4;
+  margin: $px;
+  color: var(--ink);
+  background: var(--ground);
+  border: 0;
+  border-radius: 0;
+  @include pixel-frame(var(--ink));
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    background: var(--ink);
+    color: var(--ground);
+  }
+  &:active { transform: translateY($px); }
+  &:disabled {
+    cursor: not-allowed;
+    color: var(--mid);
+    @include pixel-frame(var(--mid));
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Badges — small framed labels
+// -----------------------------------------------------------------------------
+// A tag is a little price tag: a stepped point with a punched hole (the
+// tag-end sprite), a filled body, and the right corners notched off
+$tag-end: $px-tag-end-w * $px;
+$tag-h: $px-tag-end-h * $px;
+
+.badge {
+  @include pixel-type(12px);
+  display: inline-flex;
+  align-items: center;
+  height: $tag-h;
+  padding: 0 $s-2 0 ($tag-end + $s-1);
+  margin: 0;
+  color: var(--ink);
+  background: var(--mid);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-mask:
+    $px-tag-end no-repeat 0 0 / #{$tag-end} #{$tag-h},
+    linear-gradient(#000 0 0) #{$tag-end} 0 / calc(100% - #{$tag-end + $px}) 100% no-repeat,
+    linear-gradient(#000 0 0) 100% #{$px} / #{$px} calc(100% - #{$px * 2}) no-repeat;
+  mask:
+    $px-tag-end no-repeat 0 0 / #{$tag-end} #{$tag-h},
+    linear-gradient(#000 0 0) #{$tag-end} 0 / calc(100% - #{$tag-end + $px}) 100% no-repeat,
+    linear-gradient(#000 0 0) 100% #{$px} / #{$px} calc(100% - #{$px * 2}) no-repeat;
+
+  &:has(a):hover {
+    color: var(--ground);
+    background: var(--ink);
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+    background: none !important;
+  }
+}
+
+.post-badge {
+  margin-right: $s-1;
+  a { color: inherit !important; }
+}
+
+// -----------------------------------------------------------------------------
+// Alerts — a note in a frame
+// -----------------------------------------------------------------------------
+.alert {
+  margin: $s-6 $px;
+  padding: $s-4 $s-6;
+  font-size: 15px;
+  line-height: 1.75;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  @include pixel-frame(currentColor);
+
+  &.alert-danger,
+  &.alert-warning {
+    background: var(--print);
+    color: var(--paper);
+    box-shadow: none;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Pagination — numbered cells, the current one reversed
+// -----------------------------------------------------------------------------
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $s-3;
+  margin: $s-16 0 0 0;
+
+  a, .current-page {
+    @include pixel-type(12px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 $s-2;
+    margin: $px;
+    color: var(--ink);
+    text-decoration: none;
+    @include pixel-frame(var(--ink));
+  }
+
+  a:hover { background: var(--mid); color: var(--ink); }
+
+  .current-page {
+    background: var(--ink);
+    color: var(--ground);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// To-top — a square key with an arrow
+// -----------------------------------------------------------------------------
+.to-top-btn {
+  position: fixed;
+  right: $s-6;
+  bottom: $s-6;
+  z-index: 80;
+  width: 48px;
+  height: 48px;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  font-size: 0 !important;
+  line-height: 0;
+  color: var(--ground);
+  background: var(--ink);
+  @include pixel-frame(var(--ink));
+
+  &::before {
+    content: "";
+    @include sprite($px-up, $px-up-w, $px-up-h, 2);
+    // pinned to the centre: the button's "^" text is still in the flow
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: (-$px-up-h * 1px) 0 0 (-$px-up-w * 1px);
+  }
+
+  &:hover {
+    background: var(--ground);
+    color: var(--ink);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// PaperCSS leftovers in the shared markup
+// -----------------------------------------------------------------------------
+.border,
+.border-1, .border-2, .border-3, .border-4, .border-5, .border-6,
+.border-primary, .border-secondary, .border-success, .border-warning, .border-danger, .border-muted,
+.border-dashed, .border-dotted, .border-thick {
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.shadow,
+.shadow-large,
+.shadow-small,
+.shadow-hover {
+  box-shadow: none !important;
+}

@@ -1,0 +1,54 @@
+{%- comment -%}
+  About, pixel theme: the camera's album page. Eight pictures (drawn by
+  _pixel/scenes.py, exported by _pixel/build.py), each with the thermal strip
+  it printed underneath. Everything is on the page at once; no script.
+  Cards fill the columns top to bottom in `pixel_order`.
+{%- endcomment -%}
+{%- assign interests = site.data.about.interests -%}
+<main class="page-content album" aria-label="Content">
+  <div class="album-wrap">
+    <h1 class="album-title">关于 Coink</h1>
+    <div class="album-grid">
+      {%- for key in site.data.about.pixel_order %}
+      {%- assign item = interests | where: "key", key | first %}
+      {%- capture pic %}/assets/img/pixel/about-{{ key }}.png{% endcapture %}
+      <article class="shot" id="{{ key }}" aria-labelledby="{{ key }}-title">
+        <div class="shot-camera">
+          <img class="shot-pic" src="{{ pic | relative_url }}" width="112" height="84" alt="{{ item.alt }}">
+          <h2 class="shot-title" id="{{ key }}-title">{{ item.zh }} <span class="shot-title-en" lang="en">{{ item.en }}</span></h2>
+        </div>
+        <div class="shot-print">
+          {%- for line in item.desc %}
+          <p>{{ line }}</p>
+          {%- endfor %}
+          {%- if item.list %}
+          <h3 class="print-subhead">{{ item.list_title }}</h3>
+          <ul class="print-list">
+            {%- for entry in item.list %}
+            <li>{{ entry }}</li>
+            {%- endfor %}
+          </ul>
+          {%- endif %}
+          {%- if item.works %}
+          <h3 class="print-subhead">{{ item.works_title }}</h3>
+          <div class="print-frames">
+            {%- for work in item.works %}
+            <figure class="print-frame">
+              <img src="{{ work.pixel_cover | default: work.cover | relative_url }}" alt="{{ work.title }} 封面" width="112" height="158">
+              <figcaption><a href="{{ work.url }}">{{ work.title }}</a>（{{ work.year }}）</figcaption>
+            </figure>
+            {%- endfor %}
+            {%- if item.wip %}
+            <figure class="print-frame print-frame--blank">
+              <div class="print-blank" aria-hidden="true"></div>
+              <figcaption>{{ item.wip }}（WIP）</figcaption>
+            </figure>
+            {%- endif %}
+          </div>
+          {%- endif %}
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</main>

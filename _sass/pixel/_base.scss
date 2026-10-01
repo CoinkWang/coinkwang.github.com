@@ -1,0 +1,136 @@
+// =============================================================================
+// Pixel base — the LCD ground, type, links and the browser's own surfaces
+// =============================================================================
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  background: var(--ground);
+  scrollbar-color: var(--shade) var(--ground);
+}
+
+body {
+  margin: 0;
+  font-family: $font-body;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--ink);
+  background: var(--ground);
+  caret-color: var(--ink);
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+
+main { flex: 1 0 auto; }
+
+h1, h2 {
+  @include pixel-type(24px);
+  color: var(--ink);
+  margin: 0 0 $s-4 0;
+}
+
+h3, h4, h5, h6 {
+  font-family: $font-body;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.5;
+  margin: 0 0 $s-2 0;
+}
+
+h3 { font-size: 19px; }
+h4 { font-size: 17px; }
+h5, h6 { font-size: 15px; }
+
+p { margin: 0 0 1em 0; }
+
+strong, b { font-weight: 700; }
+
+small { font-size: 13px; }
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: $px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--mid);
+
+  &:hover {
+    background: var(--ink);
+    color: var(--ground);
+    text-decoration-color: transparent;
+  }
+  &:focus-visible {
+    outline: $px solid var(--ink);
+    outline-offset: $px;
+  }
+}
+
+:focus-visible {
+  outline: $px solid var(--ink);
+  outline-offset: $px;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--ground);
+}
+
+// Scrollbars: square thumb on the ground, no rounding
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: var(--ground); }
+::-webkit-scrollbar-thumb {
+  background: var(--shade);
+  border: 4px solid var(--ground);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--ink); }
+
+// Divider: a short trail of bird tracks
+hr {
+  border: 0;
+  width: $px-tracks-w * $px;
+  height: $px-tracks-h * $px;
+  margin: $s-12 auto;
+  background: var(--shade);
+  -webkit-mask: $px-tracks no-repeat center / 100% 100%;
+  mask: $px-tracks no-repeat center / 100% 100%;
+}
+
+ul, ol { padding-left: 1.4em; }
+li { margin: 0.3em 0; }
+ul li::marker { content: "■ "; font-size: 0.6em; }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+code, kbd, samp, pre {
+  font-family: $font-code;
+  font-size: 0.88em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: $s-6 0;
+  font-size: 15px;
+
+  th {
+    @include pixel-type(12px);
+    text-align: left;
+    padding: $s-2 $s-3;
+    background: var(--ink);
+    color: var(--ground);
+  }
+
+  td {
+    padding: $s-2 $s-3;
+    @include dotted-rule(var(--mid));
+  }
+}
+
+input, textarea, select { font: inherit; }

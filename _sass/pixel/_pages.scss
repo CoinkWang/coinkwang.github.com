@@ -1,0 +1,443 @@
+// =============================================================================
+// Pixel pages — the album index, the printed post, tags, friends, 404
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Home — an album index grouped by year; the row under the cursor reverses
+// -----------------------------------------------------------------------------
+.year-heading {
+  @include pixel-type(24px);
+  display: flex;
+  align-items: center;
+  gap: $s-4;
+  margin: $s-16 0 $s-3 0;
+  padding: 0;
+  color: var(--ink);
+  background: transparent;
+
+  &::after {
+    content: "";
+    flex: 1 1 auto;
+    height: $px;
+    @include dotted-rule(var(--ink), center);
+  }
+
+  &:first-of-type { margin-top: $s-4; }
+}
+
+.post-link {
+  position: relative;
+  display: block;
+  margin: 0 (-$s-3);
+  padding: $s-4 $s-3 $s-4 $s-8;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: $s-3;
+    top: $s-4 + 9px;
+    @include sprite($px-cursor, $px-cursor-w, $px-cursor-h, 2);
+    visibility: hidden;
+  }
+
+  & + .post-link { @include dotted-rule(var(--mid), top); }
+
+  &:hover,
+  &:focus-within {
+    background: var(--ink);
+    color: var(--ground);
+    &::before { visibility: visible; }
+    .post-subtitle, .post-preview, .post-meta-list { color: var(--ground); }
+    a:hover { background: transparent; color: var(--ground); }
+
+    // on the lit row the tags turn dark
+    .badge { background: var(--ground); color: var(--ink); }
+    .badge:has(a):hover { background: var(--shade); color: var(--ground); }
+  }
+}
+
+.post-link-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: $s-2 $s-4;
+  flex-wrap: wrap;
+}
+
+.post-link-title {
+  @include pixel-type(24px);
+  flex: 1 1 18em;
+  min-width: 0;
+  color: inherit !important;
+  text-decoration: none !important;
+  background: none !important;
+
+  &:focus-visible { outline-color: var(--ground); }
+}
+
+.post-meta-list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $s-1;
+  padding-top: 6px;
+  color: var(--shade);
+
+  // the date reads as a plain stamp, not a tag
+  .badge:last-child,
+  .post-link:hover & .badge:last-child,
+  .post-link:focus-within & .badge:last-child {
+    height: auto;
+    padding: 0;
+    color: inherit;
+    background: none;
+    -webkit-mask: none;
+    mask: none;
+  }
+}
+
+.post-link-body {
+  display: block;
+  color: inherit !important;
+  text-decoration: none !important;
+  background: none !important;
+}
+
+.post-subtitle {
+  margin-top: $s-1;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.post-preview {
+  margin-top: $s-1;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--shade);
+}
+
+@media (max-width: $bp-tablet - 1) {
+  .post-link { margin: 0 (-$s-2); padding-left: $s-8; padding-right: $s-2; }
+  .post-meta-list { padding-top: 0; }
+}
+
+// -----------------------------------------------------------------------------
+// Post — the entry is printed: a thermal strip feeds out of a slot under the
+// title, torn off with a toothed edge
+// -----------------------------------------------------------------------------
+article.article {
+  max-width: $content-max;
+  margin: 0 auto;
+  position: relative;
+
+  > header {
+    padding: $s-4 0 0 0;
+
+    h3 {
+      @include pixel-type(24px);
+      margin: 0 0 $s-3 0;
+    }
+
+    > a {
+      color: var(--ink) !important;
+      text-decoration: none;
+      margin-right: 0 !important;
+      &:hover { background: transparent; }
+      .badge:hover { background: var(--ink); color: var(--ground); }
+    }
+
+    > p {
+      font-size: 16px;
+      color: var(--ink);
+      margin: $s-3 0 0 0;
+    }
+
+    .article-meta {
+      @include pixel-type(12px);
+      color: var(--shade);
+      margin-top: $s-2;
+
+      time { color: inherit; }
+    }
+
+    // the printer's slot
+    &::after {
+      content: "";
+      display: block;
+      height: $s-2;
+      margin: $s-8 (-$s-2) 0;
+      background: var(--ink);
+      @include pixel-frame(var(--ink));
+    }
+  }
+
+  > div:first-of-type {
+    position: relative;
+    margin: 0 $s-1;
+    padding: $s-8 $s-4 $s-16;
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--print);
+    background: var(--paper);
+    -webkit-mask:
+      linear-gradient(#000 0 0) 0 0 / 100% calc(100% - 4px) no-repeat,
+      $px-teeth-bottom repeat-x 0 100% / 8px 4px;
+    mask:
+      linear-gradient(#000 0 0) 0 0 / 100% calc(100% - 4px) no-repeat,
+      $px-teeth-bottom repeat-x 0 100% / 8px 4px;
+
+    @media (min-width: $bp-tablet) { margin: 0 $s-2; padding: $s-12 $s-12 $s-16; }
+
+    ::selection { background: var(--print); color: var(--paper); }
+
+    > :first-child { margin-top: 0; }
+
+    // end of the print: the magpie in black, its white patches left as paper
+    &::after {
+      content: "";
+      display: block;
+      width: $px-magpie-w * 2px;
+      height: $px-magpie-h * 2px;
+      margin: $s-12 auto 0;
+      background: var(--print);
+      -webkit-mask: $px-magpie no-repeat center / 100% 100%;
+      mask: $px-magpie no-repeat center / 100% 100%;
+    }
+
+    h1, h2 {
+      @include pixel-type(24px);
+      color: var(--print);
+      margin: 1.8em 0 0.6em;
+    }
+
+    h3, h4, h5, h6 {
+      color: var(--print);
+      margin: 1.6em 0 0.5em;
+    }
+
+    p { margin: 0 0 1.15em 0; }
+
+    a {
+      text-decoration-color: var(--print-faint);
+      &:hover {
+        background: var(--print);
+        color: var(--paper);
+      }
+    }
+
+    ul li::marker { color: var(--print-soft); }
+
+    blockquote {
+      position: relative;
+      margin: $s-6 0;
+      padding: $s-1 0 $s-1 $s-6;
+      color: var(--print-soft);
+      background: none;
+      border: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: $s-2;
+        @include dither(var(--print), transparent);
+      }
+
+      p:last-child { margin-bottom: 0; }
+    }
+
+    img {
+      display: block;
+      margin: $s-6 auto;
+    }
+
+    figcaption {
+      @include pixel-type(12px);
+      color: var(--print-soft);
+      text-align: center;
+    }
+
+    code {
+      padding: 0.1em 0.35em;
+      background: var(--print-faint);
+      color: var(--print);
+    }
+
+    pre {
+      margin: $s-6 0;
+      padding: $s-4 $s-6;
+      overflow-x: auto;
+      font-size: 13.5px;
+      line-height: 1.7;
+      background: var(--print);
+      color: var(--paper);
+
+      code { padding: 0; background: transparent; color: inherit; font-size: inherit; }
+    }
+
+    table {
+      th { background: var(--print); color: var(--paper); }
+      td { @include dotted-rule(var(--print-faint)); }
+    }
+
+    hr { background: var(--print-soft); }
+  }
+}
+
+#cusdis_thread {
+  max-width: $content-max;
+  margin: $s-16 0 0;
+  padding: $s-4;
+  background: var(--paper);
+}
+
+// -----------------------------------------------------------------------------
+// Tag pages
+// -----------------------------------------------------------------------------
+.tag .page-heading {
+  @include pixel-type(24px);
+  font-family: $font-pixel !important;
+  margin: $s-4 0 $s-8 0;
+}
+
+.page-heading {
+  @include pixel-type(24px);
+}
+
+// -----------------------------------------------------------------------------
+// Friends — a menu: one row per site, the cursor and reverse video on the
+// row you are on, the note set to the right
+// -----------------------------------------------------------------------------
+article > header h2 { margin-top: $s-4; }
+
+.friend-links-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 640px;
+  margin-top: $s-8;
+}
+
+.friend-links {
+  & + .friend-links { @include dotted-rule(var(--mid), top); }
+
+  a {
+    display: block;
+    text-decoration: none;
+    &:hover { background: transparent; }
+    &:focus-visible { outline: none; }
+  }
+
+  button {
+    @include pixel-type(24px);
+    position: relative;
+    width: 100%;
+    min-height: 56px;
+    margin: 0;
+    padding: 0 $s-3 0 $s-8;
+    justify-content: space-between;
+    gap: $s-4;
+    text-align: left;
+    color: var(--ink);
+    background: transparent;
+    box-shadow: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: $s-3;
+      top: 50%;
+      margin-top: -7px;
+      @include sprite($px-cursor, $px-cursor-w, $px-cursor-h, 2);
+      visibility: hidden;
+    }
+
+    &[popover-top]::after {
+      content: attr(popover-top);
+      @include pixel-type(12px);
+      color: var(--shade);
+      text-align: right;
+    }
+
+    &:active { transform: none; }
+  }
+
+  a:hover button,
+  a:focus-visible button {
+    background: var(--ink);
+    color: var(--ground);
+    &::before { visibility: visible; }
+    &::after { color: var(--ground); }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 404 — the camera with nothing on its screen: an empty viewfinder, focus
+// brackets on no subject, the code in the caption bar
+// -----------------------------------------------------------------------------
+$empty-w: 336px;
+$empty-h: 252px;
+
+.container.flex-spaces {
+  max-width: none;
+  margin: $s-12 0 0;
+  text-align: left;
+
+  > div {
+    width: $empty-w + $s-2;
+    max-width: calc(100% - #{$s-4});
+    margin: $s-2 auto;
+    padding: $s-1 $s-1 $s-4;
+    background: var(--ink);
+    color: var(--ground);
+    box-shadow: 0 (-$s-2) 0 0 var(--ink), 0 $s-2 0 0 var(--ink), (-$s-2) 0 0 0 var(--ink), $s-2 0 0 0 var(--ink) !important;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      margin-bottom: $s-3;
+      background-color: var(--ground);
+      background-image:
+        linear-gradient(var(--ink) 0 0), linear-gradient(var(--ink) 0 0),
+        linear-gradient(var(--ink) 0 0), linear-gradient(var(--ink) 0 0),
+        linear-gradient(var(--ink) 0 0), linear-gradient(var(--ink) 0 0),
+        linear-gradient(var(--ink) 0 0), linear-gradient(var(--ink) 0 0),
+        conic-gradient(at 2px 2px, transparent 75%, var(--mid) 0);
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat,
+                         no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+      background-size: 16px 4px, 4px 16px, 16px 4px, 4px 16px,
+                       16px 4px, 4px 16px, 16px 4px, 4px 16px, 8px 8px;
+      // corner brackets around an empty middle (screen is 336 x 252)
+      background-position:
+        104px 72px, 104px 72px, 216px 72px, 228px 72px,
+        104px 176px, 104px 164px, 216px 176px, 228px 164px, 0 0;
+    }
+  }
+
+  h1 {
+    @include pixel-type(24px);
+    font-size: 24px !important;
+    letter-spacing: 0 !important;
+    margin: 0 0 $s-2 !important;
+    padding: 0 $s-3;
+    color: var(--ground);
+  }
+
+  p {
+    @include pixel-type(12px);
+    margin: 0;
+    padding: 0 $s-3;
+    color: var(--ground);
+
+    strong { font-weight: 400; }
+  }
+}

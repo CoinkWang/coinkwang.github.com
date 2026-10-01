@@ -12,6 +12,8 @@
 @import "denise";
 {% elsif site.theme_style == "fieldguide" %}
 @import "fieldguide";
+{% elsif site.theme_style == "pixel" %}
+@import "pixel";
 {% else %}
 @import "bugatti";
 {% endif %}

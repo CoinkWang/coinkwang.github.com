@@ -1,0 +1,247 @@
+// =============================================================================
+// About — the camera's album page: eight pictures, each on a camera's screen
+// with the strip it printed feeding out of the slot below, all on the page at
+// once. On a desktop the four columns fit one screen; on a phone they stack
+// into one scroll.
+//
+// Every picture pixel lands on whole device pixels: x3 on phones and wide
+// tablet columns, x2 elsewhere, and x1.5 (three device pixels) on hi-dpi
+// desktops, where the label moves beside the picture to save height.
+// =============================================================================
+
+$shot-w: 112px;
+$shot-h: 84px;
+$bezel: $s-2;     // body around the screen
+$slot: $s-1;      // the printer slot
+$lip: $s-2;       // body below the slot, behind the strip
+$feed: $s-2;      // how far in from the body's sides the strip runs
+$col-gap: $s-4;
+
+.page-content.album {
+  padding: $s-6 0 $s-16;
+}
+
+.album-wrap {
+  max-width: $wide-max;
+  margin: 0 auto;
+  padding: 0 $s-4;
+
+  @media (min-width: $bp-tablet) { padding: 0 $s-6; }
+}
+
+.album-title {
+  margin: 0 0 $s-5;
+
+  // On a desktop the album is the whole first screen; the lit "About" in the
+  // nav already says where you are, so the heading is for screen readers only
+  @media (min-width: $bp-desktop) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+.album-grid {
+  @media (min-width: 560px) { columns: 2; column-gap: $col-gap; }
+  @media (min-width: 900px) { columns: 3; }
+  @media (min-width: $bp-desktop) { columns: 4; }
+}
+
+.shot {
+  container-type: inline-size;
+  break-inside: avoid;
+  margin: 0 0 $s-8;
+  scroll-margin-top: $s-6;
+
+  @media (min-width: 560px) { margin-bottom: $col-gap; }
+}
+
+// -----------------------------------------------------------------------------
+// The camera: a dark body, the picture lit on its sunken screen, the label
+// under it, and the printer slot along the bottom
+// -----------------------------------------------------------------------------
+.shot-camera {
+  position: relative;
+  padding: $bezel $bezel ($s-2 + $slot + $lip);
+  color: var(--ink);
+  background: var(--mid);
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: $feed - $px;
+    right: $feed - $px;
+    bottom: $lip;
+    height: $slot;
+    background: var(--ground);
+  }
+}
+
+.shot-pic {
+  display: block;
+  width: $shot-w * 2;
+  height: $shot-h * 2;
+  margin: 0 auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  background: var(--ground);
+  @include pixel-frame(var(--ground));
+}
+
+@container (min-width: #{$shot-w * 3 + $bezel * 2}) {
+  .shot-pic {
+    width: $shot-w * 3;
+    height: $shot-h * 3;
+  }
+}
+
+.shot-title {
+  display: flex;
+  align-items: baseline;
+  gap: $s-2;
+  margin: 0;
+  padding: $s-2 $s-1 0;
+  color: var(--ink);
+}
+
+.shot-title-en {
+  @include pixel-type(12px);
+}
+
+@mixin shot-side {
+  .shot-camera {
+    display: flex;
+    padding-bottom: $bezel + $slot + $lip;
+  }
+
+  .shot-pic {
+    flex: 0 0 auto;
+    width: $shot-w * 1.5;
+    height: $shot-h * 1.5;
+    margin: 0;
+  }
+
+  .shot-title {
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    min-width: 0;
+    padding: 0 0 0 $s-3;
+  }
+}
+
+@media (min-width: $bp-desktop) and (min-resolution: 2dppx) { @include shot-side; }
+@media (min-width: $bp-desktop) and (-webkit-min-device-pixel-ratio: 2) { @include shot-side; }
+
+// -----------------------------------------------------------------------------
+// The strip, fed out of the slot: it starts at the slot and covers the lip
+// -----------------------------------------------------------------------------
+.shot-print {
+  position: relative;
+  margin: (-$lip) $feed 0;
+  padding: $s-3 $s-3 $s-4;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--print);
+  background: var(--paper);
+  -webkit-mask:
+    linear-gradient(#000 0 0) 0 0 / 100% calc(100% - 4px) no-repeat,
+    $px-teeth-bottom repeat-x 0 100% / 8px 4px;
+  mask:
+    linear-gradient(#000 0 0) 0 0 / 100% calc(100% - 4px) no-repeat,
+    $px-teeth-bottom repeat-x 0 100% / 8px 4px;
+
+  ::selection { background: var(--print); color: var(--paper); }
+
+  p { margin: 0 0 $s-1; }
+  > :last-child { margin-bottom: 0; }
+
+  a {
+    text-decoration-color: var(--print-soft);
+    &:hover { background: var(--print); color: var(--paper); }
+  }
+
+  @container (min-width: 340px) {
+    padding: $s-4 $s-4 $s-6;
+    font-size: 15px;
+  }
+}
+
+.print-subhead {
+  @include pixel-type(12px);
+  display: inline-block;
+  margin: $s-3 0 $s-2;
+  padding: 0 $s-2;
+  background: var(--print);
+  color: var(--paper);
+}
+
+// Lists print run-on, one square between entries, so a long list stays short
+.print-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 18px;
+
+  li {
+    @include pixel-type(12px);
+    display: inline-block;
+    max-width: 100%;
+    margin: 0 $s-2 0 0;
+    padding: 0;
+    line-height: 18px;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      margin: 0 $s-1 2px 0;
+      vertical-align: middle;
+      background: var(--print-soft);
+    }
+  }
+}
+
+// The published book beside the one not printed yet, two frames of one size:
+// equal columns, each at most a cover wide
+.print-frames {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 112px));
+  align-items: start;
+  gap: $s-3;
+}
+
+.print-frame {
+  margin: 0;
+  min-width: 0;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    @include pixel-type(12px);
+    margin-top: $s-1;
+    line-height: 18px;
+  }
+}
+
+// Not yet developed: an empty frame with a dotted edge
+.print-blank {
+  aspect-ratio: 224 / 317;  // the cover's own proportions
+  background-image:
+    linear-gradient(90deg, var(--print-soft) 50%, transparent 0),
+    linear-gradient(90deg, var(--print-soft) 50%, transparent 0),
+    linear-gradient(0deg, var(--print-soft) 50%, transparent 0),
+    linear-gradient(0deg, var(--print-soft) 50%, transparent 0);
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  background-size: 4px 2px, 4px 2px, 2px 4px, 2px 4px;
+  background-position: 0 0, 0 100%, 0 0, 100% 0;
+}

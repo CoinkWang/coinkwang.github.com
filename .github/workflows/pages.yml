@@ -1,0 +1,58 @@
+# Builds and deploys the site to GitHub Pages (Settings → Pages → Source:
+# GitHub Actions). Same build as the classic branch deploy (the github-pages
+# gem, safe mode), plus one step: the pixel font is cut down to the characters
+# the built site uses (_pixel/subset_font.py), so pages load ~80 KB of font
+# instead of ~540 KB. The subset only exists in the deployed artifact.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time; a newer push waits rather than cancelling one mid-way
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/configure-pages@v6
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Subset the pixel font
+        run: |
+          # the Jekyll step runs in a container and leaves _site owned by root
+          sudo chown -R "$(id -u):$(id -g)" _site
+          pip install --disable-pip-version-check fonttools==4.66.1 brotli==1.2.0
+          python _pixel/subset_font.py _site
+
+      - uses: actions/upload-pages-artifact@v5
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

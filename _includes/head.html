@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="{{ "/assets/fonts/denise.css" | relative_url }}">
   {%- elsif site.theme_style == "fieldguide" -%}
     <link rel="stylesheet" href="{{ "/assets/fonts/fieldguide.css" | relative_url }}">
+  {%- elsif site.theme_style == "pixel" -%}
+    {%- comment -%} Only the deploy-time subset is preloaded; it is not built locally (see _pixel/subset_font.py). {%- endcomment -%}
+    {%- if jekyll.environment == "production" -%}
+    <link rel="preload" href="{{ "/assets/fonts/ark-pixel/ark-pixel-subset.woff2" | relative_url }}" as="font" type="font/woff2" crossorigin>
+    {%- endif -%}
+    <link rel="stylesheet" href="{{ "/assets/fonts/pixel.css" | relative_url }}">
+    <meta name="theme-color" content="#0c1714">
   {%- elsif site.theme_style == nil or site.theme_style == "bugatti" -%}
     <link rel="stylesheet" href="{{ "/assets/fonts/bugatti.css" | relative_url }}">
   {%- endif -%}

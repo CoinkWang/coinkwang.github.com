@@ -1,0 +1,124 @@
+// =============================================================================
+// Pixel footnotes — numbered keys in the print; on wide screens the notes sit
+// on the screen beside the strip, on narrow ones they pop up as a small print
+// =============================================================================
+
+.footnotes { display: none; }
+.sidenotes { display: none; }
+
+sup[id^="fnref:"] {
+  font-size: 0;
+  line-height: 0;
+  vertical-align: super;
+
+  a {
+    @include pixel-type(12px);
+    display: inline-block;
+    min-width: 18px;
+    margin: 0 3px;
+    padding: 0 3px;
+    line-height: 16px;
+    text-align: center;
+    color: var(--paper) !important;
+    background: var(--print);
+    text-decoration: none !important;
+
+    &:hover { background: var(--print-soft); }
+  }
+}
+
+$sidenote-w: 248px;
+
+@media (min-width: 1200px) {
+  body.has-sidenotes {
+    // the strip and its notes are centred as one
+    article.article {
+      margin-left: calc((100% - #{$content-max + $s-8 + $sidenote-w}) / 2);
+      margin-right: 0;
+    }
+
+    .sidenotes {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: $sidenote-w;
+      margin-left: $s-8;
+      pointer-events: none;
+    }
+
+    .sidenote {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: var(--shade);
+      pointer-events: auto;
+
+      p:first-of-type { display: inline; margin: 0; }
+      p + p { display: block; margin: 0.5em 0 0 0; }
+
+      &.is-active { color: var(--ink); }
+    }
+
+    // the same reversed number chip as in the print
+    .sidenote-num {
+      @include pixel-type(12px);
+      display: inline-block;
+      min-width: 18px;
+      margin-right: $s-2;
+      padding: 0 3px;
+      line-height: 16px;
+      text-align: center;
+      color: var(--ground);
+      background: var(--ink);
+    }
+
+    sup[id^="fnref:"] a { cursor: default; }
+  }
+}
+
+.fn-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: $s-4;
+  background: color-mix(in srgb, var(--ground) 55%, transparent);
+
+  &.is-open { display: flex; }
+}
+
+.fn-popup-card {
+  position: relative;
+  width: 32rem;
+  max-width: 100%;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: $s-6;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--print);
+  background: var(--paper);
+  -webkit-mask:
+    linear-gradient(#000 0 0) 0 0 / 100% calc(100% - 4px) no-repeat,
+    $px-teeth-bottom repeat-x 0 100% / 8px 4px;
+  mask:
+    linear-gradient(#000 0 0) 0 0 / 100% calc(100% - 4px) no-repeat,
+    $px-teeth-bottom repeat-x 0 100% / 8px 4px;
+}
+
+.fn-popup-num {
+  @include pixel-type(12px);
+  display: inline;
+  margin-right: $s-1;
+}
+
+.fn-popup-content {
+  display: inline;
+  p:first-of-type { display: inline; margin: 0; }
+  p + p { display: block; margin: 0.5em 0 0 0; }
+}

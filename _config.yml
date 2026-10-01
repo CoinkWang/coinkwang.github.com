@@ -15,7 +15,8 @@ show_subtitle: true
 #   denise  — Denise Chandler 风格（黄油奶黄底 + 珊瑚红 + 手写 Caveat 标题 + 贴纸卡片）
 #   glance  — 旧版，PaperCSS 手绘风格
 #   fieldguide — 鸟类学家观察手册（陈纸 + 墨色 + 苔绿 + 朱砂印章，手绘群鸟）
-theme_style: fieldguide
+#   pixel  — 4 阶像素掌机相机（夜间液晶屏 + 热敏打印纸条，像素群鸟，喜鹊站标）
+theme_style: pixel
 
 header_pages:
   - about.md
@@ -39,3 +40,15 @@ plugins:
 # 添加分页配置
 paginate: 10  # 每页显示的文章数量
 paginate_path: "/page/:num/"  # 分页URL路径格式 
+
+# 设计文档（impeccable 生成）只给自己看，不发布到站点；其余为 Jekyll 默认排除项
+exclude:
+  - PRODUCT.md
+  - DESIGN.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

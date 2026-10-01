@@ -1,0 +1,261 @@
+// =============================================================================
+// Pixel layout — the camera's top bar (birds on the wire) and the footer
+// =============================================================================
+
+// The header and footer span the frame; each page's reading column keeps its
+// own measure, centred in it
+.wrapper {
+  max-width: $wide-max;
+  margin: 0 auto;
+  padding: 0 $s-4;
+
+  @media (min-width: $bp-tablet) { padding: 0 $s-6; }
+}
+
+.page-content {
+  padding: $s-8 0 $s-24 0;
+}
+
+.home,
+.tag {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+// Friends: the links layout's plain article
+article:has(> .friend-links-container) {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+// -----------------------------------------------------------------------------
+// Header
+// -----------------------------------------------------------------------------
+.site-header {
+  position: relative;
+  background: var(--ground);
+  margin: 0;
+  min-height: 0;
+  box-shadow: none !important;
+  border-bottom: $px solid var(--ink);
+
+  // The rule is a wire: a night heron, a spotted dove, a light-vented
+  // bulbul, a hoopoe and a kingfisher sit on it in their own colours
+  // (_pixel/wire.py), tails hanging below. The strip's wire row lies exactly
+  // on the rule.
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -($perch-below * $px + $px);
+    z-index: 1;
+    height: $perch-h * $px;
+    pointer-events: none;
+    background: url("../img/pixel/perch.png") repeat-x 24px 0 / #{$perch-w * $px} #{$perch-h * $px};
+    image-rendering: pixelated;
+  }
+
+  nav.split-nav {
+    max-width: $wide-max;
+    margin: 0 auto;
+    padding: $s-6 $s-4 $s-16 $s-4;  // the bottom is the birds' sky
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $s-4;
+    border: 0 !important;
+    background: transparent;
+
+    @media (min-width: $bp-tablet) { padding: $s-6 $s-6 $s-16 $s-6; }
+  }
+
+  .nav-brand {
+    max-width: none !important;
+    min-width: 0;
+
+    h4 {
+      margin: 0;
+      @include pixel-type(24px);
+
+      // A lit plate, always reversed: a magpie only reads as one in black and
+      // white, so its white patches are the plate showing through
+      a {
+        display: inline-flex;
+        align-items: center;
+        gap: $s-3;
+        min-height: 44px;
+        padding: 0 $s-3 0 $s-2;
+        color: var(--ground);
+        background: var(--ink);
+        text-decoration: none;
+
+        &::before {
+          content: "";
+          @include sprite($px-magpie, $px-magpie-w, $px-magpie-h, 2);
+        }
+
+        // the bird hops one pixel
+        &:hover::before { transform: translateY(-$px); }
+      }
+    }
+  }
+
+  .collapsible {
+    display: flex;
+    align-items: center;
+
+    .collapsible-body ul.inline {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: $s-2;
+
+      li { margin: 0; }
+      li::marker { content: none; }
+    }
+
+    .collapsible-body a {
+      @include pixel-type(12px);
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 $s-3 0 $s-6;
+      color: var(--ink);
+      text-decoration: none;
+
+      // the menu cursor
+      &::before {
+        content: "";
+        position: absolute;
+        left: $s-2;
+        top: 50%;
+        margin-top: -7px;
+        @include sprite($px-cursor, $px-cursor-w, $px-cursor-h, 2);
+        visibility: hidden;
+      }
+
+      &:hover,
+      &[aria-current="page"] {
+        background: var(--ink);
+        color: var(--ground);
+        &::before { visibility: visible; }
+      }
+    }
+
+    input,
+    button { display: none; }
+  }
+
+  @media (max-width: $bp-tablet - 1) {
+    // plate and menu key share one row down to a 375px phone
+    nav.split-nav { gap: $s-2; }
+    .nav-brand h4 a { gap: $s-2; padding: 0 $s-2; }
+
+    .collapsible {
+      // the menu key, a second lit plate at the other end of the bar
+      button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        background: var(--ink);
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        cursor: pointer;
+
+        // the label is what toggles, so it covers the whole key
+        label {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          gap: 4px;
+          width: 100%;
+          height: 100%;
+          padding: 0 $s-3;
+          cursor: pointer;
+        }
+      }
+
+      // held down while the menu is open
+      input:checked + button { background: var(--shade); }
+
+      .bar1, .bar2, .bar3 {
+        display: block;
+        width: 20px;
+        height: 4px;
+        background: var(--ground);
+      }
+      .bar2 { width: 14px; }
+
+      .collapsible-body {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 90;
+        display: none;
+        background: var(--ground);
+        border-bottom: $px solid var(--ink);
+        padding: $s-2 $s-4 $s-4;
+
+        ul.inline {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0;
+        }
+
+        a { display: flex; width: 100%; }
+      }
+
+      input:checked ~ .collapsible-body { display: block; }
+    }
+
+    // menu open: the rule is covered, so the birds take off
+    &:has(#collapsible1:checked)::after { visibility: hidden; }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Footer
+// -----------------------------------------------------------------------------
+.site-footer {
+  margin: 0;
+  background: var(--ground);
+  color: var(--shade);
+  border: 0 !important;
+  border-top: $px solid var(--ink) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  .container {
+    max-width: $wide-max;
+    margin: 0 auto;
+    padding: $s-8 $s-4 $s-12;
+    text-align: left;
+
+    @media (min-width: $bp-tablet) { padding: $s-8 $s-6 $s-12; }
+  }
+
+  .flex-middle {
+    display: flex;
+    flex-direction: column;
+    gap: $s-1;
+  }
+
+  p {
+    @include pixel-type(12px);
+    margin: 0;
+    color: var(--shade);
+  }
+
+  a { color: var(--ink); }
+  a:hover { color: var(--ground); }
+}
