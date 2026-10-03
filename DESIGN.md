@@ -153,7 +153,7 @@ The four LCD tones, named in the code by luminance `--t0` (darkest) to `--t3` (l
 - **Lit-Teal Ink** (`ink`, t3): text, frames, the header and footer rules, reverse-video fills, the album labels, and the two header plates (brand and menu key), which stay reversed so the magpie reads in black and white.
 
 ### Neutral
-Thermal paper is used for post bodies, About prints, footnote popups and the Cusdis comment box.
+Thermal paper is used for post bodies, About prints, footnote popups and the Waline comment box (self-hosted at comments.coink.wang on Vercel + Neon, open to anonymous comments).
 - **Thermal Paper** (`paper`): the strip ground.
 - **Print Black** (`print`): print text, print subheads in reverse, code blocks, `<pre>` and table header fills, the closing magpie.
 - **Faded Print** (`print-soft`): blockquotes, figcaptions, list bullets and markers, the dotted edge of the blank WIP frame.
