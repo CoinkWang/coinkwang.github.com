@@ -697,44 +697,7 @@
 
   .wl-operation button { margin: $s-4 $px; }
 
-  .wl-meta-foot {
-    flex-wrap: wrap;
-    gap: $s-2 $s-4;
-    margin-top: $s-4;
-    padding-top: $s-4;
-    @include dotted-rule(var(--print-faint), top);
-  }
-
-  // the feed links fold out of their icon on hover or focus
-  .wl-rss {
-    gap: $s-3;
-    max-width: 24px;
-    transition: none;
-
-    &:hover,
-    &:focus-within { max-width: 100%; }
-
-    > a {
-      @include print-icon-key;
-      height: 24px;
-      padding: 0 $s-1;
-    }
-
-    span {
-      @include pixel-type(12px);
-      color: inherit;
-    }
-
-    // the feed icon is an orange badge; print only its waves
-    svg { width: 16px; height: 16px; }
-    svg path { fill: none; }
-    svg path:last-child { fill: currentColor; }
-  }
-
-  .wl-power {
-    @include pixel-type(12px);
-    margin-inline-start: auto;
-    padding: 0;
-    color: var(--print-soft);
-  }
+  // post.html turns off the feed links and the credit line, so the footer
+  // that held them stays empty; hide it rather than print a lone rule
+  .wl-meta-foot { display: none; }
 }
