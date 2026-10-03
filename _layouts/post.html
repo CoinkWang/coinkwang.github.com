@@ -80,9 +80,14 @@ layout: default
       login: 'enable',
       meta: ['nick', 'mail', 'link'],
       requiredMeta: ['nick'],
-      // shown only when the name is left empty; the stock text asks for 3+
-      // characters, which nothing enforces and two-character names don't need
-      locale: { nickError: '请填写昵称' },
+      locale: {
+        // shown only when the name is left empty; the stock text asks for 3+
+        // characters, which nothing enforces and two-character names don't need
+        nickError: '请填写昵称',
+        sofa: '这篇文章暂时还没有留言。',
+        // blank on purpose; a reply still shows "@name" here
+        placeholder: '',
+      },
       emoji: false,
       search: false,
       imageUploader: false,
