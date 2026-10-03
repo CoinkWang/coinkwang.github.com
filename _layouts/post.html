@@ -56,23 +56,42 @@ layout: default
 
   </br>
 
-  <div id="cusdis_thread"
-    data-host="https://cusdis.com"
-    data-app-id="0b1007c1-b9b6-4403-9ee7-a91cc7c12828"
-    data-page-id="{{ page.title }}"
-    data-page-title="{{ page.title }}"
-  ></div>
+  {%- assign waline_server = site.waline.server_url | strip -%}
+  {%- if waline_server != "" -%}
+  {%- comment -%}
+    Comments: self-hosted Waline (site.waline.server_url), with its client
+    vendored under assets/vendor (CDNs are unreliable in mainland China).
+    Comments are keyed by page.url; the themes style the box by #waline.
+    Anything that would call a third party or store images in the database
+    (emoji presets, GIF search, base64 image upload) is off, and so are
+    reactions, the view/comment counters and Waline's own dark palette.
+  {%- endcomment -%}
+  <link rel="stylesheet" href="{{ '/assets/vendor/waline/3.16.0/waline.css' | relative_url }}">
+  <div id="waline"></div>
+  <script type="module">
+    import { init } from {{ '/assets/vendor/waline/3.16.0/waline.js' | relative_url | jsonify }};
 
-  <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-
-  <script>
-    window.addEventListener('load', function () {
-      setTimeout(() => {
-          let scrollHeight = window.document.querySelector("#cusdis_thread iframe").contentWindow.document.body.scrollHeight;
-          window.document.querySelector("#cusdis_thread iframe").style.height = scrollHeight + "px";
-      }, 3000);
+    init({
+      el: '#waline',
+      serverURL: {{ waline_server | jsonify }},
+      path: {{ page.url | jsonify }},
+      lang: 'zh-CN',
+      dark: false,
+      login: 'enable',
+      meta: ['nick', 'mail', 'link'],
+      requiredMeta: ['nick'],
+      // shown only when the name is left empty; the stock text asks for 3+
+      // characters, which nothing enforces and two-character names don't need
+      locale: { nickError: '请填写昵称' },
+      emoji: false,
+      search: false,
+      imageUploader: false,
+      reaction: false,
+      pageview: false,
+      comment: false,
     });
   </script>
+  {%- endif -%}
 
   {%- include toper.html -%}
 

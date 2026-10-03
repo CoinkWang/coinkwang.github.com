@@ -1,0 +1,740 @@
+// =============================================================================
+// Pixel comments — Waline, printed as a reply slip: a second thermal strip fed
+// out of its own slot under the post. Waline renders into the page, not an
+// iframe, so the theme's bare button / a / hr / li rules reach into it, and
+// waline.css loads after this sheet; every rule here is scoped under #waline
+// so it wins over both.
+// =============================================================================
+
+// A 2px frame drawn inside the box, dotted by default (the blank frame's edge);
+// $on: 100% draws it solid
+@mixin edge-frame($c, $on: 50%) {
+  background-image:
+    linear-gradient(90deg, #{$c} $on, transparent 0),
+    linear-gradient(90deg, #{$c} $on, transparent 0),
+    linear-gradient(0deg, #{$c} $on, transparent 0),
+    linear-gradient(0deg, #{$c} $on, transparent 0);
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  background-size: ($px * 2) $px, ($px * 2) $px, $px ($px * 2), $px ($px * 2);
+  background-position: 0 0, 0 100%, 0 0, 100% 0;
+}
+
+// A bare icon key on paper: no frame, reversed on contact
+@mixin print-icon-key {
+  @include pixel-type(12px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $s-1;
+  min-width: 28px;
+  min-height: 0;
+  height: 28px;
+  margin: 0;
+  padding: 0 $s-1;
+  color: var(--print-soft);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  text-decoration: none;
+  transition: none;
+
+  &:hover {
+    color: var(--paper);
+    background: var(--print);
+  }
+}
+
+#waline {
+  // Waline's palette, mapped onto the paper set. Declared on the mount point
+  // itself, so neither waline.css's :root defaults nor its dark-mode block
+  // (written onto :root, body or an ancestor) can reach the slip.
+  --waline-font-size: 15px;
+  --waline-white: var(--paper);
+  --waline-light-grey: var(--print-soft);
+  --waline-dark-grey: var(--print-soft);
+  --waline-theme-color: var(--print);
+  --waline-active-color: var(--print);
+  --waline-color: var(--print);
+  --waline-bg-color: var(--paper);
+  --waline-bg-color-light: var(--paper);
+  --waline-bg-color-hover: var(--print-faint);
+  --waline-border-color: var(--print-faint);
+  --waline-disable-bg-color: var(--paper);
+  --waline-disable-color: var(--print-faint);
+  --waline-code-bg-color: var(--print);
+  --waline-warning-color: var(--paper);
+  --waline-warning-bg-color: var(--print);
+  --waline-bq-color: var(--print-soft);
+  --waline-avatar-size: 40px;
+  --waline-m-avatar-size: 32px;
+  --waline-avatar-radius: 0;
+  --waline-badge-color: var(--print);
+  --waline-badge-font-size: 12px;
+  --waline-info-bg-color: transparent;
+  --waline-info-color: var(--print-soft);
+  --waline-info-font-size: 12px;
+  --waline-border: none;
+  --waline-box-shadow: none;
+
+  margin: $s-16 0 0;
+
+  // nothing to print until Waline has mounted
+  &:empty { display: none; }
+
+  // the printer's slot, as under the post title
+  &::before {
+    content: "";
+    display: block;
+    height: $s-2;
+    margin: 0 (-$s-2);
+    background: var(--ink);
+    @include pixel-frame(var(--ink));
+  }
+
+  // ---------------------------------------------------------------------------
+  // The slip
+  // ---------------------------------------------------------------------------
+  [data-waline] {
+    position: relative;
+    margin: 0 $s-1;
+    padding: $s-6 $s-4 $s-12;
+    font-family: $font-body;
+    line-height: 1.75;
+    color: var(--print);
+    background: var(--paper);
+    // a light surface: the browser's own bits (caret, grips, autofill) follow
+    color-scheme: light;
+    caret-color: var(--print);
+    scrollbar-color: var(--print-soft) var(--paper);
+    -webkit-mask:
+      linear-gradient(#000 0 0) 0 0 / 100% calc(100% - 4px) no-repeat,
+      $px-teeth-bottom repeat-x 0 100% / 8px 4px;
+    mask:
+      linear-gradient(#000 0 0) 0 0 / 100% calc(100% - 4px) no-repeat,
+      $px-teeth-bottom repeat-x 0 100% / 8px 4px;
+
+    @media (min-width: $bp-tablet) { margin: 0 $s-2; padding: $s-8 $s-8 $s-12; }
+  }
+
+  ::selection { background: var(--print); color: var(--paper); }
+
+  :focus-visible {
+    outline: $px solid var(--print);
+    outline-offset: $px;
+  }
+
+  a {
+    display: inline;
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: $px;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--print-faint);
+
+    &:hover {
+      color: var(--paper);
+      background: var(--print);
+      text-decoration-color: transparent;
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // The form: fill-in lines for the name fields, a dotted blank frame to write
+  // in; a field in use turns its dots solid
+  // ---------------------------------------------------------------------------
+  .wl-comment {
+    display: flex;
+    margin: 0;
+  }
+
+  .wl-panel {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .wl-header {
+    display: flex;
+    flex-direction: column;
+    gap: $s-1 $s-4;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
+
+    @media (min-width: $bp-tablet) { flex-direction: row; }
+  }
+
+  .wl-header-item {
+    display: flex;
+    align-items: center;
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+    border: 0;
+    @include dotted-rule(var(--print-soft));
+
+    &:focus-within {
+      background-image: linear-gradient(var(--print) 0 0);
+      background-size: 100% $px;
+    }
+  }
+
+  .wl-header label {
+    @include pixel-type(12px);
+    flex: none;
+    min-width: 0;
+    padding: 0 $s-2 0 0;
+    color: var(--print-soft);
+    text-align: start;
+  }
+
+  // 16px keeps iOS from zooming the page on focus
+  .wl-input,
+  .wl-editor {
+    font-family: $font-body;
+    font-size: 16px;
+    color: var(--print);
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    outline: none;
+    transition: none;
+
+    &:focus { background-color: transparent; }
+    &::placeholder { color: var(--print-soft); opacity: 1; }
+
+    // the browser's autofill tint, painted back to paper
+    &:-webkit-autofill {
+      -webkit-text-fill-color: var(--print);
+      box-shadow: inset 0 0 0 40px var(--paper);
+    }
+  }
+
+  .wl-header input {
+    flex: 1 1 auto;
+    width: 0;
+    min-width: 0;
+    height: 40px;
+    padding: 0;
+  }
+
+  .wl-editor {
+    display: block;
+    width: 100%;
+    min-height: 128px;
+    margin: $s-4 0 0;
+    padding: $s-3;
+    line-height: 1.75;
+    @include edge-frame(var(--print-soft));
+
+    &:focus { @include edge-frame(var(--print), 100%); }
+  }
+
+  .wl-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: $s-3;
+    margin: $s-4 0 0;
+  }
+
+  .wl-actions {
+    flex: 1 1 auto;
+    gap: $s-1;
+  }
+
+  .wl-action {
+    @include print-icon-key;
+    width: 32px;
+    height: 32px;
+
+    &.active {
+      color: var(--paper);
+      background: var(--print);
+    }
+  }
+
+  // keeps to the right edge when it wraps under the icons
+  .wl-info {
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+    gap: $s-3;
+    margin-inline-start: auto;
+  }
+
+  .wl-text-number {
+    @include pixel-type(12px);
+    color: var(--print-soft);
+
+    .illegal { color: var(--print); text-decoration: underline; }
+  }
+
+  // Keys: print on paper in a notched print frame; the submit key is printed
+  // reversed. Both reverse on contact.
+  .wl-btn {
+    @include pixel-type(12px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: 0;
+    min-height: 40px;
+    margin: $px;
+    padding: 0 $s-4;
+    color: var(--print);
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    @include pixel-frame(var(--print));
+    transition: none;
+
+    &:hover {
+      color: var(--paper);
+      background: var(--print);
+    }
+
+    // one LCD pixel clear of the frame, so the ring reads on the filled key too
+    &:focus-visible { outline-offset: $px * 2; }
+
+    &.primary {
+      color: var(--paper);
+      background: var(--print);
+
+      &:hover {
+        color: var(--print);
+        background: var(--paper);
+      }
+    }
+
+    &:disabled,
+    &.primary:disabled {
+      cursor: not-allowed;
+      color: var(--print-faint);
+      background: transparent;
+      @include pixel-frame(var(--print-faint));
+    }
+  }
+
+  .wl-preview {
+    margin: $s-3 0 0;
+    padding: $s-3;
+    @include edge-frame(var(--print-faint));
+
+    hr { display: none; }
+
+    // a print subhead
+    h4 {
+      @include pixel-type(12px);
+      display: inline-block;
+      margin: 0 0 $s-2;
+      padding: 0 $s-2;
+      color: var(--paper);
+      background: var(--print);
+    }
+
+    .wl-content { min-height: 0; padding: 0; }
+  }
+
+  // signed in: the reader's avatar and name beside the form
+  .wl-login-info {
+    max-width: 64px;
+    margin: 0 $s-3 0 0;
+  }
+
+  .wl-avatar {
+    border: 0;
+    border-radius: 0;
+
+    img { border-radius: 0; }
+  }
+
+  .wl-login-nick {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--print);
+  }
+
+  .wl-logout-btn {
+    @include print-icon-key;
+    min-width: 0;
+    height: auto;
+    padding: 0;
+  }
+
+  // a reply's form opens inside the comment it answers
+  .wl-card .wl-comment { margin: $s-3 0 $s-1; }
+
+  // Its cancel key sits in its own column, clear of the fields. Waline's icon
+  // is a rounded grey badge; a bitmap × replaces it, hidden from the
+  // accessible name so the key is still read by its title, 取消回复.
+  .wl-close {
+    @include print-icon-key;
+    @include pixel-type(24px);
+    position: static;
+    flex: none;
+    align-self: flex-start;
+    width: 32px;
+    height: 32px;
+    margin: 0 0 0 $s-2;
+    padding: 0;
+    color: var(--print);
+
+    &::before {
+      content: "×";
+      content: unquote('"×" / ""');
+    }
+
+    svg { display: none; }
+  }
+
+  // ---------------------------------------------------------------------------
+  // The thread: a count stamped in reverse, then each comment on its own
+  // stretch of paper between dotted rules
+  // ---------------------------------------------------------------------------
+  .wl-meta-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: $s-2 $s-4;
+    margin: 0 0 $s-2;
+    padding: 0;
+  }
+
+  // while a reply is being written the form leaves the top of the slip
+  .wl-comment + .wl-meta-head { margin-top: $s-12; }
+
+  .wl-count {
+    @include pixel-type(12px);
+    flex: none;
+    padding: 0 $s-2;
+    color: var(--paper);
+    background: var(--print);
+  }
+
+  .wl-sort {
+    display: flex;
+    gap: $s-1;
+    margin: 0;
+    padding: 0;
+
+    li {
+      @include pixel-type(12px);
+      margin: 0;
+      padding: 0 $s-2;
+      color: var(--print-soft);
+
+      &:hover { color: var(--print); background: var(--print-faint); }
+      &.active { color: var(--paper); background: var(--print); }
+    }
+  }
+
+  .wl-card-item {
+    padding: $s-4 0;
+
+    & + .wl-card-item { @include dotted-rule(var(--print-faint), top); }
+  }
+
+  .wl-user {
+    flex: none;
+    margin: 0 $s-3 0 0;
+  }
+
+  // printed like everything else on the strip: in greys, its white the paper
+  .wl-user-avatar {
+    display: block;
+    border-radius: 0;
+    box-shadow: none;
+    filter: grayscale(1);
+    mix-blend-mode: multiply;
+  }
+
+  .verified-icon,
+  .administrator-icon {
+    border-radius: 0;
+    background: var(--paper);
+    box-shadow: none;
+  }
+
+  .wl-card {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .wl-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 $s-2;
+    overflow: visible;
+    line-height: 28px;
+  }
+
+  // names are the readers' own words, so they stay in the sans
+  .wl-nick {
+    display: inline;
+    margin: 0;
+    font-family: $font-body;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 28px;
+    color: var(--print);
+  }
+
+  .wl-badge {
+    @include pixel-type(12px);
+    margin: 0;
+    padding: 0 $s-1;
+    color: var(--paper);
+    background: var(--print);
+    border: 0;
+    border-radius: 0;
+  }
+
+  .wl-time {
+    @include pixel-type(12px);
+    margin: 0;
+    color: var(--print-soft);
+  }
+
+  .wl-comment-actions {
+    display: flex;
+    gap: $s-1;
+    margin-inline-start: auto;
+    float: none;
+  }
+
+  .wl-like,
+  .wl-reply,
+  .wl-edit,
+  .wl-delete {
+    @include print-icon-key;
+
+    svg { width: 16px; height: 16px; }
+  }
+
+  .wl-like.active { color: var(--print); }
+  .wl-reply.active { color: var(--paper); background: var(--print); }
+
+  .wl-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 $s-3;
+
+    > span {
+      @include pixel-type(12px);
+      margin: 0;
+      padding: 0;
+      color: var(--print-soft);
+      background: none;
+      border-radius: 0;
+    }
+  }
+
+  .wl-warning {
+    @include pixel-type(12px);
+    margin: $s-2 0 0;
+    padding: $s-1 $s-2;
+    color: var(--paper);
+    background: var(--print);
+    border: 0;
+    border-radius: 0;
+  }
+
+  .wl-admin-actions {
+    @include pixel-type(12px);
+    margin: $s-2 0;
+
+    .wl-btn { min-height: 28px; padding: 0 $s-2; }
+  }
+
+  .wl-comment-status { margin: 0 $s-2; }
+
+  // replies hang off a dotted line under the comment they answer
+  .wl-quote {
+    border: 0;
+
+    &:not(:empty) {
+      margin-top: $s-2;
+      padding-left: $s-3;
+      background: linear-gradient(180deg, var(--print-faint) 50%, transparent 0) repeat-y 0 0 / #{$px} #{$px * 2};
+    }
+
+    .wl-card-item { padding: $s-3 0; }
+  }
+
+  // ---------------------------------------------------------------------------
+  // A comment's text, printed like the post above it at a smaller size
+  // ---------------------------------------------------------------------------
+  .wl-content {
+    position: relative;
+    margin: $s-1 0 0;
+    padding: 0;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--print);
+    overflow-wrap: break-word;
+
+    p { margin: 0 0 $s-2; color: inherit; }
+    > div > :last-child { margin-bottom: 0; }
+
+    .wl-reply-to {
+      float: left;
+      margin: 0 $s-1 0 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      margin: $s-3 0 $s-1;
+      font-family: $font-body;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.5;
+      color: var(--print);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ul, ol { margin: $s-2 0; padding: 0 0 0 1.4em; }
+    li::marker { color: var(--print-soft); }
+
+    blockquote {
+      position: relative;
+      margin: $s-3 0;
+      padding: 0 0 0 $s-4;
+      color: var(--print-soft);
+      border: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: $s-1;
+        @include dither(var(--print), transparent);
+      }
+
+      p { color: inherit; }
+      > :last-child { margin-bottom: 0; }
+    }
+
+    hr {
+      margin: $s-4 auto;
+      border: 0;
+      background: var(--print-soft);
+    }
+
+    img { max-width: 100%; height: auto; }
+
+    code {
+      padding: 0.1em 0.35em;
+      font-family: $font-code;
+      font-size: 13.5px;
+      color: var(--print);
+      background: var(--print-faint);
+      border-radius: 0;
+    }
+
+    pre {
+      margin: $s-3 0;
+      padding: $s-3 $s-4;
+      overflow-x: auto;
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: var(--paper);
+      background: var(--print);
+      border-radius: 0;
+
+      code {
+        padding: 0;
+        font-size: inherit;
+        line-height: inherit;
+        color: inherit;
+        background: transparent;
+        white-space: pre;
+      }
+    }
+
+    // the server's Prism highlighting, in the same greys as the post's code
+    .token { color: inherit; }
+    .token.comment, .token.block-comment, .token.prolog, .token.doctype, .token.cdata {
+      color: var(--print-faint);
+      font-style: italic;
+    }
+    .token.keyword, .token.builtin, .token.function, .token.class-name, .token.tag {
+      color: var(--paper);
+      font-weight: 700;
+    }
+    .token.string, .token.char, .token.regex, .token.number, .token.boolean,
+    .token.operator, .token.punctuation, .token.attr-value {
+      color: var(--print-faint);
+    }
+
+    table {
+      font-size: 14px;
+
+      th { color: var(--paper); background: var(--print); }
+      td { @include dotted-rule(var(--print-faint)); }
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Empty, loading, more, and the foot of the slip
+  // ---------------------------------------------------------------------------
+  .wl-empty {
+    padding: $s-6 0;
+    font-size: 15px;
+    color: var(--print-soft);
+  }
+
+  .wl-loading { color: var(--print-soft); }
+
+  .wl-operation button { margin: $s-4 $px; }
+
+  .wl-meta-foot {
+    flex-wrap: wrap;
+    gap: $s-2 $s-4;
+    margin-top: $s-4;
+    padding-top: $s-4;
+    @include dotted-rule(var(--print-faint), top);
+  }
+
+  // the feed links fold out of their icon on hover or focus
+  .wl-rss {
+    gap: $s-3;
+    max-width: 24px;
+    transition: none;
+
+    &:hover,
+    &:focus-within { max-width: 100%; }
+
+    > a {
+      @include print-icon-key;
+      height: 24px;
+      padding: 0 $s-1;
+    }
+
+    span {
+      @include pixel-type(12px);
+      color: inherit;
+    }
+
+    // the feed icon is an orange badge; print only its waves
+    svg { width: 16px; height: 16px; }
+    svg path { fill: none; }
+    svg path:last-child { fill: currentColor; }
+  }
+
+  .wl-power {
+    @include pixel-type(12px);
+    margin-inline-start: auto;
+    padding: 0;
+    color: var(--print-soft);
+  }
+}
