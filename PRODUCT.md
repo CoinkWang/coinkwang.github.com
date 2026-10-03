@@ -27,7 +27,7 @@ A hand-built, single-author blog whose theme is also made by the author ("Theme 
 - Jekyll site deployed on GitHub Pages; layouts in `_layouts/`, includes in `_includes/`.
 - Multiple swappable visual themes selected by `theme_style` in `_config.yml`; each theme lives in `_sass/<name>/` plus an optional `assets/fonts/<name>.css`.
 - Readers are largely in mainland China: fonts are self-hosted because Google Fonts is blocked there; no external font CDNs.
-- Comments via Cusdis embed on posts; analytics via Clicky.
+- Comments via Waline on posts, self-hosted at comments.coink.wang (Vercel + Neon Postgres), anonymous comments allowed; analytics via Clicky.
 - Posts carry `title`, `subtitle`, `tag` (life / fiction / poem / phil / tech / work), `date`, optional `alert`, and footnotes (`assets/js/footnotes.js`).
 
 ## Capabilities and Constraints
