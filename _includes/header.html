@@ -31,4 +31,8 @@
       {%- endif -%}
     </div>
   </nav>
+  {%- if site.theme_style == "pixel" -%}
+  <div class="header-perch" aria-hidden="true"></div>
+  <script type="module" src="{{ '/assets/js/perch.js' | relative_url }}"></script>
+  {%- endif -%}
 </header>

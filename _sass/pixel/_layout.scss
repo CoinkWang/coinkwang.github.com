@@ -39,12 +39,9 @@ article:has(> .friend-links-container) {
   box-shadow: none !important;
   border-bottom: $px solid var(--ink);
 
-  // The rule is a wire: a night heron, a spotted dove, a light-vented
-  // bulbul, a hoopoe and a kingfisher sit on it in their own colours
-  // (_pixel/wire.py), tails hanging below. The strip's wire row lies exactly
-  // on the rule.
-  &::after {
-    content: "";
+  // Both the static fallback and random flock stand on the same wire row.
+  &::after,
+  .header-perch {
     position: absolute;
     left: 0;
     right: 0;
@@ -52,9 +49,20 @@ article:has(> .friend-links-container) {
     z-index: 1;
     height: $perch-h * $px;
     pointer-events: none;
+  }
+
+  &::after {
+    content: "";
     // Vector pixel cells avoid WebKit's smooth interpolation of PNG backgrounds.
     background: url("../img/pixel/perch.svg") repeat-x 24px 0 / #{$perch-w * $px} #{$perch-h * $px};
   }
+
+  .header-perch {
+    overflow: hidden;
+    svg { display: block; max-width: none; }
+  }
+
+  &.has-random-perch::after { display: none; }
 
   nav.split-nav {
     max-width: $wide-max;
@@ -219,7 +227,8 @@ article:has(> .friend-links-container) {
     }
 
     // menu open: the rule is covered, so the birds take off
-    &:has(#collapsible1:checked)::after { visibility: hidden; }
+    &:has(#collapsible1:checked)::after,
+    &:has(#collapsible1:checked) .header-perch { visibility: hidden; }
   }
 }
 

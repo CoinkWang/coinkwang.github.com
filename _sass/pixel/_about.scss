@@ -18,7 +18,8 @@ $feed: $s-2;      // how far in from the body's sides the strip runs
 $col-gap: $s-4;
 
 .page-content.album {
-  padding: $s-6 0 $s-16;
+  // Leave room for the blue-magpie's tail below the header wire.
+  padding: $s-8 0 $s-16;
 }
 
 .album-wrap {
