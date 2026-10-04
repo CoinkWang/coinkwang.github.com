@@ -70,6 +70,10 @@ layout: default
   <div id="waline"></div>
   <script type="module">
     import { init } from {{ '/assets/vendor/waline/3.16.0/waline.js' | relative_url | jsonify }};
+    import { perchAvatars } from {{ '/assets/js/perch-avatar.js' | relative_url | jsonify }};
+
+    // an avatar that fails to load (no picture of their own) becomes a bird
+    perchAvatars(document.getElementById('waline'));
 
     init({
       el: '#waline',
